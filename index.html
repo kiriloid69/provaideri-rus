@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Провайдеры РУС</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container d-flex align-center justify-between">
+        <div class="header__menu d-flex align-center gap-24">
+          <div class="header__logo">
+            <img src="images/logo.svg" alt="logo" />
+          </div>
+          <ul class="header__menu-list d-flex align-center gap-24">
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Подключение по адресу</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Тарифы</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Провайдеры</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__contacts d-flex gap-24 align-center">
+          <div class="header__contacts-item">
+            <a href="tel:88007001234" class="header__contacts-link phone-number"
+              >8-800-700-1234</a
+            >
+          </div>
+          <div class="header__contacts-item">
+            <a
+              href="#"
+              class="header__contacts-link d-flex align-center gap-8"
+            >
+              <div class="header__contacts-icon">
+                <img src="icons/call-icon.svg" alt="phone" />
+              </div>
+              <span>Заказать звонок</span>
+            </a>
+          </div>
+          <div class="header__contacts-item">
+            <a href="#" class="header__contacts-link d-flex align-center gap-8">
+              <div class="header__contacts-icon">
+                <img src="icons/map-icon.svg" alt="phone" />
+              </div>
+              <span>Петропавловск-Камчатский</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="providers-check">
+      <div class="container">
+        <div class="providers-check__block">
+          <h2>Проверьте, какие провайдеры есть по вашему адресу</h2>
+          <div class="providers-check__block__input-wrapper">
+            <input
+              class="providers-check__block__input"
+              type="text"
+              placeholder="Введите адрес"
+            />
+            <button type="button" class="providers-check__block__search-btn" aria-label="Поиск">
+              <svg
+                class="providers-check__block__search-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M1.95117 10.5C1.95117 5.80558 5.66393 2 10.2439 2C14.8238 2 18.5365 5.80558 18.5365 10.5C18.5365 12.7198 17.7063 14.7409 16.3468 16.2549C16.7059 16.089 17.1428 16.1573 17.4378 16.4596L20.6898 19.7929C21.0708 20.1835 21.0708 20.8166 20.6898 21.2071C20.3088 21.5977 19.6911 21.5977 19.3101 21.2071L16.0581 17.8738C15.7631 17.5715 15.6965 17.1236 15.8584 16.7556C14.3813 18.1491 12.4095 19 10.2439 19C5.66393 19 1.95117 15.1944 1.95117 10.5ZM10.2439 4C6.74156 4 3.90239 6.91015 3.90239 10.5C3.90239 14.0899 6.74156 17 10.2439 17C13.7461 17 16.5853 14.0899 16.5853 10.5C16.5853 6.91015 13.7461 4 10.2439 4Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script defer src="js/main.js"></script>
+  </body>
+</html>

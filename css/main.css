@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  font-family: system-ui, sans-serif;
+}
+
+img, video, svg {
+  max-width: 100%;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+*:focus,
+*:focus-visible,
+*:active {
+  outline: none !important;
+}
+
+button, input, textarea, select, a {
+  outline: none !important;
+}
+button:active, button:focus, button:focus-visible, input:active, input:focus, input:focus-visible, textarea:active, textarea:focus, textarea:focus-visible, select:active, select:focus, select:focus-visible, a:active, a:focus, a:focus-visible {
+  outline: none !important;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-6 {
+  gap: 6px;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-32 {
+  gap: 32px;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+body {
+  background-color: #f4f6f6;
+  color: #0c0d0d;
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.1;
+}
+
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.header {
+  background-color: #0c0d0d;
+  color: #ffffff;
+  padding: 24px 0;
+}
+.header__contacts-link {
+  font-size: 12px;
+  color: #84FCCB;
+}
+.header__contacts-link.phone-number {
+  font-size: 16px;
+  font-weight: 700;
+}
+.header__contacts-icon {
+  height: 36px;
+  width: 36px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #84FCCB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__contacts-icon img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.providers-check {
+  margin: 36px 0 48px;
+}
+.providers-check__block {
+  width: 60%;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 32px 28px;
+  background: linear-gradient(135deg, #b1e541 -50%, #0fb661 100%);
+  color: #ffffff;
+}
+.providers-check__block h2 {
+  margin-bottom: 32px;
+}
+.providers-check__block__input-wrapper {
+  position: relative;
+  padding: 14px 48px 14px 16px;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+.providers-check__block__input {
+  border: none;
+  line-height: 20px;
+  width: 100%;
+}
+.providers-check__block__search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: not-allowed;
+  z-index: 2;
+  border-radius: 0 6px 6px 0;
+}
+.providers-check__block__search-icon {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  flex-shrink: 0;
+  color: #D8D9DA;
+  transition: color 1s ease;
+}
+.providers-check__block__input-wrapper:has(.providers-check__block__input:not(:-moz-placeholder-shown)) .providers-check__block__search-icon {
+  color: #2BBE48;
+}
+.providers-check__block__input-wrapper:has(.providers-check__block__input:not(:placeholder-shown)) .providers-check__block__search-icon {
+  color: #2BBE48;
+}
+.providers-check__block__input-wrapper:has(.providers-check__block__input:not(:-moz-placeholder-shown)) .providers-check__block__search-btn {
+  cursor: pointer;
+}
+.providers-check__block__input-wrapper:has(.providers-check__block__input:not(:placeholder-shown)) .providers-check__block__search-btn {
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */

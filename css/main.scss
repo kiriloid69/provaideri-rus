@@ -1,0 +1,124 @@
+@import "./_reset.scss";
+@import "./_variables.scss";
+@import "./_fonts.scss";
+@import "./_utilities.scss";
+
+body {
+  background-color: $bg-color;
+  color: $black-color;
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.1;
+}
+
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.header {
+  background-color: $black-color;
+  color: $white-color;
+  padding: 24px 0;
+  &__contacts-link {
+    font-size: 12px;
+    color: $mint-color;
+    &.phone-number {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  &__contacts-icon {
+    height: 36px;
+    width: 36px;
+    object-fit: contain;
+    background-color: $mint-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.providers-check {
+  margin: 36px 0 48px;
+  &__block {
+    width: 60%;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 32px 28px;
+    background: $green-gradient;
+    color: $white-color;
+    & h2 {
+      margin-bottom: 32px;
+    }
+    &__input-wrapper {
+      position: relative;
+      padding: 14px 48px 14px 16px;
+      background-color: $white-color;
+      border-radius: 6px;
+    }
+    &__input {
+      border: none;
+      line-height: 20px;
+      width: 100%;
+    }
+    &__search-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: not-allowed;
+      z-index: 2;
+      border-radius: 0 6px 6px 0;
+    }
+    &__search-icon {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      min-height: 24px;
+      flex-shrink: 0;
+      color: #D8D9DA;
+      transition: color 1s ease;
+    }
+    &__input-wrapper:has(.providers-check__block__input:not(:placeholder-shown)) &__search-icon {
+      color: $primary-color;
+    }
+    &__input-wrapper:has(.providers-check__block__input:not(:placeholder-shown)) &__search-btn {
+      cursor: pointer;
+    }
+  }
+}

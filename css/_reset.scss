@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  font-family: system-ui, sans-serif;
+}
+
+img, video, svg {
+  max-width: 100%;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+*:focus,
+*:focus-visible,
+*:active {
+  outline: none !important;
+}
+
+button, input, textarea, select, a {
+  outline: none !important;
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: none !important;
+  }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
