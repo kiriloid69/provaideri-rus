@@ -1,12 +1,13 @@
 $primary-color: #2BBE48;
 $secondary-color: #cdff63;
 $pastel-green-color: #EBF5D7;
-$mint-color: #84FCCB;
+$mint-color: #86EBA8;
 $light-mint-color: #D9FFE9;
 $orange-color: #FFA500;
 $dark-orange-color: #FF7633;
 
 $black-color: #0c0d0d;
+$dark-gray-color: #6C757D;
 $gray-color: #A4A5A8;
 $white-color: #ffffff;
 
@@ -14,6 +15,20 @@ $bg-color: #f4f6f6;
 $mobile-bg-color: #e8edf4;
 
 $green-gradient: linear-gradient(135deg, #b1e541 -50%, #0fb661 100%);
+$second-green-gradient: linear-gradient(90deg, #00AB89 0%, #00D459 50%, #1CFF8E 100%);
 
 
 $border-radius: 10px;
+$border-radius-big: 12px;
+
+$z-base: 0;
+$z-content: 1;
+$z-main-tariffs: 50;
+$z-dropdown-section: 200;
+$z-dropdown: 500;
+$z-filter: 1000;
+$z-filter-open: 1100;
+$z-cookies: 9999;
+$z-mobile-menu: 10000;
+
+$header-height-mobile: 80px;

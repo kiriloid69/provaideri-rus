@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/kiriloid69/provaideri-rus/issues"
   },
-  "homepage": "https://github.com/kiriloid69/provaideri-rus#readme"
+  "homepage": "https://github.com/kiriloid69/provaideri-rus#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
 }

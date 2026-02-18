@@ -4,6 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Провайдеры РУС</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="images/main-mobile.gif" as="image" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -35,17 +63,14 @@
             >
           </div>
           <div class="header__contacts-item">
-            <a
-              href="#"
-              class="header__contacts-link d-flex align-center gap-8"
-            >
+            <a href="#" class="header__contacts-link d-flex align-center gap-8">
               <div class="header__contacts-icon">
                 <img src="icons/call-icon.svg" alt="phone" />
               </div>
               <span>Заказать звонок</span>
             </a>
           </div>
-          <div class="header__contacts-item">
+          <div class="header__contacts-item header__contacts-item--city">
             <a href="#" class="header__contacts-link d-flex align-center gap-8">
               <div class="header__contacts-icon">
                 <img src="icons/map-icon.svg" alt="phone" />
@@ -53,21 +78,189 @@
               <span>Петропавловск-Камчатский</span>
             </a>
           </div>
+          <div class="header__menu-mobile">
+            <button
+              type="button"
+              class="header__menu-mobile-btn"
+              aria-label="Меню"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <img
+                class="header__menu-mobile-icon header__menu-mobile-icon--open"
+                src="icons/hamburger-icon.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <span
+                class="header__menu-mobile-icon header__menu-mobile-icon--close"
+                aria-hidden="true"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 6L6 18M6 6l12 12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </header>
 
+    <!-- Мобильное меню (ширина 320px, экраны ≤
+     px) -->
+    <div class="mobile">
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu__backdrop" aria-label="Закрыть меню"></div>
+        <div class="mobile-menu__panel">
+          <div class="mobile-menu__content">
+            <nav class="mobile-menu__nav">
+              <a href="#" class="mobile-menu__link">Подключение по адресу</a>
+              <a href="#" class="mobile-menu__link">Тарифы</a>
+              <a href="#" class="mobile-menu__link">Провайдеры</a>
+              <a href="#" class="mobile-menu__link">Контакты</a>
+            </nav>
+            <div class="mobile-menu__location">
+              <p class="mobile-menu__location-label">Вы находитесь здесь</p>
+              <div
+                class="mobile-menu__location-card"
+                id="mobile-menu-location-card"
+              >
+                <img
+                  src="icons/map-icon.svg"
+                  alt=""
+                  class="mobile-menu__location-icon"
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                />
+                <span class="mobile-menu__city">Москва</span>
+              </div>
+              <div
+                class="mobile-menu__location-input-wrapper"
+                id="mobile-menu-location-input-wrapper"
+                style="display: none"
+              >
+                <div class="mobile-menu__location-input-container">
+                  <img
+                    src="icons/map-icon.svg"
+                    alt=""
+                    class="mobile-menu__location-input-icon"
+                    width="20"
+                    height="20"
+                    aria-hidden="true"
+                  />
+                  <input
+                    type="text"
+                    class="mobile-menu__location-input"
+                    id="mobile-menu-location-input"
+                    placeholder="Введите город"
+                    autocomplete="off"
+                    aria-autocomplete="list"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu-city-suggestions"
+                  />
+                </div>
+                <ul
+                  class="mobile-menu__city-suggestions"
+                  id="mobile-menu-city-suggestions"
+                  role="listbox"
+                  aria-label="Подсказки городов"
+                >
+                  <!-- Список будет заполнен через JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-mobile">
+        <div class="main-mobile__content">
+          <div class="container">
+            <nav class="main-mobile__content-navigation">
+              <ul class="main-mobile__content-navigation-list">
+                <li class="main-mobile__content-navigation-item">
+                  <a href="#" class="main-mobile__content-navigation-link"
+                    >Тарифы</a
+                  >
+                </li>
+                <li class="main-mobile__content-navigation-item">
+                  <a href="#" class="main-mobile__content-navigation-link"
+                    >Провайдеры</a
+                  >
+                </li>
+                <li class="main-mobile__content-navigation-item">
+                  <a href="#" class="main-mobile__content-navigation-link">
+                    <svg
+                      class="compare-btn__icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    Сравнение
+                    <span class="main-mobile__content-navigation-link-count"
+                      >5</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="main-mobile__content-main">
+          <img src="images/main-mobile.gif" alt="Девушка за компьютером" loading="eager" fetchpriority="high" />
+        </div>
+      </div>
+    </div>
+
     <section class="providers-check">
-      <div class="container">
+      <div class="container d-flex gap-24">
         <div class="providers-check__block">
-          <h2>Проверьте, какие провайдеры есть по вашему адресу</h2>
+          <h2>
+            Подключить выгодно интернет в&nbsp;<span class="city-name"
+              >Москве</span
+            >
+          </h2>
           <div class="providers-check__block__input-wrapper">
             <input
               class="providers-check__block__input"
               type="text"
               placeholder="Введите адрес"
+              autocomplete="off"
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-controls="address-suggestions-1"
+              id="address-input-1"
             />
-            <button type="button" class="providers-check__block__search-btn" aria-label="Поиск">
+            <button
+              type="button"
+              class="providers-check__block__search-btn"
+              aria-label="Поиск"
+            >
               <svg
                 class="providers-check__block__search-icon"
                 width="24"
@@ -85,10 +278,2928 @@
                 />
               </svg>
             </button>
+            <ul
+              class="providers-check__block__suggestions"
+              id="address-suggestions-1"
+              role="listbox"
+              aria-label="Подсказки адресов"
+            >
+              <li role="option">Москва, ул. Красного Маяка</li>
+              <li role="option">Москва, ул. Крамского</li>
+              <li role="option">Москва, ул. Красина</li>
+              <li role="option">Москва, ул. Красноармейская</li>
+              <li role="option">Москва, ул. Красноказарменная</li>
+              <li role="option">Москва, ул. Краснодарская</li>
+              <li role="option">Москва, ул. Краснодонская</li>
+              <li role="option">Москва, ул. Краснопресненская</li>
+            </ul>
+          </div>
+        </div>
+        <a href="#" class="providers-check-free__block">
+          <h2>Провайдеры с&nbsp;бесплатным подключением</h2>
+          <img src="images/free-connect-man.png" alt="Бесплатное подключение" />
+        </a>
+      </div>
+    </section>
+
+    <section class="main-tariffs">
+      <div class="container">
+        <h1 class="title">
+          Популярные тарифы домашнего интернета и ТВ в&nbsp;Москве
+        </h1>
+        <p class="subtitle">
+          Собрали самые популярные тарифы среди пользователей от более чем 50
+          провайдеров
+        </p>
+        <div class="main-tariffs__block d-flex gap-24">
+          <div class="main-tariffs__content">
+            <div class="main-tariffs__tabs" role="tablist">
+              <button
+                type="button"
+                class="main-tariffs__tab active"
+                role="tab"
+                aria-selected="true"
+                data-tab="int"
+              >
+                Интернет
+              </button>
+              <button
+                type="button"
+                class="main-tariffs__tab"
+                role="tab"
+                aria-selected="false"
+                data-tab="int-tv"
+              >
+                Интернет + ТВ
+              </button>
+              <button
+                type="button"
+                class="main-tariffs__tab"
+                role="tab"
+                aria-selected="false"
+                data-tab="int-tv-mob"
+              >
+                Интернет + ТВ + моб
+              </button>
+              <button
+                type="button"
+                class="main-tariffs__tab"
+                role="tab"
+                aria-selected="false"
+                data-tab="int-tv-mob-cin"
+              >
+                Интернет + ТВ + моб+ онлайн кинотеатры
+              </button>
+            </div>
+            <div class="main-tariffs__sort-filter-bar">
+              <div class="main-tariffs__sort-wrapper">
+                <button
+                  type="button"
+                  class="main-tariffs__filter-btn main-tariffs__sort-btn"
+                  id="sort-btn-bar"
+                  aria-label="Сортировка"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-controls="sort-dropdown"
+                >
+                  <img
+                    src="icons/sort-icon.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                    aria-hidden="true"
+                  />
+                  <span class="main-tariffs__sort-btn-text">Сначала полезные</span>
+                </button>
+              </div>
+              <button
+                type="button"
+                class="main-tariffs__filter-btn main-tariffs__filter-open-btn"
+                aria-label="Открыть фильтры"
+                aria-expanded="false"
+                aria-controls="filter-panel"
+              >
+                <img
+                  src="icons/filter-icon.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                />
+                <span>Все фильтры</span>
+              </button>
+            </div>
+            <div
+              class="main-tariffs__sort-dropdown"
+              id="sort-dropdown"
+              role="listbox"
+              aria-label="Сортировать"
+              hidden
+            >
+              <div class="main-tariffs__sort-dropdown-inner">
+                <div class="main-tariffs__sort-dropdown-header">
+                  <h3 class="main-tariffs__filter-title">Сортировать</h3>
+                  <button
+                    type="button"
+                    class="main-tariffs__sort-dropdown-close"
+                    aria-label="Закрыть"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+                <ul class="main-tariffs__sort-dropdown-list">
+                  <li><button type="button" class="main-tariffs__sort-option" data-sort="cheap">Сначала дешевые</button></li>
+                  <li><button type="button" class="main-tariffs__sort-option" data-sort="expensive">Сначала дорогие</button></li>
+                  <li><button type="button" class="main-tariffs__sort-option is-selected" data-sort="useful">Сначала полезные</button></li>
+                  <li><button type="button" class="main-tariffs__sort-option" data-sort="popular">Сначала популярные</button></li>
+                  <li><button type="button" class="main-tariffs__sort-option" data-sort="rating-high">Высокий рейтинг</button></li>
+                  <li><button type="button" class="main-tariffs__sort-option" data-sort="rating-low">Низкий рейтинг</button></li>
+                </ul>
+              </div>
+            </div>
+            <div class="main-tariffs__panels">
+              <div
+                class="main-tariffs__panel active"
+                role="tabpanel"
+                id="int"
+                aria-hidden="false"
+              >
+                <div class="main-tariffs__panel-list">
+                  <div class="tariff-block">
+                    <div class="tariff-block__header">
+                      <div class="badge sales">Скидка</div>
+                      <div class="compare-btn">
+                        <svg
+                          class="compare-btn__icon"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                        <span class="compare-btn__label">
+                          <span
+                            class="compare-btn__text compare-btn__text--default"
+                            >Сравнить</span
+                          >
+                          <span
+                            class="compare-btn__text compare-btn__text--added"
+                            >Добавлено</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tariff-block__content">
+                      <div class="tariff-block__title">
+                        <h2>Тариф №1 (Интернет)</h2>
+                      </div>
+                      <div class="tariff-block__body">
+                        <div class="tariff-block__body-info">
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Интернет
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>200 Мбит/с</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                ТВ
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>300 каналов</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Мобильная связь
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                Sim-карта в&nbsp;подарок
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Билайн ТВ
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                200 каналов
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Wi-Fi роутер
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                В аренду
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="operator-logo">
+                                <img
+                                  src="images/operators-logos/beeline.png"
+                                  alt="Beeline"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon rating-mobile"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Рейтинг оператора
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/timer-icon.svg"
+                                alt="Срок подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Срок подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  В течение недели
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/wallet-icon.svg"
+                                alt="Стоимость подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Стоимость подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  950 ₽
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line rating-pc">
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tariff-block__body-price">
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--fee"
+                          >
+                            <h3 class="tariff-block__body-price-value">
+                              490₽/мес
+                            </h3>
+                            <span class="tariff-block__body-price-label"
+                              >Абонентская плата</span
+                            >
+                          </div>
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--first-month"
+                          >
+                            <h3 class="tariff-block__body-price-value">0₽</h3>
+                            <span class="tariff-block__body-price-label"
+                              >Первый месяц</span
+                            >
+                          </div>
+                          <button
+                            type="button"
+                            class="big-button tariff-block__body-price-btn"
+                          >
+                            Подключить тариф
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tariff-block">
+                    <div class="tariff-block__header">
+                      <div class="badge hit">Хит подключений</div>
+                      <div class="compare-btn">
+                        <svg
+                          class="compare-btn__icon"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                        <span class="compare-btn__label">
+                          <span
+                            class="compare-btn__text compare-btn__text--default"
+                            >Сравнить</span
+                          >
+                          <span
+                            class="compare-btn__text compare-btn__text--added"
+                            >Добавлено</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tariff-block__content">
+                      <div class="tariff-block__title">
+                        <h2>Тариф №2 (Интернет)</h2>
+                      </div>
+                      <div class="tariff-block__body">
+                        <div class="tariff-block__body-info">
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Интернет
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>200 Мбит/с</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                ТВ
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>300 каналов</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Мобильная связь
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                Sim-карта в&nbsp;подарок
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                KION
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                120 каналов
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Wi-Fi роутер
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                В аренду
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="operator-logo">
+                                <img
+                                  src="images/operators-logos/mts.png"
+                                  alt="Beeline"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon rating-mobile"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Рейтинг оператора
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/timer-icon.svg"
+                                alt="Срок подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Срок подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  В течение недели
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/wallet-icon.svg"
+                                alt="Стоимость подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Стоимость подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  950 ₽
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line rating-pc">
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tariff-block__body-price">
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--fee"
+                          >
+                            <h3 class="tariff-block__body-price-value">
+                              490₽/мес
+                            </h3>
+                            <span class="tariff-block__body-price-label"
+                              >Абонентская плата</span
+                            >
+                          </div>
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--first-month"
+                          >
+                            <h3 class="tariff-block__body-price-value">0₽</h3>
+                            <span class="tariff-block__body-price-label"
+                              >Первый месяц</span
+                            >
+                          </div>
+                          <button
+                            type="button"
+                            class="big-button tariff-block__body-price-btn"
+                          >
+                            Подключить тариф
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tariff-block">
+                    <div class="tariff-block__header">
+                      <div class="badge popular">Самый популярный</div>
+                      <div class="compare-btn">
+                        <svg
+                          class="compare-btn__icon"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                        <span class="compare-btn__label">
+                          <span
+                            class="compare-btn__text compare-btn__text--default"
+                            >Сравнить</span
+                          >
+                          <span
+                            class="compare-btn__text compare-btn__text--added"
+                            >Добавлено</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tariff-block__content">
+                      <div class="tariff-block__title">
+                        <h2>Тариф №3 (Интернет)</h2>
+                      </div>
+                      <div class="tariff-block__body">
+                        <div class="tariff-block__body-info">
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Интернет
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>200 Мбит/с</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                ТВ
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>300 каналов</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Мобильная связь
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                Sim-карта в&nbsp;подарок
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Мегафон ТВ
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                300 каналов
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Wi-Fi роутер
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                В аренду
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="operator-logo">
+                                <img
+                                  src="images/operators-logos/megafon.svg"
+                                  alt="Мегафон"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon rating-mobile"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Рейтинг оператора
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/timer-icon.svg"
+                                alt="Срок подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Срок подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  В течение недели
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/wallet-icon.svg"
+                                alt="Стоимость подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Стоимость подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  950 ₽
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line rating-pc">
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tariff-block__body-price">
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--fee"
+                          >
+                            <h3 class="tariff-block__body-price-value">
+                              490₽/мес
+                            </h3>
+                            <span class="tariff-block__body-price-label"
+                              >Абонентская плата</span
+                            >
+                          </div>
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--first-month"
+                          >
+                            <h3 class="tariff-block__body-price-value">0₽</h3>
+                            <span class="tariff-block__body-price-label"
+                              >Первый месяц</span
+                            >
+                          </div>
+                          <button
+                            type="button"
+                            class="big-button tariff-block__body-price-btn"
+                          >
+                            Подключить тариф
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tariff-block">
+                    <div class="tariff-block__header">
+                      <div class="badge hit">Хит подключений</div>
+                      <div class="compare-btn">
+                        <svg
+                          class="compare-btn__icon"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                        <span class="compare-btn__label">
+                          <span
+                            class="compare-btn__text compare-btn__text--default"
+                            >Сравнить</span
+                          >
+                          <span
+                            class="compare-btn__text compare-btn__text--added"
+                            >Добавлено</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tariff-block__content">
+                      <div class="tariff-block__title">
+                        <h2>Тариф №4 (Интернет)</h2>
+                      </div>
+                      <div class="tariff-block__body">
+                        <div class="tariff-block__body-info">
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Интернет
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>200 Мбит/с</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                ТВ
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                <span>300 каналов</span>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Мобильная связь
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                Sim-карта в&nbsp;подарок
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Билайн ТВ
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                200 каналов
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-info-item">
+                              <div class="tariff-block__body-info-item-title">
+                                Wi-Fi роутер
+                              </div>
+                              <div class="tariff-block__body-info-item-value">
+                                В аренду
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line">
+                            <div class="tariff-block__body-info-item">
+                              <div class="operator-logo">
+                                <img
+                                  src="images/operators-logos/beeline.png"
+                                  alt="Beeline"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon rating-mobile"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Рейтинг оператора
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/timer-icon.svg"
+                                alt="Срок подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Срок подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  В течение недели
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/wallet-icon.svg"
+                                alt="Стоимость подключения"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-title">
+                                  Стоимость подключения
+                                </div>
+                                <div class="tariff-block__body-info-item-value">
+                                  950 ₽
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tariff-block__body-info__line rating-pc">
+                            <div
+                              class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                            >
+                              <img
+                                src="icons/star-icon.svg"
+                                alt="Рейтинг оператора"
+                              />
+                              <div
+                                class="tariff-block__body-info-item__icon-content"
+                              >
+                                <div class="tariff-block__body-info-item-value">
+                                  4.8
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tariff-block__body-price">
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--fee"
+                          >
+                            <h3 class="tariff-block__body-price-value">
+                              490₽/мес
+                            </h3>
+                            <span class="tariff-block__body-price-label"
+                              >Абонентская плата</span
+                            >
+                          </div>
+                          <div
+                            class="tariff-block__body-price-cell tariff-block__body-price-cell--first-month"
+                          >
+                            <h3 class="tariff-block__body-price-value">0₽</h3>
+                            <span class="tariff-block__body-price-label"
+                              >Первый месяц</span
+                            >
+                          </div>
+                          <button
+                            type="button"
+                            class="big-button tariff-block__body-price-btn"
+                          >
+                            Подключить тариф
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-tariffs__panel-more">
+                    <div class="main-tariffs__panel-more-inner">
+                      <div class="tariff-block">
+                        <div class="tariff-block__header">
+                          <div class="badge hit">Хит подключений</div>
+                          <div class="compare-btn">
+                            <svg
+                              class="compare-btn__icon"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span class="compare-btn__label">
+                              <span
+                                class="compare-btn__text compare-btn__text--default"
+                                >Сравнить</span
+                              >
+                              <span
+                                class="compare-btn__text compare-btn__text--added"
+                                >Добавлено</span
+                              >
+                            </span>
+                          </div>
+                        </div>
+                        <div class="tariff-block__content">
+                          <div class="tariff-block__title">
+                            <h2>Тариф №5 (Интернет)</h2>
+                          </div>
+                          <div class="tariff-block__body">
+                            <div class="tariff-block__body-info">
+                              <div class="tariff-block__body-info__line">
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Интернет
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    <span>200 Мбит/с</span>
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    ТВ
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    <span>300 каналов</span>
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Мобильная связь
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    Sim-карта в&nbsp;подарок
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Билайн ТВ
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    200 каналов
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Wi-Fi роутер
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    В аренду
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="tariff-block__body-info__line">
+                                <div class="tariff-block__body-info-item">
+                                  <div class="operator-logo">
+                                    <img
+                                      src="images/operators-logos/beeline.png"
+                                      alt="Beeline"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon rating-mobile"
+                                >
+                                  <img
+                                    src="icons/star-icon.svg"
+                                    alt="Рейтинг оператора"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Рейтинг оператора
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      4.8
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/timer-icon.svg"
+                                    alt="Срок подключения"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Срок подключения
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      В течение недели
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/wallet-icon.svg"
+                                    alt="Стоимость подключения"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Стоимость подключения
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      950 ₽
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="tariff-block__body-info__line rating-pc"
+                              >
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/star-icon.svg"
+                                    alt="Рейтинг оператора"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      4.8
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-price">
+                              <div
+                                class="tariff-block__body-price-cell tariff-block__body-price-cell--fee"
+                              >
+                                <h3 class="tariff-block__body-price-value">
+                                  490₽/мес
+                                </h3>
+                                <span class="tariff-block__body-price-label"
+                                  >Абонентская плата</span
+                                >
+                              </div>
+                              <div
+                                class="tariff-block__body-price-cell tariff-block__body-price-cell--first-month"
+                              >
+                                <h3 class="tariff-block__body-price-value">
+                                  0₽
+                                </h3>
+                                <span class="tariff-block__body-price-label"
+                                  >Первый месяц</span
+                                >
+                              </div>
+                              <button
+                                type="button"
+                                class="big-button tariff-block__body-price-btn"
+                              >
+                                Подключить тариф
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tariff-block">
+                        <div class="tariff-block__header">
+                          <div class="badge hit">Хит подключений</div>
+                          <div class="compare-btn">
+                            <svg
+                              class="compare-btn__icon"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span class="compare-btn__label">
+                              <span
+                                class="compare-btn__text compare-btn__text--default"
+                                >Сравнить</span
+                              >
+                              <span
+                                class="compare-btn__text compare-btn__text--added"
+                                >Добавлено</span
+                              >
+                            </span>
+                          </div>
+                        </div>
+                        <div class="tariff-block__content">
+                          <div class="tariff-block__title">
+                            <h2>Тариф №6 (Интернет)</h2>
+                          </div>
+                          <div class="tariff-block__body">
+                            <div class="tariff-block__body-info">
+                              <div class="tariff-block__body-info__line">
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Интернет
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    <span>200 Мбит/с</span>
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    ТВ
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    <span>300 каналов</span>
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Мобильная связь
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    Sim-карта в&nbsp;подарок
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Билайн ТВ
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    200 каналов
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Wi-Fi роутер
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    В аренду
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="tariff-block__body-info__line">
+                                <div class="tariff-block__body-info-item">
+                                  <div class="operator-logo">
+                                    <img
+                                      src="images/operators-logos/beeline.png"
+                                      alt="Beeline"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon rating-mobile"
+                                >
+                                  <img
+                                    src="icons/star-icon.svg"
+                                    alt="Рейтинг оператора"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Рейтинг оператора
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      4.8
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/timer-icon.svg"
+                                    alt="Срок подключения"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Срок подключения
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      В течение недели
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/wallet-icon.svg"
+                                    alt="Стоимость подключения"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Стоимость подключения
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      950 ₽
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="tariff-block__body-info__line rating-pc"
+                              >
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/star-icon.svg"
+                                    alt="Рейтинг оператора"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      4.8
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-price">
+                              <div
+                                class="tariff-block__body-price-cell tariff-block__body-price-cell--fee"
+                              >
+                                <h3 class="tariff-block__body-price-value">
+                                  490₽/мес
+                                </h3>
+                                <span class="tariff-block__body-price-label"
+                                  >Абонентская плата</span
+                                >
+                              </div>
+                              <div
+                                class="tariff-block__body-price-cell tariff-block__body-price-cell--first-month"
+                              >
+                                <h3 class="tariff-block__body-price-value">
+                                  0₽
+                                </h3>
+                                <span class="tariff-block__body-price-label"
+                                  >Первый месяц</span
+                                >
+                              </div>
+                              <button
+                                type="button"
+                                class="big-button tariff-block__body-price-btn"
+                              >
+                                Подключить тариф
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tariff-block">
+                        <div class="tariff-block__header">
+                          <div class="badge hit">Хит подключений</div>
+                          <div class="compare-btn">
+                            <svg
+                              class="compare-btn__icon"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span class="compare-btn__label">
+                              <span
+                                class="compare-btn__text compare-btn__text--default"
+                                >Сравнить</span
+                              >
+                              <span
+                                class="compare-btn__text compare-btn__text--added"
+                                >Добавлено</span
+                              >
+                            </span>
+                          </div>
+                        </div>
+                        <div class="tariff-block__content">
+                          <div class="tariff-block__title">
+                            <h2>Тариф №7 (Интернет)</h2>
+                          </div>
+                          <div class="tariff-block__body">
+                            <div class="tariff-block__body-info">
+                              <div class="tariff-block__body-info__line">
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Интернет
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    <span>200 Мбит/с</span>
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    ТВ
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    <span>300 каналов</span>
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Мобильная связь
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    Sim-карта в&nbsp;подарок
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Билайн ТВ
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    200 каналов
+                                  </div>
+                                </div>
+                                <div class="tariff-block__body-info-item">
+                                  <div
+                                    class="tariff-block__body-info-item-title"
+                                  >
+                                    Wi-Fi роутер
+                                  </div>
+                                  <div
+                                    class="tariff-block__body-info-item-value"
+                                  >
+                                    В аренду
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="tariff-block__body-info__line">
+                                <div class="tariff-block__body-info-item">
+                                  <div class="operator-logo">
+                                    <img
+                                      src="images/operators-logos/beeline.png"
+                                      alt="Beeline"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon rating-mobile"
+                                >
+                                  <img
+                                    src="icons/star-icon.svg"
+                                    alt="Рейтинг оператора"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Рейтинг оператора
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      4.8
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/timer-icon.svg"
+                                    alt="Срок подключения"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Срок подключения
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      В течение недели
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/wallet-icon.svg"
+                                    alt="Стоимость подключения"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-title"
+                                    >
+                                      Стоимость подключения
+                                    </div>
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      950 ₽
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="tariff-block__body-info__line rating-pc"
+                              >
+                                <div
+                                  class="tariff-block__body-info-item tariff-block__body-info-item__icon"
+                                >
+                                  <img
+                                    src="icons/star-icon.svg"
+                                    alt="Рейтинг оператора"
+                                  />
+                                  <div
+                                    class="tariff-block__body-info-item__icon-content"
+                                  >
+                                    <div
+                                      class="tariff-block__body-info-item-value"
+                                    >
+                                      4.8
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tariff-block__body-price">
+                              <div
+                                class="tariff-block__body-price-cell tariff-block__body-price-cell--fee"
+                              >
+                                <h3 class="tariff-block__body-price-value">
+                                  490₽/мес
+                                </h3>
+                                <span class="tariff-block__body-price-label"
+                                  >Абонентская плата</span
+                                >
+                              </div>
+                              <div
+                                class="tariff-block__body-price-cell tariff-block__body-price-cell--first-month"
+                              >
+                                <h3 class="tariff-block__body-price-value">
+                                  0₽
+                                </h3>
+                                <span class="tariff-block__body-price-label"
+                                  >Первый месяц</span
+                                >
+                              </div>
+                              <button
+                                type="button"
+                                class="big-button tariff-block__body-price-btn"
+                              >
+                                Подключить тариф
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="main-tariffs__show-more"
+                  aria-expanded="false"
+                >
+                  <span>Показать ещё</span>
+                  <img
+                    src="icons/green-arrow-icon.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                    aria-hidden="true"
+                    class="main-tariffs__show-more-icon"
+                  />
+                </button>
+              </div>
+              <div
+                class="main-tariffs__panel"
+                role="tabpanel"
+                id="int-tv"
+                aria-hidden="true"
+              >
+                Тарифы: Интернет + ТВ
+              </div>
+              <div
+                class="main-tariffs__panel"
+                role="tabpanel"
+                id="int-tv-mob"
+                aria-hidden="true"
+              >
+                Тарифы: ТВ
+              </div>
+              <div
+                class="main-tariffs__panel"
+                role="tabpanel"
+                id="int-tv-mob-cin"
+                aria-hidden="true"
+              >
+                Тарифы: Мобильная связь
+              </div>
+            </div>
+          </div>
+          <div class="main-tariffs__filter-col" id="filter-col">
+            <div class="main-tariffs__filter-slide">
+              <div
+                class="main-tariffs__filter-actions main-tariffs__filter-actions--panel"
+              >
+                <button
+                  type="button"
+                  class="main-tariffs__filter-btn main-tariffs__sort-btn"
+                  id="sort-btn-sidebar"
+                  aria-label="Сортировка"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-controls="sort-dropdown"
+                >
+                  <img
+                    src="icons/sort-icon.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                    aria-hidden="true"
+                  />
+                  <span class="main-tariffs__sort-btn-text">Сначала полезные</span>
+                </button>
+                <button type="button" class="main-tariffs__filter-btn">
+                  <img
+                    src="icons/filter-icon.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                    aria-hidden="true"
+                  />
+                  <span>Все фильтры</span>
+                </button>
+              </div>
+              <aside
+                class="main-tariffs__filter"
+                id="filter-panel"
+                role="dialog"
+                aria-label="Фильтры"
+              >
+                <div class="main-tariffs__filter-inner">
+                  <div class="main-tariffs__filter-header">
+                    <h3 class="main-tariffs__filter-title">Фильтры</h3>
+                    <button
+                      type="button"
+                      class="main-tariffs__filter-close"
+                      aria-label="Закрыть фильтры"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="main-tariffs__filter-section">
+                    <div
+                      class="main-tariffs__filter-section-title"
+                      id="filter-services"
+                    >
+                      Услуги
+                    </div>
+                    <ul
+                      class="main-tariffs__filter-list"
+                      role="group"
+                      aria-labelledby="filter-services"
+                    >
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="internet"
+                            checked
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Интернет</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="tv"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >ТВ</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="mobile"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Мобильная связь</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="cinema"
+                            checked
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Онлайн кинотеатры</span
+                          >
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="main-tariffs__filter-section">
+                    <div
+                      class="main-tariffs__filter-section-title"
+                      id="filter-connect"
+                    >
+                      Куда подключать
+                    </div>
+                    <ul
+                      class="main-tariffs__filter-list"
+                      role="radiogroup"
+                      aria-labelledby="filter-connect"
+                    >
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="radio"
+                            name="connect-type"
+                            value="apartment"
+                            checked
+                            class="main-tariffs__filter-input main-tariffs__filter-input--radio"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Квартира</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="radio"
+                            name="connect-type"
+                            value="house"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--radio"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Частный дом</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="radio"
+                            name="connect-type"
+                            value="office"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--radio"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Офис</span
+                          >
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="main-tariffs__filter-section">
+                    <div
+                      class="main-tariffs__filter-section-title"
+                      id="filter-services"
+                    >
+                      Скорость
+                    </div>
+                    <ul
+                      class="main-tariffs__filter-list"
+                      role="group"
+                      aria-labelledby="filter-services"
+                    >
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="1000mbs"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >до 1 000 Мбит/сек</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="3000mbs"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >до 3 000 Мбит/сек</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="10000mbs"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >до 10 000 Мбит/сек</span
+                          >
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="main-tariffs__filter-section">
+                    <div
+                      class="main-tariffs__filter-section-title"
+                      id="filter-services"
+                    >
+                      Стоимость в месяц
+                    </div>
+                    <ul
+                      class="main-tariffs__filter-list"
+                      role="group"
+                      aria-labelledby="filter-services"
+                    >
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="do500rub"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >до 500 ₽</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="do1000rub"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >до 1000 ₽</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="do2000rub"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >до 2000 ₽</span
+                          >
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="main-tariffs__filter-section">
+                    <div
+                      class="main-tariffs__filter-section-title"
+                      id="filter-services"
+                    >
+                      Провайдеры
+                    </div>
+                    <ul
+                      class="main-tariffs__filter-list"
+                      role="group"
+                      aria-labelledby="filter-services"
+                    >
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="mts_prov"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >МТС</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="beeline_prov"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Билайн</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="megafon_prov"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Мегафон</span
+                          >
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="main-tariffs__filter-section">
+                    <div
+                      class="main-tariffs__filter-section-title"
+                      id="filter-services"
+                    >
+                      Дополнительно
+                    </div>
+                    <ul
+                      class="main-tariffs__filter-list"
+                      role="group"
+                      aria-labelledby="filter-services"
+                    >
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="free-connect"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Бесплатное подключение</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="wifi-router"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Wi-Fi роутер</span
+                          >
+                        </label>
+                      </li>
+                      <li class="main-tariffs__filter-item">
+                        <label class="main-tariffs__filter-label">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value="game-bonuses"
+                            class="main-tariffs__filter-input main-tariffs__filter-input--checkbox"
+                          />
+                          <span class="main-tariffs__filter-label-text"
+                            >Игровые бонусы</span
+                          >
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="main-tariffs__find-block">
+          <div class="main-tariffs__find-block-text">
+            <span class="main-tariffs__find-block-title"
+              >Не нашли подходящий?</span
+            >
+            <span class="main-tariffs__find-block-subtitle"
+              >автоматический подбор тарифа</span
+            >
+          </div>
+          <span class="main-tariffs__find-block-btn">Найти</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="how-to-connect">
+      <div class="container">
+        <h2 class="title">
+          Как подключить домашний интернет в&nbsp;<span class="city-name"
+            >Москве</span
+          >
+        </h2>
+        <div class="how-to-connect__content">
+          <div class="how-to-connect__card">
+            <img src="icons/home-icon.svg" alt="Проверка доступности" />
+            <h3 class="how-to-connect__card-title">
+              Проверка доступности подключения по адресу
+            </h3>
+            <div class="how-to-connect__card-description">
+              Введите свой адрес в форму — система автоматически показывает,
+              какие провайдеры и тарифы доступны именно в вашем доме.
+            </div>
+          </div>
+          <div class="how-to-connect__card">
+            <img src="icons/wifi-icon.svg" alt="Выбор провайдера и тарифа" />
+            <h3 class="how-to-connect__card-title">
+              Выбор провайдера и&nbsp;тарифа
+            </h3>
+            <div class="how-to-connect__card-description">
+              Сравните предложения — скорость, стоимость, акции и условия —
+              и&nbsp;выбираете подходящий вариант подключения.
+            </div>
+          </div>
+          <div class="how-to-connect__card">
+            <img src="icons/order-icon.svg" alt="Оформление заявки" />
+            <h3 class="how-to-connect__card-title">
+              Оформление <br />
+              заявки
+            </h3>
+            <div class="how-to-connect__card-description">
+              Заполните короткую форму: контактные данные, адрес, удобное время
+              подключения. Заявка отправляется выбранному провайдеру. Менеджер
+              связывается с вами, уточняет дату и&nbsp;время приезда
+              специалиста.
+            </div>
+          </div>
+          <div class="how-to-connect__card">
+            <img src="icons/int-icon.svg" alt="Проверка доступности" />
+            <h3 class="how-to-connect__card-title">
+              Установка и активация интернета
+            </h3>
+            <div class="how-to-connect__card-description">
+              Специалист приезжает, устанавливает оборудование, настраивает
+              соединение и проверяет работу сети. После этого вы можете
+              пользоваться интернетом.
+            </div>
+          </div>
+        </div>
+        <button class="big-button how-to-connect__button">Задать вопрос</button>
+      </div>
+    </section>
+
+    <section class="hot-select-tariff">
+      <div class="container">
+        <h2 class="title">
+          Как выбрать лучший тариф для домашнего интернета в&nbsp;<span
+            class="city-name"
+            >Москве</span
+          >
+        </h2>
+        <p class="hot-select-tariff__intro">
+          Вот на что обращают внимание большинство клиентов ДомИнтернет при
+          выборе тарифного плана:
+        </p>
+        <ol class="hot-select-tariff__list">
+          <li>Абонентская плата</li>
+          <li>Скорость интернета</li>
+          <li>Подписки и бонусы в пакете тарифа</li>
+          <li>Цена за роутер</li>
+          <li>Качество цифрового ТВ и включена ли приставка в тариф</li>
+          <li>Акции</li>
+          <li>Стоимость подключения</li>
+        </ol>
+        <div class="hot-select-tariff__text">
+          <p>
+            Выгодное решение сэкономит семье тысячи рублей в год. Например, если
+            выберите пакет с домашним интернетом, телевидением и мобильной
+            связью от 561 до 3000 руб/мес у Ростелеком, Билайн, МТС, МегаФон или
+            других провайдеров в Балашихе.
+          </p>
+          <p>
+            Изучите все предложения. Возможно, за какие-то услуги вы уже
+            платите, а их можно подключить бесплатно вместе с домашним
+            интернетом.
+          </p>
+          <p>
+            Пакет с ТВ-каналами, онлайн-кинотеатром и каталогом фильмов, — это
+            неполный список тех опций, которые вы покупаете вместе с выгодными
+            тарифами.
+          </p>
+          <p>
+            Провайдеры часто делают скидки на стартовый период для новых
+            клиентов. При этом абонентская плата за интернет снижается на 50 или
+            даже 100% на 1–3 месяца.
+          </p>
+          <p>
+            В Балашихе по акции доступны следующие предложения: «МТС Дома
+            Хорошо» от МТС, «Технологии развлечения Тест-драйв» от Ростелеком,
+            «оптимальный» от билайн.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="providers-check">
+      <div class="container d-flex gap-24">
+        <div class="providers-check__block">
+          <h2>
+            Зона покрытия интернет-провайдеров в
+            <span class="city-name">Москве</span>
+          </h2>
+          <div class="providers-check__block__input-wrapper">
+            <input
+              class="providers-check__block__input"
+              type="text"
+              placeholder="Введите адрес"
+              autocomplete="off"
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-controls="address-suggestions-2"
+              id="address-input-2"
+            />
+            <button
+              type="button"
+              class="providers-check__block__search-btn"
+              aria-label="Поиск"
+            >
+              <svg
+                class="providers-check__block__search-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M1.95117 10.5C1.95117 5.80558 5.66393 2 10.2439 2C14.8238 2 18.5365 5.80558 18.5365 10.5C18.5365 12.7198 17.7063 14.7409 16.3468 16.2549C16.7059 16.089 17.1428 16.1573 17.4378 16.4596L20.6898 19.7929C21.0708 20.1835 21.0708 20.8166 20.6898 21.2071C20.3088 21.5977 19.6911 21.5977 19.3101 21.2071L16.0581 17.8738C15.7631 17.5715 15.6965 17.1236 15.8584 16.7556C14.3813 18.1491 12.4095 19 10.2439 19C5.66393 19 1.95117 15.1944 1.95117 10.5ZM10.2439 4C6.74156 4 3.90239 6.91015 3.90239 10.5C3.90239 14.0899 6.74156 17 10.2439 17C13.7461 17 16.5853 14.0899 16.5853 10.5C16.5853 6.91015 13.7461 4 10.2439 4Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+            <ul
+              class="providers-check__block__suggestions"
+              id="address-suggestions-2"
+              role="listbox"
+              aria-label="Подсказки адресов"
+            >
+              <li role="option">Москва, ул. Красного Маяка</li>
+              <li role="option">Москва, ул. Крамского</li>
+              <li role="option">Москва, ул. Красина</li>
+              <li role="option">Москва, ул. Красноармейская</li>
+              <li role="option">Москва, ул. Красноказарменная</li>
+              <li role="option">Москва, ул. Краснодарская</li>
+              <li role="option">Москва, ул. Краснодонская</li>
+              <li role="option">Москва, ул. Краснопресненская</li>
+            </ul>
+          </div>
+        </div>
+        <div class="providers-check-free__block">
+          <h2>Провайдеры с&nbsp;бесплатным подключением</h2>
+          <img src="images/free-connect-man.png" alt="Бесплатное подключение" />
+        </div>
+      </div>
+      <div class="container addresses-block">
+        <div class="addresses-block__tabs" role="tablist">
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="А"
+          >
+            А
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab active"
+            role="tab"
+            aria-selected="true"
+            data-letter="Б"
+          >
+            Б
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="В"
+          >
+            В
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="Г"
+          >
+            Г
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="Д"
+          >
+            Д
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="Е"
+          >
+            Е
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="Ё"
+          >
+            Ё
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="Ж"
+          >
+            Ж
+          </button>
+          <button
+            type="button"
+            class="addresses-block__tab"
+            role="tab"
+            aria-selected="false"
+            data-letter="З"
+          >
+            З
+          </button>
+        </div>
+        <div class="addresses-block__panels">
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-a"
+            aria-hidden="true"
+            data-letter="А"
+          >
+            <div class="addresses-block__letter-only">А</div>
+          </div>
+          <div
+            class="addresses-block__panel active"
+            role="tabpanel"
+            id="address-letter-b"
+            aria-hidden="false"
+            data-letter="Б"
+          >
+            <div class="addresses-block__panel-inner">
+              <div class="addresses-block__list addresses-block__list--cols">
+                <div class="addresses-block__col">
+                  <div class="addresses-block__item">
+                    ул. Б.Кузнецова (г Волоколамск)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Б.Учительская (г Раменское) (дп Родники)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Б.Хмельницкого (г Королев) (мкр Первомайский)
+                  </div>
+                  <div class="addresses-block__item">ул. Бабаевская</div>
+                  <div class="addresses-block__item">
+                    ул. Бабакина (г Химки)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Бабушкина (г Коломна)
+                  </div>
+                </div>
+                <div class="addresses-block__col">
+                  <div class="addresses-block__item">
+                    ул. Бабушкина (г Коломна)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Бабушкина (г Королев)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Бабушкина (г Ногинск)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Бабушкина (г Ногинск)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Баграмяна (г Домодедово) (мкр Белые Столбы)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Багратиона (г Можайск)
+                  </div>
+                </div>
+                <div class="addresses-block__col">
+                  <div class="addresses-block__item">
+                    ул. Багратиона (г Можайск) (п Бородинское Поле)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Багратиона (г Подольск)
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Багратионовская (г Щёлково) (с Трубино)
+                  </div>
+                  <div class="addresses-block__item">
+                    проезд Багратионовский
+                  </div>
+                  <div class="addresses-block__item">
+                    ул. Багратиона (г Москва)
+                  </div>
+                  <div class="addresses-block__item">ул. Багрицкого</div>
+                </div>
+              </div>
+              <div class="addresses-block__list-more">
+                <div class="addresses-block__list-more-inner">
+                  <div
+                    class="addresses-block__list addresses-block__list--cols"
+                  >
+                    <div class="addresses-block__col">
+                      <div class="addresses-block__item">
+                        ул. Б.Кузнецова (г Волоколамск)
+                      </div>
+                      <div class="addresses-block__item">
+                        ул. Б.Учительская (г Раменское) (дп Родники)
+                      </div>
+                      <div class="addresses-block__item">ул. Бабаевская</div>
+                      <div class="addresses-block__item">
+                        ул. Бабакина (г Химки)
+                      </div>
+                      <div class="addresses-block__item">
+                        ул. Бабушкина (г Королев)
+                      </div>
+                      <div class="addresses-block__item">
+                        ул. Багратиона (г Подольск)
+                      </div>
+                    </div>
+                    <div class="addresses-block__col">
+                      <div class="addresses-block__item">
+                        ул. Багратионовская (г Щёлково) (с Трубино)
+                      </div>
+                      <div class="addresses-block__item">
+                        проезд Багратионовский
+                      </div>
+                      <div class="addresses-block__item">ул. Багрицкого</div>
+                      <div class="addresses-block__item">
+                        ул. Б.Кузнецова (г Волоколамск)
+                      </div>
+                      <div class="addresses-block__item">ул. Бабаевская</div>
+                      <div class="addresses-block__item">
+                        ул. Бабушкина (г Ногинск)
+                      </div>
+                    </div>
+                    <div class="addresses-block__col">
+                      <div class="addresses-block__item">
+                        ул. Баграмяна (г Домодедово) (мкр Белые Столбы)
+                      </div>
+                      <div class="addresses-block__item">
+                        ул. Багратиона (г Можайск)
+                      </div>
+                      <div class="addresses-block__item">
+                        ул. Багратиона (г Можайск) (п Бородинское Поле)
+                      </div>
+                      <div class="addresses-block__item">ул. Багрицкого</div>
+                      <div class="addresses-block__item">
+                        ул. Б.Хмельницкого (г Королев) (мкр Первомайский)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-v"
+            aria-hidden="true"
+            data-letter="В"
+          >
+            <div class="addresses-block__letter-only">В</div>
+          </div>
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-g"
+            aria-hidden="true"
+            data-letter="Г"
+          >
+            <div class="addresses-block__letter-only">Г</div>
+          </div>
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-d"
+            aria-hidden="true"
+            data-letter="Д"
+          >
+            <div class="addresses-block__letter-only">Д</div>
+          </div>
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-e"
+            aria-hidden="true"
+            data-letter="Е"
+          >
+            <div class="addresses-block__letter-only">Е</div>
+          </div>
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-yo"
+            aria-hidden="true"
+            data-letter="Ё"
+          >
+            <div class="addresses-block__letter-only">Ё</div>
+          </div>
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-zh"
+            aria-hidden="true"
+            data-letter="Ж"
+          >
+            <div class="addresses-block__letter-only">Ж</div>
+          </div>
+          <div
+            class="addresses-block__panel"
+            role="tabpanel"
+            id="address-letter-z"
+            aria-hidden="true"
+            data-letter="З"
+          >
+            <div class="addresses-block__letter-only">З</div>
+          </div>
+        </div>
+        <div class="addresses-block__show-all">
+          <button
+            type="button"
+            class="addresses-block__show-all-btn"
+            aria-expanded="false"
+            data-action="expand"
+          >
+            <span class="addresses-block__show-all-text"
+              >Показать все адреса</span
+            >
+            <img
+              src="icons/green-arrow-icon.svg"
+              alt=""
+              width="24"
+              height="24"
+              aria-hidden="true"
+              class="addresses-block__show-all-icon"
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2 class="title">Частые вопросы</h2>
+        <div class="faq__list">
+          <div class="faq__col">
+            <div class="faq__item">
+              <button
+                type="button"
+                class="faq__question faq__question--open"
+                aria-expanded="true"
+                aria-controls="faq-1"
+                id="faq-q-1"
+              >
+                <span class="faq__question-text"
+                  >Какие тарифы доступны для частного дома в&nbsp;Москве?</span
+                >
+                <svg
+                  class="faq__icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <g clip-path="url(#faq-clip-1)">
+                    <path
+                      fill="currentColor"
+                      d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="faq-clip-1">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <div
+                class="faq__answer-wrap faq__answer-wrap--open"
+                id="faq-1"
+                role="region"
+                aria-labelledby="faq-q-1"
+              >
+                <div class="faq__answer-inner">
+                  <div class="faq__answer">В квартиру</div>
+                  <div class="faq__answer">В частный дом</div>
+                  <div class="faq__answer">В офис</div>
+                </div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button
+                type="button"
+                class="faq__question"
+                aria-expanded="false"
+                aria-controls="faq-2"
+                id="faq-q-2"
+              >
+                <span class="faq__question-text"
+                  >Какие тарифы доступны для частного дома в&nbsp;Москве?</span
+                >
+                <svg
+                  class="faq__icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <g clip-path="url(#faq-clip-2)">
+                    <path
+                      fill="currentColor"
+                      d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="faq-clip-2">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <div
+                class="faq__answer-wrap"
+                id="faq-2"
+                role="region"
+                aria-labelledby="faq-q-2"
+              >
+                <div class="faq__answer-inner">
+                  <div class="faq__answer">В квартиру</div>
+                  <div class="faq__answer">В частный дом</div>
+                  <div class="faq__answer">В офис</div>
+                </div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button
+                type="button"
+                class="faq__question"
+                aria-expanded="false"
+                aria-controls="faq-3"
+                id="faq-q-3"
+              >
+                <span class="faq__question-text"
+                  >Какие тарифы доступны для частного дома в&nbsp;Москве?</span
+                >
+                <svg
+                  class="faq__icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <g clip-path="url(#faq-clip-3)">
+                    <path
+                      fill="currentColor"
+                      d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="faq-clip-3">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <div
+                class="faq__answer-wrap"
+                id="faq-3"
+                role="region"
+                aria-labelledby="faq-q-3"
+              >
+                <div class="faq__answer-inner">
+                  <div class="faq__answer">В квартиру</div>
+                  <div class="faq__answer">В частный дом</div>
+                  <div class="faq__answer">В офис</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq__col">
+            <div class="faq__item">
+              <button
+                type="button"
+                class="faq__question"
+                aria-expanded="false"
+                aria-controls="faq-4"
+                id="faq-q-4"
+              >
+                <span class="faq__question-text"
+                  >Какие тарифы доступны для частного дома в&nbsp;Москве?</span
+                >
+                <svg
+                  class="faq__icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <g clip-path="url(#faq-clip-4)">
+                    <path
+                      fill="currentColor"
+                      d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="faq-clip-4">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <div
+                class="faq__answer-wrap"
+                id="faq-4"
+                role="region"
+                aria-labelledby="faq-q-4"
+              >
+                <div class="faq__answer-inner">
+                  <div class="faq__answer">В квартиру</div>
+                  <div class="faq__answer">В частный дом</div>
+                  <div class="faq__answer">В офис</div>
+                </div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button
+                type="button"
+                class="faq__question"
+                aria-expanded="false"
+                aria-controls="faq-5"
+                id="faq-q-5"
+              >
+                <span class="faq__question-text"
+                  >Какие тарифы доступны для частного дома в&nbsp;Москве?</span
+                >
+                <svg
+                  class="faq__icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <g clip-path="url(#faq-clip-5)">
+                    <path
+                      fill="currentColor"
+                      d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="faq-clip-5">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <div
+                class="faq__answer-wrap"
+                id="faq-5"
+                role="region"
+                aria-labelledby="faq-q-5"
+              >
+                <div class="faq__answer-inner">
+                  <div class="faq__answer">В квартиру</div>
+                  <div class="faq__answer">В частный дом</div>
+                  <div class="faq__answer">В офис</div>
+                </div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button
+                type="button"
+                class="faq__question"
+                aria-expanded="false"
+                aria-controls="faq-6"
+                id="faq-q-6"
+              >
+                <span class="faq__question-text"
+                  >Какие тарифы доступны для частного дома в&nbsp;Москве?</span
+                >
+                <svg
+                  class="faq__icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <g clip-path="url(#faq-clip-6)">
+                    <path
+                      fill="currentColor"
+                      d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="faq-clip-6">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <div
+                class="faq__answer-wrap"
+                id="faq-6"
+                role="region"
+                aria-labelledby="faq-q-6"
+              >
+                <div class="faq__answer-inner">
+                  <div class="faq__answer">В квартиру</div>
+                  <div class="faq__answer">В частный дом</div>
+                  <div class="faq__answer">В офис</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <a
+            href="#"
+            class="footer__logo"
+            aria-label="Провайдеры.рус — на главную"
+          >
+            <img
+              src="images/white-logo.svg"
+              alt="Провайдеры РУС"
+              width="198"
+              height="29"
+              class="footer__logo-img"
+            />
+          </a>
+          <p class="footer__copyright">© 2026 Провайдеры.рус</p>
+        </div>
+        <nav class="footer__links-mobile">
+          <a href="#">Подключение по адресу</a>
+          <a href="#">Тарифы</a>
+          <a href="#">Провайдеры</a>
+          <a href="#">Контакты</a>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__col">
+            <h3 class="footer__col-title">О компании</h3>
+            <ul class="footer__list">
+              <li><a href="#">Подключение по адресу</a></li>
+              <li><a href="#">Тарифы</a></li>
+              <li><a href="#">Провайдеры</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__col-title">Услуги</h3>
+            <ul class="footer__list">
+              <li><a href="#">Интернет</a></li>
+              <li><a href="#">ТВ</a></li>
+              <li><a href="#">Мобильная связь</a></li>
+              <li><a href="#">Онлайн кинотеатры</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__col-title">Провайдеры</h3>
+            <ul class="footer__list">
+              <li><a href="#">MTC</a></li>
+              <li><a href="#">Билайн</a></li>
+              <li><a href="#">Мегафон</a></li>
+              <li><a href="#">Теле2</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__col-title">Поиск</h3>
+            <ul class="footer__list">
+              <li><a href="#">Город</a></li>
+              <li><a href="#">Улица</a></li>
+              <li><a href="#">Поиск по адресу</a></li>
+              <li><a href="#">Проверка скорости интернета</a></li>
+              <li><a href="#">Рейтинг провайдеров</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="footer-disclaimer">
+      <div class="container">
+        <p class="footer-disclaimer__text">
+          Продолжая использовать наш сайт, вы даёте согласие на обработку файлов
+          <a href="#">Cookies</a> и других пользовательских данных, в
+          соответствии с <a href="#">Политикой конфиденциальности</a> и&nbsp;<a
+            href="#"
+            >Пользовательским соглашением</a
+          >.
+        </p>
+        <div class="copyright-mobile">
+          <p class="copyright-mobile__text">© 2026 Провайдеры.рус</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookies-block">
+      <div class="cookies-block__inner">
+        <p class="cookies-block__text">
+          Оставаясь на сайте, вы даете <a href="#">согласие</a> на использование
+          файлов cookie
+        </p>
+        <button type="button" class="cookies-block__btn">Хорошо</button>
+      </div>
+    </div>
 
     <script defer src="js/main.js"></script>
   </body>
