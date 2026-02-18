@@ -1995,7 +1995,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
     gap: 16px;
     margin-top: 24px;
     padding: 20px 24px;
-    background: linear-gradient(90deg, #00AB89 0%, #00D459 50%, #1CFF8E 100%);
+    background: linear-gradient(135deg, #b1e541 -50%, #0fb661 100%);
     border-radius: 12px;
     text-decoration: none;
     color: #ffffff;
