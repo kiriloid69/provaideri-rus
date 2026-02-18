@@ -1379,9 +1379,16 @@ input.main-tariffs__filter-input--radio {
   }
 
   &__item {
+    display: block;
     font-size: 14px;
     line-height: 1.4;
     color: $black-color;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   &__show-all {
@@ -1722,7 +1729,6 @@ input.main-tariffs__filter-input--radio {
       }
     }
     &-main {
-      min-height: 260px;
       & img {
         width: 100%;
         height: auto;
@@ -2423,6 +2429,11 @@ input.main-tariffs__filter-input--radio {
       &-info {
         gap: 8px;
       }
+    }
+  }
+  .main-tariffs {
+    &__filter-btn {
+      font-size: 11px;
     }
   }
 }

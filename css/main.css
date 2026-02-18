@@ -1335,9 +1335,15 @@ input.main-tariffs__filter-input--radio:focus-visible {
   gap: 12px;
 }
 .addresses-block__item {
+  display: block;
   font-size: 14px;
   line-height: 1.4;
   color: #0c0d0d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.addresses-block__item:hover {
+  color: #2BBE48;
 }
 .addresses-block__show-all {
   display: none;
@@ -1631,9 +1637,6 @@ input.main-tariffs__filter-input--radio:focus-visible {
   color: #ffffff;
   border-radius: 20px;
   padding: 2px 4px;
-}
-.main-mobile__content-main {
-  min-height: 260px;
 }
 .main-mobile__content-main img {
   width: 100%;
@@ -2233,5 +2236,8 @@ input.main-tariffs__filter-input--radio:focus-visible {
 @media screen and (max-width: 340px) {
   .tariff-block__body-info {
     gap: 8px;
+  }
+  .main-tariffs__filter-btn {
+    font-size: 11px;
   }
 }/*# sourceMappingURL=main.css.map */
