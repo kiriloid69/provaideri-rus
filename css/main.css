@@ -567,7 +567,7 @@ p {
   padding: 12px 20px;
   font: inherit;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: #2BBE48;
   background: transparent;
   border: none;
@@ -1979,10 +1979,6 @@ input.main-tariffs__filter-input--radio:focus-visible {
   .main-tariffs .subtitle {
     font-size: 14px;
     line-height: 120%;
-  }
-  .main-tariffs__show-more {
-    background-color: #ffffff;
-    border-radius: 10px;
   }
   .main-tariffs__panel {
     gap: 4px;

@@ -489,7 +489,7 @@ p {
     padding: 12px 20px;
     font: inherit;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: $primary-color;
     background: transparent;
     border: none;
@@ -2134,10 +2134,6 @@ input.main-tariffs__filter-input--radio {
     .subtitle {
       font-size: 14px;
       line-height: 120%;
-    }
-    &__show-more {
-      background-color: $white-color;
-      border-radius: $border-radius;
     }
     &__panel {
       gap: 4px;
