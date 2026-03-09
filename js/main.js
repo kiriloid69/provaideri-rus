@@ -403,7 +403,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // FAQ — аккордеон: при открытии одного остальные закрываются
   document.querySelectorAll(".faq__question").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const scrollY = window.scrollY;
       const item = btn.closest(".faq__item");
       const wrap = item?.querySelector(".faq__answer-wrap");
       if (!wrap) return;
@@ -418,6 +420,12 @@ document.addEventListener("DOMContentLoaded", () => {
         wrap.classList.add("faq__answer-wrap--open");
         btn.setAttribute("aria-expanded", "true");
       }
+      requestAnimationFrame(() => {
+        if (window.location.hash) {
+          history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+        window.scrollTo(0, scrollY);
+      });
     });
   });
 
