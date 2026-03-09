@@ -130,7 +130,7 @@ a {
 }
 
 body {
-  background-color: #f4f6f6;
+  background-color: #f0f1f4;
   color: #0c0d0d;
   font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
   font-weight: 500;
@@ -1527,7 +1527,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
 }
 
 .footer-disclaimer {
-  background-color: #f4f6f6;
+  background-color: #f0f1f4;
   padding: 36px 0;
 }
 .footer-disclaimer__text {
@@ -1927,7 +1927,6 @@ input.main-tariffs__filter-input--radio:focus-visible {
   }
   body {
     font-size: 14px;
-    background-color: #e8edf4;
   }
   section {
     padding-bottom: 32px;
