@@ -1180,11 +1180,10 @@ input.main-tariffs__filter-input--radio {
     opacity 0.2s ease;
 
   &:hover {
-    background-color: color.adjust($secondary-color, $lightness: -8%);
+    background-color: #BCE529;
   }
-
   &:active {
-    opacity: 0.9;
+    background-color: #E0F9AC;
   }
 }
 

@@ -1164,10 +1164,10 @@ input.main-tariffs__filter-input--radio:focus-visible {
   transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 .big-button:hover {
-  background-color: rgb(191.9230769231, 255, 58.2);
+  background-color: #BCE529;
 }
 .big-button:active {
-  opacity: 0.9;
+  background-color: #E0F9AC;
 }
 
 .rating-mobile {
