@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Провайдеры РУС</title>
+
+        <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+        <link rel="shortcut icon" href="../favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="../favicon/site.webmanifest" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <link rel="preload" href="../images/main-mobile.gif" as="image" />
+        <link rel="stylesheet" href="../css/main.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container d-flex align-center justify-between">
+                <div class="header__menu d-flex align-center gap-24">
+                    <div class="header__logo">
+                        <img src="../images/logo.svg" alt="logo" />
+                    </div>
+                    <ul class="header__menu-list d-flex align-center gap-24">
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Подключение по адресу</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Тарифы</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Провайдеры</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__contacts d-flex gap-24 align-center">
+                    <div class="header__contacts-item">
+                        <a href="tel:88007001234" class="header__contacts-link phone-number">8-800-700-1234</a>
+                    </div>
+                    <div class="header__contacts-item">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/call-icon.svg" alt="phone" />
+                            </div>
+                            <span>Заказать звонок</span>
+                        </a>
+                    </div>
+                    <div class="header__contacts-item header__contacts-item--city">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/map-icon.svg" alt="phone" />
+                            </div>
+                            <span>Петропавловск-Камчатский</span>
+                        </a>
+                    </div>
+                    <div class="header__menu-mobile">
+                        <button type="button" class="header__menu-mobile-btn" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
+                            <img class="header__menu-mobile-icon header__menu-mobile-icon--open" src="icons/hamburger-icon.svg" alt="" aria-hidden="true" />
+                            <span class="header__menu-mobile-icon header__menu-mobile-icon--close" aria-hidden="true">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Мобильное меню (ширина 320px, экраны ≤ px) -->
+        <div class="mobile">
+            <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu__backdrop" aria-label="Закрыть меню"></div>
+                <div class="mobile-menu__panel">
+                    <div class="mobile-menu__content">
+                        <nav class="mobile-menu__nav">
+                            <a href="#" class="mobile-menu__link">Подключение по адресу</a>
+                            <a href="#" class="mobile-menu__link">Тарифы</a>
+                            <a href="#" class="mobile-menu__link">Провайдеры</a>
+                            <a href="#" class="mobile-menu__link">Контакты</a>
+                        </nav>
+                        <div class="mobile-menu__location">
+                            <p class="mobile-menu__location-label">Вы находитесь здесь</p>
+                            <div class="mobile-menu__location-card" id="mobile-menu-location-card">
+                                <img src="icons/map-icon.svg" alt="" class="mobile-menu__location-icon" width="20" height="20" aria-hidden="true" />
+                                <span class="mobile-menu__city">Москва</span>
+                            </div>
+                            <div class="mobile-menu__location-input-wrapper" id="mobile-menu-location-input-wrapper" style="display: none">
+                                <div class="mobile-menu__location-input-container">
+                                    <img src="icons/map-icon.svg" alt="" class="mobile-menu__location-input-icon" width="20" height="20" aria-hidden="true" />
+                                    <input type="text" class="mobile-menu__location-input" id="mobile-menu-location-input" placeholder="Введите город" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="mobile-menu-city-suggestions" />
+                                </div>
+                                <ul class="mobile-menu__city-suggestions" id="mobile-menu-city-suggestions" role="listbox" aria-label="Подсказки городов">
+                                    <!-- Список будет заполнен через JS -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-mobile">
+                <div class="main-mobile__content">
+                    <div class="container">
+                        <nav class="main-mobile__content-navigation">
+                            <ul class="main-mobile__content-navigation-list">
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Тарифы</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Провайдеры</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">
+                                        <svg class="compare-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z" fill="currentColor" />
+                                            <path d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z" fill="currentColor" />
+                                        </svg>
+                                        Сравнение
+                                        <span class="main-mobile__content-navigation-link-count">5</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="main-mobile__content-main">
+                    <img src="images/main-mobile.gif" alt="Девушка за компьютером" loading="eager" fetchpriority="high" />
+                </div>
+            </div>
+        </div>
+
+        <section class="providers-check">
+            <div class="container d-flex gap-64">
+                <div class="providers-info__block gap-16">
+                    <div class="providers-info__block-logo">
+                        <img src="../images/operators-logos/big-rtk.png" alt="Ростелеком" />
+                    </div>
+                    <div class="providers-info__block-meta">
+                        <div class="providers-info__block-name">
+                            <h2>Ростелеком</h2>
+                        </div>
+                        <div class="providers-info__block-rate">
+                            <img src="../icons/star-icon.svg" alt="Рейтинг" />
+                            <div class="providers-info__block-rate-info">
+                                <span class="providers-info__block-rate-info-text">Рейтинг</span>
+                                <span class="providers-info__block-rate-info-value">4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="providers-check__block">
+                    <h2>Подключить выгодно интернет в&nbsp;<span class="city-name">Москве</span></h2>
+                    <div class="providers-check__block__input-wrapper">
+                        <input class="providers-check__block__input" type="text" placeholder="Введите адрес" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="address-suggestions-1" id="address-input-1" />
+                        <button type="button" class="providers-check__block__search-btn" aria-label="Поиск">
+                            <svg class="providers-check__block__search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.95117 10.5C1.95117 5.80558 5.66393 2 10.2439 2C14.8238 2 18.5365 5.80558 18.5365 10.5C18.5365 12.7198 17.7063 14.7409 16.3468 16.2549C16.7059 16.089 17.1428 16.1573 17.4378 16.4596L20.6898 19.7929C21.0708 20.1835 21.0708 20.8166 20.6898 21.2071C20.3088 21.5977 19.6911 21.5977 19.3101 21.2071L16.0581 17.8738C15.7631 17.5715 15.6965 17.1236 15.8584 16.7556C14.3813 18.1491 12.4095 19 10.2439 19C5.66393 19 1.95117 15.1944 1.95117 10.5ZM10.2439 4C6.74156 4 3.90239 6.91015 3.90239 10.5C3.90239 14.0899 6.74156 17 10.2439 17C13.7461 17 16.5853 14.0899 16.5853 10.5C16.5853 6.91015 13.7461 4 10.2439 4Z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <ul class="providers-check__block__suggestions" id="address-suggestions-1" role="listbox" aria-label="Подсказки адресов">
+                            <li role="option">Москва, ул. Красного Маяка</li>
+                            <li role="option">Москва, ул. Крамского</li>
+                            <li role="option">Москва, ул. Красина</li>
+                            <li role="option">Москва, ул. Красноармейская</li>
+                            <li role="option">Москва, ул. Красноказарменная</li>
+                            <li role="option">Москва, ул. Краснодарская</li>
+                            <li role="option">Москва, ул. Краснодонская</li>
+                            <li role="option">Москва, ул. Краснопресненская</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <div class="footer__left">
+                    <a href="#" class="footer__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="images/white-logo.svg" alt="Провайдеры РУС" width="198" height="29" class="footer__logo-img" />
+                    </a>
+                    <p class="footer__copyright">© 2026 Провайдеры.рус</p>
+                </div>
+                <nav class="footer__links-mobile">
+                    <a href="#">Подключение по адресу</a>
+                    <a href="#">Тарифы</a>
+                    <a href="#">Провайдеры</a>
+                    <a href="#">Контакты</a>
+                </nav>
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">О компании</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Подключение по адресу</a></li>
+                            <li><a href="#">Тарифы</a></li>
+                            <li><a href="#">Провайдеры</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Услуги</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Интернет</a></li>
+                            <li><a href="#">ТВ</a></li>
+                            <li><a href="#">Мобильная связь</a></li>
+                            <li><a href="#">Онлайн кинотеатры</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Провайдеры</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">MTC</a></li>
+                            <li><a href="#">Билайн</a></li>
+                            <li><a href="#">Мегафон</a></li>
+                            <li><a href="#">Теле2</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Поиск</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Город</a></li>
+                            <li><a href="#">Улица</a></li>
+                            <li><a href="#">Поиск по адресу</a></li>
+                            <li><a href="#">Проверка скорости интернета</a></li>
+                            <li><a href="#">Рейтинг провайдеров</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+
+        <div class="footer-disclaimer">
+            <div class="container">
+                <p class="footer-disclaimer__text">
+                    Продолжая использовать наш сайт, вы даёте согласие на обработку файлов
+                    <a href="#">Cookies</a> и других пользовательских данных, в соответствии с <a href="#">Политикой конфиденциальности</a> и&nbsp;<a href="#">Пользовательским соглашением</a>.
+                </p>
+                <div class="copyright-mobile">
+                    <p class="copyright-mobile__text">© 2026 Провайдеры.рус</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookies-block">
+            <div class="cookies-block__inner">
+                <p class="cookies-block__text">Оставаясь на сайте, вы даете <a href="#">согласие</a> на использование файлов cookie</p>
+                <button type="button" class="cookies-block__btn">Хорошо</button>
+            </div>
+        </div>
+
+        <script defer src="../js/main.js"></script>
+    </body>
+</html>
