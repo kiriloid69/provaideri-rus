@@ -4,7 +4,7 @@
     display: flex;
 }
 .align-center {
-    align-items: center;
+    align-items: center !important;
 }
 .justify-between {
     justify-content: space-between;

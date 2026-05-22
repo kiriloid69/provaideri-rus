@@ -245,6 +245,72 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  document.querySelectorAll(".main-tariffs__tabs-scroll").forEach((wrap) => {
+    const scroller = wrap.querySelector(".main-tariffs__tabs");
+    if (!scroller) return;
+
+    const updateTabsScrollFade = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = scroller;
+      const hasOverflow = scrollWidth > clientWidth + 1;
+      const atStart = scrollLeft <= 1;
+      const atEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+
+      wrap.classList.toggle("is-overflow-right", hasOverflow && !atEnd);
+      wrap.classList.toggle("is-overflow-left", hasOverflow && !atStart);
+    };
+
+    scroller.addEventListener("scroll", updateTabsScrollFade, { passive: true });
+    window.addEventListener("resize", updateTabsScrollFade);
+
+    if (typeof ResizeObserver !== "undefined") {
+      new ResizeObserver(updateTabsScrollFade).observe(scroller);
+    }
+
+    updateTabsScrollFade();
+  });
+
+  document.querySelectorAll(".reviews__carousel").forEach((carousel) => {
+    const scroll = carousel.querySelector(".reviews__scroll");
+    const prevBtn = carousel.querySelector(".reviews__nav--prev");
+    const nextBtn = carousel.querySelector(".reviews__nav--next");
+    if (!scroll) return;
+
+    const getStep = () => {
+      const card = scroll.querySelector(".reviews__card");
+      if (!card) return scroll.clientWidth;
+      const list = scroll.querySelector(".reviews__list");
+      const gap = list ? parseFloat(getComputedStyle(list).gap) || 24 : 24;
+      return card.offsetWidth + gap;
+    };
+
+    const updateReviewsCarousel = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = scroll;
+      const hasOverflow = scrollWidth > clientWidth + 1;
+      const atStart = scrollLeft <= 1;
+      const atEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+
+      if (prevBtn) prevBtn.disabled = !hasOverflow || atStart;
+      if (nextBtn) nextBtn.disabled = !hasOverflow || atEnd;
+    };
+
+    prevBtn?.addEventListener("click", () => {
+      scroll.scrollBy({ left: -getStep(), behavior: "smooth" });
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      scroll.scrollBy({ left: getStep(), behavior: "smooth" });
+    });
+
+    scroll.addEventListener("scroll", updateReviewsCarousel, { passive: true });
+    window.addEventListener("resize", updateReviewsCarousel);
+
+    if (typeof ResizeObserver !== "undefined") {
+      new ResizeObserver(updateReviewsCarousel).observe(scroll);
+    }
+
+    updateReviewsCarousel();
+  });
+
   // Табы по буквам (адреса)
   document.querySelectorAll(".addresses-block").forEach((block) => {
     const tabs = block.querySelectorAll(".addresses-block__tab");
@@ -556,6 +622,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Подсказка к цене тарифа (иконка «i»)
+  const priceInfoPopovers = document.querySelectorAll(".tariff-block__price-info-popover");
+
+  const PRICE_INFO_TRANSITION_MS = 380;
+
+  function closePriceInfoPopover(popover) {
+    if (!popover || !popover.classList.contains("is-open")) return;
+    popover.classList.remove("is-open");
+    popover.setAttribute("aria-hidden", "true");
+    const infoBtn = popover
+      .closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")
+      ?.querySelector(".tariff-block__body-price-info");
+    infoBtn?.setAttribute("aria-expanded", "false");
+    window.setTimeout(() => {
+      if (!popover.classList.contains("is-open")) {
+        popover.hidden = true;
+      }
+    }, PRICE_INFO_TRANSITION_MS);
+  }
+
+  function closeAllPriceInfoPopovers(except) {
+    priceInfoPopovers.forEach((popover) => {
+      if (popover !== except) {
+        closePriceInfoPopover(popover);
+      }
+    });
+  }
+
+  function openPriceInfoPopover(popover) {
+    if (!popover) return;
+    closeAllPriceInfoPopovers(popover);
+    popover.hidden = false;
+    popover.setAttribute("aria-hidden", "false");
+    const infoBtn = popover
+      .closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")
+      ?.querySelector(".tariff-block__body-price-info");
+    infoBtn?.setAttribute("aria-expanded", "true");
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => popover.classList.add("is-open"));
+    });
+  }
+
+  document.querySelectorAll(".tariff-block__body-price-info").forEach((btn) => {
+    const banner = btn.closest(".tariff-block__body-price-banner");
+    const popover = banner?.querySelector(".tariff-block__price-info-popover");
+    if (!popover) return;
+
+    btn.setAttribute("aria-expanded", "false");
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = popover.classList.contains("is-open");
+      if (isOpen) {
+        closePriceInfoPopover(popover);
+      } else {
+        openPriceInfoPopover(popover);
+      }
+    });
+
+    popover.querySelector(".tariff-block__price-info-popover-btn")?.addEventListener("click", () => {
+      closePriceInfoPopover(popover);
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")) return;
+    closeAllPriceInfoPopovers();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeAllPriceInfoPopovers();
+    }
+  });
+
   // Куки: при нажатии «Хорошо» — анимация исчезновения и сохранение согласия на 30 дней
   const COOKIES_KEY = "cookiesConsentExpiry";
   const COOKIES_DAYS = 30;
@@ -590,5 +731,60 @@ document.addEventListener("DOMContentLoaded", () => {
         { once: true }
       );
     });
+  }
+
+  // Секции провайдера: плавный скролл с учётом sticky-хедера
+  const providerNavLinks = document.querySelectorAll('.providers-info__tabs a[href^="#"]');
+  if (providerNavLinks.length) {
+    const SCROLL_GAP = 16;
+
+    const getHeaderOffset = () => (header?.offsetHeight ?? 0) + SCROLL_GAP;
+
+    const setActiveProviderTab = (id) => {
+      providerNavLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("is-active", isActive);
+        link.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+    };
+
+    const scrollToProviderSection = (id, { updateHash = true, behavior = "smooth" } = {}) => {
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - getHeaderOffset());
+      window.scrollTo({ top, behavior });
+      if (updateHash) {
+        history.pushState(null, "", `#${id}`);
+      }
+      setActiveProviderTab(id);
+    };
+
+    providerNavLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (!href?.startsWith("#")) return;
+        const id = href.slice(1);
+        if (!document.getElementById(id)) return;
+        e.preventDefault();
+        scrollToProviderSection(id);
+      });
+    });
+
+    const scrollFromHash = (behavior = "smooth") => {
+      const hash = window.location.hash;
+      if (!hash.startsWith("#")) return;
+      const id = hash.slice(1);
+      if (!document.getElementById(id)) return;
+      scrollToProviderSection(id, { updateHash: false, behavior });
+    };
+
+    if (window.location.hash) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => scrollFromHash("auto"));
+      });
+    }
+
+    window.addEventListener("hashchange", () => scrollFromHash());
   }
 });
