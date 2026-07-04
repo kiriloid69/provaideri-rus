@@ -1,0 +1,228 @@
+<!-- prefix: "" for index.html, "../" for pages/ -->
+<div class="app-modal app-modal--connect-tariff" id="connect-request-modal" data-app-modal-id="connect-request" role="dialog" aria-modal="true" aria-labelledby="connect-request-modal-title" aria-hidden="true">
+    <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+    <div class="app-modal__dialog connect-tariff-modal__dialog">
+        <button type="button" class="app-modal__close connect-tariff-modal__close" data-app-modal-close aria-label="Закрыть">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 8L24 24M24 8L8 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+        <div class="connect-tariff-modal">
+            <div class="connect-tariff-modal__scroll">
+            <header class="connect-tariff-modal__header">
+                <div class="connect-tariff-modal__header-main">
+                    <div class="connect-tariff-modal__logo">
+                        <img src="{{PREFIX}}images/operators-logos/mts.png" alt="" width="92" height="92" data-app-modal-logo />
+                    </div>
+                    <div class="connect-tariff-modal__heading">
+                        <div class="connect-tariff-modal__badge hit" data-app-modal-badge>Хит подключений</div>
+                        <h2 class="connect-tariff-modal__title" id="connect-request-modal-title" data-app-modal-tariff>Тариф «МТС Дома Отлично»</h2>
+                    </div>
+                </div>
+                <p class="connect-tariff-modal__subtitle">Оптимальная скорость без переплат и дополнительных услуг</p>
+            </header>
+
+                <div class="connect-tariff-modal__services">
+                    <div class="connect-tariff-modal__accordion">
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="{{PREFIX}}icons/wifi-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Интернет</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="{{PREFIX}}icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="{{PREFIX}}icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Скорость</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">500 Мбит/с</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Технология</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">GPON (Оптический кабель)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="{{PREFIX}}icons/tv-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Телевидение</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="{{PREFIX}}icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="{{PREFIX}}icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Количество ТВ-каналов</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="{{PREFIX}}icons/phone-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Мобильная связь</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="{{PREFIX}}icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="{{PREFIX}}icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Интернет</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">30 Гб</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Исходящих звонков</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">900 мин</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">SMS</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">100</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Sim</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service connect-tariff-modal__accordion-icon-service--kion" src="{{PREFIX}}icons/kion-icon.png" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">KION</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="{{PREFIX}}icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="{{PREFIX}}icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <p class="connect-tariff-modal__text">Видеосервис от МТС с эксклюзивным контентом KION Originals, большой коллекцией фильмов, сериалов и более 200 телеканалов.</p>
+                                    <ul class="connect-tariff-modal__list">
+                                        <li>Возможность приобретать фильмы навсегда или брать напрокат</li>
+                                        <li>Рейтинг фильмов</li>
+                                        <li>Детский профиль</li>
+                                        <li>Доступ с 5 устройств.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="{{PREFIX}}icons/more-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Дополнительно</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="{{PREFIX}}icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="{{PREFIX}}icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <ul class="connect-tariff-modal__list">
+                                        <li>Группа для близких</li>
+                                        <li>Скидка 10% на 3 мес. с услугой Автоплатеж</li>
+                                        <li>Страховой полис с выплатой до 100 тыс. рублей</li>
+                                        <li>Безлимитный доступ к мессенджерам WhatsApp, Telegram и ещё + 3</li>
+                                        <li>Безлимитный доступ к Одноклассники и ВКонтакте</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <aside class="connect-tariff-modal__aside">
+                    <div class="connect-tariff-modal__pricing">
+                        <h3 class="connect-tariff-modal__pricing-title">Стоимость тарифа</h3>
+                        <p class="connect-tariff-modal__pricing-value" data-app-modal-price>529 ₽/мес</p>
+                        <p class="connect-tariff-modal__pricing-note">Средняя цена за год с учетом скидки 40% и стоимости подключения</p>
+
+                        <div class="connect-tariff-modal__pricing-breakdown">
+                            <p class="connect-tariff-modal__pricing-breakdown-heading">Из чего состоит стоимость</p>
+                            <button type="button" class="connect-tariff-modal__pricing-breakdown-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__pricing-breakdown-title">Из чего состоит стоимость</span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="{{PREFIX}}icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="{{PREFIX}}icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__pricing-breakdown-panel">
+                                <div class="connect-tariff-modal__pricing-breakdown-inner">
+                                <p class="connect-tariff-modal__pricing-discount">Скидка -40% первые 6 месяцев</p>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">С 1 по 6 месяц</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value">355 ₽/мес</span>
+                                </div>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">Далее с 7 месяца</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value">883 ₽/мес</span>
+                                </div>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">Подключение</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value">950 ₽</span>
+                                </div>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">Авансовый платеж</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value connect-tariff-modal__row-value--with-info">
+                                        2000 ₽
+                                        <button type="button" class="connect-tariff-modal__info-btn" aria-label="Подробнее об авансовом платеже">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5" />
+                                                <path d="M10 9v5M10 6.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="big-button connect-tariff-modal__submit">Подключить тариф</button>
+                    </div>
+
+                    <div class="connect-tariff-modal__address">
+                        <p class="connect-tariff-modal__address-title">Проверьте, доступность тарифа по вашему адресу</p>
+                        <label class="connect-tariff-modal__address-field">
+                            <span class="connect-tariff-modal__sr-only">Введите ваш адрес</span>
+                            <input class="connect-tariff-modal__address-input" type="text" placeholder="Введите ваш адрес" data-app-modal-address-input />
+                            <img class="connect-tariff-modal__address-search" src="{{PREFIX}}icons/search-icon.svg" alt="" width="24" height="24" aria-hidden="true" />
+                        </label>
+                    </div>
+                </aside>
+        </div>
+    </div>
+</div>

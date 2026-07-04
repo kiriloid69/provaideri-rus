@@ -107,8 +107,40 @@
       const block = trigger.closest(".tariff-block");
       const tariffTitle = block?.querySelector(".tariff-block__title h2")?.textContent.trim() ?? "";
 
-      setLines(modal.querySelector("[data-app-modal-tariff]"), splitTariffLines(tariffTitle));
-      setLines(modal.querySelector("[data-app-modal-address]"), splitAddressLines(getAddressValue()));
+      const titleEl = modal.querySelector("[data-app-modal-tariff]");
+      if (titleEl) titleEl.textContent = tariffTitle;
+
+      const logoImg = block?.querySelector(".tariff-block__provider-logo img");
+      const logoSlot = modal.querySelector("[data-app-modal-logo]");
+      if (logoSlot && logoImg) {
+        logoSlot.src = logoImg.src;
+        logoSlot.alt = logoImg.alt || "";
+      }
+
+      const badge = block?.querySelector(".tariff-block__header .badge");
+      const badgeSlot = modal.querySelector("[data-app-modal-badge]");
+      if (badgeSlot) {
+        if (badge) {
+          badgeSlot.hidden = false;
+          badgeSlot.textContent = badge.textContent.trim();
+          badgeSlot.className = "connect-tariff-modal__badge";
+          ["hit", "sales", "popular"].forEach((type) => {
+            if (badge.classList.contains(type)) badgeSlot.classList.add(type);
+          });
+        } else {
+          badgeSlot.hidden = true;
+        }
+      }
+
+      const price = block?.querySelector(".tariff-block__body-price-value")?.textContent.trim();
+      const priceSlot = modal.querySelector("[data-app-modal-price]");
+      if (priceSlot && price) priceSlot.textContent = price;
+
+      const addressInput = modal.querySelector("[data-app-modal-address-input]");
+      if (addressInput) {
+        const address = getAddressValue();
+        if (address) addressInput.value = address;
+      }
     },
     "review-detail"(modal, trigger) {
       fillReviewDetail(modal, trigger);
@@ -138,12 +170,37 @@
     });
   }
 
+  function initConnectTariffModal(modal) {
+    modal.querySelectorAll(".connect-tariff-modal__accordion-trigger").forEach((btn) => {
+      if (btn.dataset.connectTariffBound) return;
+      btn.dataset.connectTariffBound = "true";
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".connect-tariff-modal__accordion-item");
+        if (!item) return;
+        const isOpen = item.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+
+    modal.querySelectorAll(".connect-tariff-modal__pricing-breakdown-trigger").forEach((btn) => {
+      if (btn.dataset.connectTariffBound) return;
+      btn.dataset.connectTariffBound = "true";
+      btn.addEventListener("click", () => {
+        const block = btn.closest(".connect-tariff-modal__pricing-breakdown");
+        if (!block) return;
+        const isOpen = block.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+  }
+
   function openModal(modal, trigger) {
     if (!modal || modal.classList.contains(OPEN_CLASS)) return;
 
     const id = modal.dataset.appModalId;
     if (id && modalFillers[id]) modalFillers[id](modal, trigger);
 
+    initConnectTariffModal(modal);
     initModalPhoneMask(modal);
 
     previousFocus = document.activeElement;
@@ -177,6 +234,8 @@
   }
 
   function boot() {
+    document.querySelectorAll(".app-modal--connect-tariff").forEach(initConnectTariffModal);
+
     document.addEventListener("click", (e) => {
       const openBtn = e.target.closest(".js-app-modal-open");
       if (openBtn) {
