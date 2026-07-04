@@ -48,7 +48,7 @@
       const value = input.value.trim();
       if (value) return value;
     }
-    return "Москва, ул. Сущевский Вал, д. 18, кв 47";
+    return "Москва, ул. Сущевский Вал, д. 18";
   }
 
   function fillReviewDetail(modal, trigger) {
@@ -104,6 +104,13 @@
 
   const modalFillers = {
     "connect-request"(modal, trigger) {
+      const block = trigger.closest(".tariff-block");
+      const tariffTitle = block?.querySelector(".tariff-block__title h2")?.textContent.trim() ?? "";
+
+      setLines(modal.querySelector("[data-app-modal-tariff]"), splitTariffLines(tariffTitle));
+      setLines(modal.querySelector("[data-app-modal-address]"), splitAddressLines(getAddressValue()));
+    },
+    "connect-tariff"(modal, trigger) {
       const block = trigger.closest(".tariff-block");
       const tariffTitle = block?.querySelector(".tariff-block__title h2")?.textContent.trim() ?? "";
 
@@ -200,7 +207,9 @@
     const id = modal.dataset.appModalId;
     if (id && modalFillers[id]) modalFillers[id](modal, trigger);
 
-    initConnectTariffModal(modal);
+    if (modal.classList.contains("app-modal--connect-tariff")) {
+      initConnectTariffModal(modal);
+    }
     initModalPhoneMask(modal);
 
     previousFocus = document.activeElement;
@@ -237,6 +246,14 @@
     document.querySelectorAll(".app-modal--connect-tariff").forEach(initConnectTariffModal);
 
     document.addEventListener("click", (e) => {
+      const tariffTitle = e.target.closest(".tariff-block__title h2");
+      if (tariffTitle) {
+        e.preventDefault();
+        const modal = document.querySelector('[data-app-modal-id="connect-tariff"]');
+        openModal(modal, tariffTitle);
+        return;
+      }
+
       const openBtn = e.target.closest(".js-app-modal-open");
       if (openBtn) {
         e.preventDefault();

@@ -1575,8 +1575,30 @@
             </div>
         </div>
 
+        <div class="app-modal" id="connect-request-modal" data-app-modal-id="connect-request" role="dialog" aria-modal="true" aria-labelledby="connect-request-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="connect-request-modal-title">Запрос на подключение</h2>
+                    <div class="app-modal__lines app-modal__lines--highlight" data-app-modal-tariff></div>
+                    <div class="app-modal__lines app-modal__lines--muted" data-app-modal-address></div>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Отправить запрос</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<div class="app-modal app-modal--connect-tariff" id="connect-request-modal" data-app-modal-id="connect-request" role="dialog" aria-modal="true" aria-labelledby="connect-request-modal-title" aria-hidden="true">
+
+<div class="app-modal app-modal--connect-tariff" id="connect-tariff-modal" data-app-modal-id="connect-tariff" role="dialog" aria-modal="true" aria-labelledby="connect-tariff-modal-title" aria-hidden="true">
     <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
     <div class="app-modal__dialog connect-tariff-modal__dialog">
         <button type="button" class="app-modal__close connect-tariff-modal__close" data-app-modal-close aria-label="Закрыть">
@@ -1593,7 +1615,7 @@
                     </div>
                     <div class="connect-tariff-modal__heading">
                         <div class="connect-tariff-modal__badge hit" data-app-modal-badge>Хит подключений</div>
-                        <h2 class="connect-tariff-modal__title" id="connect-request-modal-title" data-app-modal-tariff>Тариф «МТС Дома Отлично»</h2>
+                        <h2 class="connect-tariff-modal__title" id="connect-tariff-modal-title" data-app-modal-tariff>Тариф «МТС Дома Отлично»</h2>
                     </div>
                 </div>
                 <p class="connect-tariff-modal__subtitle">Оптимальная скорость без переплат и дополнительных услуг</p>

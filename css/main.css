@@ -1334,6 +1334,11 @@ input.main-tariffs__filter-input--radio:focus-visible {
 }
 .tariff-block__title h2 {
   margin: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.tariff-block__title h2:hover {
+  color: #2BBE48;
 }
 .tariff-block__provider-logo {
   flex-shrink: 0;
@@ -2453,7 +2458,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
     grid-template-rows: auto minmax(0, 1fr);
     grid-template-areas: "header header" "services aside";
     gap: 20px 32px;
-    padding: 60px 48px 48px;
+    padding: 28px 32px 40px 58px;
     overflow-y: auto;
   }
 }
@@ -2474,7 +2479,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   padding-right: 40px;
 }
 @media (min-width: 860px) {
@@ -2765,7 +2770,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
     margin-left: -20px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    box-shadow: 0 -4px 20px rgba(49, 49, 49, 0.1);
+    box-shadow: 0 -4px 10px rgba(49, 49, 49, 0.1);
   }
 }
 @media (min-width: 860px) {
