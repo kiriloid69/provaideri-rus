@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ростелеком - первый интенет-провайдер в России</title>
+        <title>Провайдеры РУС — Тарифы и провайдеры по вашему адресу</title>
 
         <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
@@ -18,7 +18,7 @@
         <link rel="preload" href="../images/main-mobile.gif" as="image" />
         <link rel="stylesheet" href="../css/main.css" />
     </head>
-    <body>
+    <body class="page-search-address">
         <header class="header">
             <div class="container d-flex align-center justify-between">
                 <div class="header__menu d-flex align-center gap-24">
@@ -27,7 +27,7 @@
                     </a>
                     <ul class="header__menu-list d-flex align-center gap-24">
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link">Подключение по адресу</a>
+                            <a href="search_address.html" class="header__menu-link">Подключение по адресу</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="#" class="header__menu-link">Тарифы</a>
@@ -81,7 +81,7 @@
                 <div class="mobile-menu__panel">
                     <div class="mobile-menu__content">
                         <nav class="mobile-menu__nav">
-                            <a href="#" class="mobile-menu__link">Подключение по адресу</a>
+                            <a href="search_address.html" class="mobile-menu__link">Подключение по адресу</a>
                             <a href="#" class="mobile-menu__link">Тарифы</a>
                             <a href="#" class="mobile-menu__link">Провайдеры</a>
                             <a href="#" class="mobile-menu__link">Контакты</a>
@@ -137,61 +137,82 @@
             </div>
         </div>
 
-        <section class="providers-check">
-            <div class="container d-flex gap-64 align-center">
-                <div class="providers-info__block__wlink">
-                    <div class="providers-info__block gap-16">
-                        <div class="providers-info__block-logo">
-                            <img src="../images/operators-logos/big-rtk.png" alt="Ростелеком" />
-                        </div>
-                        <div class="providers-info__block-meta">
-                            <div class="providers-info__block-name">
-                                <h2>Ростелеком</h2>
-                            </div>
-                            <div class="providers-info__block-rate">
-                                <img src="../icons/star-icon.svg" alt="Рейтинг" />
-                                <div class="providers-info__block-rate-info">
-                                    <span class="providers-info__block-rate-info-text">Рейтинг</span>
-                                    <span class="providers-info__block-rate-info-value">4.8</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="providers-check__block">
-                        <h2>Проверьте доступность Ростелеком по вашему адресу</h2>
-                        <div class="providers-check__block__input-wrapper">
-                            <input class="providers-check__block__input" type="text" placeholder="Введите адрес" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="address-suggestions-1" id="address-input-1" />
-                            <button type="button" class="providers-check__block__search-btn" aria-label="Поиск">
-                                <svg class="providers-check__block__search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.95117 10.5C1.95117 5.80558 5.66393 2 10.2439 2C14.8238 2 18.5365 5.80558 18.5365 10.5C18.5365 12.7198 17.7063 14.7409 16.3468 16.2549C16.7059 16.089 17.1428 16.1573 17.4378 16.4596L20.6898 19.7929C21.0708 20.1835 21.0708 20.8166 20.6898 21.2071C20.3088 21.5977 19.6911 21.5977 19.3101 21.2071L16.0581 17.8738C15.7631 17.5715 15.6965 17.1236 15.8584 16.7556C14.3813 18.1491 12.4095 19 10.2439 19C5.66393 19 1.95117 15.1944 1.95117 10.5ZM10.2439 4C6.74156 4 3.90239 6.91015 3.90239 10.5C3.90239 14.0899 6.74156 17 10.2439 17C13.7461 17 16.5853 14.0899 16.5853 10.5C16.5853 6.91015 13.7461 4 10.2439 4Z" fill="currentColor" />
-                                </svg>
-                            </button>
-                            <ul class="providers-check__block__suggestions" id="address-suggestions-1" role="listbox" aria-label="Подсказки адресов">
-                                <li role="option">Москва, ул. Красного Маяка</li>
-                                <li role="option">Москва, ул. Крамского</li>
-                                <li role="option">Москва, ул. Красина</li>
-                                <li role="option">Москва, ул. Красноармейская</li>
-                                <li role="option">Москва, ул. Красноказарменная</li>
-                                <li role="option">Москва, ул. Краснодарская</li>
-                                <li role="option">Москва, ул. Краснодонская</li>
-                                <li role="option">Москва, ул. Краснопресненская</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <nav class="providers-info__tabs" role="tablist" aria-label="Разделы страницы провайдера">
-                        <a href="#tariffs" class="providers-info__tab is-active" role="tab" aria-selected="true">Тарифы</a>
-                        <a href="#about-provider" class="providers-info__tab" role="tab" aria-selected="false">О провайдере</a>
-                        <a href="#reviews" class="providers-info__tab" role="tab" aria-selected="false">Отзывы</a>
-                    </nav>
+        <section class="providers-check providers-check--search-results">
+            <div class="container d-flex gap-24 align-center">
+                <div class="hero-title">
+                    <h2 class="title">Тарифы и провайдеры по вашему адресу</h2>
+                    <p class="hero-title__address">Петропавловск-Камчатский, ул. Сущевский Вал, д. 18, кв 47</p>
                 </div>
-                
+                <div class="providers-check__block providers-check__block--change-address">
+                    <div class="providers-check__block__input-wrapper">
+                        <input class="providers-check__block__input" type="text" placeholder="Изменить адрес" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="address-suggestions-search" id="address-input-search" />
+                        <button type="button" class="providers-check__block__search-btn" aria-label="Поиск">
+                            <svg class="providers-check__block__search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.95117 10.5C1.95117 5.80558 5.66393 2 10.2439 2C14.8238 2 18.5365 5.80558 18.5365 10.5C18.5365 12.7198 17.7063 14.7409 16.3468 16.2549C16.7059 16.089 17.1428 16.1573 17.4378 16.4596L20.6898 19.7929C21.0708 20.1835 21.0708 20.8166 20.6898 21.2071C20.3088 21.5977 19.6911 21.5977 19.3101 21.2071L16.0581 17.8738C15.7631 17.5715 15.6965 17.1236 15.8584 16.7556C14.3813 18.1491 12.4095 19 10.2439 19C5.66393 19 1.95117 15.1944 1.95117 10.5ZM10.2439 4C6.74156 4 3.90239 6.91015 3.90239 10.5C3.90239 14.0899 6.74156 17 10.2439 17C13.7461 17 16.5853 14.0899 16.5853 10.5C16.5853 6.91015 13.7461 4 10.2439 4Z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <ul class="providers-check__block__suggestions" id="address-suggestions-search" role="listbox" aria-label="Подсказки адресов">
+                            <li role="option">Петропавловск-Камчатский, ул. Сущевский Вал, д. 18, кв 47</li>
+                            <li role="option">Петропавловск-Камчатский, ул. Ленинская, д. 1</li>
+                            <li role="option">Петропавловск-Камчатский, пр-т. Победы, д. 12</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="main-tariffs" id="tariffs">
+        <section class="search-providers">
             <div class="container">
-                <h1 class="title">Тарифы провайдера Ростелеком</h1>
-                <!-- <p class="subtitle">Собрали самые популярные тарифы среди пользователей от более чем 50 провайдеров</p> -->
+                <h2 class="search-providers__title">Найдено 12 провайдеров</h2>
+                <div class="search-providers__sort-wrapper">
+                    <button type="button" class="search-providers__sort-btn" aria-label="Сортировка" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-providers-sort-dropdown">
+                        <img src="../icons/sort-icon.svg" alt="" width="24" height="24" aria-hidden="true" />
+                        <span class="search-providers__sort-btn-text">Сначала дешевые</span>
+                    </button>
+                    <div class="search-providers__sort-dropdown" id="search-providers-sort-dropdown" role="listbox" aria-label="Сортировать" hidden>
+                        <div class="search-providers__sort-dropdown-inner">
+                            <div class="search-providers__sort-dropdown-header">
+                                <h3 class="search-providers__sort-dropdown-title">Сортировать</h3>
+                                <button type="button" class="search-providers__sort-dropdown-close" aria-label="Закрыть">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul class="search-providers__sort-dropdown-list">
+                                <li>
+                                    <button type="button" class="search-providers__sort-option is-selected" data-sort="cheap">Сначала дешевые</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="search-providers__sort-option" data-sort="expensive">Сначала дорогие</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="search-providers__sort-option" data-sort="useful">Сначала полезные</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="search-providers__sort-option" data-sort="popular">Сначала популярные</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="search-providers__sort-option" data-sort="rating-high">Высокий рейтинг</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="search-providers__sort-option" data-sort="rating-low">Низкий рейтинг</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-providers__list"></div>
+                <button type="button" class="search-providers__show-more" hidden aria-expanded="false">
+                    <span>Показать ещё</span>
+                    <img src="../icons/green-arrow-icon.svg" alt="" width="24" height="24" aria-hidden="true" class="search-providers__show-more-icon" />
+                </button>
+            </div>
+        </section>
+
+        <section class="main-tariffs">
+            <div class="container">
+                <h1 class="title">Доступные тарифы по вашему адресу</h1>
                 <div class="main-tariffs__block d-flex gap-24">
                     <div class="main-tariffs__content">
                         <div class="main-tariffs__tabs-scroll">
@@ -252,7 +273,7 @@
                                 <div class="main-tariffs__panel-list">
                                     <div class="tariff-block">
                                         <div class="tariff-block__header">
-                                            <div class="badge sales">Скидка</div>
+                                            <div class="badge sales">Хит подключений</div>
                                             <div class="compare-btn">
                                                 <svg class="compare-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                                     <path d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z" fill="currentColor" />
@@ -266,6 +287,9 @@
                                         </div>
                                         <div class="tariff-block__content">
                                             <div class="tariff-block__title">
+                                                <div class="tariff-block__provider-logo">
+                                                    <img src="../images/operators-logos/beeline.png" alt="билайн" width="100" height="100" aria-hidden="true" />
+                                                </div>
                                                 <h2>Тариф очень быстрый Интернет во всем интернете + ТВ KION + моб. связь</h2>
                                             </div>
                                             <div class="tariff-block__body">
@@ -351,7 +375,10 @@
                                         </div>
                                         <div class="tariff-block__content">
                                             <div class="tariff-block__title">
-                                                <h2>Тариф №2 (Интернет)</h2>
+                                                <div class="tariff-block__provider-logo">
+                                                    <img src="../images/operators-logos/big-rtk.png" alt="РТК" width="100" height="100" aria-hidden="true" />
+                                                </div>
+                                                <h2>Тариф очень быстрый Интернет во всем интернете + ТВ KION + моб. связь</h2>
                                             </div>
                                             <div class="tariff-block__body">
                                                 <div class="tariff-block__body-info">
@@ -447,7 +474,10 @@
                                         </div>
                                         <div class="tariff-block__content">
                                             <div class="tariff-block__title">
-                                                <h2>Тариф №3 (Интернет)</h2>
+                                                <div class="tariff-block__provider-logo">
+                                                    <img src="../images/operators-logos/mts.png" alt="МТС" width="100" height="100" aria-hidden="true" />
+                                                </div>
+                                                <h2>Тариф очень быстрый Интернет + ТВ KION + моб. связь</h2>
                                             </div>
                                             <div class="tariff-block__body">
                                                 <div class="tariff-block__body-info">
@@ -465,7 +495,7 @@
                                                         </div>
                                                         <div class="tariff-block__body-info-item">
                                                             <div class="tariff-block__body-info-item-icon">
-                                                                <img src="../icons/kion-icon.png" alt="KION" />
+                                                                <img src="../icons/kion-icon.svg" alt="KION" />
                                                             </div>
                                                             <div class="tariff-block__body-info-item__block">
                                                                 <div class="tariff-block__body-info-item-title-unic">KION</div>
@@ -554,7 +584,10 @@
                                         </div>
                                         <div class="tariff-block__content">
                                             <div class="tariff-block__title">
-                                                <h2>Тариф №4 (Интернет)</h2>
+                                                <div class="tariff-block__provider-logo">
+                                                    <img src="../images/operators-logos/megafon.png" alt="Мегафон" width="100" height="100" aria-hidden="true" />
+                                                </div>
+                                                <h2>Тариф очень быстрый Интернет + ТВ KION + моб. связь</h2>
                                             </div>
                                             <div class="tariff-block__body">
                                                 <div class="tariff-block__body-info">
@@ -663,7 +696,10 @@
                                                 </div>
                                                 <div class="tariff-block__content">
                                                     <div class="tariff-block__title">
-                                                        <h2>Тариф №5 (Интернет)</h2>
+                                                        <div class="tariff-block__provider-logo">
+                                                            <img src="../images/operators-logos/beeline.png" alt="МТС" width="100" height="100" aria-hidden="true" />
+                                                        </div>
+                                                        <h2>Тариф очень быстрый Интернет во всем интернете + ТВ KION + моб. связь</h2>
                                                     </div>
                                                     <div class="tariff-block__body">
                                                         <div class="tariff-block__body-info">
@@ -770,7 +806,10 @@
                                                 </div>
                                                 <div class="tariff-block__content">
                                                     <div class="tariff-block__title">
-                                                        <h2>Тариф №6 (Интернет)</h2>
+                                                        <div class="tariff-block__provider-logo">
+                                                            <img src="../images/operators-logos/beeline.png" alt="МТС" width="100" height="100" aria-hidden="true" />
+                                                        </div>
+                                                        <h2>Тариф очень быстрый Интернет во всем интернете + ТВ KION + моб. связь</h2>
                                                     </div>
                                                     <div class="tariff-block__body">
                                                         <div class="tariff-block__body-info">
@@ -877,7 +916,10 @@
                                                 </div>
                                                 <div class="tariff-block__content">
                                                     <div class="tariff-block__title">
-                                                        <h2>Тариф №7 (Интернет)</h2>
+                                                        <div class="tariff-block__provider-logo">
+                                                            <img src="../images/operators-logos/beeline.png" alt="МТС" width="100" height="100" aria-hidden="true" />
+                                                        </div>
+                                                        <h2>Тариф очень быстрый Интернет во всем интернете + ТВ KION + моб. связь</h2>
                                                     </div>
                                                     <div class="tariff-block__body">
                                                         <div class="tariff-block__body-info">
@@ -979,7 +1021,7 @@
                             <div class="main-tariffs__panel" role="tabpanel" id="int" aria-hidden="true">Интернет</div>
                             <div class="main-tariffs__panel" role="tabpanel" id="int-tv" aria-hidden="true">Интернет + ТВ</div>
                             <div class="main-tariffs__panel" role="tabpanel" id="int-tv-mob" aria-hidden="true">Интернет + ТВ + моб</div>
-                            <div class="main-tariffs__panel" role="tabpanel" id="int-tv-mob-cin" aria-hidden="true">Интернет + ТВ + моб+ онлайн кинотеатры</div>
+                            <div class="main-tariffs__panel" role="tabpanel" id="int-tv-mob-cin" aria-hidden="true">Интернет + ТВ + моб + онлайн кинотеатры</div>
                         </div>
                     </div>
                     <div class="main-tariffs__filter-col" id="filter-col">
@@ -1103,6 +1145,29 @@
                                         </ul>
                                     </div>
                                     <div class="main-tariffs__filter-section">
+                                        <div class="main-tariffs__filter-section-title" id="filter-services">Провайдеры</div>
+                                        <ul class="main-tariffs__filter-list" role="group" aria-labelledby="filter-services">
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="services" value="mts_prov" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">МТС</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="services" value="beeline_prov" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Билайн</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="services" value="megafon_prov" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Мегафон</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="main-tariffs__filter-section">
                                         <div class="main-tariffs__filter-section-title" id="filter-services">Дополнительно</div>
                                         <ul class="main-tariffs__filter-list" role="group" aria-labelledby="filter-services">
                                             <li class="main-tariffs__filter-item">
@@ -1130,72 +1195,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="main-tariffs__find-block">
-                    <span class="main-tariffs__find-block-title">Ничего не нашли?</span>
+                <a href="#" class="main-tariffs__find-block">
+                    <span class="main-tariffs__find-block-title">Не нашли подходящий?</span>
                     <div class="main-tariffs__find-block-row">
-                        <span class="main-tariffs__find-block-subtitle">Поможем подобрать тариф у&nbsp;Ростелеком</span>
-                        <button type="button" class="main-tariffs__find-block-btn js-app-modal-open" data-app-modal="ask-operator">Отправить заявку</button>
+                        <span class="main-tariffs__find-block-subtitle">автоматический подбор тарифа</span>
+                        <span class="main-tariffs__find-block-btn">Найти</span>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
-        <section class="operator-help">
+        <section class="how-to-connect">
             <div class="container">
-                <div class="operator-help__banner">
-                    <div class="operator-help__info">
-                        <img class="operator-help__avatar" src="../images/operator-avatar.png" alt="Оператор" width="90" height="90" aria-hidden="true" />
-                        <div class="operator-help__text">
-                            <h2 class="operator-help__title">Ничего не нашли?</h2>
-                            <p class="operator-help__subtitle">Спросите у оператора, поможем <br />подобрать тариф</p>
-                        </div>
+                <h2 class="title">Как подключить домашний интернет в&nbsp;<span class="city-name">Москве</span></h2>
+                <div class="how-to-connect__content">
+                    <div class="how-to-connect__card">
+                        <img src="../icons/home-icon.svg" alt="Проверка доступности" />
+                        <h3 class="how-to-connect__card-title">Проверка доступности подключения по адресу</h3>
+                        <div class="how-to-connect__card-description">Введите свой адрес в форму — система автоматически показывает, какие провайдеры и тарифы доступны именно в вашем доме.</div>
                     </div>
-                    <form class="operator-help__form" action="#" method="post">
-                        <input class="operator-help__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
-                        <input class="operator-help__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
-                        <button type="submit" class="operator-help__submit">Отправить запрос</button>
-                    </form>
+                    <div class="how-to-connect__card">
+                        <img src="../icons/wifiq-icon.svg" alt="Выбор провайдера и тарифа" />
+                        <h3 class="how-to-connect__card-title">Выбор провайдера и&nbsp;тарифа</h3>
+                        <div class="how-to-connect__card-description">Сравните предложения — скорость, стоимость, акции и условия — и&nbsp;выбираете подходящий вариант подключения.</div>
+                    </div>
+                    <div class="how-to-connect__card">
+                        <img src="../icons/order-icon.svg" alt="Оформление заявки" />
+                        <h3 class="how-to-connect__card-title">
+                            Оформление <br />
+                            заявки
+                        </h3>
+                        <div class="how-to-connect__card-description">Заполните короткую форму: контактные данные, адрес, удобное время подключения. Заявка отправляется выбранному провайдеру. Менеджер связывается с вами, уточняет дату и&nbsp;время приезда специалиста.</div>
+                    </div>
+                    <div class="how-to-connect__card">
+                        <img src="../icons/int-icon.svg" alt="Проверка доступности" />
+                        <h3 class="how-to-connect__card-title">Установка и активация интернета</h3>
+                        <div class="how-to-connect__card-description">Специалист приезжает, устанавливает оборудование, настраивает соединение и проверяет работу сети. После этого вы можете пользоваться интернетом.</div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="about-provider" id="about-provider">
-            <div class="container">
-                <h2 class="about-provider__title">О провайдере Ростелеком</h2>
-                <p class="about-provider__text">ПАО «Ростелеком» — крупнейший в России провайдер цифровых услуг. Компания обеспечивает доступ к интернету, телевидению и мобильной связи миллионам абонентов по всей стране.</p>
-                <ul class="about-provider__details">
-                    <li class="about-provider__detail">Год основания: 2001</li>
-                    <li class="about-provider__detail">Юрлицо: ПАО «Ростелеком»</li>
-                </ul>
-            </div>
-
-            <div class="about-provider__services how-to-connect">
-                    <div class="container">
-                        <h2 class="title">Услуги Ростелеком</h2>
-                        <div class="how-to-connect__content">
-                            <div class="how-to-connect__card">
-                                <img src="../icons/home-icon.svg" alt="Интернет" width="42" height="42" aria-hidden="true" />
-                                <h3 class="how-to-connect__card-title">Интернет</h3>
-                                <div class="how-to-connect__card-description">Современная волоконно-оптическая сеть GPON обеспечивает высокую надёжность и скорость доступа к интернету и цифровым сервисам 10–100&nbsp;Мбит/с</div>
-                            </div>
-                            <div class="how-to-connect__card">
-                                <img src="../icons/home-icon.svg" alt="Мобильная связь" width="42" height="42" aria-hidden="true" />
-                                <h3 class="how-to-connect__card-title">Мобильная связь</h3>
-                                <div class="how-to-connect__card-description">Современная волоконно-оптическая сеть GPON обеспечивает высокую надёжность и скорость доступа к интернету и цифровым сервисам 10–100&nbsp;Мбит/с</div>
-                            </div>
-                            <div class="how-to-connect__card">
-                                <img src="../icons/home-icon.svg" alt="Интерактивное телевидение" width="42" height="42" aria-hidden="true" />
-                                <h3 class="how-to-connect__card-title">Интерактивное телевидение</h3>
-                                <div class="how-to-connect__card-description">Современная волоконно-оптическая сеть GPON обеспечивает высокую надёжность и скорость доступа к интернету и цифровым сервисам 10–100&nbsp;Мбит/с</div>
-                            </div>
-                            <div class="how-to-connect__card">
-                                <img src="../icons/home-icon.svg" alt="Облачные сервисы" width="42" height="42" aria-hidden="true" />
-                                <h3 class="how-to-connect__card-title">Облачные сервисы</h3>
-                                <div class="how-to-connect__card-description">Современная волоконно-оптическая сеть GPON обеспечивает высокую надёжность и скорость доступа к интернету и цифровым сервисам 10–100&nbsp;Мбит/с</div>
-                            </div>
-                        </div>
-                        <button type="button" class="big-button how-to-connect__button js-app-modal-open" data-app-modal="ask-operator">Задать вопрос</button>
-                    </div>
+                <button type="button" class="big-button how-to-connect__button js-app-modal-open" data-app-modal="ask-operator">Задать вопрос</button>
             </div>
         </section>
 
@@ -1342,126 +1380,6 @@
                 </div>
             </div>
         </section>
-
-        <section class="reviews" id="reviews">
-            <div class="container">
-                <header class="reviews__header">
-                    <h2 class="reviews__title">Отзывы</h2>
-                    <p class="reviews__count">10&nbsp;345 отзывов</p>
-                </header>
-
-                <div class="reviews__carousel">
-                    <button type="button" class="reviews__nav reviews__nav--prev" aria-label="Предыдущий отзыв" disabled>
-                        <svg class="reviews__nav-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M14.1707 16.6891L9.23795 11.8098C8.81883 11.3952 8.81883 10.7255 9.23795 10.3109L14.1707 5.43164C14.5898 5.01706 15.2669 5.01706 15.686 5.43164C16.1051 5.84621 16.1051 6.51593 15.686 6.9305L11.5163 11.0551L15.686 15.1797C16.1051 15.5943 16.1051 16.264 15.686 16.6786C15.2777 17.083 14.5898 17.083 14.1707 16.6891Z" fill="currentColor" />
-                        </svg>
-                    </button>
-                    <div class="reviews__scroll">
-                        <ul class="reviews__list">
-                        <li>
-                            <button type="button" class="reviews__card js-app-modal-open" data-app-modal="review-detail">
-                            <div class="reviews__rating" role="img" aria-label="Оценка 4 из 5">
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon-empty.svg" alt="" width="22" height="22" aria-hidden="true" />
-                            </div>
-                            <p class="reviews__text">Пока нашла более или менее нормального провайдера, пришлось поэкспериментировать. Решила попробовать интернет от МТС. Выбрала тариф Весь МТС супер за 850 руб/мес. Это пока самый дорогой тариф, какой у меня был. За эти деньги я получаю интернет 500 мБит/с, 228 каналов, 1500 минут, 30 ГБ моб.интернета, 100 смс, безлимитные соцсети и онлайн-кинотеатр КИОН. Пользуюсь второй месяц, и скажу, что я переоценила свои потребности.</p>
-                            <footer class="reviews__author">
-                                <img class="reviews__avatar" src="../images/reviev-avatar.png" alt="" width="40" height="40" aria-hidden="true" />
-                                <div class="reviews__author-info">
-                                    <span class="reviews__author-name">Светлана</span>
-                                    <div class="reviews__author-meta">
-                                        <span class="reviews__author-city">г. Москва</span>
-                                        <span class="reviews__author-date">9 апреля 2023&nbsp;г.</span>
-                                    </div>
-                                </div>
-                            </footer>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="reviews__card js-app-modal-open" data-app-modal="review-detail">
-                            <div class="reviews__rating" role="img" aria-label="Оценка 4 из 5">
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon-empty.svg" alt="" width="22" height="22" aria-hidden="true" />
-                            </div>
-                            <p class="reviews__text">Пока нашла более или менее нормального провайдера, пришлось поэкспериментировать. Решила попробовать интернет от МТС. Выбрала тариф Весь МТС супер за 850 руб/мес. Это пока самый дорогой тариф, какой у меня был. За эти деньги я получаю интернет 500 мБит/с, 228 каналов, 1500 минут, 30 ГБ моб.интернета, 100 смс, безлимитные соцсети и онлайн-кинотеатр КИОН. Пользуюсь второй месяц, и скажу, что я переоценила свои потребности.</p>
-                            <footer class="reviews__author">
-                                <img class="reviews__avatar" src="../images/reviev-avatar.png" alt="" width="40" height="40" aria-hidden="true" />
-                                <div class="reviews__author-info">
-                                    <span class="reviews__author-name">Светлана</span>
-                                    <div class="reviews__author-meta">
-                                        <span class="reviews__author-city">г. Москва</span>
-                                        <span class="reviews__author-date">9 апреля 2023&nbsp;г.</span>
-                                    </div>
-                                </div>
-                            </footer>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="reviews__card js-app-modal-open" data-app-modal="review-detail">
-                            <div class="reviews__rating" role="img" aria-label="Оценка 4 из 5">
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon-empty.svg" alt="" width="22" height="22" aria-hidden="true" />
-                            </div>
-                            <p class="reviews__text">Пока нашла более или менее нормального провайдера, пришлось поэкспериментировать. Решила попробовать интернет от МТС. Выбрала тариф Весь МТС супер за 850 руб/мес. Это пока самый дорогой тариф, какой у меня был. За эти деньги я получаю интернет 500 мБит/с, 228 каналов, 1500 минут, 30 ГБ моб.интернета, 100 смс, безлимитные соцсети и онлайн-кинотеатр КИОН. Пользуюсь второй месяц, и скажу, что я переоценила свои потребности.</p>
-                            <footer class="reviews__author">
-                                <img class="reviews__avatar" src="../images/reviev-avatar.png" alt="" width="40" height="40" aria-hidden="true" />
-                                <div class="reviews__author-info">
-                                    <span class="reviews__author-name">Светлана</span>
-                                    <div class="reviews__author-meta">
-                                        <span class="reviews__author-city">г. Москва</span>
-                                        <span class="reviews__author-date">9 апреля 2023&nbsp;г.</span>
-                                    </div>
-                                </div>
-                            </footer>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="reviews__card js-app-modal-open" data-app-modal="review-detail">
-                            <div class="reviews__rating" role="img" aria-label="Оценка 4 из 5">
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon.svg" alt="" width="22" height="22" aria-hidden="true" />
-                                <img src="../icons/review-star-icon-empty.svg" alt="" width="22" height="22" aria-hidden="true" />
-                            </div>
-                            <p class="reviews__text">Пока нашла более или менее нормального провайдера, пришлось поэкспериментировать. Решила попробовать интернет от МТС. Выбрала тариф Весь МТС супер за 850 руб/мес. Это пока самый дорогой тариф, какой у меня был. За эти деньги я получаю интернет 500 мБит/с, 228 каналов, 1500 минут, 30 ГБ моб.интернета, 100 смс, безлимитные соцсети и онлайн-кинотеатр КИОН. Пользуюсь второй месяц, и скажу, что я переоценила свои потребности.</p>
-                            <footer class="reviews__author">
-                                <img class="reviews__avatar" src="../images/reviev-avatar.png" alt="" width="40" height="40" aria-hidden="true" />
-                                <div class="reviews__author-info">
-                                    <span class="reviews__author-name">Светлана</span>
-                                    <div class="reviews__author-meta">
-                                        <span class="reviews__author-city">г. Москва</span>
-                                        <span class="reviews__author-date">9 апреля 2023&nbsp;г.</span>
-                                    </div>
-                                </div>
-                            </footer>
-                            </button>
-                        </li>
-                        </ul>
-                    </div>
-                    <button type="button" class="reviews__nav reviews__nav--next" aria-label="Следующий отзыв">
-                        <svg class="reviews__nav-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M9.82933 16.6891L14.7621 11.8098C15.1812 11.3952 15.1812 10.7255 14.7621 10.3109L9.82933 5.43164C9.41021 5.01706 8.73317 5.01706 8.31405 5.43164C7.89493 5.84621 7.89493 6.51593 8.31405 6.9305L12.4837 11.0551L8.31405 15.1797C7.89493 15.5943 7.89493 16.264 8.31405 16.6786C8.72235 17.083 9.41021 17.083 9.82933 16.6891Z" fill="currentColor" />
-                        </svg>
-                    </button>
-                </div>
-
-                <footer class="reviews__footer">
-                    <a href="#" class="reviews__all-link">Все отзывы</a>
-                    <button type="button" class="big-button reviews__cta js-app-modal-open" data-app-modal="ask-operator">Запросить консультацию</button>
-                </footer>
-            </div>
-        </section>
-
         <footer class="footer">
             <div class="container footer__inner">
                 <div class="footer__left">
@@ -1471,7 +1389,7 @@
                     <p class="footer__copyright">© 2026 Провайдеры.рус</p>
                 </div>
                 <nav class="footer__links-mobile">
-                    <a href="#">Подключение по адресу</a>
+                    <a href="search_address.html">Подключение по адресу</a>
                     <a href="#">Тарифы</a>
                     <a href="#">Провайдеры</a>
                     <a href="#">Контакты</a>
@@ -1480,7 +1398,7 @@
                     <div class="footer__col">
                         <h3 class="footer__col-title">О компании</h3>
                         <ul class="footer__list">
-                            <li><a href="#">Подключение по адресу</a></li>
+                            <li><a href="search_address.html">Подключение по адресу</a></li>
                             <li><a href="#">Тарифы</a></li>
                             <li><a href="#">Провайдеры</a></li>
                             <li><a href="#">Контакты</a></li>
@@ -1546,31 +1464,6 @@
                         <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
                         <button type="submit" class="app-modal__submit">Отправить запрос</button>
                     </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="app-modal app-modal--review" id="review-detail-modal" data-app-modal-id="review-detail" role="dialog" aria-modal="true" aria-labelledby="review-detail-modal-title" aria-hidden="true">
-            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
-            <div class="app-modal__dialog app-modal__dialog--review">
-                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </button>
-                <div class="app-modal__body app-modal__body--review">
-                    <h2 class="app-modal__sr-only" id="review-detail-modal-title">Отзыв</h2>
-                    <div class="app-modal__review-rating" data-app-modal-review-rating role="img"></div>
-                    <p class="app-modal__review-text" data-app-modal-review-text></p>
-                    <footer class="app-modal__review-author">
-                        <img class="app-modal__review-avatar" data-app-modal-review-avatar src="" alt="" width="50" height="50" aria-hidden="true" />
-                        <div class="app-modal__review-author-info">
-                            <span class="app-modal__review-name" data-app-modal-review-name></span>
-                            <span class="app-modal__review-meta" data-app-modal-review-city></span>
-                            <span class="app-modal__review-meta" data-app-modal-review-date></span>
-                        </div>
-                    </footer>
-                    <a href="#" class="app-modal__review-all" data-app-modal-review-all data-app-modal-close>Смотреть все отзывы</a>
                 </div>
             </div>
         </div>
@@ -1712,7 +1605,7 @@
                         <div class="connect-tariff-modal__accordion-item">
                             <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
                                 <span class="connect-tariff-modal__accordion-head">
-                                    <img class="connect-tariff-modal__accordion-icon-service connect-tariff-modal__accordion-icon-service--kion" src="../icons/kion-icon.png" alt="" width="32" height="32" aria-hidden="true" />
+                                    <img class="connect-tariff-modal__accordion-icon-service connect-tariff-modal__accordion-icon-service--kion" src="../icons/kion-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
                                     <span class="connect-tariff-modal__accordion-title">KION</span>
                                 </span>
                                 <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
@@ -1836,5 +1729,6 @@
         <script defer src="../js/phone-mask.js"></script>
         <script defer src="../js/app-modal.js"></script>
         <script defer src="../js/main.js"></script>
+        <script defer src="../js/search-address.js"></script>
     </body>
 </html>

@@ -1,15 +1,68 @@
+(function restoreSearchAddressScroll() {
+  if (!window.location.pathname.includes("search_address")) return;
+
+  const saved = sessionStorage.getItem("searchAddressScrollY");
+  if (saved === null) return;
+
+  sessionStorage.removeItem("searchAddressScrollY");
+  const scrollY = Number.parseInt(saved, 10);
+  if (!Number.isFinite(scrollY)) return;
+
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.addEventListener(
+    "load",
+    () => {
+      window.scrollTo(0, scrollY);
+    },
+    { once: true }
+  );
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   // Хедер: при скролле > 100px — уменьшаем вертикальный отступ (не при открытом мобильном меню)
   const header = document.querySelector(".header");
   const mobileMenu = document.getElementById("mobile-menu");
-  const SCROLL_THRESHOLD = 100;
+  const SCROLL_DOWN_THRESHOLD = 100;
+  const SCROLL_UP_THRESHOLD = 60;
+  let headerIsScrolled = false;
+  let headerScrollTicking = false;
+
+  const updateHeaderScrollState = () => {
+    headerScrollTicking = false;
+    if (!header || mobileMenu?.classList.contains("is-open")) return;
+
+    const scrollY = window.scrollY;
+    const shouldBeScrolled = headerIsScrolled
+      ? scrollY > SCROLL_UP_THRESHOLD
+      : scrollY > SCROLL_DOWN_THRESHOLD;
+
+    if (shouldBeScrolled === headerIsScrolled) return;
+
+    headerIsScrolled = shouldBeScrolled;
+    header.classList.toggle("header--scrolled", headerIsScrolled);
+  };
+
+  const scheduleHeaderScrollUpdate = () => {
+    if (headerScrollTicking) return;
+    headerScrollTicking = true;
+    requestAnimationFrame(updateHeaderScrollState);
+  };
+
   if (header) {
-    const onScroll = () => {
-      if (mobileMenu?.classList.contains("is-open")) return;
-      header.classList.toggle("header--scrolled", window.scrollY > SCROLL_THRESHOLD);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    header.classList.add("header--no-transition");
+    headerIsScrolled = window.scrollY > SCROLL_DOWN_THRESHOLD;
+    header.classList.toggle("header--scrolled", headerIsScrolled);
+
+    requestAnimationFrame(() => {
+      header.classList.remove("header--no-transition");
+    });
+
+    window.addEventListener("scroll", scheduleHeaderScrollUpdate, { passive: true });
+    window.addEventListener("load", updateHeaderScrollState);
+    window.addEventListener("pageshow", updateHeaderScrollState);
   }
 
   // Мобильное меню (≤1280px): открытие/закрытие по кнопке (гамбургер ↔ крестик), закрытие по оверлею
@@ -20,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openMobileMenu() {
     if (!mobileMenu || !mobileMenuToggleBtn) return;
+    headerIsScrolled = false;
     header?.classList.remove("header--scrolled");
     mobileMenu.classList.add("is-open");
     mobileMenu.setAttribute("aria-hidden", "false");
@@ -37,9 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenuToggleBtn.setAttribute("aria-label", "Меню");
     mobileMenuToggleBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
-    if (header) {
-      header.classList.toggle("header--scrolled", window.scrollY > SCROLL_THRESHOLD);
-    }
+    updateHeaderScrollState();
   }
 
   function toggleMobileMenu() {
@@ -405,6 +457,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  function getSearchAddressPageUrl() {
+    const inPagesDir = window.location.pathname.includes("/pages/");
+    return inPagesDir ? "search_address.html" : "pages/search_address.html";
+  }
+
+  function isSearchAddressPage() {
+    return window.location.pathname.includes("search_address");
+  }
+
+  function navigateToSearchAddress() {
+    if (isSearchAddressPage()) {
+      sessionStorage.setItem("searchAddressScrollY", String(window.scrollY));
+      window.location.reload();
+      return;
+    }
+    window.location.href = getSearchAddressPageUrl();
+  }
+
+  document.querySelectorAll(".addresses-block__item").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigateToSearchAddress();
+    });
+  });
+
   document.querySelectorAll(".providers-check__block").forEach((block) => {
     const searchBtn = block.querySelector(".providers-check__block__search-btn");
     const searchInput = block.querySelector(".providers-check__block__input");
@@ -417,16 +494,14 @@ document.addEventListener("DOMContentLoaded", () => {
       inputWrapper.classList.toggle("is-empty", !searchInput.value.trim());
     };
 
-    const openDropdown = () => {
-      if (searchInput.value.trim()) {
-        inputWrapper.classList.add("is-open");
-        searchInput?.setAttribute("aria-expanded", "true");
-      }
-    };
-
     const closeDropdown = () => {
       inputWrapper.classList.remove("is-open");
       searchInput?.setAttribute("aria-expanded", "false");
+    };
+
+    const submitAddressSearch = () => {
+      if (!searchInput.value.trim()) return;
+      navigateToSearchAddress();
     };
 
     updateBtnState();
@@ -440,6 +515,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     searchInput.addEventListener("change", updateBtnState);
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        submitAddressSearch();
+      }
+    });
     searchInput.addEventListener("blur", () => {
       setTimeout(closeDropdown, 150);
     });
@@ -448,10 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
       suggestions.querySelectorAll("li").forEach((li) => {
         li.addEventListener("mousedown", (e) => {
           e.preventDefault();
-          searchInput.value = li.textContent;
-          updateBtnState();
-          closeDropdown();
-          searchInput.blur();
+          navigateToSearchAddress();
         });
       });
     }
@@ -462,7 +540,8 @@ document.addEventListener("DOMContentLoaded", () => {
           e.preventDefault();
           return;
         }
-        console.log(searchInput.value);
+        e.preventDefault();
+        submitAddressSearch();
       });
     }
   });
