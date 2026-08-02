@@ -7038,25 +7038,35 @@ input.main-tariffs__filter-input--radio {
 
 .cookies-block {
     z-index: $z-cookies;
-    width: 90%;
-    max-width: 800px;
     position: fixed;
+    left: 20px;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba($dark-gray-color, 0.7);
-    backdrop-filter: blur(10px);
-    color: $white-color;
+    width: auto;
+    max-width: 480px;
+    padding: 18px 20px;
+    background-color: $white-color;
     border-radius: $border-radius-big;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+    color: $dark-gray-color;
     opacity: 1;
+    transform: none;
+    animation: cookies-block-in 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
     transition:
         opacity 0.35s ease,
         transform 0.35s ease;
 
+    @media screen and (max-width: 620px) {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-width: none;
+    }
+
     &--hidden {
         opacity: 0;
-        transform: translateX(-50%) translateY(24px);
+        transform: translateY(24px);
         pointer-events: none;
+        animation: none;
 
         &.cookies-block--removed {
             display: none;
@@ -7064,31 +7074,63 @@ input.main-tariffs__filter-input--radio {
     }
 
     &__inner {
-        padding: 16px 20px;
+        padding: 0;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        & a {
-            text-decoration: underline;
+        gap: 18px;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: $dark-gray-color;
+
+        a {
+            color: $primary-color;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
+
     &__btn {
-        border: 1px solid $white-color;
+        flex-shrink: 0;
+        padding: 12px 24px;
+        border: none;
         border-radius: $border-radius;
-        padding: 12px;
         font: inherit;
-        font-size: 12px;
-        color: $white-color;
-        background: transparent;
+        font-size: 14px;
+        font-weight: 600;
+        color: $black-color;
+        background-color: $secondary-color;
         cursor: pointer;
-        transition: color 0.4s ease;
+        transition: background-color 0.2s ease;
+
         &:hover {
-            color: $dark-gray-color;
-            background-color: $white-color;
-            transition: color 0.4s ease;
-            border: 1px solid $white-color;
+            background-color: #bce529;
+            color: $black-color;
+            border: none;
         }
+
+        &:active {
+            background-color: #e0f9ac;
+        }
+    }
+}
+
+@keyframes cookies-block-in {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
     }
 }
 

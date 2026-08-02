@@ -6369,55 +6369,91 @@ input.main-tariffs__filter-input--radio:focus-visible {
 
 .cookies-block {
   z-index: 9999;
-  width: 90%;
-  max-width: 800px;
   position: fixed;
+  left: 20px;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(108, 117, 125, 0.7);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
+  width: auto;
+  max-width: 480px;
+  padding: 18px 20px;
+  background-color: #ffffff;
   border-radius: 12px;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+  color: #6C757D;
   opacity: 1;
+  transform: none;
+  animation: cookies-block-in 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
   transition: opacity 0.35s ease, transform 0.35s ease;
+}
+@media screen and (max-width: 620px) {
+  .cookies-block {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+  }
 }
 .cookies-block--hidden {
   opacity: 0;
-  transform: translateX(-50%) translateY(24px);
+  transform: translateY(24px);
   pointer-events: none;
+  animation: none;
 }
 .cookies-block--hidden.cookies-block--removed {
   display: none;
 }
 .cookies-block__inner {
-  padding: 16px 20px;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 18px;
 }
-.cookies-block__inner a {
+.cookies-block__text {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #6C757D;
+}
+.cookies-block__text a {
+  color: #2BBE48;
+  font-weight: 600;
+  text-decoration: none;
+}
+.cookies-block__text a:hover {
   text-decoration: underline;
 }
 .cookies-block__btn {
-  border: 1px solid #ffffff;
+  flex-shrink: 0;
+  padding: 12px 24px;
+  border: none;
   border-radius: 10px;
-  padding: 12px;
   font: inherit;
-  font-size: 12px;
-  color: #ffffff;
-  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c0d0d;
+  background-color: #cdff63;
   cursor: pointer;
-  transition: color 0.4s ease;
+  transition: background-color 0.2s ease;
 }
 .cookies-block__btn:hover {
-  color: #6C757D;
-  background-color: #ffffff;
-  transition: color 0.4s ease;
-  border: 1px solid #ffffff;
+  background-color: #bce529;
+  color: #0c0d0d;
+  border: none;
+}
+.cookies-block__btn:active {
+  background-color: #e0f9ac;
 }
 
+@keyframes cookies-block-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 .main-mobile {
   display: none;
   position: relative;
