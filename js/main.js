@@ -363,6 +363,29 @@ document.addEventListener("DOMContentLoaded", () => {
     updateReviewsCarousel();
   });
 
+  // Алфавит улиц на странице города (city-seo)
+  document.querySelectorAll(".city-seo").forEach((block) => {
+    const tabs = block.querySelectorAll(".city-seo__alpha-btn");
+    const panels = block.querySelectorAll(".city-seo__streets-panel");
+    tabs.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const letter = btn.getAttribute("data-letter");
+        if (!letter) return;
+        tabs.forEach((b) => {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-selected", "true");
+        panels.forEach((panel) => {
+          const isActive = panel.getAttribute("data-letter") === letter;
+          panel.classList.toggle("is-active", isActive);
+          panel.setAttribute("aria-hidden", String(!isActive));
+        });
+      });
+    });
+  });
+
   // Табы по буквам (адреса)
   document.querySelectorAll(".addresses-block").forEach((block) => {
     const tabs = block.querySelectorAll(".addresses-block__tab");
