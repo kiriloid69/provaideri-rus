@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Отзывы о провайдерах в Москве — Провайдеры.рус</title>
+
+        <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+        <link rel="shortcut icon" href="../favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="../favicon/site.webmanifest" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <link rel="preload" href="../images/main-mobile.gif" as="image" />
+        <link rel="stylesheet" href="../css/main.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container d-flex align-center justify-between">
+                <div class="header__menu d-flex align-center gap-24">
+                    <a href="../index.html" class="header__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/logo.svg" alt="logo" />
+                    </a>
+                    <ul class="header__menu-list d-flex align-center gap-24">
+                        <li class="header__menu-item">
+                            <a href="search_address.html" class="header__menu-link">Подключение по адресу</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Тарифы</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Провайдеры</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__contacts d-flex gap-24 align-center">
+                    <div class="header__contacts-item">
+                        <a href="tel:88007001234" class="header__contacts-link phone-number">8-800-700-1234</a>
+                    </div>
+                    <div class="header__contacts-item">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/call-icon.svg" alt="phone" />
+                            </div>
+                            <span>Заказать звонок</span>
+                        </a>
+                    </div>
+                    <div class="header__contacts-item header__contacts-item--city">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/map-icon.svg" alt="phone" />
+                            </div>
+                            <span>Москва</span>
+                        </a>
+                    </div>
+                    <div class="header__menu-mobile">
+                        <button type="button" class="header__menu-mobile-btn" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
+                            <img class="header__menu-mobile-icon header__menu-mobile-icon--open" src="../icons/hamburger-icon.svg" alt="" aria-hidden="true" />
+                            <span class="header__menu-mobile-icon header__menu-mobile-icon--close" aria-hidden="true">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Мобильное меню (ширина 320px, экраны ≤ px) -->
+        <div class="mobile">
+            <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu__backdrop" aria-label="Закрыть меню"></div>
+                <div class="mobile-menu__panel">
+                    <div class="mobile-menu__content">
+                        <nav class="mobile-menu__nav">
+                            <a href="search_address.html" class="mobile-menu__link">Подключение по адресу</a>
+                            <a href="#" class="mobile-menu__link">Тарифы</a>
+                            <a href="#" class="mobile-menu__link">Провайдеры</a>
+                            <a href="#" class="mobile-menu__link">Контакты</a>
+                        </nav>
+                        <div class="mobile-menu__location">
+                            <p class="mobile-menu__location-label">Вы находитесь здесь</p>
+                            <div class="mobile-menu__location-card" id="mobile-menu-location-card">
+                                <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-icon" width="20" height="20" aria-hidden="true" />
+                                <span class="mobile-menu__city">Москва</span>
+                            </div>
+                            <div class="mobile-menu__location-input-wrapper" id="mobile-menu-location-input-wrapper" style="display: none">
+                                <div class="mobile-menu__location-input-container">
+                                    <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-input-icon" width="20" height="20" aria-hidden="true" />
+                                    <input type="text" class="mobile-menu__location-input" id="mobile-menu-location-input" placeholder="Введите город" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="mobile-menu-city-suggestions" />
+                                </div>
+                                <ul class="mobile-menu__city-suggestions" id="mobile-menu-city-suggestions" role="listbox" aria-label="Подсказки городов">
+                                    <!-- Список будет заполнен через JS -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-mobile">
+                <div class="main-mobile__content">
+                    <div class="container">
+                        <nav class="main-mobile__content-navigation">
+                            <ul class="main-mobile__content-navigation-list">
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Тарифы</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Провайдеры</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">
+                                        <svg class="compare-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z" fill="currentColor" />
+                                            <path d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z" fill="currentColor" />
+                                        </svg>
+                                        Сравнение
+                                        <span class="main-mobile__content-navigation-link-count">5</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="reviews-hero">
+            <div class="container">
+                <nav class="breadcrumbs breadcrumbs--in-hero" aria-label="Хлебные крошки">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Главная</a></li>
+                        <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Отзывы</li>
+                    </ol>
+                </nav>
+                <div class="reviews-hero__grid">
+                    <div class="reviews-hero__main">
+                        <h1 class="reviews-hero__title">Отзывы о&nbsp;провайдерах в&nbsp;Москве</h1>
+                        <p class="reviews-hero__lead">Собрали <b>независимые отзывы абонентов</b> о домашнем интернете, ТВ и мобильной связи в Москве. Реальный опыт подключения и обслуживания помогает выбрать провайдера без маркетинговых обещаний — по фактам.</p>
+                    </div>
+                    <aside class="reviews-hero__cta">
+                        <div class="reviews-hero__cta-title">Пользовались провайдером?</div>
+                        <p class="reviews-hero__cta-text">Помогите другим выбрать — расскажите о скорости и сервисе. Оценка в один тап.</p>
+                        <a href="#add-review" class="big-button reviews-hero__cta-btn">Оставить отзыв</a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="city-trust">
+            <div class="container">
+                <div class="city-trust__grid">
+                    <div class="city-trust__item">
+                        <div class="city-trust__value">12 480</div>
+                        <div class="city-trust__label">отзывов в городе</div>
+                    </div>
+                    <div class="city-trust__item">
+                        <div class="city-trust__value city-trust__value--accent">4,3 <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="18" height="18" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="18" height="18" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="18" height="18" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="18" height="18" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="18" height="18" alt="" aria-hidden="true" /></span></div>
+                        <div class="city-trust__label">средняя оценка по рынку</div>
+                    </div>
+                    <div class="city-trust__item">
+                        <div class="city-trust__value">24</div>
+                        <div class="city-trust__label">провайдеров с отзывами</div>
+                    </div>
+                    <div class="city-trust__item">
+                        <div class="city-trust__value city-trust__value--date">30 июня 2026</div>
+                        <div class="city-trust__label">дата обновления</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-board main-tariffs">
+            <div class="container">
+                <div class="main-tariffs__block d-flex gap-24">
+                    <div class="main-tariffs__content reviews-board__main">
+                        <div class="reviews-board__toolbar">
+                            <label class="reviews-board__search">
+                                <span class="reviews-board__sr-only">Поиск по провайдеру</span>
+                                <input type="search" placeholder="Поиск по провайдеру" />
+                                <img src="../icons/search-icon.svg" alt="" width="20" height="20" aria-hidden="true" />
+                            </label>
+                            <button type="button" class="main-tariffs__filter-btn main-tariffs__filter-open-btn reviews-board__filters-btn" aria-label="Открыть фильтры" aria-expanded="false" aria-controls="filter-panel">
+                                <img src="../icons/filter-icon.svg" alt="" width="24" height="24" aria-hidden="true" />
+                                <span>Все фильтры</span>
+                            </button>
+                            <div class="reviews-sort" role="group" aria-label="Сортировка">
+                                <button type="button" class="reviews-sort__btn is-active" data-sort="new">Свежие</button>
+                                <button type="button" class="reviews-sort__btn" data-sort="useful">Полезные</button>
+                                <button type="button" class="reviews-sort__btn" data-sort="high">Высокая оценка</button>
+                                <button type="button" class="reviews-sort__btn" data-sort="low">Низкая оценка</button>
+                            </div>
+                        </div>
+
+                        <h2 class="section-title">Рейтинг провайдеров по отзывам</h2>
+                        <div class="reviews-rating-list">
+                        <div class="reviews-prow">
+                            <div class="reviews-prow__logo"><img src="../images/operators-logos/big-rtk.png" alt="Ростелеком" /></div>
+                            <div class="reviews-prow__score">
+                                <div class="reviews-prow__score-row">
+                                    <b>4,6</b>
+                                    <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /></span>
+                                </div>
+                                <span class="reviews-prow__count">3 214 отзывов</span>
+                            </div>
+                            <div class="reviews-prow__sum"><span class="reviews-chip reviews-chip--pos">Стабильная скорость</span><span class="reviews-chip reviews-chip--pos">Быстрый монтаж</span><span class="reviews-chip reviews-chip--neg">Дозвон в поддержку</span></div>
+                            <a class="reviews-ghost-btn" href="#">Все отзывы Ростелеком</a>
+                        </div>
+                        <div class="reviews-prow">
+                            <div class="reviews-prow__logo"><img src="../images/operators-logos/mts.png" alt="МТС" /></div>
+                            <div class="reviews-prow__score">
+                                <div class="reviews-prow__score-row">
+                                    <b>4,4</b>
+                                    <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="14" height="14" alt="" aria-hidden="true" /></span>
+                                </div>
+                                <span class="reviews-prow__count">2 980 отзывов</span>
+                            </div>
+                            <div class="reviews-prow__sum"><span class="reviews-chip reviews-chip--pos">Скорость как в тарифе</span><span class="reviews-chip reviews-chip--pos">Бонусы KION</span><span class="reviews-chip reviews-chip--neg">Цена растёт после акции</span></div>
+                            <a class="reviews-ghost-btn" href="#">Все отзывы МТС</a>
+                        </div>
+                        <div class="reviews-prow">
+                            <div class="reviews-prow__logo"><img src="../images/operators-logos/beeline.png" alt="Билайн" /></div>
+                            <div class="reviews-prow__score">
+                                <div class="reviews-prow__score-row">
+                                    <b>4,2</b>
+                                    <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="14" height="14" alt="" aria-hidden="true" /></span>
+                                </div>
+                                <span class="reviews-prow__count">2 106 отзывов</span>
+                            </div>
+                            <div class="reviews-prow__sum"><span class="reviews-chip reviews-chip--pos">Недорогой старт</span><span class="reviews-chip reviews-chip--pos">Простое подключение</span><span class="reviews-chip reviews-chip--neg">Скачки скорости вечером</span></div>
+                            <a class="reviews-ghost-btn" href="#">Все отзывы Билайн</a>
+                        </div>
+                        <div class="reviews-prow">
+                            <div class="reviews-prow__logo"><img src="../images/operators-logos/megafon.png" alt="МегаФон" /></div>
+                            <div class="reviews-prow__score">
+                                <div class="reviews-prow__score-row">
+                                    <b>4,1</b>
+                                    <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="14" height="14" alt="" aria-hidden="true" /></span>
+                                </div>
+                                <span class="reviews-prow__count">1 740 отзывов</span>
+                            </div>
+                            <div class="reviews-prow__sum"><span class="reviews-chip reviews-chip--pos">Удобное приложение</span><span class="reviews-chip reviews-chip--pos">Связка с мобильным</span><span class="reviews-chip reviews-chip--neg">Долгий монтаж</span></div>
+                            <a class="reviews-ghost-btn" href="#">Все отзывы МегаФон</a>
+                        </div>
+                        <div class="reviews-prow">
+                            <div class="reviews-prow__logo"><img src="../images/operators-logos/domru.png" alt="Дом.ру" /></div>
+                            <div class="reviews-prow__score">
+                                <div class="reviews-prow__score-row">
+                                    <b>3,9</b>
+                                    <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="14" height="14" alt="" aria-hidden="true" /></span>
+                                </div>
+                                <span class="reviews-prow__count">1 268 отзывов</span>
+                            </div>
+                            <div class="reviews-prow__sum"><span class="reviews-chip reviews-chip--pos">Низкая цена</span><span class="reviews-chip reviews-chip--pos">Без платы за роутер</span><span class="reviews-chip reviews-chip--neg">Нестабильный вечером</span></div>
+                            <a class="reviews-ghost-btn" href="#">Все отзывы Дом.ру</a>
+                        </div>
+                        <div class="reviews-prow">
+                            <div class="reviews-prow__logo"><img src="../images/operators-logos/rtk.png" alt="2КОМ" /></div>
+                            <div class="reviews-prow__score">
+                                <div class="reviews-prow__score-row">
+                                    <b>4,0</b>
+                                    <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="14" height="14" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="14" height="14" alt="" aria-hidden="true" /></span>
+                                </div>
+                                <span class="reviews-prow__count">1 172 отзывов</span>
+                            </div>
+                            <div class="reviews-prow__sum"><span class="reviews-chip reviews-chip--pos">Живая поддержка</span><span class="reviews-chip reviews-chip--pos">Честная цена</span><span class="reviews-chip reviews-chip--neg">Покрытие не везде</span></div>
+                            <a class="reviews-ghost-btn" href="#">Все отзывы 2КОМ</a>
+                        </div>
+                        </div>
+
+                        <h2 class="section-title">Свежие отзывы</h2>
+                        <p class="section-subtitle">Реальный опыт абонентов с честным балансом плюсов и минусов</p>
+                        <div class="reviews-feed">
+                    <article class="reviews-card">
+                        <div class="reviews-card__side">
+                            <div class="reviews-card__author">
+                                <img class="reviews-card__avatar" src="../images/reviev-avatar.png" alt="" width="48" height="48" />
+                                <div>
+                                    <div class="reviews-card__name">Анна К.</div>
+                                    <div class="reviews-card__meta">24 июня 2026</div>
+                                </div>
+                            </div>
+                            <div class="reviews-card__rating-row">
+                                <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /></span>
+                                <span class="reviews-chip reviews-chip--svc">Интернет</span>
+                            </div>
+                            <div class="reviews-card__provider">
+                                <img src="../images/operators-logos/big-rtk.png" alt="" width="80" height="20" />
+                                <span>Ростелеком</span>
+                            </div>
+                            <span class="reviews-card__verified">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                    Проверенный отзыв
+                                </span>
+                        </div>
+                        <div class="reviews-card__body">
+                            <p class="reviews-card__text">Подключили за два дня, мастер аккуратный. Скорость держится стабильно даже вечером, 1000 Мбит/с по тарифу реально получаю. За полгода ни одного обрыва.</p>
+                            <div class="reviews-card__pm">
+                                <div class="reviews-card__pm-row reviews-card__pm-row--pos"><b>+</b><span>Стабильная скорость, вежливый монтажник, честный тариф</span></div>
+                                <div class="reviews-card__pm-row reviews-card__pm-row--neg"><b>—</b><span>Пришлось подождать звонка оператора</span></div>
+                            </div>
+                            <div class="reviews-card__reply">
+                                <img src="../images/operator-avatar.png" alt="" width="32" height="32" />
+                                <div>
+                                    <p class="reviews-card__reply-title">Ответ оператора Ростелеком</p>
+                                    <p class="reviews-card__reply-text">Спасибо за отзыв! Рады, что подключение прошло гладко. Хорошего интернета!</p>
+                                </div>
+                            </div>
+                            <div class="reviews-card__foot">
+                                <button type="button" class="reviews-card__helpful">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                    Полезно · 42
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="reviews-card">
+                        <div class="reviews-card__side">
+                            <div class="reviews-card__author">
+                                <img class="reviews-card__avatar" src="../images/reviev-avatar.png" alt="" width="48" height="48" />
+                                <div>
+                                    <div class="reviews-card__name">Дмитрий В.</div>
+                                    <div class="reviews-card__meta">21 июня 2026</div>
+                                </div>
+                            </div>
+                            <div class="reviews-card__rating-row">
+                                <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="16" height="16" alt="" aria-hidden="true" /></span>
+                                <span class="reviews-chip reviews-chip--svc">Интернет + ТВ</span>
+                            </div>
+                            <div class="reviews-card__provider">
+                                <img src="../images/operators-logos/mts.png" alt="" width="80" height="20" />
+                                <span>МТС</span>
+                            </div>
+                            <span class="reviews-card__verified">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                    Проверенный отзыв
+                                </span>
+                        </div>
+                        <div class="reviews-card__body">
+                            <p class="reviews-card__text">В целом доволен. Интернет быстрый, KION приятный бонус. Минус — после акции абонентка выросла, об этом предупредили мелким шрифтом.</p>
+                            <div class="reviews-card__pm">
+                                <div class="reviews-card__pm-row reviews-card__pm-row--pos"><b>+</b><span>Скорость, ТВ-приставка в комплекте</span></div>
+                                <div class="reviews-card__pm-row reviews-card__pm-row--neg"><b>—</b><span>Рост цены после первых месяцев</span></div>
+                            </div>
+                            
+                            <div class="reviews-card__foot">
+                                <button type="button" class="reviews-card__helpful">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                    Полезно · 28
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="reviews-card">
+                        <div class="reviews-card__side">
+                            <div class="reviews-card__author">
+                                <img class="reviews-card__avatar" src="../images/reviev-avatar.png" alt="" width="48" height="48" />
+                                <div>
+                                    <div class="reviews-card__name">Елена С.</div>
+                                    <div class="reviews-card__meta">19 июня 2026</div>
+                                </div>
+                            </div>
+                            <div class="reviews-card__rating-row">
+                                <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="16" height="16" alt="" aria-hidden="true" /></span>
+                                <span class="reviews-chip reviews-chip--svc">Интернет</span>
+                            </div>
+                            <div class="reviews-card__provider">
+                                <img src="../images/operators-logos/beeline.png" alt="" width="80" height="20" />
+                                <span>Билайн</span>
+                            </div>
+                            
+                        </div>
+                        <div class="reviews-card__body">
+                            <p class="reviews-card__text">Бюджетный тариф, для работы из дома хватает. Иногда вечером скорость проседает, но не критично. Поддержка отвечает быстро в чате.</p>
+                            <div class="reviews-card__pm">
+                                <div class="reviews-card__pm-row reviews-card__pm-row--pos"><b>+</b><span>Цена, быстрый чат поддержки</span></div>
+                                <div class="reviews-card__pm-row reviews-card__pm-row--neg"><b>—</b><span>Скачки скорости в час пик</span></div>
+                            </div>
+                            
+                            <div class="reviews-card__foot">
+                                <button type="button" class="reviews-card__helpful">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                    Полезно · 17
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="reviews-card">
+                        <div class="reviews-card__side">
+                            <div class="reviews-card__author">
+                                <img class="reviews-card__avatar" src="../images/reviev-avatar.png" alt="" width="48" height="48" />
+                                <div>
+                                    <div class="reviews-card__name">Игорь П.</div>
+                                    <div class="reviews-card__meta">17 июня 2026</div>
+                                </div>
+                            </div>
+                            <div class="reviews-card__rating-row">
+                                <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /></span>
+                                <span class="reviews-chip reviews-chip--svc">Интернет + моб. связь</span>
+                            </div>
+                            <div class="reviews-card__provider">
+                                <img src="../images/operators-logos/megafon.png" alt="" width="80" height="20" />
+                                <span>МегаФон</span>
+                            </div>
+                            <span class="reviews-card__verified">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                    Проверенный отзыв
+                                </span>
+                        </div>
+                        <div class="reviews-card__body">
+                            <p class="reviews-card__text">Взял связку домашний + мобильный — вышло выгодно. Приложение удобное, всё видно в одном месте. Монтаж ждал почти неделю, это единственный минус.</p>
+                            <div class="reviews-card__pm">
+                                <div class="reviews-card__pm-row reviews-card__pm-row--pos"><b>+</b><span>Выгодная связка, удобное приложение</span></div>
+                                <div class="reviews-card__pm-row reviews-card__pm-row--neg"><b>—</b><span>Долго ждал монтажника</span></div>
+                            </div>
+                            <div class="reviews-card__reply">
+                                <img src="../images/operator-avatar.png" alt="" width="32" height="32" />
+                                <div>
+                                    <p class="reviews-card__reply-title">Ответ оператора МегаФон</p>
+                                    <p class="reviews-card__reply-text">Благодарим за выбор МегаФон! Передали в монтажную службу, сроки сокращаем.</p>
+                                </div>
+                            </div>
+                            <div class="reviews-card__foot">
+                                <button type="button" class="reviews-card__helpful">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                    Полезно · 35
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="reviews-card">
+                        <div class="reviews-card__side">
+                            <div class="reviews-card__author">
+                                <img class="reviews-card__avatar" src="../images/reviev-avatar.png" alt="" width="48" height="48" />
+                                <div>
+                                    <div class="reviews-card__name">Ольга Н.</div>
+                                    <div class="reviews-card__meta">14 июня 2026</div>
+                                </div>
+                            </div>
+                            <div class="reviews-card__rating-row">
+                                <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="16" height="16" alt="" aria-hidden="true" /></span>
+                                <span class="reviews-chip reviews-chip--svc">Интернет + ТВ</span>
+                            </div>
+                            <div class="reviews-card__provider">
+                                <img src="../images/operators-logos/domru.png" alt="" width="80" height="20" />
+                                <span>Дом.ру</span>
+                            </div>
+                            <span class="reviews-card__verified">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                    Проверенный отзыв
+                                </span>
+                        </div>
+                        <div class="reviews-card__body">
+                            <p class="reviews-card__text">Цена хорошая, роутер бесплатный. Но вечером бывают подвисания, особенно в выходные. Поддержка помогает, но проблема возвращается.</p>
+                            <div class="reviews-card__pm">
+                                <div class="reviews-card__pm-row reviews-card__pm-row--pos"><b>+</b><span>Низкая цена, бесплатный роутер</span></div>
+                                <div class="reviews-card__pm-row reviews-card__pm-row--neg"><b>—</b><span>Нестабильность по вечерам</span></div>
+                            </div>
+                            
+                            <div class="reviews-card__foot">
+                                <button type="button" class="reviews-card__helpful">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                    Полезно · 21
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="reviews-card">
+                        <div class="reviews-card__side">
+                            <div class="reviews-card__author">
+                                <img class="reviews-card__avatar" src="../images/reviev-avatar.png" alt="" width="48" height="48" />
+                                <div>
+                                    <div class="reviews-card__name">Сергей М.</div>
+                                    <div class="reviews-card__meta">11 июня 2026</div>
+                                </div>
+                            </div>
+                            <div class="reviews-card__rating-row">
+                                <span class="reviews-stars" aria-hidden="true"><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon.svg" width="16" height="16" alt="" aria-hidden="true" /><img src="../icons/review-star-icon-empty.svg" width="16" height="16" alt="" aria-hidden="true" /></span>
+                                <span class="reviews-chip reviews-chip--svc">Интернет</span>
+                            </div>
+                            <div class="reviews-card__provider">
+                                <img src="../images/operators-logos/rtk.png" alt="" width="80" height="20" />
+                                <span>2КОМ</span>
+                            </div>
+                            
+                        </div>
+                        <div class="reviews-card__body">
+                            <p class="reviews-card__text">Небольшой провайдер, но связь держит хорошо. Понравилось, что дозвон до живого человека — за минуту. Покрытие правда есть не во всех домах, повезло.</p>
+                            <div class="reviews-card__pm">
+                                <div class="reviews-card__pm-row reviews-card__pm-row--pos"><b>+</b><span>Живая поддержка, честная цена</span></div>
+                                <div class="reviews-card__pm-row reviews-card__pm-row--neg"><b>—</b><span>Покрытие ограничено</span></div>
+                            </div>
+                            
+                            <div class="reviews-card__foot">
+                                <button type="button" class="reviews-card__helpful">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                    Полезно · 14
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                        </div>
+                        <div class="reviews-feed__more">
+                            <button type="button" class="reviews-ghost-btn reviews-ghost-btn--lg">Показать ещё отзывы</button>
+                        </div>
+                    </div>
+                    <div class="main-tariffs__filter-col" id="filter-col">
+                        <div class="main-tariffs__filter-slide">
+                            <aside class="main-tariffs__filter" id="filter-panel" role="dialog" aria-label="Фильтры">
+                                <div class="main-tariffs__filter-inner">
+                                    <div class="main-tariffs__filter-header">
+                                        <h3 class="main-tariffs__filter-title">Фильтры</h3>
+                                        <button type="button" class="main-tariffs__filter-close" aria-label="Закрыть фильтры">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="main-tariffs__filter-section">
+                                        <div class="main-tariffs__filter-section-title" id="filter-providers">Провайдер</div>
+                                        <ul class="main-tariffs__filter-list" role="group" aria-labelledby="filter-providers">
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="providers" value="rtk" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Ростелеком</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="providers" value="mts" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">МТС</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="providers" value="beeline" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Билайн</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="providers" value="megafon" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">МегаФон</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="providers" value="domru" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Дом.ру</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="providers" value="2kom" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">2КОМ</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="main-tariffs__filter-section">
+                                        <div class="main-tariffs__filter-section-title" id="filter-rating">Оценка</div>
+                                        <ul class="main-tariffs__filter-list" role="group" aria-labelledby="filter-rating">
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="rating" value="5" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">5 звёзд</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="rating" value="4plus" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">4 звезды и выше</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="rating" value="3plus" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">3 звезды и выше</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="rating" value="2minus" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">2 звезды и ниже</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="main-tariffs__filter-section">
+                                        <div class="main-tariffs__filter-section-title" id="filter-service">Услуга</div>
+                                        <ul class="main-tariffs__filter-list" role="group" aria-labelledby="filter-service">
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="service" value="internet" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Интернет</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="service" value="tv" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">ТВ</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="service" value="mobile" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Мобильная связь</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="main-tariffs__filter-section">
+                                        <div class="main-tariffs__filter-section-title" id="filter-extra">Дополнительно</div>
+                                        <ul class="main-tariffs__filter-list" role="group" aria-labelledby="filter-extra">
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="extra" value="reply" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Только с ответом оператора</span>
+                                                </label>
+                                            </li>
+                                            <li class="main-tariffs__filter-item">
+                                                <label class="main-tariffs__filter-label">
+                                                    <input type="checkbox" name="extra" value="verified" class="main-tariffs__filter-input main-tariffs__filter-input--checkbox" />
+                                                    <span class="main-tariffs__filter-label-text">Только проверенные</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-form-section" id="add-review">
+            <div class="container">
+                <form class="reviews-form" action="#" method="post">
+                    <h2 class="section-title reviews-form__heading">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="3"/><path d="M9 11h6M12 8v6"/></svg>
+                        Оставить отзыв о провайдере
+                    </h2>
+                    <p class="section-subtitle">Расскажите о своём опыте — честно и по делу. Поля со звёздочкой обязательны.</p>
+
+                    <div class="reviews-form__block">
+                        <div class="reviews-form__label">
+                            <img src="../icons/star-icon.svg" width="18" height="18" alt="" aria-hidden="true" />
+                            Общая оценка <span class="reviews-form__req">*</span>
+                        </div>
+                        <div class="reviews-form__stars" data-star-group="overall"><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
+                    </div>
+
+                    <div class="reviews-form__block">
+                        <div class="reviews-form__label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h13l5 5v3a2 2 0 0 1-2 2h-1"/><path d="M3 8v8a2 2 0 0 0 2 2h1"/><circle cx="8" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+                            Оценки по типу услуг
+                        </div>
+                        <div class="reviews-form__aspects">
+                            <div class="reviews-form__aspect">
+                                <img src="../icons/int-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
+                                <span class="reviews-form__aspect-label">Скорость</span>
+                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_speed"><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
+                            </div>
+                            <div class="reviews-form__aspect">
+                                <img src="../icons/wallet-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
+                                <span class="reviews-form__aspect-label">Цена</span>
+                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_price"><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
+                            </div>
+                            <div class="reviews-form__aspect">
+                                <img src="../icons/call-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
+                                <span class="reviews-form__aspect-label">Поддержка</span>
+                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_support"><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
+                            </div>
+                            <div class="reviews-form__aspect">
+                                <img src="../icons/wifi-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
+                                <span class="reviews-form__aspect-label">Стабильность</span>
+                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_stable"><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
+                            </div>
+                            <div class="reviews-form__aspect">
+                                <img src="../icons/timer-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
+                                <span class="reviews-form__aspect-label">Скорость подключения</span>
+                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_connect"><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-form__block">
+                        <div class="reviews-form__label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                            Какими услугами пользуетесь <span class="reviews-form__hint">— можно выбрать несколько</span>
+                        </div>
+                        <div class="reviews-form__services">
+                        <button type="button" class="reviews-svc" data-svc-chip>
+                            <img src="../icons/wifi-icon.svg" alt="" width="24" height="24" />
+                            <span>Интернет</span>
+                            <span class="reviews-svc__box" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="reviews-svc" data-svc-chip>
+                            <img src="../icons/tv-icon.svg" alt="" width="24" height="24" />
+                            <span>ТВ</span>
+                            <span class="reviews-svc__box" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="reviews-svc" data-svc-chip>
+                            <img src="../icons/phone-icon.svg" alt="" width="24" height="24" />
+                            <span>Мобильная связь</span>
+                            <span class="reviews-svc__box" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="reviews-svc" data-svc-chip>
+                            <img src="../icons/int-icon.svg" alt="" width="24" height="24" />
+                            <span>Онлайн-кинотеатр</span>
+                            <span class="reviews-svc__box" aria-hidden="true"></span>
+                        </button>
+                        </div>
+                    </div>
+
+                    <div class="reviews-form__block">
+                        <label class="reviews-form__label" for="review-name">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                            Ваше имя (ФИО) <span class="reviews-form__req">*</span>
+                        </label>
+                        <input class="reviews-form__input" id="review-name" type="text" name="name" placeholder="Например: Алексей М." required autocomplete="name" />
+                    </div>
+
+                    <div class="reviews-form__block">
+                        <label class="reviews-form__label" for="review-email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                            E-mail
+                        </label>
+                        <input class="reviews-form__input" id="review-email" type="email" name="email" placeholder="Например: alex@mail.ru" autocomplete="email" />
+                    </div>
+
+                    <div class="reviews-form__block">
+                        <label class="reviews-form__label" for="review-text">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10"/></svg>
+                            Отзыв <span class="reviews-form__req">*</span>
+                        </label>
+                        <textarea class="reviews-form__textarea" id="review-text" name="text" placeholder="Опишите свой опыт: подключение, скорость, цена, поддержка, стабильность…" required></textarea>
+                    </div>
+
+                    <label class="reviews-opt reviews-form__consent">
+                        <input class="main-tariffs__filter-input--checkbox" type="checkbox" name="consent" required />
+                        <span>Согласен на обработку персональных данных</span>
+                    </label>
+                    <button type="submit" class="big-button reviews-form__submit">Отправить на модерацию</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="reviews-method">
+            <div class="container">
+                <div class="reviews-method__card">
+                    <h2 class="section-title">Методика и модерация</h2>
+                    <p class="section-subtitle">Как формируется рейтинг и почему ему можно доверять</p>
+                    <div class="reviews-method__grid">
+                        <div>
+                            <h3 class="reviews-method__item-title">Как считается оценка</h3>
+                            <p class="reviews-method__item-text">Итоговый балл провайдера — среднее по всем опубликованным отзывам с весом по свежести. Старые отзывы влияют меньше.</p>
+                        </div>
+                        <div>
+                            <h3 class="reviews-method__item-title">Как проверяются отзывы</h3>
+                            <p class="reviews-method__item-text">Отзывы проходят модерацию: отсеиваем спам, дубли и оскорбления. «Проверенный» — подтверждено подключение по адресу.</p>
+                        </div>
+                        <div>
+                            <h3 class="reviews-method__item-title">Что НЕ влияет на рейтинг</h3>
+                            <p class="reviews-method__item-text">Провайдеры не могут купить место в рейтинге или удалить честный отзыв. Оплата за размещение не влияет на оценку.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-cta">
+            <div class="container">
+                <div class="reviews-cta__banner">
+                    <div class="reviews-cta__text">
+                        <h2 class="reviews-cta__title">Выбрали провайдера по отзывам?</h2>
+                        <p class="reviews-cta__desc">Проверьте, доступен ли он в вашем доме — введите адрес и увидите тарифы именно для вашего дома.</p>
+                    </div>
+                    <div class="reviews-cta__actions">
+                        <a href="search_address.html" class="big-button">Проверить адрес</a>
+                        <a href="#" class="reviews-ghost-btn reviews-ghost-btn--on-dark">Подобрать тариф</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Частые вопросы</h2>
+                <div class="faq__list">
+                    <div class="faq__col">
+                        <div class="faq__item">
+                            <button type="button" class="faq__question faq__question--open" aria-expanded="true" aria-controls="faq-1" id="faq-q-1">
+                                <span class="faq__question-text">Можно ли верить отзывам на сайте?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap faq__answer-wrap--open" id="faq-1" role="region" aria-labelledby="faq-q-1">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">Все отзывы проходят модерацию: мы отсеиваем спам, дубли и заказные сообщения. Метка «Проверенный» означает, что подключение по адресу подтверждено. Провайдеры не могут удалять честные отзывы.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-2" id="faq-q-2">
+                                <span class="faq__question-text">Как оставить отзыв?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-2" role="region" aria-labelledby="faq-q-2">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">Нажмите «Оставить отзыв», выберите провайдера и услугу, поставьте оценку и опишите опыт. Имя и контакт — по желанию. После модерации отзыв появится в ленте.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__col">
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-3" id="faq-q-3">
+                                <span class="faq__question-text">Как считается оценка провайдера?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-3" role="region" aria-labelledby="faq-q-3">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">Итоговый балл — среднее по всем опубликованным отзывам с весом по свежести: недавние мнения влияют сильнее устаревших. Оплата за размещение на рейтинг не влияет.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-4" id="faq-q-4">
+                                <span class="faq__question-text">Что делать при споре с провайдером?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-4" role="region" aria-labelledby="faq-q-4">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">Сначала обратитесь в поддержку оператора и зафиксируйте обращение. Если вопрос не решается — оставьте отзыв с деталями, многие провайдеры отвечают и помогают через эту площадку.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-seo">
+            <div class="container">
+                <div class="reviews-seo__card">
+                    <h2 class="section-title">Отзывы о провайдерах в Москве — как выбрать по мнениям абонентов</h2>
+                    <div class="reviews-seo__text">
+                        <p>Перед подключением домашнего интернета полезно изучить опыт других жильцов. На этой странице собраны отзывы о провайдерах Москвы — <a href="#">Ростелеком</a>, <a href="#">МТС</a>, <a href="#">Билайн</a>, <a href="#">МегаФон</a>, <a href="#">Дом.ру</a> и других. Оценки отражают качество связи, стабильность скорости, работу техподдержки и монтажа.</p>
+                        <p>Чтобы найти мнение про конкретного оператора, используйте фильтр по провайдеру и услуге, а затем переходите на страницу отзывов бренда. Там доступны подрейтинги по аспектам и распределение оценок. Выбрав провайдера, проверьте его доступность <a href="search_address.html">по вашему адресу</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<footer class="footer">
+            <div class="container footer__inner">
+                <div class="footer__left">
+                    <a href="../index.html" class="footer__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/white-logo.svg" alt="Провайдеры РУС" width="198" height="29" class="footer__logo-img" />
+                    </a>
+                    <p class="footer__copyright">© 2026 Провайдеры.рус</p>
+                </div>
+                <nav class="footer__links-mobile">
+                    <a href="search_address.html">Подключение по адресу</a>
+                    <a href="#">Тарифы</a>
+                    <a href="#">Провайдеры</a>
+                    <a href="#">Контакты</a>
+                </nav>
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">О компании</h3>
+                        <ul class="footer__list">
+                            <li><a href="search_address.html">Подключение по адресу</a></li>
+                            <li><a href="#">Тарифы</a></li>
+                            <li><a href="#">Провайдеры</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Услуги</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Интернет</a></li>
+                            <li><a href="#">ТВ</a></li>
+                            <li><a href="#">Мобильная связь</a></li>
+                            <li><a href="#">Онлайн кинотеатры</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Провайдеры</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">MTC</a></li>
+                            <li><a href="#">Билайн</a></li>
+                            <li><a href="#">Мегафон</a></li>
+                            <li><a href="#">Теле2</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Поиск</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Город</a></li>
+                            <li><a href="#">Улица</a></li>
+                            <li><a href="#">Поиск по адресу</a></li>
+                            <li><a href="#">Проверка скорости интернета</a></li>
+                            <li><a href="#">Рейтинг провайдеров</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+
+        <div class="footer-disclaimer">
+            <div class="container">
+                <p class="footer-disclaimer__text">
+                    Продолжая использовать наш сайт, вы даёте согласие на обработку файлов
+                    <a href="#">Cookies</a> и других пользовательских данных, в соответствии с <a href="#">Политикой конфиденциальности</a> и&nbsp;<a href="#">Пользовательским соглашением</a>.
+                </p>
+                <div class="copyright-mobile">
+                    <p class="copyright-mobile__text">© 2026 Провайдеры.рус</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal" id="ask-operator-modal" data-app-modal-id="ask-operator" role="dialog" aria-modal="true" aria-labelledby="ask-operator-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body app-modal__body--compact">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="ask-operator-modal-title">Спросите у оператора</h2>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Отправить запрос</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal app-modal--review" id="review-detail-modal" data-app-modal-id="review-detail" role="dialog" aria-modal="true" aria-labelledby="review-detail-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog app-modal__dialog--review">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body app-modal__body--review">
+                    <h2 class="app-modal__sr-only" id="review-detail-modal-title">Отзыв</h2>
+                    <div class="app-modal__review-rating" data-app-modal-review-rating role="img"></div>
+                    <p class="app-modal__review-text" data-app-modal-review-text></p>
+                    <footer class="app-modal__review-author">
+                        <img class="app-modal__review-avatar" data-app-modal-review-avatar src="" alt="" width="50" height="50" aria-hidden="true" />
+                        <div class="app-modal__review-author-info">
+                            <span class="app-modal__review-name" data-app-modal-review-name></span>
+                            <span class="app-modal__review-meta" data-app-modal-review-city></span>
+                            <span class="app-modal__review-meta" data-app-modal-review-date></span>
+                        </div>
+                    </footer>
+                    <a href="#" class="app-modal__review-all" data-app-modal-review-all data-app-modal-close>Смотреть все отзывы</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal" id="connect-request-modal" data-app-modal-id="connect-request" role="dialog" aria-modal="true" aria-labelledby="connect-request-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="connect-request-modal-title">Запрос на подключение</h2>
+                    <div class="app-modal__lines app-modal__lines--highlight" data-app-modal-tariff></div>
+                    <div class="app-modal__lines app-modal__lines--muted" data-app-modal-address></div>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Отправить запрос</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal app-modal--connect-tariff" id="connect-tariff-modal" data-app-modal-id="connect-tariff" role="dialog" aria-modal="true" aria-labelledby="connect-tariff-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog connect-tariff-modal__dialog">
+                <button type="button" class="app-modal__close connect-tariff-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 8L24 24M24 8L8 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="connect-tariff-modal">
+                    <div class="connect-tariff-modal__scroll">
+                        <header class="connect-tariff-modal__header">
+                            <div class="connect-tariff-modal__header-main">
+                                <div class="connect-tariff-modal__logo">
+                                    <img src="../images/operators-logos/mts.png" alt="" width="92" height="92" data-app-modal-logo />
+                                </div>
+                                <div class="connect-tariff-modal__heading">
+                                    <div class="connect-tariff-modal__badge hit" data-app-modal-badge>Хит подключений</div>
+                                    <h2 class="connect-tariff-modal__title" id="connect-tariff-modal-title" data-app-modal-tariff>Тариф «МТС Дома Отлично»</h2>
+                                </div>
+                            </div>
+                            <p class="connect-tariff-modal__subtitle">Оптимальная скорость без переплат и дополнительных услуг</p>
+                        </header>
+
+                        <div class="connect-tariff-modal__services">
+                            <div class="connect-tariff-modal__accordion">
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/wifi-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Интернет</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Скорость</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">500 Мбит/с</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Технология</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">GPON (Оптический кабель)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/tv-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Телевидение</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Количество ТВ-каналов</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">200</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/phone-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Мобильная связь</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Интернет</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">30 Гб</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Исходящих звонков</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">900 мин</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">SMS</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">100</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Sim</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service connect-tariff-modal__accordion-icon-service--kion" src="../icons/kion-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">KION</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <p class="connect-tariff-modal__text">Видеосервис от МТС с эксклюзивным контентом KION Originals, большой коллекцией фильмов, сериалов и более 200 телеканалов.</p>
+                                            <ul class="connect-tariff-modal__list">
+                                                <li>Возможность приобретать фильмы навсегда или брать напрокат</li>
+                                                <li>Рейтинг фильмов</li>
+                                                <li>Детский профиль</li>
+                                                <li>Доступ с 5 устройств.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/more-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Дополнительно</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <ul class="connect-tariff-modal__list">
+                                                <li>Группа для близких</li>
+                                                <li>Скидка 10% на 3 мес. с услугой Автоплатеж</li>
+                                                <li>Страховой полис с выплатой до 100 тыс. рублей</li>
+                                                <li>Безлимитный доступ к мессенджерам WhatsApp, Telegram и ещё + 3</li>
+                                                <li>Безлимитный доступ к Одноклассники и ВКонтакте</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="connect-tariff-modal__aside">
+                        <div class="connect-tariff-modal__pricing">
+                            <h3 class="connect-tariff-modal__pricing-title">Стоимость тарифа</h3>
+                            <p class="connect-tariff-modal__pricing-value" data-app-modal-price>529 ₽/мес</p>
+                            <p class="connect-tariff-modal__pricing-note">Средняя цена за год с учетом скидки 40% и стоимости подключения</p>
+
+                            <div class="connect-tariff-modal__pricing-breakdown">
+                                <p class="connect-tariff-modal__pricing-breakdown-heading">Из чего состоит стоимость</p>
+                                <button type="button" class="connect-tariff-modal__pricing-breakdown-trigger" aria-expanded="false">
+                                    <span class="connect-tariff-modal__pricing-breakdown-title">Из чего состоит стоимость</span>
+                                    <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                        <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                        <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                    </span>
+                                </button>
+                                <div class="connect-tariff-modal__pricing-breakdown-panel">
+                                    <div class="connect-tariff-modal__pricing-breakdown-inner">
+                                        <p class="connect-tariff-modal__pricing-discount">Скидка -40% первые 6 месяцев</p>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">С 1 по 6 месяц</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value">355 ₽/мес</span>
+                                        </div>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">Далее с 7 месяца</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value">883 ₽/мес</span>
+                                        </div>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">Подключение</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value">950 ₽</span>
+                                        </div>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">Авансовый платеж</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value connect-tariff-modal__row-value--with-info">
+                                                2000 ₽
+                                                <button type="button" class="connect-tariff-modal__info-btn" aria-label="Подробнее об авансовом платеже">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5" />
+                                                        <path d="M10 9v5M10 6.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                                    </svg>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="big-button connect-tariff-modal__submit">Подключить тариф</button>
+                        </div>
+
+                        <div class="connect-tariff-modal__address">
+                            <p class="connect-tariff-modal__address-title">Проверьте, доступность тарифа по вашему адресу</p>
+                            <label class="connect-tariff-modal__address-field">
+                                <span class="connect-tariff-modal__sr-only">Введите ваш адрес</span>
+                                <input class="connect-tariff-modal__address-input" type="text" placeholder="Введите ваш адрес" data-app-modal-address-input />
+                                <img class="connect-tariff-modal__address-search" src="../icons/search-icon.svg" alt="" width="24" height="24" aria-hidden="true" />
+                            </label>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <div class="cookies-block">
+            <div class="cookies-block__inner">
+                <p class="cookies-block__text">Оставаясь на сайте, вы даете <a href="#">согласие</a> на использование файлов cookie</p>
+                <button type="button" class="cookies-block__btn">Хорошо</button>
+            </div>
+        </div>
+
+        <script defer src="../js/phone-mask.js"></script>
+        <script defer src="../js/app-modal.js"></script>
+        <script defer src="../js/main.js"></script>
+    </body>
+</html>

@@ -889,4 +889,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("hashchange", () => scrollFromHash());
   }
+
+  // Reviews page: sort tabs
+  document.querySelectorAll(".reviews-sort").forEach((bar) => {
+    bar.querySelectorAll(".reviews-sort__btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        bar.querySelectorAll(".reviews-sort__btn").forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+      });
+    });
+  });
+
+  // Reviews page: star pickers
+  document.querySelectorAll("[data-star-group]").forEach((group) => {
+    const buttons = [...group.querySelectorAll("[data-star-pick]")];
+    let value = 0;
+
+    const paint = (n) => {
+      buttons.forEach((btn, i) => {
+        const img = btn.querySelector("img");
+        if (!img) return;
+        const full = img.dataset.full;
+        const empty = img.dataset.empty;
+        if (full && empty) img.src = i < n ? full : empty;
+      });
+    };
+
+    buttons.forEach((btn) => {
+      const n = Number(btn.dataset.value) || 0;
+      btn.addEventListener("mouseenter", () => paint(n));
+      btn.addEventListener("click", () => {
+        value = n;
+        paint(value);
+      });
+    });
+    group.addEventListener("mouseleave", () => paint(value));
+  });
+
+  // Reviews page: service multi-select chips
+  document.querySelectorAll("[data-svc-chip]").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chip.classList.toggle("is-on");
+      chip.setAttribute("aria-pressed", chip.classList.contains("is-on") ? "true" : "false");
+    });
+  });
 });
