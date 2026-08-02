@@ -731,17 +731,72 @@ document.addEventListener("DOMContentLoaded", () => {
   const priceInfoPopovers = document.querySelectorAll(".tariff-block__price-info-popover");
 
   const PRICE_INFO_TRANSITION_MS = 380;
+  let activeFixedPopover = null;
+
+  function clearFixedPopoverStyles(popover) {
+    if (!popover) return;
+    popover.classList.remove("is-fixed-layer");
+    ["position", "top", "left", "right", "bottom", "width", "maxWidth", "transform", "zIndex"].forEach((prop) => {
+      popover.style[prop] = "";
+    });
+  }
+
+  function restoreComparePopoverHome(popover) {
+    if (!popover?._compareHome || popover.parentElement === popover._compareHome) return;
+    popover._compareHome.appendChild(popover);
+  }
+
+  function placeComparePricePopover(popover, infoBtn) {
+    if (!popover || !infoBtn) return;
+    const home = popover._compareHome || popover.parentElement;
+    popover._compareHome = home;
+    if (popover.parentElement !== document.body) {
+      document.body.appendChild(popover);
+    }
+
+    const rect = infoBtn.getBoundingClientRect();
+    const gap = 8;
+    const maxWidth = Math.min(520, window.innerWidth - 32);
+    let left = rect.right - maxWidth;
+    left = Math.max(16, Math.min(left, window.innerWidth - maxWidth - 16));
+    let top = rect.bottom + gap;
+    const estimatedHeight = 88;
+    if (top + estimatedHeight > window.innerHeight - 16) {
+      top = Math.max(16, rect.top - gap - estimatedHeight);
+    }
+
+    popover.classList.add("is-fixed-layer");
+    popover.hidden = false;
+    popover.style.position = "fixed";
+    popover.style.top = `${Math.round(top)}px`;
+    popover.style.left = `${Math.round(left)}px`;
+    popover.style.right = "auto";
+    popover.style.bottom = "auto";
+    popover.style.width = `${maxWidth}px`;
+    popover.style.maxWidth = `${maxWidth}px`;
+    popover.style.transform = "none";
+    popover.style.zIndex = "10050";
+    activeFixedPopover = { popover, infoBtn };
+  }
 
   function closePriceInfoPopover(popover) {
     if (!popover || !popover.classList.contains("is-open")) return;
     popover.classList.remove("is-open");
     popover.setAttribute("aria-hidden", "true");
-    const infoBtn = popover
-      .closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")
-      ?.querySelector(".tariff-block__body-price-info");
+    const infoBtn =
+      activeFixedPopover?.popover === popover
+        ? activeFixedPopover.infoBtn
+        : popover
+            .closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")
+            ?.querySelector(".tariff-block__body-price-info");
     infoBtn?.setAttribute("aria-expanded", "false");
+    if (activeFixedPopover?.popover === popover) {
+      activeFixedPopover = null;
+    }
     window.setTimeout(() => {
       if (!popover.classList.contains("is-open")) {
+        clearFixedPopoverStyles(popover);
+        restoreComparePopoverHome(popover);
         popover.hidden = true;
       }
     }, PRICE_INFO_TRANSITION_MS);
@@ -755,19 +810,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function openPriceInfoPopover(popover) {
+  function openPriceInfoPopover(popover, infoBtn) {
     if (!popover) return;
     closeAllPriceInfoPopovers(popover);
     popover.hidden = false;
     popover.setAttribute("aria-hidden", "false");
-    const infoBtn = popover
-      .closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")
-      ?.querySelector(".tariff-block__body-price-info");
-    infoBtn?.setAttribute("aria-expanded", "true");
+    const btn =
+      infoBtn ||
+      popover
+        .closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")
+        ?.querySelector(".tariff-block__body-price-info");
+    btn?.setAttribute("aria-expanded", "true");
+
+    // на странице сравнения overflow/sticky обрезают absolute-попап — выносим в body + fixed
+    if (btn && (popover.closest("[data-compare]") || btn.closest("[data-compare]"))) {
+      placeComparePricePopover(popover, btn);
+    } else {
+      clearFixedPopoverStyles(popover);
+      restoreComparePopoverHome(popover);
+    }
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => popover.classList.add("is-open"));
     });
   }
+
+  function syncActiveFixedPopover() {
+    if (!activeFixedPopover) return;
+    const { popover, infoBtn } = activeFixedPopover;
+    if (!popover.classList.contains("is-open")) {
+      activeFixedPopover = null;
+      return;
+    }
+    placeComparePricePopover(popover, infoBtn);
+  }
+
+  window.addEventListener("resize", syncActiveFixedPopover);
+  document.querySelector("[data-compare-scroll]")?.addEventListener("scroll", syncActiveFixedPopover, {
+    passive: true,
+  });
 
   document.querySelectorAll(".tariff-block__body-price-info").forEach((btn) => {
     const banner = btn.closest(".tariff-block__body-price-banner");
@@ -782,7 +863,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isOpen) {
         closePriceInfoPopover(popover);
       } else {
-        openPriceInfoPopover(popover);
+        openPriceInfoPopover(popover, btn);
       }
     });
 
@@ -793,6 +874,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("click", (e) => {
     if (e.target.closest(".tariff-block__body-price-info-wrap, .tariff-block__body-price-banner")) return;
+    if (e.target.closest(".tariff-block__price-info-popover")) return;
     closeAllPriceInfoPopovers();
   });
 
@@ -980,16 +1062,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Страница сравнения тарифов: скролл, различия, удаление колонок
   document.querySelectorAll("[data-compare]").forEach((root) => {
-    const head = root.querySelector("[data-compare-head]");
-    const body = root.querySelector("[data-compare-body]");
+    const scroller = root.querySelector("[data-compare-scroll]");
+    const fixedHead = root.querySelector(".compare__fixed-head");
+    const head = root.querySelector(".compare__head");
     const btnPrev = root.querySelector('[data-compare-arrow="prev"]');
     const btnNext = root.querySelector('[data-compare-arrow="next"]');
     const toggle = root.querySelector("[data-compare-toggle]");
     const empty = root.querySelector("[data-compare-empty]");
     const countEl = document.querySelector("[data-compare-count]");
-    if (!head || !body) return;
+    if (!scroller) return;
 
-    let syncing = false;
     const colWidth = 268;
 
     const visibleCols = () =>
@@ -1013,6 +1095,33 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
+    const syncRowHeights = () => {
+      const labelRows = [...root.querySelectorAll("[data-compare-label-row]")];
+      const dataRows = [...root.querySelectorAll("[data-compare-row]")];
+      labelRows.forEach((row) => {
+        row.style.minHeight = "";
+      });
+      dataRows.forEach((row) => {
+        row.style.minHeight = "";
+      });
+      if (fixedHead) fixedHead.style.minHeight = "";
+      if (head) head.style.minHeight = "";
+
+      requestAnimationFrame(() => {
+        if (fixedHead && head) {
+          const h = Math.max(fixedHead.offsetHeight, head.offsetHeight);
+          fixedHead.style.minHeight = `${h}px`;
+          head.style.minHeight = `${h}px`;
+        }
+        const len = Math.min(labelRows.length, dataRows.length);
+        for (let i = 0; i < len; i += 1) {
+          const h = Math.max(labelRows[i].offsetHeight, dataRows[i].offsetHeight);
+          labelRows[i].style.minHeight = `${h}px`;
+          dataRows[i].style.minHeight = `${h}px`;
+        }
+      });
+    };
+
     const equalize = () => {
       const titles = [...root.querySelectorAll(".compare__col:not([hidden]) .compare__plan-title")];
       const banners = [...root.querySelectorAll(".compare__col:not([hidden]) .compare__price")];
@@ -1030,67 +1139,67 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
         requestAnimationFrame(() => {
-          if (!banners.length) return;
-          const maxB = Math.max(...banners.map((b) => b.offsetHeight));
-          banners.forEach((b) => {
-            b.style.minHeight = `${maxB}px`;
-          });
+          if (banners.length) {
+            const maxB = Math.max(...banners.map((b) => b.offsetHeight));
+            banners.forEach((b) => {
+              b.style.minHeight = `${maxB}px`;
+            });
+          }
+          syncRowHeights();
         });
       });
     };
 
     const refreshDiffFlags = () => {
       const ids = visibleCols().map((col) => col.dataset.planId);
-      root.querySelectorAll("[data-compare-row]").forEach((row) => {
+      root.querySelectorAll("[data-compare-row]").forEach((row, index) => {
         const values = ids.map((id) => {
           const cell = row.querySelector(`.compare__cell[data-plan-id="${id}"]`);
           return cell?.querySelector(".compare__value")?.textContent.trim() ?? "";
         });
         const allSame = values.length > 1 && values.every((v) => v === values[0]);
-        if (allSame) row.setAttribute("data-all-same", "");
-        else row.removeAttribute("data-all-same");
+        const labelRow = root.querySelectorAll("[data-compare-label-row]")[index];
+        if (allSame) {
+          row.setAttribute("data-all-same", "");
+          labelRow?.setAttribute("data-all-same", "");
+        } else {
+          row.removeAttribute("data-all-same");
+          labelRow?.removeAttribute("data-all-same");
+        }
       });
     };
 
     const applyDiffFilter = () => {
       const showDiffs = toggle?.getAttribute("aria-pressed") === "true";
       let visibleRows = 0;
-      root.querySelectorAll("[data-compare-row]").forEach((row) => {
+      root.querySelectorAll("[data-compare-row]").forEach((row, index) => {
         const hide = showDiffs && row.hasAttribute("data-all-same");
         row.hidden = hide;
+        const labelRow = root.querySelectorAll("[data-compare-label-row]")[index];
+        if (labelRow) labelRow.hidden = hide;
         if (!hide) visibleRows += 1;
       });
       if (empty) empty.hidden = !(showDiffs && visibleRows === 0);
+      syncRowHeights();
     };
 
     const updateArrows = () => {
       if (!btnPrev || !btnNext) return;
-      const max = body.scrollWidth - body.clientWidth;
-      const atStart = body.scrollLeft <= 2;
-      const atEnd = body.scrollLeft >= max - 2;
+      const max = scroller.scrollWidth - scroller.clientWidth;
+      const atStart = scroller.scrollLeft <= 2;
+      const atEnd = scroller.scrollLeft >= max - 2;
       btnPrev.hidden = atStart || max <= 0;
       btnNext.hidden = atEnd || max <= 0;
     };
 
-    const syncScroll = (from) => {
-      if (syncing) return;
-      syncing = true;
-      const left = from.scrollLeft;
-      if (from === body && head.scrollLeft !== left) head.scrollLeft = left;
-      if (from === head && body.scrollLeft !== left) body.scrollLeft = left;
-      updateArrows();
-      syncing = false;
-    };
-
-    body.addEventListener("scroll", () => syncScroll(body), { passive: true });
-    head.addEventListener("scroll", () => syncScroll(head), { passive: true });
+    scroller.addEventListener("scroll", updateArrows, { passive: true });
 
     btnPrev?.addEventListener("click", () => {
-      body.scrollBy({ left: -colWidth, behavior: "smooth" });
+      scroller.scrollBy({ left: -colWidth, behavior: "smooth" });
       setTimeout(updateArrows, 320);
     });
     btnNext?.addEventListener("click", () => {
-      body.scrollBy({ left: colWidth, behavior: "smooth" });
+      scroller.scrollBy({ left: colWidth, behavior: "smooth" });
       setTimeout(updateArrows, 320);
     });
 
