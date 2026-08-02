@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Тест скорости интернета — Провайдеры.рус</title>
+
+        <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+        <link rel="shortcut icon" href="../favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="../favicon/site.webmanifest" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <link rel="preload" href="../images/main-mobile.gif" as="image" />
+        <link rel="stylesheet" href="../css/main.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container d-flex align-center justify-between">
+                <div class="header__menu d-flex align-center gap-24">
+                    <a href="../index.html" class="header__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/logo.svg" alt="logo" />
+                    </a>
+                    <ul class="header__menu-list d-flex align-center gap-24">
+                        <li class="header__menu-item">
+                            <a href="search_address.html" class="header__menu-link">Подключение по адресу</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Тарифы</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Провайдеры</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__contacts d-flex gap-24 align-center">
+                    <div class="header__contacts-item">
+                        <a href="tel:88007001234" class="header__contacts-link phone-number">8-800-700-1234</a>
+                    </div>
+                    <div class="header__contacts-item">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/call-icon.svg" alt="phone" />
+                            </div>
+                            <span>Заказать звонок</span>
+                        </a>
+                    </div>
+                    <div class="header__contacts-item header__contacts-item--city">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/map-icon.svg" alt="phone" />
+                            </div>
+                            <span>Москва</span>
+                        </a>
+                    </div>
+                    <div class="header__menu-mobile">
+                        <button type="button" class="header__menu-mobile-btn" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
+                            <img class="header__menu-mobile-icon header__menu-mobile-icon--open" src="../icons/hamburger-icon.svg" alt="" aria-hidden="true" />
+                            <span class="header__menu-mobile-icon header__menu-mobile-icon--close" aria-hidden="true">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Мобильное меню (ширина 320px, экраны ≤ px) -->
+        <div class="mobile">
+            <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu__backdrop" aria-label="Закрыть меню"></div>
+                <div class="mobile-menu__panel">
+                    <div class="mobile-menu__content">
+                        <nav class="mobile-menu__nav">
+                            <a href="search_address.html" class="mobile-menu__link">Подключение по адресу</a>
+                            <a href="#" class="mobile-menu__link">Тарифы</a>
+                            <a href="#" class="mobile-menu__link">Провайдеры</a>
+                            <a href="#" class="mobile-menu__link">Контакты</a>
+                        </nav>
+                        <div class="mobile-menu__location">
+                            <p class="mobile-menu__location-label">Вы находитесь здесь</p>
+                            <div class="mobile-menu__location-card" id="mobile-menu-location-card">
+                                <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-icon" width="20" height="20" aria-hidden="true" />
+                                <span class="mobile-menu__city">Москва</span>
+                            </div>
+                            <div class="mobile-menu__location-input-wrapper" id="mobile-menu-location-input-wrapper" style="display: none">
+                                <div class="mobile-menu__location-input-container">
+                                    <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-input-icon" width="20" height="20" aria-hidden="true" />
+                                    <input type="text" class="mobile-menu__location-input" id="mobile-menu-location-input" placeholder="Введите город" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="mobile-menu-city-suggestions" />
+                                </div>
+                                <ul class="mobile-menu__city-suggestions" id="mobile-menu-city-suggestions" role="listbox" aria-label="Подсказки городов">
+                                    <!-- Список будет заполнен через JS -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-mobile">
+                <div class="main-mobile__content">
+                    <div class="container">
+                        <nav class="main-mobile__content-navigation">
+                            <ul class="main-mobile__content-navigation-list">
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Тарифы</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Провайдеры</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="compare_tariffs.html" class="main-mobile__content-navigation-link">
+                                        <svg class="compare-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z" fill="currentColor" />
+                                            <path d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z" fill="currentColor" />
+                                        </svg>
+                                        Сравнение
+                                        <span class="main-mobile__content-navigation-link-count">6</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="speedtest-hero">
+            <div class="container">
+                <nav class="breadcrumbs breadcrumbs--in-hero" aria-label="Хлебные крошки">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Главная</a></li>
+                        <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Тест скорости</li>
+                    </ol>
+                </nav>
+                <div class="speedtest-hero__heading">
+                    <h1 class="speedtest-hero__title">Тест скорости интернета</h1>
+                    <p class="speedtest-hero__lead">Проверьте реальную скорость вашего соединения. Нажмите на кнопку — и наблюдайте, как заряжается канал.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="speedtest" data-speedtest>
+            <div class="container">
+                <div class="speedtest__countdown" data-speedtest-countdown hidden>
+                    <div class="speedtest__countdown-head">
+                        <p class="speedtest__countdown-kicker">Скоро запуск</p>
+                        <p class="speedtest__countdown-title">Найти провайдеров можно будет 1 сентября</p>
+                    </div>
+                    <div class="speedtest__countdown-clock" aria-label="Обратный отсчёт">
+                        <div class="speedtest__countdown-cell">
+                            <span class="speedtest__countdown-num" data-cd="d">00</span>
+                            <span class="speedtest__countdown-label">дней</span>
+                        </div>
+                        <span class="speedtest__countdown-sep" aria-hidden="true">:</span>
+                        <div class="speedtest__countdown-cell">
+                            <span class="speedtest__countdown-num" data-cd="h">00</span>
+                            <span class="speedtest__countdown-label">часов</span>
+                        </div>
+                        <span class="speedtest__countdown-sep" aria-hidden="true">:</span>
+                        <div class="speedtest__countdown-cell">
+                            <span class="speedtest__countdown-num" data-cd="m">00</span>
+                            <span class="speedtest__countdown-label">минут</span>
+                        </div>
+                        <span class="speedtest__countdown-sep" aria-hidden="true">:</span>
+                        <div class="speedtest__countdown-cell">
+                            <span class="speedtest__countdown-num" data-cd="s">00</span>
+                            <span class="speedtest__countdown-label">секунд</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speedtest__stage">
+                    <div class="speedtest-gauge" data-speedtest-gauge>
+                        <canvas class="speedtest-gauge__canvas" data-speedtest-canvas aria-hidden="true"></canvas>
+                        <div class="speedtest-gauge__hint" data-speedtest-hint>
+                            <b>Готовы?</b>
+                            <span>Нажмите «Начать проверку»</span>
+                        </div>
+                        <div class="speedtest-gauge__center" data-speedtest-center hidden>
+                            <div class="speedtest-gauge__phase" data-speedtest-phase></div>
+                            <div class="speedtest-gauge__num" data-speedtest-num>0</div>
+                            <div class="speedtest-gauge__unit">Мбит/с</div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="big-button speedtest__run" data-speedtest-run>
+                        <span data-speedtest-run-label>Начать проверку</span>
+                    </button>
+
+                    <div class="speedtest__meta">
+                        <span class="speedtest__meta-item"><span class="speedtest__meta-dot" aria-hidden="true"></span>Сервер: Москва, M9</span>
+                        <span class="speedtest__meta-item">Провайдер: <span data-speedtest-isp>Ростелеком</span></span>
+                        <span class="speedtest__meta-item">IP: 91.108.xxx.xxx</span>
+                    </div>
+                </div>
+
+                <div class="speedtest__results">
+                    <div class="speedtest__tile" data-speedtest-tile="ping">
+                        <div class="speedtest__tile-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+                                <circle cx="12" cy="12" r="3.4" />
+                            </svg>
+                        </div>
+                        <div class="speedtest__tile-label">Пинг</div>
+                        <div class="speedtest__tile-val"><span data-speedtest-val="ping">—</span> <small>мс</small></div>
+                    </div>
+                    <div class="speedtest__tile" data-speedtest-tile="jitter">
+                        <div class="speedtest__tile-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-8 4 16 3-8h5" /></svg>
+                        </div>
+                        <div class="speedtest__tile-label">Джиттер</div>
+                        <div class="speedtest__tile-val"><span data-speedtest-val="jitter">—</span> <small>мс</small></div>
+                    </div>
+                    <div class="speedtest__tile" data-speedtest-tile="dl">
+                        <div class="speedtest__tile-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5M5 21h14" /></svg>
+                        </div>
+                        <div class="speedtest__tile-label">Загрузка (download)</div>
+                        <div class="speedtest__tile-val"><span data-speedtest-val="dl">—</span> <small>Мбит/с</small></div>
+                    </div>
+                    <div class="speedtest__tile" data-speedtest-tile="ul">
+                        <div class="speedtest__tile-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V8M7 13l5-5 5 5M5 3h14" /></svg>
+                        </div>
+                        <div class="speedtest__tile-label">Отдача (upload)</div>
+                        <div class="speedtest__tile-val"><span data-speedtest-val="ul">—</span> <small>Мбит/с</small></div>
+                    </div>
+                </div>
+
+                <div class="speedtest__verdict" data-speedtest-verdict hidden>
+                    <div class="speedtest__verdict-text">
+                        <h2 class="speedtest__verdict-title" data-speedtest-verdict-title></h2>
+                        <p class="speedtest__verdict-desc" data-speedtest-verdict-desc></p>
+                    </div>
+                    <button type="button" class="big-button speedtest__verdict-btn" data-app-modal-open="ask-operator">Подобрать тариф быстрее →</button>
+                </div>
+
+                <div class="speedtest__info">
+                    <article class="speedtest__info-card">
+                        <h3 class="speedtest__info-title">Что такое пинг и джиттер</h3>
+                        <p class="speedtest__info-text">Пинг — задержка сигнала до сервера, важна для игр и звонков. Джиттер — колебание этой задержки. Чем ниже оба — тем стабильнее связь.</p>
+                    </article>
+                    <article class="speedtest__info-card">
+                        <h3 class="speedtest__info-title">Загрузка и Отдача</h3>
+                        <p class="speedtest__info-text">Загрузка отвечает за скачивание, стриминг и открытие сайтов. Отдача — за выгрузку файлов, видеозвонки и облако. Для дома важнее download.</p>
+                    </article>
+                    <article class="speedtest__info-card">
+                        <h3 class="speedtest__info-title">Скорость ниже тарифа?</h3>
+                        <p class="speedtest__info-text">Проверьте по кабелю, а не по Wi-Fi, закройте лишние вкладки. Если разрыв большой — сравните предложения других провайдеров в вашем доме.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <div class="footer__left">
+                    <a href="../index.html" class="footer__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/white-logo.svg" alt="Провайдеры РУС" width="198" height="29" class="footer__logo-img" />
+                    </a>
+                    <p class="footer__copyright">© 2026 Провайдеры.рус</p>
+                </div>
+                <nav class="footer__links-mobile">
+                    <a href="search_address.html">Подключение по адресу</a>
+                    <a href="#">Тарифы</a>
+                    <a href="#">Провайдеры</a>
+                    <a href="#">Контакты</a>
+                </nav>
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">О компании</h3>
+                        <ul class="footer__list">
+                            <li><a href="search_address.html">Подключение по адресу</a></li>
+                            <li><a href="#">Тарифы</a></li>
+                            <li><a href="#">Провайдеры</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Услуги</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Интернет</a></li>
+                            <li><a href="#">ТВ</a></li>
+                            <li><a href="#">Мобильная связь</a></li>
+                            <li><a href="#">Онлайн кинотеатры</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Провайдеры</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">MTC</a></li>
+                            <li><a href="#">Билайн</a></li>
+                            <li><a href="#">Мегафон</a></li>
+                            <li><a href="#">Теле2</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Поиск</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Город</a></li>
+                            <li><a href="#">Улица</a></li>
+                            <li><a href="#">Поиск по адресу</a></li>
+                            <li><a href="speedtest.html">Проверка скорости интернета</a></li>
+                            <li><a href="#">Рейтинг провайдеров</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+
+        <div class="footer-disclaimer">
+            <div class="container">
+                <p class="footer-disclaimer__text">
+                    Продолжая использовать наш сайт, вы даёте согласие на обработку файлов
+                    <a href="#">Cookies</a> и других пользовательских данных, в соответствии с <a href="#">Политикой конфиденциальности</a> и&nbsp;<a href="#">Пользовательским соглашением</a>.
+                </p>
+                <div class="copyright-mobile">
+                    <p class="copyright-mobile__text">© 2026 Провайдеры.рус</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal" id="ask-operator-modal" data-app-modal-id="ask-operator" role="dialog" aria-modal="true" aria-labelledby="ask-operator-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body app-modal__body--compact">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="ask-operator-modal-title">Спросите у оператора</h2>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Отправить запрос</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal app-modal--review" id="review-detail-modal" data-app-modal-id="review-detail" role="dialog" aria-modal="true" aria-labelledby="review-detail-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog app-modal__dialog--review">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body app-modal__body--review">
+                    <h2 class="app-modal__sr-only" id="review-detail-modal-title">Отзыв</h2>
+                    <div class="app-modal__review-rating" data-app-modal-review-rating role="img"></div>
+                    <p class="app-modal__review-text" data-app-modal-review-text></p>
+                    <footer class="app-modal__review-author">
+                        <img class="app-modal__review-avatar" data-app-modal-review-avatar src="" alt="" width="50" height="50" aria-hidden="true" />
+                        <div class="app-modal__review-author-info">
+                            <span class="app-modal__review-name" data-app-modal-review-name></span>
+                            <span class="app-modal__review-meta" data-app-modal-review-city></span>
+                            <span class="app-modal__review-meta" data-app-modal-review-date></span>
+                        </div>
+                    </footer>
+                    <a href="#" class="app-modal__review-all" data-app-modal-review-all data-app-modal-close>Смотреть все отзывы</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal" id="connect-request-modal" data-app-modal-id="connect-request" role="dialog" aria-modal="true" aria-labelledby="connect-request-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="connect-request-modal-title">Запрос на подключение</h2>
+                    <div class="app-modal__lines app-modal__lines--highlight" data-app-modal-tariff></div>
+                    <div class="app-modal__lines app-modal__lines--muted" data-app-modal-address></div>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Отправить запрос</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal app-modal--connect-tariff" id="connect-tariff-modal" data-app-modal-id="connect-tariff" role="dialog" aria-modal="true" aria-labelledby="connect-tariff-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog connect-tariff-modal__dialog">
+                <button type="button" class="app-modal__close connect-tariff-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 8L24 24M24 8L8 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="connect-tariff-modal">
+                    <div class="connect-tariff-modal__scroll">
+                        <header class="connect-tariff-modal__header">
+                            <div class="connect-tariff-modal__header-main">
+                                <div class="connect-tariff-modal__logo">
+                                    <img src="../images/operators-logos/mts.png" alt="" width="92" height="92" data-app-modal-logo />
+                                </div>
+                                <div class="connect-tariff-modal__heading">
+                                    <div class="connect-tariff-modal__badge hit" data-app-modal-badge>Хит подключений</div>
+                                    <h2 class="connect-tariff-modal__title" id="connect-tariff-modal-title" data-app-modal-tariff>Тариф «МТС Дома Отлично»</h2>
+                                </div>
+                            </div>
+                            <p class="connect-tariff-modal__subtitle">Оптимальная скорость без переплат и дополнительных услуг</p>
+                        </header>
+
+                        <div class="connect-tariff-modal__services">
+                            <div class="connect-tariff-modal__accordion">
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/wifi-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Интернет</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Скорость</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">500 Мбит/с</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Технология</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">GPON (Оптический кабель)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/tv-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Телевидение</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Количество ТВ-каналов</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">200</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/phone-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Мобильная связь</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Интернет</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">30 Гб</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Исходящих звонков</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">900 мин</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">SMS</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">100</span>
+                                            </div>
+                                            <div class="connect-tariff-modal__row">
+                                                <span class="connect-tariff-modal__row-label">Sim</span>
+                                                <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                                <span class="connect-tariff-modal__row-value">1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service connect-tariff-modal__accordion-icon-service--kion" src="../icons/kion-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">KION</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <p class="connect-tariff-modal__text">Видеосервис от МТС с эксклюзивным контентом KION Originals, большой коллекцией фильмов, сериалов и более 200 телеканалов.</p>
+                                            <ul class="connect-tariff-modal__list">
+                                                <li>Возможность приобретать фильмы навсегда или брать напрокат</li>
+                                                <li>Рейтинг фильмов</li>
+                                                <li>Детский профиль</li>
+                                                <li>Доступ с 5 устройств.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="connect-tariff-modal__accordion-item">
+                                    <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                        <span class="connect-tariff-modal__accordion-head">
+                                            <img class="connect-tariff-modal__accordion-icon-service" src="../icons/more-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                            <span class="connect-tariff-modal__accordion-title">Дополнительно</span>
+                                        </span>
+                                        <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                            <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                        </span>
+                                    </button>
+                                    <div class="connect-tariff-modal__accordion-panel">
+                                        <div class="connect-tariff-modal__accordion-content">
+                                            <ul class="connect-tariff-modal__list">
+                                                <li>Группа для близких</li>
+                                                <li>Скидка 10% на 3 мес. с услугой Автоплатеж</li>
+                                                <li>Страховой полис с выплатой до 100 тыс. рублей</li>
+                                                <li>Безлимитный доступ к мессенджерам WhatsApp, Telegram и ещё + 3</li>
+                                                <li>Безлимитный доступ к Одноклассники и ВКонтакте</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="connect-tariff-modal__aside">
+                        <div class="connect-tariff-modal__pricing">
+                            <h3 class="connect-tariff-modal__pricing-title">Стоимость тарифа</h3>
+                            <p class="connect-tariff-modal__pricing-value" data-app-modal-price>529 ₽/мес</p>
+                            <p class="connect-tariff-modal__pricing-note">Средняя цена за год с учетом скидки 40% и стоимости подключения</p>
+
+                            <div class="connect-tariff-modal__pricing-breakdown">
+                                <p class="connect-tariff-modal__pricing-breakdown-heading">Из чего состоит стоимость</p>
+                                <button type="button" class="connect-tariff-modal__pricing-breakdown-trigger" aria-expanded="false">
+                                    <span class="connect-tariff-modal__pricing-breakdown-title">Из чего состоит стоимость</span>
+                                    <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                        <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                        <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                    </span>
+                                </button>
+                                <div class="connect-tariff-modal__pricing-breakdown-panel">
+                                    <div class="connect-tariff-modal__pricing-breakdown-inner">
+                                        <p class="connect-tariff-modal__pricing-discount">Скидка -40% первые 6 месяцев</p>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">С 1 по 6 месяц</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value">355 ₽/мес</span>
+                                        </div>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">Далее с 7 месяца</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value">883 ₽/мес</span>
+                                        </div>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">Подключение</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value">950 ₽</span>
+                                        </div>
+                                        <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                            <span class="connect-tariff-modal__row-label">Авансовый платеж</span>
+                                            <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                            <span class="connect-tariff-modal__row-value connect-tariff-modal__row-value--with-info">
+                                                2000 ₽
+                                                <button type="button" class="connect-tariff-modal__info-btn" aria-label="Подробнее об авансовом платеже">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5" />
+                                                        <path d="M10 9v5M10 6.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                                    </svg>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="big-button connect-tariff-modal__submit">Подключить тариф</button>
+                        </div>
+
+                        <div class="connect-tariff-modal__address">
+                            <p class="connect-tariff-modal__address-title">Проверьте, доступность тарифа по вашему адресу</p>
+                            <label class="connect-tariff-modal__address-field">
+                                <span class="connect-tariff-modal__sr-only">Введите ваш адрес</span>
+                                <input class="connect-tariff-modal__address-input" type="text" placeholder="Введите ваш адрес" data-app-modal-address-input />
+                                <img class="connect-tariff-modal__address-search" src="../icons/search-icon.svg" alt="" width="24" height="24" aria-hidden="true" />
+                            </label>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <div class="cookies-block">
+            <div class="cookies-block__inner">
+                <p class="cookies-block__text">Мы используем cookie и обрабатываем данные согласно <a href="#">политике конфиденциальности</a> (152-ФЗ).</p>
+                <button type="button" class="cookies-block__btn">Принять</button>
+            </div>
+        </div>
+
+        <script defer src="../js/phone-mask.js"></script>
+        <script defer src="../js/app-modal.js"></script>
+        <script defer src="../js/main.js"></script>
+        <script defer src="../js/speedtest.js"></script>
+    </body>
+</html>
