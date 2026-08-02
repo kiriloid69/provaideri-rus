@@ -459,7 +459,10 @@ document.addEventListener("DOMContentLoaded", () => {
       toast.className = "tariff-block__compare-toast";
       toast.setAttribute("role", "status");
       toast.setAttribute("aria-live", "polite");
-      toast.innerHTML = '<span>Тариф добавлен в сравнение</span><a href="#" class="tariff-block__compare-toast-link">Перейти</a>';
+      const compareHref = window.location.pathname.includes("/pages/")
+        ? "compare_tariffs.html"
+        : "pages/compare_tariffs.html";
+      toast.innerHTML = `<span>Тариф добавлен в сравнение</span><a href="${compareHref}" class="tariff-block__compare-toast-link">Перейти</a>`;
       block.appendChild(toast);
     }
   });
@@ -932,5 +935,198 @@ document.addEventListener("DOMContentLoaded", () => {
       chip.classList.toggle("is-on");
       chip.setAttribute("aria-pressed", chip.classList.contains("is-on") ? "true" : "false");
     });
+  });
+
+  // Reviews pages: «Показать ещё» — догружаем дубликаты карточек
+  document.querySelectorAll(".js-reviews-more").forEach((btn) => {
+    const feed = btn.closest(".reviews-board__main")?.querySelector(".reviews-feed")
+      || btn.closest("section")?.querySelector(".reviews-feed");
+    if (!feed) return;
+
+    const BATCH = 2;
+    const MAX_LOADS = 2;
+    let loads = 0;
+
+    btn.addEventListener("click", () => {
+      const cards = [...feed.querySelectorAll(":scope > .reviews-card")];
+      if (!cards.length) return;
+
+      const source = cards.slice(0, Math.min(BATCH, cards.length));
+      const fragment = document.createDocumentFragment();
+
+      source.forEach((card, i) => {
+        const clone = card.cloneNode(true);
+        clone.removeAttribute("id");
+        clone.querySelectorAll("[id]").forEach((el) => el.removeAttribute("id"));
+        // лёгкая вариация даты, чтобы дубликаты не выглядели копией 1:1
+        const meta = clone.querySelector(".reviews-card__meta");
+        if (meta) {
+          const extras = ["8 июня 2026", "5 июня 2026", "2 июня 2026", "28 мая 2026"];
+          meta.textContent = extras[(loads * BATCH + i) % extras.length];
+        }
+        fragment.appendChild(clone);
+      });
+
+      feed.appendChild(fragment);
+      loads += 1;
+
+      if (loads >= MAX_LOADS) {
+        const wrap = btn.closest(".reviews-feed__more");
+        if (wrap) wrap.hidden = true;
+        else btn.hidden = true;
+      }
+    });
+  });
+
+  // Страница сравнения тарифов: скролл, различия, удаление колонок
+  document.querySelectorAll("[data-compare]").forEach((root) => {
+    const head = root.querySelector("[data-compare-head]");
+    const body = root.querySelector("[data-compare-body]");
+    const btnPrev = root.querySelector('[data-compare-arrow="prev"]');
+    const btnNext = root.querySelector('[data-compare-arrow="next"]');
+    const toggle = root.querySelector("[data-compare-toggle]");
+    const empty = root.querySelector("[data-compare-empty]");
+    const countEl = document.querySelector("[data-compare-count]");
+    if (!head || !body) return;
+
+    let syncing = false;
+    const colWidth = 268;
+
+    const visibleCols = () =>
+      [...root.querySelectorAll(".compare__col")].filter((col) => !col.hidden);
+
+    const updateCount = () => {
+      if (!countEl) return;
+      const n = visibleCols().length;
+      countEl.textContent = String(n);
+      const label = countEl.parentElement;
+      if (label) {
+        const word =
+          n % 10 === 1 && n % 100 !== 11
+            ? "тариф"
+            : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)
+              ? "тарифа"
+              : "тарифов";
+        label.childNodes.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE) node.textContent = ` ${word}`;
+        });
+      }
+    };
+
+    const equalize = () => {
+      const titles = [...root.querySelectorAll(".compare__col:not([hidden]) .compare__plan-title")];
+      const banners = [...root.querySelectorAll(".compare__col:not([hidden]) .compare__price")];
+      titles.forEach((t) => {
+        t.style.minHeight = "";
+      });
+      banners.forEach((b) => {
+        b.style.minHeight = "";
+      });
+      requestAnimationFrame(() => {
+        if (titles.length) {
+          const max = Math.max(55, ...titles.map((t) => t.scrollHeight));
+          titles.forEach((t) => {
+            t.style.minHeight = `${max}px`;
+          });
+        }
+        requestAnimationFrame(() => {
+          if (!banners.length) return;
+          const maxB = Math.max(...banners.map((b) => b.offsetHeight));
+          banners.forEach((b) => {
+            b.style.minHeight = `${maxB}px`;
+          });
+        });
+      });
+    };
+
+    const refreshDiffFlags = () => {
+      const ids = visibleCols().map((col) => col.dataset.planId);
+      root.querySelectorAll("[data-compare-row]").forEach((row) => {
+        const values = ids.map((id) => {
+          const cell = row.querySelector(`.compare__cell[data-plan-id="${id}"]`);
+          return cell?.querySelector(".compare__value")?.textContent.trim() ?? "";
+        });
+        const allSame = values.length > 1 && values.every((v) => v === values[0]);
+        if (allSame) row.setAttribute("data-all-same", "");
+        else row.removeAttribute("data-all-same");
+      });
+    };
+
+    const applyDiffFilter = () => {
+      const showDiffs = toggle?.getAttribute("aria-pressed") === "true";
+      let visibleRows = 0;
+      root.querySelectorAll("[data-compare-row]").forEach((row) => {
+        const hide = showDiffs && row.hasAttribute("data-all-same");
+        row.hidden = hide;
+        if (!hide) visibleRows += 1;
+      });
+      if (empty) empty.hidden = !(showDiffs && visibleRows === 0);
+    };
+
+    const updateArrows = () => {
+      if (!btnPrev || !btnNext) return;
+      const max = body.scrollWidth - body.clientWidth;
+      const atStart = body.scrollLeft <= 2;
+      const atEnd = body.scrollLeft >= max - 2;
+      btnPrev.hidden = atStart || max <= 0;
+      btnNext.hidden = atEnd || max <= 0;
+    };
+
+    const syncScroll = (from) => {
+      if (syncing) return;
+      syncing = true;
+      const left = from.scrollLeft;
+      if (from === body && head.scrollLeft !== left) head.scrollLeft = left;
+      if (from === head && body.scrollLeft !== left) body.scrollLeft = left;
+      updateArrows();
+      syncing = false;
+    };
+
+    body.addEventListener("scroll", () => syncScroll(body), { passive: true });
+    head.addEventListener("scroll", () => syncScroll(head), { passive: true });
+
+    btnPrev?.addEventListener("click", () => {
+      body.scrollBy({ left: -colWidth, behavior: "smooth" });
+      setTimeout(updateArrows, 320);
+    });
+    btnNext?.addEventListener("click", () => {
+      body.scrollBy({ left: colWidth, behavior: "smooth" });
+      setTimeout(updateArrows, 320);
+    });
+
+    toggle?.addEventListener("click", () => {
+      const next = toggle.getAttribute("aria-pressed") !== "true";
+      toggle.setAttribute("aria-pressed", String(next));
+      applyDiffFilter();
+    });
+
+    root.addEventListener("click", (e) => {
+      const removeBtn = e.target.closest("[data-compare-remove]");
+      if (!removeBtn) return;
+      const col = removeBtn.closest(".compare__col");
+      const id = col?.dataset.planId;
+      if (!id) return;
+      if (visibleCols().length <= 1) return;
+      col.hidden = true;
+      root.querySelectorAll(`.compare__cell[data-plan-id="${id}"]`).forEach((cell) => {
+        cell.hidden = true;
+      });
+      refreshDiffFlags();
+      applyDiffFilter();
+      updateCount();
+      equalize();
+      updateArrows();
+    });
+
+    refreshDiffFlags();
+    applyDiffFilter();
+    updateCount();
+    equalize();
+    updateArrows();
+    window.addEventListener("resize", () => {
+      equalize();
+      updateArrows();
+    });
+    setTimeout(equalize, 300);
   });
 });
