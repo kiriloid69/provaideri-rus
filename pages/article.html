@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Как выбрать интернет-провайдера в Москве — Провайдеры.рус</title>
+
+        <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+        <link rel="shortcut icon" href="../favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="../favicon/site.webmanifest" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <link rel="preload" href="../images/news-cover.jpg" as="image" />
+        <link rel="stylesheet" href="../css/main.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container d-flex align-center justify-between">
+                <div class="header__menu d-flex align-center gap-24">
+                    <a href="../index.html" class="header__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/logo.svg" alt="logo" />
+                    </a>
+                    <ul class="header__menu-list d-flex align-center gap-24">
+                        <li class="header__menu-item">
+                            <a href="search_address.html" class="header__menu-link">Подключение по адресу</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Тарифы</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Провайдеры</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__contacts d-flex gap-24 align-center">
+                    <div class="header__contacts-item">
+                        <a href="tel:88007001234" class="header__contacts-link phone-number">8-800-700-1234</a>
+                    </div>
+                    <div class="header__contacts-item">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/call-icon.svg" alt="phone" />
+                            </div>
+                            <span>Заказать звонок</span>
+                        </a>
+                    </div>
+                    <div class="header__contacts-item header__contacts-item--city">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/map-icon.svg" alt="phone" />
+                            </div>
+                            <span>Москва</span>
+                        </a>
+                    </div>
+                    <div class="header__menu-mobile">
+                        <button type="button" class="header__menu-mobile-btn" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
+                            <img class="header__menu-mobile-icon header__menu-mobile-icon--open" src="../icons/hamburger-icon.svg" alt="" aria-hidden="true" />
+                            <span class="header__menu-mobile-icon header__menu-mobile-icon--close" aria-hidden="true">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mobile">
+            <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu__backdrop" aria-label="Закрыть меню"></div>
+                <div class="mobile-menu__panel">
+                    <div class="mobile-menu__content">
+                        <nav class="mobile-menu__nav">
+                            <a href="search_address.html" class="mobile-menu__link">Подключение по адресу</a>
+                            <a href="#" class="mobile-menu__link">Тарифы</a>
+                            <a href="#" class="mobile-menu__link">Провайдеры</a>
+                            <a href="#" class="mobile-menu__link">Контакты</a>
+                        </nav>
+                        <div class="mobile-menu__location">
+                            <p class="mobile-menu__location-label">Вы находитесь здесь</p>
+                            <div class="mobile-menu__location-card" id="mobile-menu-location-card">
+                                <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-icon" width="20" height="20" aria-hidden="true" />
+                                <span class="mobile-menu__city">Москва</span>
+                            </div>
+                            <div class="mobile-menu__location-input-wrapper" id="mobile-menu-location-input-wrapper" style="display: none">
+                                <div class="mobile-menu__location-input-container">
+                                    <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-input-icon" width="20" height="20" aria-hidden="true" />
+                                    <input type="text" class="mobile-menu__location-input" id="mobile-menu-location-input" placeholder="Введите город" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="mobile-menu-city-suggestions" />
+                                </div>
+                                <ul class="mobile-menu__city-suggestions" id="mobile-menu-city-suggestions" role="listbox" aria-label="Подсказки городов"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-mobile">
+                <div class="main-mobile__content">
+                    <div class="container">
+                        <nav class="main-mobile__content-navigation">
+                            <ul class="main-mobile__content-navigation-list">
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Тарифы</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Провайдеры</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="compare_tariffs.html" class="main-mobile__content-navigation-link">
+                                        <svg class="compare-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z" fill="currentColor" />
+                                            <path d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z" fill="currentColor" />
+                                        </svg>
+                                        Сравнение
+                                        <span class="main-mobile__content-navigation-link-count">5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-page" data-article>
+            <section class="article-hero">
+                <div class="container">
+                    <nav class="breadcrumbs breadcrumbs--in-hero" aria-label="Хлебные крошки">
+                        <ol class="breadcrumbs__list">
+                            <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Главная</a></li>
+                            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Москва</a></li>
+                            <li class="breadcrumbs__item"><a href="news.html" class="breadcrumbs__link">Новости и статьи</a></li>
+                            <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Как выбрать провайдера</li>
+                        </ol>
+                    </nav>
+                    <span class="article-hero__badge">Интернет</span>
+                    <h1 class="article-hero__title">Как выбрать интернет-провайдера в Москве: пошаговый разбор</h1>
+                    <p class="article-hero__lead">В городе 207 провайдеров, но в конкретный дом заходят 3–8. Разбираем, как отобрать доступных, сравнить цену за Мбит и не переплатить после окончания акции.</p>
+                    <div class="news-meta article-hero__meta">
+                        29 июля 2026
+                        <span class="news-meta__dot" aria-hidden="true"></span>
+                        8 мин чтения
+                        <span class="news-meta__dot" aria-hidden="true"></span>
+                        Обновлено после пересчёта рейтинга
+                        <span class="news-meta__dot" aria-hidden="true"></span>
+                        1 248 просмотров
+                    </div>
+                </div>
+            </section>
+
+            <div class="container article-layout">
+                <aside class="article-side">
+                    <nav class="article-card article-toc" data-article-toc aria-label="Содержание">
+                        <p class="article-toc__title">Содержание</p>
+                        <div class="article-toc__list">
+                            <a class="article-toc__link is-active" href="#s1"><span class="article-toc__n">01</span>Начните с адреса, а не с тарифа</a>
+                            <a class="article-toc__link" href="#s2"><span class="article-toc__n">02</span>Считайте цену за Мбит</a>
+                            <a class="article-toc__link" href="#s3"><span class="article-toc__n">03</span>Цена «в течение года»</a>
+                            <a class="article-toc__link" href="#s4"><span class="article-toc__n">04</span>Технология в доме</a>
+                            <a class="article-toc__link" href="#s5"><span class="article-toc__n">05</span>Отзывы по району</a>
+                            <a class="article-toc__link" href="#s6"><span class="article-toc__n">06</span>Пакеты услуг</a>
+                            <a class="article-toc__link" href="#s7"><span class="article-toc__n">07</span>Чек-лист перед подключением</a>
+                        </div>
+                    </nav>
+
+                    <div class="article-card article-sidecta">
+                        <div>
+                            <h3 class="article-sidecta__t">Тарифы в Москве прямо сейчас</h3>
+                            <p class="article-sidecta__sub">Три предложения с лучшей ценой за Мбит на 29 июля 2026</p>
+                        </div>
+                        <div class="article-tlist">
+                            <div class="article-trow">
+                                <img class="article-trow__logo" src="../images/operators-logos/rtk.png" alt="Ростелеком" width="72" height="18" />
+                                <span class="article-trow__sp">1000 Мбит/с</span>
+                                <span class="article-trow__pr">490 ₽</span>
+                            </div>
+                            <div class="article-trow">
+                                <img class="article-trow__logo" src="../images/operators-logos/beeline.png" alt="Билайн" width="72" height="18" />
+                                <span class="article-trow__sp">500 Мбит/с</span>
+                                <span class="article-trow__pr">450 ₽</span>
+                            </div>
+                            <div class="article-trow">
+                                <img class="article-trow__logo" src="../images/operators-logos/mts.png" alt="МТС" width="72" height="18" />
+                                <span class="article-trow__sp">500 Мбит/с</span>
+                                <span class="article-trow__pr">500 ₽</span>
+                            </div>
+                        </div>
+                        <a class="article-btn article-btn--lime article-btn--block" href="#">Смотреть все тарифы</a>
+                        <div class="article-promoline">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                            Акция месяца: подключение 0 ₽ у 6 провайдеров Москвы
+                        </div>
+                    </div>
+
+                    <div class="article-card article-sidecta">
+                        <div>
+                            <h3 class="article-sidecta__t">Акции в Москве</h3>
+                            <p class="article-sidecta__sub">Действуют до 31 июля 2026</p>
+                        </div>
+                        <div class="article-tlist">
+                            <div class="article-promoline">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                                МТС: подключение 0 ₽ и роутер бесплатно первые 3 месяца
+                            </div>
+                            <div class="article-promoline">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                                Дом.ру: два месяца ТВ при оплате интернета за год
+                            </div>
+                            <div class="article-promoline">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                                Ростелеком: гигабит за 560 ₽/мес первый год
+                            </div>
+                        </div>
+                        <a class="article-btn article-btn--ghost article-btn--block" href="#">Все акции города</a>
+                    </div>
+
+                    <div class="article-card article-sidecta article-sidecta--addr">
+                        <div>
+                            <h3 class="article-sidecta__t">Подберём провайдера по адресу</h3>
+                            <p class="article-sidecta__sub">Оператор проверит дом и перезвонит за 15 минут. Бесплатно.</p>
+                        </div>
+                        <a class="article-btn article-btn--lime article-btn--block" href="search_address.html">Проверить адрес</a>
+                    </div>
+                </aside>
+
+                <article class="article-body">
+                    <figure>
+                        <img src="../images/news-cover.jpg" alt="" width="760" height="340" decoding="async" />
+                        <figcaption>Схема подключения многоквартирного дома: оптика до щитка, дальше — витая пара или GPON в квартиру.</figcaption>
+                    </figure>
+
+                    <h2 id="s1">Начните с адреса, а не с тарифа</h2>
+                    <p>Каталог тарифов бесполезен, пока не известно, кто физически заходит в дом. В Москве <b>207 провайдеров</b>, но в один адрес обычно заведено от трёх до восьми сетей. Проверка по адресу отсекает 95 % предложений, которые вам всё равно недоступны.</p>
+                    <p>Порядок действий простой: адрес → список доступных провайдеров → сравнение их тарифов. Обратный порядок приводит к разочарованию: выбранный тариф оказывается недоступен в вашем корпусе.</p>
+
+                    <div class="article-cta">
+                        <div>
+                            <h3>Проверьте, кто подключает ваш дом</h3>
+                            <p>Введите адрес — покажем доступных провайдеров, их тарифы и цены со скидками, действующими сегодня.</p>
+                        </div>
+                        <div class="article-cta__acts">
+                            <a class="article-btn article-btn--lime" href="search_address.html">Проверить адрес</a>
+                            <a class="article-cta__ghost" href="#">Все провайдеры</a>
+                        </div>
+                    </div>
+
+                    <h2 id="s2">Считайте цену за Мбит, а не абонплату</h2>
+                    <p>Тариф за 350 ₽ на 100 Мбит/с дороже тарифа за 460 ₽ на 500 Мбит/с: 3,5 ₽ против 0,92 ₽ за Мбит. Цена за Мбит — единственный показатель, который позволяет сравнивать предложения разной скорости.</p>
+                    <div class="article-tablewrap">
+                        <table class="article-table">
+                            <thead>
+                                <tr>
+                                    <th>Скорость</th>
+                                    <th>Средняя цена в Москве</th>
+                                    <th class="num">Цена за Мбит</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>100 Мбит/с</td>
+                                    <td>от 299 ₽/мес</td>
+                                    <td class="num">3,0 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>300 Мбит/с</td>
+                                    <td>от 370 ₽/мес</td>
+                                    <td class="num">1,2 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>500 Мбит/с</td>
+                                    <td>от 420 ₽/мес</td>
+                                    <td class="num">0,84 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>1000 Мбит/с</td>
+                                    <td>от 490 ₽/мес</td>
+                                    <td class="num">0,49 ₽</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Из таблицы видно главное: разница между 100 и 500 Мбит/с — около 120 ₽ в месяц, а скорость выше в пять раз. Экономия на скорости почти всегда бессмысленна.</p>
+
+                    <h2 id="s3">Смотрите цену «в течение года», а не первый месяц</h2>
+                    <p>Акционная цена действует 1–3 месяца, затем тариф возвращается к базовой стоимости. Честное сравнение — средняя стоимость месяца за год с учётом подключения, аренды роутера и окончания акции.</p>
+                    <ul>
+                        <li><b>Подключение</b> — от 0 до 1500 ₽, чаще всего 0 ₽ по акции;</li>
+                        <li><b>Роутер</b> — 90–150 ₽/мес в аренду или свой за 3000–6000 ₽ единоразово;</li>
+                        <li><b>Приставка ТВ</b> — 0–150 ₽/мес, если пакет с телевидением;</li>
+                        <li><b>Рост цены</b> — после акции абонплата поднимается на 30–60 %.</li>
+                    </ul>
+                    <div class="article-quote">Если провайдер обещает 95 ₽/мес, ищите срок акции. В годовом расчёте такой тариф обычно стоит 380–450 ₽/мес.</div>
+
+                    <h2 id="s4">Проверьте технологию в доме</h2>
+                    <p>GPON — оптика в квартиру, до 10 Гбит/с, минимальные потери. FTTB — оптика до дома, витая пара внутрь, реально до 500 Мбит/с. xDSL по телефонной линии остаётся только там, где нет ни того, ни другого: скорость до 100 Мбит/с и высокий отклик.</p>
+                    <p>В новостройках чаще встречается GPON, в панельных домах 1970–1990-х — FTTB. Технология указана в карточке каждого провайдера.</p>
+
+                    <h2 id="s5">Учитывайте отзывы по своему району</h2>
+                    <p>Средняя оценка провайдера по городу — 4,3, но по районам она различается: поддержка и аварийная служба работают неравномерно. Смотрите подрейтинги: интернет, ТВ, поддержка, мобильная связь.</p>
+                    <p>Байес-средняя защищает от накрутки: пять пятёрок не поднимут нового оператора выше проверенного с тремя тысячами отзывов.</p>
+
+                    <div class="article-cta">
+                        <div>
+                            <h3>Акции провайдеров Москвы в июле</h3>
+                            <p>Бесплатное подключение, два месяца ТВ в подарок и гигабит за 560 ₽ — собрали действующие предложения в одном списке.</p>
+                        </div>
+                        <div class="article-cta__acts">
+                            <a class="article-btn article-btn--lime" href="#">Смотреть акции</a>
+                            <a class="article-cta__ghost" href="#">Рейтинг по отзывам</a>
+                        </div>
+                    </div>
+
+                    <h2 id="s6">Не берите пакет услуг «на всякий случай»</h2>
+                    <p>Пакет «интернет + ТВ + мобильная связь» выгоден, если вы пользуетесь всеми услугами. Телевидение в пакете стоит 50–150 ₽ против 250–400 ₽ отдельно, но если телевизор не включается — это лишние 600–1800 ₽ в год.</p>
+
+                    <h2 id="s7">Чек-лист перед подключением</h2>
+                    <ol>
+                        <li>Проверили адрес и получили список доступных провайдеров;</li>
+                        <li>Сравнили цену за Мбит, а не абонплату;</li>
+                        <li>Посчитали стоимость года с подключением и роутером;</li>
+                        <li>Уточнили технологию в доме и требования к роутеру;</li>
+                        <li>Посмотрели оценку и подрейтинг поддержки;</li>
+                        <li>Отказались от услуг, которыми не будете пользоваться.</li>
+                    </ol>
+
+                    <div class="article-card article-author">
+                        <img src="../images/operator-avatar.png" alt="" width="52" height="52" />
+                        <div>
+                            <div class="article-author__n">Редакция Провайдеры.рус</div>
+                            <div class="article-author__r">Данные обновляются еженедельно по каталогу тарифов и отзывам абонентов</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <section class="article-endcta">
+                <div class="container">
+                    <div class="article-endcta__box">
+                        <div>
+                            <h2 class="article-endcta__title">Готовы подключаться?</h2>
+                            <p class="article-endcta__text">Сравните тарифы доступных провайдеров по вашему адресу — с ценой за Мбит, действующими акциями и оценками абонентов.</p>
+                            <div class="article-endcta__acts">
+                                <a class="article-btn article-btn--lime" href="#">Смотреть тарифы Москвы</a>
+                                <a class="article-btn article-btn--ghost" href="#">Рейтинг провайдеров</a>
+                            </div>
+                        </div>
+                        <div class="article-endcta__nums">
+                            <div class="article-endcta__num"><b>564</b><span>тарифа в каталоге</span></div>
+                            <div class="article-endcta__num"><b>от 95 ₽</b><span>минимальная цена/мес</span></div>
+                            <div class="article-endcta__num"><b>207</b><span>провайдеров Москвы</span></div>
+                            <div class="article-endcta__num"><b>0 ₽</b><span>подключение по акции</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-related">
+                <div class="container">
+                    <h2 class="article-related__title">Читайте также</h2>
+                    <p class="article-related__sub">Материалы о тарифах и технологиях в Москве</p>
+                    <div class="article-related__grid">
+                        <article class="article-relc">
+                            <div class="article-relc__media">
+                                <img src="../images/news-cover.jpg" alt="" width="400" height="150" loading="lazy" decoding="async" />
+                            </div>
+                            <div class="article-relc__b">
+                                <h3 class="article-relc__t"><a href="article.html">Сколько Мбит/с реально нужно квартире в 2026 году</a></h3>
+                                <div class="news-meta">26 июля 2026<span class="news-meta__dot" aria-hidden="true"></span>6 мин</div>
+                            </div>
+                        </article>
+                        <article class="article-relc">
+                            <div class="article-relc__media">
+                                <img src="../images/news-cover.jpg" alt="" width="400" height="150" loading="lazy" decoding="async" />
+                            </div>
+                            <div class="article-relc__b">
+                                <h3 class="article-relc__t"><a href="article.html">GPON против FTTB: какая технология быстрее в московских домах</a></h3>
+                                <div class="news-meta">28 июля 2026<span class="news-meta__dot" aria-hidden="true"></span>5 мин</div>
+                            </div>
+                        </article>
+                        <article class="article-relc">
+                            <div class="article-relc__media">
+                                <img src="../images/news-cover.jpg" alt="" width="400" height="150" loading="lazy" decoding="async" />
+                            </div>
+                            <div class="article-relc__b">
+                                <h3 class="article-relc__t"><a href="article.html">Как проверить, за что провайдер берёт деньги: разбор квитанции</a></h3>
+                                <div class="news-meta">23 июля 2026<span class="news-meta__dot" aria-hidden="true"></span>7 мин</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <div class="footer__left">
+                    <a href="../index.html" class="footer__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/white-logo.svg" alt="Провайдеры РУС" width="198" height="29" class="footer__logo-img" />
+                    </a>
+                    <p class="footer__copyright">© 2026 Провайдеры.рус</p>
+                </div>
+                <nav class="footer__links-mobile">
+                    <a href="search_address.html">Подключение по адресу</a>
+                    <a href="#">Тарифы</a>
+                    <a href="#">Провайдеры</a>
+                    <a href="#">Контакты</a>
+                </nav>
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">О компании</h3>
+                        <ul class="footer__list">
+                            <li><a href="search_address.html">Подключение по адресу</a></li>
+                            <li><a href="#">Тарифы</a></li>
+                            <li><a href="#">Провайдеры</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Разделы</h3>
+                        <ul class="footer__list">
+                            <li><a href="news.html">Новости и статьи</a></li>
+                            <li><a href="#">Акции</a></li>
+                            <li><a href="#">Технологии</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Провайдеры</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">МТС</a></li>
+                            <li><a href="#">Билайн</a></li>
+                            <li><a href="#">МегаФон</a></li>
+                            <li><a href="#">Ростелеком</a></li>
+                            <li><a href="#">Дом.ру</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Поиск</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">ЖК Москвы</a></li>
+                            <li><a href="#">Рейтинг провайдеров</a></li>
+                            <li><a href="speedtest.html">Тест скорости</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+
+        <div class="footer-disclaimer">
+            <div class="container">
+                <p class="footer-disclaimer__text">
+                    Продолжая использовать наш сайт, вы даёте согласие на обработку файлов
+                    <a href="#">Cookies</a> и других пользовательских данных, в соответствии с <a href="#">Политикой конфиденциальности</a> и&nbsp;<a href="#">Пользовательским соглашением</a>.
+                </p>
+                <div class="copyright-mobile">
+                    <p class="copyright-mobile__text">© 2026 Провайдеры.рус</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookies-block">
+            <div class="cookies-block__inner">
+                <p class="cookies-block__text">Мы используем cookie и обрабатываем данные согласно <a href="#">политике конфиденциальности</a> (152-ФЗ).</p>
+                <button type="button" class="cookies-block__btn">Принять</button>
+            </div>
+        </div>
+
+        <script defer src="../js/main.js"></script>
+        <script defer src="../js/article.js"></script>
+    </body>
+</html>
