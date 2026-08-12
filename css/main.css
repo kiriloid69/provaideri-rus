@@ -4936,6 +4936,10 @@ input.main-tariffs__filter-input--radio:focus-visible {
   }
 }
 
+.page-speedtest {
+  background-color: #ffffff;
+}
+
 .speedtest-hero {
   padding: 40px 0 12px;
   background-color: #ffffff;
@@ -5404,6 +5408,564 @@ input.main-tariffs__filter-input--radio:focus-visible {
   }
   .speedtest__info-text {
     font-size: 13px;
+  }
+}
+
+/* Speedtest dashboard · variant 1b */
+.speedtest-dash {
+  margin-top: 28px;
+}
+.speedtest-dash__shell {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 20px;
+  background: radial-gradient(ellipse 90% 85% at 50% -8%, rgba(43, 190, 72, 0.28) 0%, rgba(43, 190, 72, 0) 58%), radial-gradient(140% 120% at 50% 0%, #14301c 0%, #0c0d0d 100%);
+  color: #ffffff;
+}
+.speedtest-dash__panel {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 34px 38px;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(205, 255, 99, 0.14);
+}
+.speedtest-dash__glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  transform: none;
+  background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(43, 190, 72, 0.3) 0%, rgba(43, 190, 72, 0) 72%);
+  pointer-events: none;
+}
+.speedtest-dash__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr) 210px;
+  grid-template-areas: "left meters right";
+  gap: 26px;
+  align-items: center;
+}
+.speedtest-dash__side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.speedtest-dash__side--left {
+  grid-area: left;
+}
+.speedtest-dash__side--right {
+  grid-area: right;
+}
+.speedtest-dash__side-title {
+  margin: 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(205, 255, 99, 0.6);
+  line-height: 1.3;
+}
+.speedtest-dash__side--right .speedtest-dash__side-title {
+  text-align: right;
+}
+.speedtest-dash__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.speedtest-dash__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(205, 255, 99, 0.12);
+}
+.speedtest-dash__row span {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.3;
+}
+.speedtest-dash__row b {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #eaffc7;
+  text-align: right;
+  line-height: 1.3;
+}
+.speedtest-dash__side--left .speedtest-dash__row b {
+  font-size: 15px;
+}
+.speedtest-dash__meters {
+  grid-area: meters;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "down main up";
+  gap: 18px;
+  align-items: center;
+  min-width: 0;
+}
+.speedtest-dash__ring {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  justify-self: center;
+  flex-shrink: 0;
+}
+.speedtest-dash__ring[data-st-ring=down] {
+  grid-area: down;
+}
+.speedtest-dash__ring[data-st-ring=up] {
+  grid-area: up;
+}
+.speedtest-dash__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(90deg);
+  overflow: visible;
+}
+.speedtest-dash__svg--up {
+  transform: scaleX(-1) rotate(90deg);
+}
+.speedtest-dash__track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-dasharray: 298 597;
+}
+.speedtest-dash__arc {
+  fill: none;
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-dasharray: 298 597;
+  stroke-dashoffset: 298;
+  transition: stroke-dashoffset 0.08s linear;
+}
+.speedtest-dash__arc--down {
+  stroke: #cdff63;
+}
+.speedtest-dash__arc--up {
+  stroke: #2bbe48;
+}
+.speedtest-dash__ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+  pointer-events: none;
+}
+.speedtest-dash__ring-center b {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.speedtest-dash__ring-center span {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.25;
+}
+.speedtest-dash__main {
+  grid-area: main;
+  text-align: center;
+  padding: 0 8px;
+  min-width: 0;
+}
+.speedtest-dash__phase {
+  margin: 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(205, 255, 99, 0.6);
+  line-height: 1.3;
+}
+.speedtest-dash__num {
+  margin-top: 8px;
+  font-size: 96px;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 42px rgba(43, 190, 72, 0.5);
+  font-variant-numeric: tabular-nums;
+}
+.speedtest-dash__unit {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #cdff63;
+  line-height: 1.3;
+}
+.speedtest-dash__progress {
+  height: 4px;
+  width: 180px;
+  max-width: 100%;
+  margin: 18px auto 0;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+.speedtest-dash__progress-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #2bbe48, #cdff63);
+  transition: width 0.08s linear;
+}
+.speedtest-dash__note {
+  margin-top: 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.4;
+}
+.speedtest-dash__run {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 34px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 10px;
+  background: #cdff63;
+  color: #0c0d0d;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(43, 190, 72, 0.35);
+  transition: filter 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+.speedtest-dash__run:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+.speedtest-dash__run:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.speedtest-dash__run:disabled, .speedtest-dash__run.is-running {
+  opacity: 0.72;
+  cursor: default;
+  box-shadow: none;
+}
+.speedtest-dash__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding: 0 4px;
+}
+.speedtest-dash__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.speedtest-dash__chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(205, 255, 99, 0.14);
+  color: #eaffc7;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.speedtest-dash__chip-label {
+  color: rgba(234, 255, 199, 0.72);
+  font-weight: 600;
+}
+.speedtest-dash__chip-label::after {
+  content: ":";
+}
+.speedtest-dash__chip-value {
+  color: #eaffc7;
+  font-weight: 600;
+  font-size: inherit;
+}
+.speedtest-dash__cta {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 20px;
+  background: #cdff63;
+  color: #0c0d0d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: filter 0.2s ease;
+}
+.speedtest-dash__cta:hover {
+  filter: brightness(0.96);
+  color: #0c0d0d;
+}
+.speedtest-dash {
+  /* Узкий десктоп: та же раскладка 1b, чуть плотнее */
+}
+@media screen and (max-width: 1180px) {
+  .speedtest-dash__grid {
+    grid-template-columns: 168px minmax(0, 1fr) 168px;
+    gap: 18px;
+  }
+  .speedtest-dash__meters {
+    gap: 12px;
+  }
+  .speedtest-dash__ring {
+    width: 156px;
+    height: 156px;
+  }
+  .speedtest-dash__num {
+    font-size: 72px;
+  }
+  .speedtest-dash__ring-center b {
+    font-size: 24px;
+  }
+  .speedtest-dash__progress {
+    width: 160px;
+  }
+}
+.speedtest-dash {
+  /* Планшет: замер сверху (входящая | центр | исходящая), справочники в ряд как в референсе */
+}
+@media screen and (max-width: 980px) {
+  .speedtest-dash__shell {
+    padding: 16px;
+    background: radial-gradient(ellipse 100% 70% at 50% -5%, rgba(43, 190, 72, 0.3) 0%, rgba(43, 190, 72, 0) 55%), radial-gradient(150% 110% at 50% 0%, #14301c 0%, #0c0d0d 100%);
+  }
+  .speedtest-dash__panel {
+    padding: 26px 20px;
+  }
+  .speedtest-dash__glow {
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(43, 190, 72, 0.32) 0%, rgba(43, 190, 72, 0) 70%);
+  }
+  .speedtest-dash__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "meters meters" "left right";
+    gap: 20px 16px;
+    align-items: start;
+  }
+  .speedtest-dash__meters {
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: "down main up";
+    gap: 10px 12px;
+  }
+  .speedtest-dash__ring {
+    width: min(150px, 100%);
+    height: auto;
+  }
+  .speedtest-dash__num {
+    font-size: 64px;
+  }
+  .speedtest-dash__run {
+    margin-top: 18px;
+  }
+  .speedtest-dash__side {
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 0 1px rgba(205, 255, 99, 0.1);
+  }
+  .speedtest-dash__side--right .speedtest-dash__side-title {
+    text-align: left;
+  }
+  .speedtest-dash__footer {
+    gap: 12px;
+  }
+}
+.speedtest-dash {
+  /* Узкий планшет / широкий телефон: центр сверху, кольца рядом (входящая | исходящая) */
+}
+@media screen and (max-width: 720px) {
+  .speedtest-dash {
+    margin-top: 20px;
+  }
+  .speedtest-dash__shell {
+    padding: 12px;
+    border-radius: 16px;
+    background: radial-gradient(ellipse 120% 55% at 50% 0%, rgba(43, 190, 72, 0.32) 0%, rgba(43, 190, 72, 0) 52%), radial-gradient(170% 100% at 50% 0%, #163820 0%, #0c0d0d 100%);
+  }
+  .speedtest-dash__panel {
+    padding: 22px 14px 20px;
+    border-radius: 16px;
+  }
+  .speedtest-dash__glow {
+    background: radial-gradient(ellipse 90% 45% at 50% 0%, rgba(43, 190, 72, 0.34) 0%, rgba(43, 190, 72, 0) 68%);
+  }
+  .speedtest-dash__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "meters" "left" "right";
+    gap: 14px;
+  }
+  .speedtest-dash__meters {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main main" "down up";
+    gap: 18px 10px;
+    justify-items: center;
+  }
+  .speedtest-dash__main {
+    width: 100%;
+    padding: 0;
+  }
+  .speedtest-dash__ring {
+    width: min(148px, 42vw);
+  }
+  .speedtest-dash__ring-center b {
+    font-size: 22px;
+  }
+  .speedtest-dash__ring-center span {
+    font-size: 10px;
+    max-width: 9.5em;
+  }
+  .speedtest-dash__ring-center svg {
+    width: 18px;
+    height: 18px;
+  }
+  .speedtest-dash__num {
+    font-size: 56px;
+  }
+  .speedtest-dash__progress {
+    width: min(180px, 70%);
+  }
+  .speedtest-dash__run {
+    width: 100%;
+    max-width: 320px;
+    padding: 0 20px;
+  }
+  .speedtest-dash__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 0;
+  }
+  .speedtest-dash__chips {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 2px 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 0 1px rgba(205, 255, 99, 0.12);
+    overflow: hidden;
+  }
+  .speedtest-dash__chip {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(205, 255, 99, 0.1);
+    font-size: 12.5px;
+  }
+  .speedtest-dash__chip:last-child {
+    border-bottom: none;
+  }
+  .speedtest-dash__chip-label {
+    color: rgba(255, 255, 255, 0.52);
+    flex-shrink: 0;
+  }
+  .speedtest-dash__chip-label::after {
+    content: none;
+  }
+  .speedtest-dash__chip-value {
+    color: #eaffc7;
+    text-align: right;
+    letter-spacing: -0.01em;
+  }
+  .speedtest-dash__cta {
+    justify-content: center;
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    height: auto;
+    min-height: 44px;
+    padding: 12px 18px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .speedtest-dash__shell {
+    background: radial-gradient(ellipse 140% 48% at 50% 0%, rgba(43, 190, 72, 0.34) 0%, rgba(43, 190, 72, 0) 50%), radial-gradient(190% 100% at 50% 0%, #163820 0%, #0c0d0d 100%);
+  }
+  .speedtest-dash__panel {
+    padding: 18px 12px 18px;
+  }
+  .speedtest-dash__glow {
+    background: radial-gradient(ellipse 100% 42% at 50% 0%, rgba(43, 190, 72, 0.36) 0%, rgba(43, 190, 72, 0) 66%);
+  }
+  .speedtest-dash__meters {
+    gap: 16px 8px;
+  }
+  .speedtest-dash__ring {
+    width: min(132px, 44vw);
+  }
+  .speedtest-dash__ring-center b {
+    font-size: 20px;
+  }
+  .speedtest-dash__num {
+    font-size: 48px;
+  }
+  .speedtest-dash__unit {
+    font-size: 12px;
+  }
+  .speedtest-dash__note {
+    font-size: 11px;
+  }
+  .speedtest-dash__side {
+    padding: 12px 12px;
+  }
+  .speedtest-dash__row span {
+    font-size: 11.5px;
+  }
+  .speedtest-dash__row b {
+    font-size: 12.5px;
+  }
+  .speedtest-dash__side--left .speedtest-dash__row b {
+    font-size: 13.5px;
+  }
+  .speedtest-dash__chip {
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+  .speedtest-dash__chip-value {
+    font-size: 12.5px;
   }
 }
 
