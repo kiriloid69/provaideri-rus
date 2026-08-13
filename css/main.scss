@@ -6080,7 +6080,7 @@ input.main-tariffs__filter-input--radio {
         position: relative;
         overflow: hidden;
         padding: 22px;
-        border-radius: 20px;
+        border-radius: 32px;
         background:
             radial-gradient(ellipse 90% 85% at 50% -8%, rgba(43, 190, 72, 0.28) 0%, rgba(43, 190, 72, 0) 58%),
             radial-gradient(140% 120% at 50% 0%, #14301c 0%, #0c0d0d 100%);
@@ -6350,7 +6350,7 @@ input.main-tariffs__filter-input--radio {
         padding: 0 34px;
         margin-top: 22px;
         border: none;
-        border-radius: 10px;
+        border-radius: $border-radius;
         background: #cdff63;
         color: #0c0d0d;
         font-family: inherit;
@@ -6402,7 +6402,7 @@ input.main-tariffs__filter-input--radio {
         align-items: baseline;
         gap: 6px;
         padding: 8px 14px;
-        border-radius: 20px;
+        border-radius: $border-radius;
         background: rgba(205, 255, 99, 0.14);
         color: #eaffc7;
         font-size: 12.5px;
@@ -6430,7 +6430,7 @@ input.main-tariffs__filter-input--radio {
         align-items: center;
         height: 44px;
         padding: 0 22px;
-        border-radius: 20px;
+        border-radius: $border-radius;
         background: #cdff63;
         color: #0c0d0d;
         font-size: 14px;
@@ -8327,7 +8327,7 @@ input.main-tariffs__filter-input--radio {
         height: 44px;
         padding: 0 20px;
         border: none;
-        border-radius: 20px;
+        border-radius: $border-radius;
         background: $white-color;
         box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
         font: inherit;
@@ -8424,7 +8424,7 @@ input.main-tariffs__filter-input--radio {
         align-items: center;
         gap: 7px;
         padding: 7px 14px;
-        border-radius: 20px;
+        border-radius: $border-radius;
         background: $orange-color;
         color: $white-color;
         font-size: 12px;
@@ -8522,7 +8522,7 @@ input.main-tariffs__filter-input--radio {
     align-items: center;
     gap: 7px;
     padding: 7px 14px;
-    border-radius: 20px;
+    border-radius: $border-radius;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -8797,7 +8797,7 @@ input.main-tariffs__filter-input--radio {
         display: inline-flex;
         align-items: center;
         padding: 13px 22px;
-        border-radius: 20px;
+        border-radius: $border-radius;
         border: 1.5px solid rgba($white-color, 0.6);
         font-size: 14.5px;
         font-weight: 600;
@@ -8912,7 +8912,7 @@ input.main-tariffs__filter-input--radio {
         align-items: center;
         margin-top: 8px;
         padding: 7px 14px;
-        border-radius: 20px;
+        border-radius: $border-radius;
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.04em;
