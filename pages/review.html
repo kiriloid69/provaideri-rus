@@ -568,116 +568,147 @@
 
         <section class="reviews-form-section" id="add-review">
             <div class="container">
-                <form class="reviews-form" action="#" method="post">
-                    <h2 class="section-title reviews-form__heading">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="3"/><path d="M9 11h6M12 8v6"/></svg>
-                        Оставить отзыв о провайдере
-                    </h2>
-                    <p class="section-subtitle">Расскажите о своём опыте — честно и по делу. Поля со звёздочкой обязательны.</p>
-
-                    <div class="reviews-form__block">
-                        <div class="reviews-form__label">
-                            <img src="../icons/star-icon.svg" width="18" height="18" alt="" aria-hidden="true" />
-                            Общая оценка <span class="reviews-form__req">*</span>
+                <form class="reviews-form" action="#" method="post" data-reviews-form data-reviews-form-variant="single">
+                    <aside class="reviews-form__aside">
+                        <h2 class="reviews-form__title">Оставить отзыв о МТС</h2>
+                        <p class="reviews-form__lead">Честный опыт абонентов — главное, по чему соседи выбирают интернет.</p>
+                        <div class="reviews-form__auth">
+                            <p class="reviews-form__auth-label" data-rv-auth-label>Войдите — публикация быстрее</p>
+                        <div class="reviews-form__auth-btns">
+                            <button type="button" class="reviews-form__login" data-rv-login="yandex">
+                                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#FC3F1D"></circle><path d="M10.9 15.4V4.6H9.3c-1.8 0-3 1-3 2.9 0 1.4.6 2.2 1.8 3l-2.3 4.9h1.7l2-4.4-.9-.6c-.9-.6-1.3-1.1-1.3-2.3 0-1 .6-1.8 1.7-1.8h.6v9.1h1.6z" fill="#fff"></path></svg>
+                                Войти через Яндекс
+                            </button>
+                            <button type="button" class="reviews-form__login" data-rv-login="vk">
+                                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="6" fill="#0077FF"></rect><path d="M10.4 14.2c-3.6 0-5.8-2.5-5.9-6.7h1.9c.1 3 1.4 4.3 2.5 4.6V7.5h1.8v2.8c1-.1 2.1-1.3 2.5-2.8h1.8c-.3 1.4-1.2 2.6-2.1 3.1 1 .4 2 1.6 2.4 3.1h-2c-.3-1.2-1.3-2.2-2.6-2.3v2.3h-.3z" fill="#fff"></path></svg>
+                                Войти через ВКонтакте
+                            </button>
                         </div>
-                        <div class="reviews-form__stars" data-star-group="overall"><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="overall" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="30" height="30" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
-                    </div>
-
-                    <div class="reviews-form__block">
-                        <div class="reviews-form__label">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h13l5 5v3a2 2 0 0 1-2 2h-1"/><path d="M3 8v8a2 2 0 0 0 2 2h1"/><circle cx="8" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-                            Оценки по типу услуг
                         </div>
-                        <div class="reviews-form__aspects">
-                            <div class="reviews-form__aspect">
-                                <img src="../icons/int-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
-                                <span class="reviews-form__aspect-label">Скорость</span>
-                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_speed"><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_speed" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
-                            </div>
-                            <div class="reviews-form__aspect">
-                                <img src="../icons/wallet-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
-                                <span class="reviews-form__aspect-label">Цена</span>
-                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_price"><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_price" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
-                            </div>
-                            <div class="reviews-form__aspect">
-                                <img src="../icons/call-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
-                                <span class="reviews-form__aspect-label">Поддержка</span>
-                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_support"><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_support" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
-                            </div>
-                            <div class="reviews-form__aspect">
-                                <img src="../icons/wifi-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
-                                <span class="reviews-form__aspect-label">Стабильность</span>
-                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_stable"><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_stable" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
-                            </div>
-                            <div class="reviews-form__aspect">
-                                <img src="../icons/timer-icon.svg" width="20" height="20" alt="" aria-hidden="true" />
-                                <span class="reviews-form__aspect-label">Скорость подключения</span>
-                                <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="a_connect"><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="1" aria-label="1 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="2" aria-label="2 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="3" aria-label="3 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="4" aria-label="4 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button><button type="button" class="reviews-form__star" data-star-pick="a_connect" data-value="5" aria-label="5 из 5"><img src="../icons/review-star-icon-empty.svg" width="22" height="22" alt="" data-empty="../icons/review-star-icon-empty.svg" data-full="../icons/review-star-icon.svg" /></button></div>
-                            </div>
+                    </aside>
+                    <div class="reviews-form__body">
+                    <div class="reviews-form__block">
+                        <div class="reviews-form__label">Где подключено</div>
+                        <input type="hidden" name="place" value="home" data-rv-place-value />
+                        <div class="reviews-form__places">
+                            <button type="button" class="reviews-form__place is-on" data-rv-place="home" aria-pressed="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6h-6v6H4v-9z"></path></svg>
+                                В квартире
+                            </button>
+                            <button type="button" class="reviews-form__place" data-rv-place="office" aria-pressed="false">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M8 7h2M8 11h2M8 15h2M16 9h3a1 1 0 0 1 1 1v11M3 21h18"></path></svg>
+                                В офисе
+                            </button>
+                            <button type="button" class="reviews-form__place" data-rv-place="dacha" aria-pressed="false">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M6 9.5V21h12V9.5M10 21v-6h4v6"></path></svg>
+                                На даче
+                            </button>
                         </div>
                     </div>
-
                     <div class="reviews-form__block">
-                        <div class="reviews-form__label">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-                            Какими услугами пользуетесь <span class="reviews-form__hint">— можно выбрать несколько</span>
-                        </div>
+                        <div class="reviews-form__label">Какими услугами пользуетесь <span class="reviews-form__hint">— можно несколько</span></div>
                         <div class="reviews-form__services">
-                        <button type="button" class="reviews-svc" data-svc-chip>
-                            <img src="../icons/wifi-icon.svg" alt="" width="24" height="24" />
-                            <span>Интернет</span>
-                            <span class="reviews-svc__box" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="reviews-svc" data-svc-chip>
-                            <img src="../icons/tv-icon.svg" alt="" width="24" height="24" />
-                            <span>ТВ</span>
-                            <span class="reviews-svc__box" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="reviews-svc" data-svc-chip>
-                            <img src="../icons/phone-icon.svg" alt="" width="24" height="24" />
-                            <span>Мобильная связь</span>
-                            <span class="reviews-svc__box" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="reviews-svc" data-svc-chip>
-                            <img src="../icons/kion-icon.svg" alt="" width="24" height="24" />
-                            <span>Онлайн-кинотеатр</span>
-                            <span class="reviews-svc__box" aria-hidden="true"></span>
-                        </button>
+                            <button type="button" class="reviews-svc is-on" data-svc-chip aria-pressed="true">
+                                <img src="../icons/wifi-icon.svg" alt="" width="24" height="24" />
+                                <span>Интернет</span>
+                                <span class="reviews-svc__box" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="reviews-svc" data-svc-chip aria-pressed="false">
+                                <img src="../icons/tv-icon.svg" alt="" width="24" height="24" />
+                                <span>ТВ</span>
+                                <span class="reviews-svc__box" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="reviews-svc" data-svc-chip aria-pressed="false">
+                                <img src="../icons/phone-icon.svg" alt="" width="24" height="24" />
+                                <span>Мобильная связь</span>
+                                <span class="reviews-svc__box" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="reviews-svc" data-svc-chip aria-pressed="false">
+                                <img src="../icons/call-icon.svg" alt="" width="24" height="24" />
+                                <span>Телефония</span>
+                                <span class="reviews-svc__box" aria-hidden="true"></span>
+                            </button>
                         </div>
                     </div>
-
                     <div class="reviews-form__block">
-                        <label class="reviews-form__label" for="review-name">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-                            Ваше имя (ФИО) <span class="reviews-form__req">*</span>
-                        </label>
-                        <input class="reviews-form__input" id="review-name" type="text" name="name" placeholder="Например: Алексей М." required autocomplete="name" />
+                        <div class="reviews-form__label">Оценки по услугам</div>
+                        <div class="reviews-form__aspects">
+                        <div class="reviews-form__aspect">
+                            <svg class="reviews-form__aspect-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8C91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 15.7a5.5 5.5 0 0 1 7 0M12 19h.01"></path></svg>
+                            <span class="reviews-form__aspect-label">Скорость интернета</span>
+                            <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="speed"><button type="button" class="reviews-form__star" data-star-pick="speed" data-value="1" aria-label="1 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="speed" data-value="2" aria-label="2 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="speed" data-value="3" aria-label="3 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="speed" data-value="4" aria-label="4 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="speed" data-value="5" aria-label="5 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button></div>
+                        </div>
+                        <div class="reviews-form__aspect">
+                            <svg class="reviews-form__aspect-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8C91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg>
+                            <span class="reviews-form__aspect-label">Стабильность связи</span>
+                            <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="stable"><button type="button" class="reviews-form__star" data-star-pick="stable" data-value="1" aria-label="1 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="stable" data-value="2" aria-label="2 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="stable" data-value="3" aria-label="3 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="stable" data-value="4" aria-label="4 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="stable" data-value="5" aria-label="5 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button></div>
+                        </div>
+                        <div class="reviews-form__aspect">
+                            <svg class="reviews-form__aspect-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8C91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a8 8 0 0 1 16 0M4 14v3a2 2 0 0 0 2 2h1v-6H4v1zM20 14v3a2 2 0 0 1-2 2h-1v-6h3v1z"></path></svg>
+                            <span class="reviews-form__aspect-label">Техподдержка</span>
+                            <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="support"><button type="button" class="reviews-form__star" data-star-pick="support" data-value="1" aria-label="1 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="support" data-value="2" aria-label="2 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="support" data-value="3" aria-label="3 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="support" data-value="4" aria-label="4 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="support" data-value="5" aria-label="5 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button></div>
+                        </div>
+                        <div class="reviews-form__aspect">
+                            <svg class="reviews-form__aspect-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8C91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5h6M9 3.5A1.5 1.5 0 0 1 10.5 2h3A1.5 1.5 0 0 1 15 3.5V5h3a1 1 0 0 1 1 1v15H5V6a1 1 0 0 1 1-1h3V3.5zM9 13l2.2 2.2L15.5 11"></path></svg>
+                            <span class="reviews-form__aspect-label">Монтаж и подключение</span>
+                            <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="install"><button type="button" class="reviews-form__star" data-star-pick="install" data-value="1" aria-label="1 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="install" data-value="2" aria-label="2 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="install" data-value="3" aria-label="3 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="install" data-value="4" aria-label="4 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="install" data-value="5" aria-label="5 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button></div>
+                        </div>
+                        <div class="reviews-form__aspect">
+                            <svg class="reviews-form__aspect-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8C91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8zM3 8V7a2 2 0 0 1 2-2h12M16.5 14h.01"></path></svg>
+                            <span class="reviews-form__aspect-label">Цена и прозрачность</span>
+                            <div class="reviews-form__stars reviews-form__stars--sm" data-star-group="price"><button type="button" class="reviews-form__star" data-star-pick="price" data-value="1" aria-label="1 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="price" data-value="2" aria-label="2 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="price" data-value="3" aria-label="3 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="price" data-value="4" aria-label="4 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button><button type="button" class="reviews-form__star" data-star-pick="price" data-value="5" aria-label="5 из 5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8L12 2z" fill="#E3E5EA"></path></svg></button></div>
+                        </div>
+                        </div>
                     </div>
-
-                    <div class="reviews-form__block">
-                        <label class="reviews-form__label" for="review-email">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                            E-mail
-                        </label>
-                        <input class="reviews-form__input" id="review-email" type="email" name="email" placeholder="Например: alex@mail.ru" autocomplete="email" />
+                    <div class="reviews-form__proscons">
+                        <div>
+                            <div class="reviews-form__label reviews-form__label--pro">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4v-9h3zm3 9h7a2 2 0 0 0 2-1.6l1-5A2 2 0 0 0 18 11h-4V6a2 2 0 0 0-2-2l-2 7v9z"></path></svg>
+                                Что нравится
+                            </div>
+                            <textarea class="reviews-form__textarea reviews-form__textarea--sm" name="pros" placeholder="Скорость, цена, поддержка…"></textarea>
+                        </div>
+                        <div>
+                            <div class="reviews-form__label reviews-form__label--con">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 13V4h3v9h-3zm-3-9H7a2 2 0 0 0-2 1.6l-1 5A2 2 0 0 0 6 13h4v5a2 2 0 0 0 2 2l2-7V4z"></path></svg>
+                                Что не нравится
+                            </div>
+                            <textarea class="reviews-form__textarea reviews-form__textarea--sm" name="cons" placeholder="Обрывы, рост цены…"></textarea>
+                        </div>
                     </div>
-
-                    <div class="reviews-form__block">
-                        <label class="reviews-form__label" for="review-text">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10"/></svg>
-                            Отзыв <span class="reviews-form__req">*</span>
-                        </label>
-                        <textarea class="reviews-form__textarea" id="review-text" name="text" placeholder="Опишите свой опыт: подключение, скорость, цена, поддержка, стабильность…" required></textarea>
-                    </div>
-
                     <label class="reviews-opt reviews-form__consent">
-                        <input class="main-tariffs__filter-input--checkbox" type="checkbox" name="consent" required />
+                        <input class="main-tariffs__filter-input--checkbox" type="checkbox" name="consent" data-rv-consent />
                         <span>Согласен на обработку персональных данных</span>
                     </label>
                     <button type="submit" class="big-button reviews-form__submit">Отправить на модерацию</button>
+                    </div>
                 </form>
+                <div class="reviews-form-modal" data-rv-modal hidden>
+                    <div class="reviews-form-modal__overlay" data-rv-modal-close tabindex="-1"></div>
+                    <div class="reviews-form-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="rv-auth-title">
+                        <button type="button" class="reviews-form-modal__close" data-rv-modal-close aria-label="Закрыть">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+                        </button>
+                        <div class="reviews-form-modal__icon" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg>
+                        </div>
+                        <h3 class="reviews-form-modal__title" id="rv-auth-title">Войдите, чтобы отправить отзыв</h3>
+                        <p class="reviews-form-modal__text">Вход защищает рейтинг от накрутки. Публично покажем только имя.</p>
+                        <div class="reviews-form-modal__btns">
+                            <button type="button" class="reviews-form__login reviews-form__login--outline" data-rv-login="yandex">
+                                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#FC3F1D"></circle><path d="M10.9 15.4V4.6H9.3c-1.8 0-3 1-3 2.9 0 1.4.6 2.2 1.8 3l-2.3 4.9h1.7l2-4.4-.9-.6c-.9-.6-1.3-1.1-1.3-2.3 0-1 .6-1.8 1.7-1.8h.6v9.1h1.6z" fill="#fff"></path></svg>
+                                Войти через Яндекс
+                            </button>
+                            <button type="button" class="reviews-form__login reviews-form__login--outline" data-rv-login="vk">
+                                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="6" fill="#0077FF"></rect><path d="M10.4 14.2c-3.6 0-5.8-2.5-5.9-6.7h1.9c.1 3 1.4 4.3 2.5 4.6V7.5h1.8v2.8c1-.1 2.1-1.3 2.5-2.8h1.8c-.3 1.4-1.2 2.6-2.1 3.1 1 .4 2 1.6 2.4 3.1h-2c-.3-1.2-1.3-2.2-2.6-2.3v2.3h-.3z" fill="#fff"></path></svg>
+                                Войти через ВКонтакте
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
 
         <section class="reviews-cta">
             <div class="container">

@@ -985,7 +985,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Reviews page: star pickers
+  // Reviews form: star pickers
   document.querySelectorAll("[data-star-group]").forEach((group) => {
     const buttons = [...group.querySelectorAll("[data-star-pick]")];
     let value = 0;
@@ -993,10 +993,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const paint = (n) => {
       buttons.forEach((btn, i) => {
         const img = btn.querySelector("img");
-        if (!img) return;
-        const full = img.dataset.full;
-        const empty = img.dataset.empty;
-        if (full && empty) img.src = i < n ? full : empty;
+        if (img) {
+          const full = img.dataset.full;
+          const empty = img.dataset.empty;
+          if (full && empty) img.src = i < n ? full : empty;
+        }
+        const path = btn.querySelector("path");
+        if (path) path.setAttribute("fill", i < n ? "#FFC700" : "#E3E5EA");
       });
     };
 
@@ -1011,11 +1014,78 @@ document.addEventListener("DOMContentLoaded", () => {
     group.addEventListener("mouseleave", () => paint(value));
   });
 
-  // Reviews page: service multi-select chips
+  // Reviews form: service multi-select chips
   document.querySelectorAll("[data-svc-chip]").forEach((chip) => {
     chip.addEventListener("click", () => {
       chip.classList.toggle("is-on");
       chip.setAttribute("aria-pressed", chip.classList.contains("is-on") ? "true" : "false");
+    });
+  });
+
+  // Reviews form: place, auth, consent, submit
+  document.querySelectorAll("[data-reviews-form]").forEach((form) => {
+    const section = form.closest(".reviews-form-section") || form.parentElement;
+    const modal = section?.querySelector("[data-rv-modal]");
+    const authLabel = form.querySelector("[data-rv-auth-label]");
+    const consent = form.querySelector("[data-rv-consent]");
+    const consentWrap = form.querySelector(".reviews-form__consent");
+    let authed = false;
+
+    const setAuthed = () => {
+      authed = true;
+      form.classList.add("is-authed");
+      if (authLabel) authLabel.textContent = "Вы вошли — отзыв опубликуется быстрее";
+      closeModal();
+    };
+
+    const openModal = () => {
+      if (!modal) return;
+      modal.hidden = false;
+      document.body.classList.add("app-modal-open");
+    };
+
+    const closeModal = () => {
+      if (!modal) return;
+      modal.hidden = true;
+      document.body.classList.remove("app-modal-open");
+    };
+
+    form.querySelectorAll("[data-rv-place]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        form.querySelectorAll("[data-rv-place]").forEach((b) => {
+          b.classList.remove("is-on");
+          b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("is-on");
+        btn.setAttribute("aria-pressed", "true");
+        const placeInput = form.querySelector("[data-rv-place-value]");
+        if (placeInput) placeInput.value = btn.dataset.rvPlace || "";
+      });
+    });
+
+    section?.querySelectorAll("[data-rv-login]").forEach((btn) => {
+      btn.addEventListener("click", setAuthed);
+    });
+
+    section?.querySelectorAll("[data-rv-modal-close]").forEach((el) => {
+      el.addEventListener("click", closeModal);
+    });
+
+    consent?.addEventListener("change", () => {
+      consentWrap?.classList.remove("is-error");
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (consent && !consent.checked) {
+        consentWrap?.classList.add("is-error");
+        consent.focus();
+        return;
+      }
+      if (!authed) {
+        openModal();
+        return;
+      }
     });
   });
 
