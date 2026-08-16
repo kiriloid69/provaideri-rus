@@ -1309,3 +1309,52 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(equalize, 300);
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const rail = document.querySelector("[data-office-rail-track]");
+  if (!rail) return;
+
+  const getStep = () => {
+    const card = rail.querySelector(".office-features__card");
+    const styles = window.getComputedStyle(rail);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 16;
+    return (card?.getBoundingClientRect().width || 300) + gap;
+  };
+
+  const atEnd = () => rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4;
+
+  const scrollByCard = (dir) => {
+    if (dir > 0 && atEnd()) {
+      rail.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+    if (dir < 0 && rail.scrollLeft <= 4) {
+      rail.scrollTo({ left: rail.scrollWidth, behavior: "smooth" });
+      return;
+    }
+    rail.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+  };
+
+  let timer = null;
+  const startAuto = () => {
+    stopAuto();
+    timer = window.setInterval(() => scrollByCard(1), 2000);
+  };
+  const stopAuto = () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  };
+
+  document.querySelectorAll("[data-office-rail]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      scrollByCard(btn.getAttribute("data-office-rail") === "next" ? 1 : -1);
+      startAuto();
+    });
+  });
+
+  rail.addEventListener("pointerenter", stopAuto);
+  rail.addEventListener("pointerleave", startAuto);
+  startAuto();
+});
