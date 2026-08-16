@@ -1502,11 +1502,27 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!root) return;
 
   const houseInput = root.querySelector("[data-street-house-input]");
+  const goToHouse = (no) => {
+    const n = String(no || "").trim();
+    if (n === "12") {
+      window.location.href = "city_house.html";
+    }
+  };
+
   root.querySelectorAll("[data-house-quick]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (houseInput) houseInput.value = btn.getAttribute("data-house-quick") || "";
+      const no = btn.getAttribute("data-house-quick") || "";
+      if (houseInput) houseInput.value = no;
+      goToHouse(no);
     });
   });
+
+  const findBtn = root.querySelector(".city-street-checker__btn");
+  if (findBtn) {
+    findBtn.addEventListener("click", () => {
+      goToHouse(houseInput ? houseInput.value : "");
+    });
+  }
 
   root.querySelectorAll("[data-street-tab]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -1548,6 +1564,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   applyHouseRange("1-30");
+})();
+
+(() => {
+  const root = document.querySelector(".page-city-house");
+  if (!root) return;
+
+  const sortBtns = Array.from(root.querySelectorAll("[data-house-sort]"));
+  sortBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      sortBtns.forEach((b) => {
+        b.classList.toggle("city-street-sort__btn--active", b === btn);
+        const dir = b.querySelector("[data-house-sort-dir]");
+        if (dir) dir.textContent = b === btn ? (b.dataset.houseSort === "speed" ? "↓" : "↑") : "";
+      });
+    });
+  });
 })();
 
 (() => {

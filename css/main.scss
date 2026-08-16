@@ -5708,7 +5708,7 @@ input.main-tariffs__filter-input--radio {
     }
 
     &__title {
-        margin: 0 0 10px;
+        margin: 0 0 16px;
         max-width: 840px;
         font-size: 33px;
         font-weight: 600;
@@ -6592,7 +6592,8 @@ input.main-tariffs__filter-input--radio {
     }
 }
 
-.page-city-street {
+.page-city-street,
+.page-city-house {
     .faq {
         padding-top: 48px;
         padding-bottom: 48px;
@@ -6614,6 +6615,358 @@ input.main-tariffs__filter-input--radio {
             padding: 32px 0 40px;
         }
     }
+}
+
+/* —— Дом —— */
+.city-house-combo__grid {
+    grid-template-columns: 0.85fr 1fr 1fr;
+
+    @media screen and (max-width: 980px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.city-house-pass__tech {
+    gap: 10px;
+}
+
+.city-house-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.city-house-tech__chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: $border-radius;
+    background: $pastel-green-color;
+    color: $primary-color;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.city-house-prices {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 22px;
+    background: $white-color;
+    border-radius: $border-radius-big;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+
+    &__title {
+        margin: 0 0 2px;
+        font-size: 18px;
+        font-weight: 600;
+        color: $black-color;
+    }
+
+    .city-streets__lead {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    &__bar {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        font-weight: 500;
+        color: $black-color;
+
+        b {
+            font-size: 15px;
+            font-weight: 700;
+        }
+    }
+
+    &__accent {
+        color: $primary-color;
+    }
+
+    &__track {
+        height: 10px;
+        border-radius: 6px;
+        background: #e8e9ed;
+        overflow: hidden;
+
+        > i {
+            display: block;
+            height: 100%;
+            border-radius: 6px;
+        }
+
+        &--house > i {
+            background: $primary-color;
+        }
+
+        &--city > i {
+            background: $gray-color;
+        }
+    }
+
+    &__save {
+        padding: 12px 16px;
+        border-radius: $border-radius;
+        background: $pastel-green-color;
+        font-size: 14px;
+        font-weight: 600;
+        color: $primary-color;
+    }
+}
+
+.city-house-ptbl {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: $border-radius-big;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+
+    th {
+        padding: 0 18px 10px;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 600;
+        color: $dark-gray-color;
+        text-transform: none;
+    }
+
+    &__th-num {
+        text-align: center;
+    }
+
+    td {
+        padding: 16px 18px;
+        background: $white-color;
+        font-size: 14px;
+        font-weight: 500;
+        vertical-align: middle;
+        color: $black-color;
+    }
+
+    tbody tr:not(:last-child) td {
+        border-bottom: 1px solid #e8e9ed;
+    }
+
+    tbody tr:first-child td:first-child {
+        border-radius: $border-radius-big 0 0 0;
+    }
+
+    tbody tr:first-child td:last-child {
+        border-radius: 0 $border-radius-big 0 0;
+    }
+
+    tbody tr:last-child td:first-child {
+        border-radius: 0 0 0 $border-radius-big;
+    }
+
+    tbody tr:last-child td:last-child {
+        border-radius: 0 0 $border-radius-big 0;
+    }
+
+    &__prov {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 150px;
+
+        > img {
+            height: 24px;
+            max-width: 92px;
+            width: auto;
+            object-fit: contain;
+            object-position: left center;
+        }
+    }
+
+    &__rat {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $dark-gray-color;
+        white-space: nowrap;
+
+        img {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+
+        small {
+            display: block;
+            margin-top: 2px;
+            font-size: 12px;
+            font-weight: 500;
+            color: $dark-gray-color;
+        }
+    }
+
+    &__speed b {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    &__tech {
+        display: inline-flex;
+        padding: 4px 10px;
+        border-radius: 7px;
+        background: #eef0f3;
+        font-size: 12px;
+        font-weight: 700;
+        color: $black-color;
+    }
+
+    &__price {
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    &__price-val {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        b {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        > span:not(.city-house-ptbl__old):not(.city-house-ptbl__sale) {
+            font-size: 12px;
+            font-weight: 500;
+            color: $dark-gray-color;
+        }
+    }
+
+    &__old {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        color: $dark-gray-color;
+        text-decoration: line-through;
+    }
+
+    &__sale {
+        display: inline-flex;
+        align-items: center;
+        padding: 3px 8px;
+        border-radius: 6px;
+        background: #ff7633;
+        color: $white-color;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    &__act {
+        text-align: right;
+    }
+
+    &__btn.big-button {
+        width: auto;
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+
+    @media screen and (max-width: 980px) {
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+
+        thead {
+            display: none;
+        }
+
+        &,
+        tbody,
+        tr,
+        td {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        tbody tr:not(:last-child) td {
+            border-bottom: none;
+        }
+
+        tr {
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: $white-color;
+            border-radius: $border-radius-big;
+            box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+        }
+
+        td {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 18px;
+            border-radius: 0 !important;
+            box-shadow: none;
+
+            &::before {
+                content: attr(data-label);
+                flex-shrink: 0;
+                font-size: 12px;
+                font-weight: 600;
+                color: $dark-gray-color;
+            }
+        }
+
+        &__cell-prov {
+            padding-top: 16px;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__act {
+            padding-bottom: 16px;
+            text-align: left;
+
+            &::before {
+                display: none;
+            }
+
+            .city-house-ptbl__btn.big-button {
+                width: 100%;
+            }
+        }
+
+        &__price {
+            align-items: flex-start;
+        }
+
+        &__price-val {
+            margin-left: auto;
+            text-align: right;
+        }
+    }
+}
+
+.city-house-neighbors {
+    padding-top: 48px;
+    background: $bg-color;
 }
 
 .page-city-streets {
