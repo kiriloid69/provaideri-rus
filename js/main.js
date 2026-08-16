@@ -1338,7 +1338,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let timer = null;
   const startAuto = () => {
     stopAuto();
-    timer = window.setInterval(() => scrollByCard(1), 2000);
+    timer = window.setInterval(() => scrollByCard(1), 2500);
   };
   const stopAuto = () => {
     if (timer) {
@@ -1358,3 +1358,45 @@ document.addEventListener("DOMContentLoaded", () => {
   rail.addEventListener("pointerleave", startAuto);
   startAuto();
 });
+
+(() => {
+  const input = document.querySelector("[data-city-streets-street]");
+  const sugg = document.querySelector("[data-city-streets-sugg]");
+  if (!input || !sugg) return;
+
+  const items = Array.from(sugg.querySelectorAll("[data-value]"));
+  const show = () => {
+    sugg.hidden = false;
+  };
+  const hide = () => {
+    window.setTimeout(() => {
+      sugg.hidden = true;
+    }, 150);
+  };
+
+  const filter = () => {
+    const q = input.value.trim().toLowerCase();
+    let visible = 0;
+    items.forEach((li) => {
+      const match = !q || (li.dataset.value || "").toLowerCase().includes(q);
+      li.hidden = !match;
+      if (match) visible += 1;
+    });
+    sugg.hidden = visible === 0;
+  };
+
+  input.addEventListener("focus", () => {
+    filter();
+    show();
+  });
+  input.addEventListener("input", filter);
+  input.addEventListener("blur", hide);
+
+  items.forEach((li) => {
+    li.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      input.value = li.dataset.value || "";
+      sugg.hidden = true;
+    });
+  });
+})();
