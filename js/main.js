@@ -1645,3 +1645,128 @@ document.addEventListener("DOMContentLoaded", () => {
     mountIframe();
   }
 })();
+
+(() => {
+  const root = document.querySelector(".page-city-complexes");
+  if (!root) return;
+
+  const TOTAL = 1248;
+  const cards = Array.from(root.querySelectorAll("[data-jk-card]"));
+  const list = root.querySelector("[data-jk-list]");
+  const empty = root.querySelector("[data-jk-empty]");
+  const countEl = root.querySelector("[data-jk-count]");
+  const searchInput = root.querySelector("[data-jk-search]");
+  const newBtn = root.querySelector("[data-jk-new]");
+  const tabs = Array.from(root.querySelectorAll("[data-jk-tab]"));
+
+  let district = "Все округа";
+  let onlyNew = false;
+
+  const plural = (n, one, few, many) => {
+    const m10 = n % 10;
+    const m100 = n % 100;
+    if (m10 === 1 && m100 !== 11) return one;
+    if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+    return many;
+  };
+
+  const apply = () => {
+    const q = (searchInput ? searchInput.value : "").trim().toLowerCase();
+    let visible = 0;
+    cards.forEach((card) => {
+      const d = card.getAttribute("data-district") || "";
+      const year = Number(card.getAttribute("data-year") || 0);
+      const name = card.getAttribute("data-name") || "";
+      const okDistrict = district === "Все округа" || d === district;
+      const okNew = !onlyNew || year >= 2020;
+      const okQuery = !q || name.includes(q.toLowerCase());
+      const show = okDistrict && okNew && okQuery;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (list) list.hidden = visible === 0;
+    if (empty) empty.hidden = visible !== 0;
+    if (countEl) {
+      countEl.textContent =
+        "Показано " +
+        visible +
+        " " +
+        plural(visible, "комплекс", "комплекса", "комплексов") +
+        " из " +
+        TOTAL.toLocaleString("ru-RU").replace(/\u00a0/g, " ");
+    }
+  };
+
+  const setDistrict = (value) => {
+    district = value;
+    tabs.forEach((t) => {
+      t.classList.toggle("city-jk-tab--active", t.getAttribute("data-jk-tab") === value);
+    });
+    apply();
+  };
+
+  const reset = () => {
+    district = "Все округа";
+    onlyNew = false;
+    if (searchInput) searchInput.value = "";
+    if (newBtn) {
+      newBtn.classList.remove("city-jk-tool--active");
+      newBtn.setAttribute("aria-pressed", "false");
+    }
+    setDistrict("Все округа");
+  };
+
+  tabs.forEach((btn) => {
+    btn.addEventListener("click", () => setDistrict(btn.getAttribute("data-jk-tab") || "Все округа"));
+  });
+
+  if (newBtn) {
+    newBtn.addEventListener("click", () => {
+      onlyNew = !onlyNew;
+      newBtn.classList.toggle("city-jk-tool--active", onlyNew);
+      newBtn.setAttribute("aria-pressed", onlyNew ? "true" : "false");
+      apply();
+    });
+  }
+
+  root.querySelectorAll("[data-jk-reset]").forEach((btn) => {
+    btn.addEventListener("click", reset);
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", apply);
+  }
+
+  const searchBtn = root.querySelector("[data-jk-search-btn]");
+  if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      apply();
+    });
+  }
+
+  root.querySelectorAll("[data-jk-quick]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const label = btn.getAttribute("data-jk-quick") || "";
+      if (searchInput) searchInput.value = label;
+      onlyNew = false;
+      if (newBtn) {
+        newBtn.classList.remove("city-jk-tool--active");
+        newBtn.setAttribute("aria-pressed", "false");
+      }
+      setDistrict("Все округа");
+      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  root.querySelectorAll("[data-jk-district-link]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const d = link.getAttribute("data-jk-district-link") || "Все округа";
+      setDistrict(d);
+      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  apply();
+})();
