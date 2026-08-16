@@ -1477,6 +1477,13 @@ p {
         padding: 16px 24px;
     }
 
+    &__table--house {
+        .office-tariffs__head,
+        .office-tariffs__row {
+            grid-template-columns: 1.5fr 0.95fr 0.9fr 0.8fr 0.9fr 170px;
+        }
+    }
+
     &__head {
         background: #f7f8fa;
         font-size: 12.5px;
@@ -1889,7 +1896,8 @@ p {
     }
 }
 
-.page-office-internet {
+.page-office-internet,
+.page-house-internet {
     .faq {
         padding-bottom: 64px;
         background: $white-color;

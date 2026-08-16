@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Интернет в частный дом в Москве — Провайдеры.рус</title>
+
+        <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+        <link rel="shortcut icon" href="../favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="../favicon/site.webmanifest" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <link rel="preload" href="../images/main-mobile.gif" as="image" />
+        <link rel="stylesheet" href="../css/main.css" />
+    </head>
+    <body class="page-house-internet">
+        <header class="header">
+            <div class="container d-flex align-center justify-between">
+                <div class="header__menu d-flex align-center gap-24">
+                    <a href="../index.html" class="header__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/logo.svg" alt="logo" />
+                    </a>
+                    <ul class="header__menu-list d-flex align-center gap-24">
+                        <li class="header__menu-item">
+                            <a href="search_address.html" class="header__menu-link">Подключение по адресу</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Тарифы</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Провайдеры</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__contacts d-flex gap-24 align-center">
+                    <div class="header__contacts-item">
+                        <a href="tel:88007001234" class="header__contacts-link phone-number">8-800-700-1234</a>
+                    </div>
+                    <div class="header__contacts-item">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/call-icon.svg" alt="phone" />
+                            </div>
+                            <span>Заказать звонок</span>
+                        </a>
+                    </div>
+                    <div class="header__contacts-item header__contacts-item--city">
+                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
+                            <div class="header__contacts-icon">
+                                <img src="../icons/map-icon.svg" alt="phone" />
+                            </div>
+                            <span>Москва</span>
+                        </a>
+                    </div>
+                    <div class="header__menu-mobile">
+                        <button type="button" class="header__menu-mobile-btn" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
+                            <img class="header__menu-mobile-icon header__menu-mobile-icon--open" src="../icons/hamburger-icon.svg" alt="" aria-hidden="true" />
+                            <span class="header__menu-mobile-icon header__menu-mobile-icon--close" aria-hidden="true">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Мобильное меню (ширина 320px, экраны ≤ px) -->
+        <div class="mobile">
+            <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu__backdrop" aria-label="Закрыть меню"></div>
+                <div class="mobile-menu__panel">
+                    <div class="mobile-menu__content">
+                        <nav class="mobile-menu__nav">
+                            <a href="search_address.html" class="mobile-menu__link">Подключение по адресу</a>
+                            <a href="#" class="mobile-menu__link">Тарифы</a>
+                            <a href="#" class="mobile-menu__link">Провайдеры</a>
+                            <a href="#" class="mobile-menu__link">Контакты</a>
+                        </nav>
+                        <div class="mobile-menu__location">
+                            <p class="mobile-menu__location-label">Вы находитесь здесь</p>
+                            <div class="mobile-menu__location-card" id="mobile-menu-location-card">
+                                <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-icon" width="20" height="20" aria-hidden="true" />
+                                <span class="mobile-menu__city">Москва</span>
+                            </div>
+                            <div class="mobile-menu__location-input-wrapper" id="mobile-menu-location-input-wrapper" style="display: none">
+                                <div class="mobile-menu__location-input-container">
+                                    <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-input-icon" width="20" height="20" aria-hidden="true" />
+                                    <input type="text" class="mobile-menu__location-input" id="mobile-menu-location-input" placeholder="Введите город" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="mobile-menu-city-suggestions" />
+                                </div>
+                                <ul class="mobile-menu__city-suggestions" id="mobile-menu-city-suggestions" role="listbox" aria-label="Подсказки городов">
+                                    <!-- Список будет заполнен через JS -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-mobile">
+                <div class="main-mobile__content">
+                    <div class="container">
+                        <nav class="main-mobile__content-navigation">
+                            <ul class="main-mobile__content-navigation-list">
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Тарифы</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">Провайдеры</a>
+                                </li>
+                                <li class="main-mobile__content-navigation-item">
+                                    <a href="#" class="main-mobile__content-navigation-link">
+                                        <svg class="compare-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z" fill="currentColor" />
+                                            <path d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z" fill="currentColor" />
+                                        </svg>
+                                        Сравнение
+                                        <span class="main-mobile__content-navigation-link-count">5</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="main-mobile__content-main">
+                    <img src="../images/main-mobile.gif" alt="Девушка за компьютером" loading="eager" fetchpriority="high" />
+                </div>
+            </div>
+        </div>
+
+                <section class="office-hero">
+            <div class="container">
+                <nav class="breadcrumbs breadcrumbs--in-hero" aria-label="Хлебные крошки">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Москва</a></li>
+                        <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Интернет в частный дом</li>
+                    </ol>
+                </nav>
+                <div class="office-hero__grid">
+                    <div class="office-hero__content">
+                        <p class="office-hero__meta">
+                            <span class="office-hero__meta-dot" aria-hidden="true"></span>
+                            Частный сектор и загород
+                        </p>
+                        <h1 class="office-hero__title">Интернет в частный дом в Москве и области — <span class="office-hero__title-accent">от 590 ₽</span></h1>
+                        <p class="office-hero__lead">Подключение частного дома: оптика GPON, радио или 4G там, где нет кабеля. За городом тоже.</p>
+                        <div class="office-hero__chips">
+                            <span class="office-hero__chip office-hero__chip--accent">GPON / радио / 4G</span>
+                            <span class="office-hero__chip office-hero__chip--accent">работает за городом</span>
+                            <span class="office-hero__chip office-hero__chip--accent">до 500 Мбит/с</span>
+                            <span class="office-hero__chip">роутер / антенна</span>
+                        </div>
+                        <div class="office-hero__metrics">
+                            <div class="office-hero__metric">
+                                <b class="office-hero__metric-value office-hero__metric-value--accent">от 590 ₽</b>
+                                <span class="office-hero__metric-label">минимум в месяц</span>
+                            </div>
+                            <div class="office-hero__metric">
+                                <b class="office-hero__metric-value">до 500 Мбит/с</b>
+                                <span class="office-hero__metric-label">по оптике GPON</span>
+                            </div>
+                            <div class="office-hero__metric">
+                                <b class="office-hero__metric-value">за городом</b>
+                                <span class="office-hero__metric-label">радио и 4G до 60 км от МКАД</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="office-hero__form" id="house-form" action="#" method="post">
+                        <h2 class="office-hero__form-title">Проверить дом</h2>
+                        <p class="office-hero__form-text">Укажите адрес дома или СНТ — покажем, какие технологии доступны и что нужно из оборудования.</p>
+                        <label class="office-hero__field">
+                            <span class="office-hero__sr-only">Адрес дома</span>
+                            <svg class="office-hero__field-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <input type="text" name="address" placeholder="Адрес дома, СНТ или деревня" autocomplete="street-address" />
+                        </label>
+                        <label class="office-hero__field">
+                            <span class="office-hero__sr-only">Телефон</span>
+                            <svg class="office-hero__field-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9Z"/></svg>
+                            <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" data-phone-mask />
+                        </label>
+                        <button type="submit" class="big-button office-hero__submit">Проверить дом</button>
+                        <p class="office-hero__consent">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="office-features">
+            <div class="container office-features__head">
+                <div>
+                    <h2 class="office-features__title">Что важно для частного дома</h2>
+                    <p class="office-features__lead">В частном секторе решает не тариф, а технология: где-то заведут оптику GPON, где-то поможет радиоканал или 4G с внешней антенной.</p>
+                </div>
+                <div class="office-features__nav">
+                    <button type="button" class="office-features__nav-btn" data-office-rail="prev" aria-label="Назад">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <button type="button" class="office-features__nav-btn" data-office-rail="next" aria-label="Вперёд">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="office-features__rail" data-office-rail-track>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 13a10 10 0 0 1 14 0"/><path d="M1.5 9.5a15 15 0 0 1 21 0"/></svg></div>
+                        <h3 class="office-features__card-title">Оптика GPON до дома</h3>
+                        <p class="office-features__card-text">Если в посёлке есть оптическая линия — до 500 Мбит/с и стабильный пинг. Самый выгодный вариант по цене за мегабит.</p>
+                    </article>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m7 8 5-5 5 5"/><path d="M5 21h14"/><circle cx="12" cy="12" r="2"/></svg></div>
+                        <h3 class="office-features__card-title">Радиоканал, где нет кабеля</h3>
+                        <p class="office-features__card-text">Антенна на крыше смотрит на базовую станцию провайдера: 50–200 Мбит/с без прокладки траншеи по участку.</p>
+                    </article>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 6h4"/><path d="M12 18h.01"/></svg></div>
+                        <h3 class="office-features__card-title">4G с внешней антенной</h3>
+                        <p class="office-features__card-text">Работает почти везде: роутер с усиленной антенной вытягивает сигнал даже при одном делении на телефоне.</p>
+                    </article>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <h3 class="office-features__card-title">Работает за городом</h3>
+                        <p class="office-features__card-text">Подключаем СНТ, деревни и коттеджные посёлки до 60 км от МКАД. Проверим адрес по картам покрытия провайдеров.</p>
+                    </article>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="20" height="8" rx="2"/><path d="M7 13h.01"/><path d="M12 9V5"/><path d="m9 5 3-3 3 3"/></svg></div>
+                        <h3 class="office-features__card-title">Роутер и антенна в комплекте</h3>
+                        <p class="office-features__card-text">Оборудование даётся в аренду от 0 ₽ или в рассрочку. Монтаж антенны и ввод кабеля в дом — работа инженера.</p>
+                    </article>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+                        <h3 class="office-features__card-title">Wi-Fi на весь участок</h3>
+                        <p class="office-features__card-text">Дом в два этажа, баня и беседка: mesh-точки или уличная точка доступа закрывают территорию без мёртвых зон.</p>
+                    </article>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                        <h3 class="office-features__card-title">Видеонаблюдение и умный дом</h3>
+                        <p class="office-features__card-text">Камеры на въезде, датчики и котёл на удалённом управлении работают, пока дом пустует между приездами.</p>
+                    </article>
+                    <article class="office-features__card">
+                        <div class="office-features__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+                        <h3 class="office-features__card-title">Сезонная приостановка</h3>
+                        <p class="office-features__card-text">Если живёте в доме только летом — тариф можно заморозить на зиму и платить символическую сумму за линию.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="office-tariffs" id="tariffs">
+            <div class="container">
+                <h2 class="office-tariffs__title">Тарифы для частного дома</h2>
+                <p class="office-tariffs__lead">Подходящие тарифы с ценами. Доступность зависит от технологии по вашему адресу.</p>
+                <div class="office-tariffs__table office-tariffs__table--house">
+                    <div class="office-tariffs__head" aria-hidden="true">
+                        <div>Провайдер и тариф</div>
+                        <div>Скорость</div>
+                        <div>Цена</div>
+                        <div>Технология</div>
+                        <div>Оборудование</div>
+                        <div></div>
+                    </div>
+                    <div class="office-tariffs__row">
+                        <div class="office-tariffs__provider">
+                            <img class="office-tariffs__logo" src="../images/operators-logos/rtk.png" alt="Ростелеком" width="74" height="28" />
+                            <div>
+                                <div class="office-tariffs__name">Дом Базовый</div>
+                                <div class="office-tariffs__tech">частный сектор в черте города</div>
+                            </div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Скорость</span>
+                            <div class="office-tariffs__value">100 Мбит/с</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Цена</span>
+                            <div class="office-tariffs__price">590 ₽</div>
+                            <div class="office-tariffs__hint">в месяц</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Технология</span>
+                            <div class="office-tariffs__meta">GPON</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Оборудование</span>
+                            <div class="office-tariffs__meta">роутер в аренду</div>
+                        </div>
+                        <div class="office-tariffs__cta">
+                            <button type="button" class="big-button office-tariffs__btn js-app-modal-open" data-app-modal="connect-request">Подключить</button>
+                        </div>
+                    </div>
+                    <div class="office-tariffs__row">
+                        <div class="office-tariffs__provider">
+                            <img class="office-tariffs__logo" src="../images/operators-logos/mts.png" alt="МТС" width="74" height="28" />
+                            <div>
+                                <div class="office-tariffs__name">Загород 4G</div>
+                                <div class="office-tariffs__tech">СНТ и деревни без кабеля</div>
+                            </div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Скорость</span>
+                            <div class="office-tariffs__value">до 70 Мбит/с</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Цена</span>
+                            <div class="office-tariffs__price">790 ₽</div>
+                            <div class="office-tariffs__hint">в месяц</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Технология</span>
+                            <div class="office-tariffs__meta">4G</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Оборудование</span>
+                            <div class="office-tariffs__meta">антенна + роутер</div>
+                        </div>
+                        <div class="office-tariffs__cta">
+                            <button type="button" class="big-button office-tariffs__btn js-app-modal-open" data-app-modal="connect-request">Подключить</button>
+                        </div>
+                    </div>
+                    <div class="office-tariffs__row">
+                        <div class="office-tariffs__provider">
+                            <img class="office-tariffs__logo" src="../images/operators-logos/beeline.png" alt="Билайн" width="74" height="28" />
+                            <div>
+                                <div class="office-tariffs__name">Радио Оптимум</div>
+                                <div class="office-tariffs__tech">антенна на крышу, без траншеи</div>
+                            </div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Скорость</span>
+                            <div class="office-tariffs__value">150 Мбит/с</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Цена</span>
+                            <div class="office-tariffs__price">1 100 ₽</div>
+                            <div class="office-tariffs__hint">в месяц</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Технология</span>
+                            <div class="office-tariffs__meta">радио</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Оборудование</span>
+                            <div class="office-tariffs__meta">антенна в аренду</div>
+                        </div>
+                        <div class="office-tariffs__cta">
+                            <button type="button" class="big-button office-tariffs__btn js-app-modal-open" data-app-modal="connect-request">Подключить</button>
+                        </div>
+                    </div>
+                    <div class="office-tariffs__row">
+                        <div class="office-tariffs__provider">
+                            <img class="office-tariffs__logo" src="../images/operators-logos/megafon.png" alt="МегаФон" width="74" height="28" />
+                            <div>
+                                <div class="office-tariffs__name">Дом + ТВ</div>
+                                <div class="office-tariffs__tech">оптика и 150 каналов</div>
+                            </div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Скорость</span>
+                            <div class="office-tariffs__value">300 Мбит/с</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Цена</span>
+                            <div class="office-tariffs__price">1 350 ₽</div>
+                            <div class="office-tariffs__hint">в месяц</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Технология</span>
+                            <div class="office-tariffs__meta">GPON</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Оборудование</span>
+                            <div class="office-tariffs__meta">роутер + ТВ-приставка</div>
+                        </div>
+                        <div class="office-tariffs__cta">
+                            <button type="button" class="big-button office-tariffs__btn js-app-modal-open" data-app-modal="connect-request">Подключить</button>
+                        </div>
+                    </div>
+                    <div class="office-tariffs__row">
+                        <div class="office-tariffs__provider">
+                            <img class="office-tariffs__logo" src="../images/operators-logos/domru.png" alt="Дом.ру" width="74" height="28" />
+                            <div>
+                                <div class="office-tariffs__name">Коттедж Макс</div>
+                                <div class="office-tariffs__tech">mesh-Wi-Fi на дом и участок</div>
+                            </div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Скорость</span>
+                            <div class="office-tariffs__value">500 Мбит/с</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Цена</span>
+                            <div class="office-tariffs__price">1 890 ₽</div>
+                            <div class="office-tariffs__hint">в месяц</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Технология</span>
+                            <div class="office-tariffs__meta">GPON</div>
+                        </div>
+                        <div class="office-tariffs__cell">
+                            <span class="office-tariffs__label">Оборудование</span>
+                            <div class="office-tariffs__meta">2 mesh-точки</div>
+                        </div>
+                        <div class="office-tariffs__cta">
+                            <button type="button" class="big-button office-tariffs__btn js-app-modal-open" data-app-modal="connect-request">Подключить</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="office-tariffs__note">Оптика есть не в каждом посёлке — <a href="#house-form">проверьте адрес дома</a>, чтобы увидеть доступные технологии.</p>
+            </div>
+        </section>
+
+        <section class="office-connect">
+            <div class="container">
+                <h2 class="office-connect__title">Как подключить</h2>
+                <p class="office-connect__lead">Заявка → выезд инженера → подключение. В черте города обычно 2–4 дня, за городом — до недели.</p>
+                <div class="office-connect__steps">
+                    <article class="office-connect__step">
+                        <div class="office-connect__step-top">
+                            <span class="office-connect__num">1</span>
+                            <span class="office-connect__time">10 минут</span>
+                        </div>
+                        <h3 class="office-connect__step-title">Заявка с адресом дома</h3>
+                        <p class="office-connect__step-text">Укажите адрес или СНТ. Проверим карты покрытия и подберём технологию: оптика, радио или 4G.</p>
+                    </article>
+                    <article class="office-connect__step">
+                        <div class="office-connect__step-top">
+                            <span class="office-connect__num">2</span>
+                            <span class="office-connect__time">1 день</span>
+                        </div>
+                        <h3 class="office-connect__step-title">Расчёт и смета</h3>
+                        <p class="office-connect__step-text">Считаем тариф, оборудование и работы: ввод кабеля, монтаж антенны, длина трассы по участку.</p>
+                    </article>
+                    <article class="office-connect__step">
+                        <div class="office-connect__step-top">
+                            <span class="office-connect__num">3</span>
+                            <span class="office-connect__time">2–5 дней</span>
+                        </div>
+                        <h3 class="office-connect__step-title">Выезд инженера</h3>
+                        <p class="office-connect__step-text">Инженер заводит линию в дом, ставит антенну на крышу или мачту, настраивает роутер и Wi-Fi.</p>
+                    </article>
+                    <article class="office-connect__step">
+                        <div class="office-connect__step-top">
+                            <span class="office-connect__num">4</span>
+                            <span class="office-connect__time">в день работ</span>
+                        </div>
+                        <h3 class="office-connect__step-title">Замер скорости и приёмка</h3>
+                        <p class="office-connect__step-text">Проверяем скорость в дальней комнате и на участке. При слабом сигнале добавляем mesh-точку.</p>
+                    </article>
+                </div>
+                <div class="office-connect__banner">
+                    <div class="office-connect__banner-copy">
+                        <h3 class="office-connect__banner-title">В посёлке нет ни кабеля, ни сигнала?</h3>
+                        <p class="office-connect__banner-text">Оставьте адрес — проверим вручную по картам радиопокрытия и предложим вариант с антенной.</p>
+                    </div>
+                    <button type="button" class="big-button office-connect__banner-btn js-app-modal-open" data-app-modal="ask-operator">Проверить дом</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2 class="title">Частые вопросы</h2>
+                <div class="faq__list">
+                    <div class="faq__col">
+                        <div class="faq__item">
+                            <button type="button" class="faq__question faq__question--open" aria-expanded="true" aria-controls="faq-1" id="faq-q-1">
+                                <span class="faq__question-text">Что выбрать: оптику, радио или 4G?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <g clip-path="url(#faq-clip-1)">
+                                        <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="faq-clip-1">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap faq__answer-wrap--open" id="faq-1" role="region" aria-labelledby="faq-q-1">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">В квартиру</div>
+                                    <div class="faq__answer">В частный дом</div>
+                                    <div class="faq__answer">В офис</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-2" id="faq-q-2">
+                                <span class="faq__question-text">Подключат ли дом за городом или в СНТ?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <g clip-path="url(#faq-clip-2)">
+                                        <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="faq-clip-2">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-2" role="region" aria-labelledby="faq-q-2">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">В квартиру</div>
+                                    <div class="faq__answer">В частный дом</div>
+                                    <div class="faq__answer">В офис</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-3" id="faq-q-3">
+                                <span class="faq__question-text">Сколько стоит подключение и оборудование?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <g clip-path="url(#faq-clip-3)">
+                                        <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="faq-clip-3">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-3" role="region" aria-labelledby="faq-q-3">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">В квартиру</div>
+                                    <div class="faq__answer">В частный дом</div>
+                                    <div class="faq__answer">В офис</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-4" id="faq-q-4">
+                                <span class="faq__question-text">Нужно ли копать траншею по участку?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <g clip-path="url(#faq-clip-4)">
+                                        <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="faq-clip-4">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-4" role="region" aria-labelledby="faq-q-4">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">В квартиру</div>
+                                    <div class="faq__answer">В частный дом</div>
+                                    <div class="faq__answer">В офис</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__col">
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-5" id="faq-q-5">
+                                <span class="faq__question-text">Хватит ли скорости на видеонаблюдение и стриминг?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <g clip-path="url(#faq-clip-5)">
+                                        <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="faq-clip-5">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-5" role="region" aria-labelledby="faq-q-5">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">В квартиру</div>
+                                    <div class="faq__answer">В частный дом</div>
+                                    <div class="faq__answer">В офис</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-6" id="faq-q-6">
+                                <span class="faq__question-text">Как покрыть Wi-Fi двухэтажный дом и участок?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <g clip-path="url(#faq-clip-6)">
+                                        <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="faq-clip-6">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-6" role="region" aria-labelledby="faq-q-6">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">В квартиру</div>
+                                    <div class="faq__answer">В частный дом</div>
+                                    <div class="faq__answer">В офис</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-7" id="faq-q-7">
+                                <span class="faq__question-text">Можно ли отключать интернет на зиму?</span>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <g clip-path="url(#faq-clip-7)">
+                                        <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="faq-clip-7">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="faq__answer-wrap" id="faq-7" role="region" aria-labelledby="faq-q-7">
+                                <div class="faq__answer-inner">
+                                    <div class="faq__answer">В квартиру</div>
+                                    <div class="faq__answer">В частный дом</div>
+                                    <div class="faq__answer">В офис</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<footer class="footer">
+            <div class="container footer__inner">
+                <div class="footer__left">
+                    <a href="../index.html" class="footer__logo" aria-label="Провайдеры.рус — на главную">
+                        <img src="../images/white-logo.svg" alt="Провайдеры РУС" width="198" height="29" class="footer__logo-img" />
+                    </a>
+                    <p class="footer__copyright">© 2026 Провайдеры.рус</p>
+                </div>
+                <nav class="footer__links-mobile">
+                    <a href="search_address.html">Подключение по адресу</a>
+                    <a href="#">Тарифы</a>
+                    <a href="#">Провайдеры</a>
+                    <a href="#">Контакты</a>
+                </nav>
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">О компании</h3>
+                        <ul class="footer__list">
+                            <li><a href="search_address.html">Подключение по адресу</a></li>
+                            <li><a href="#">Тарифы</a></li>
+                            <li><a href="#">Провайдеры</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Услуги</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Интернет</a></li>
+                            <li><a href="#">ТВ</a></li>
+                            <li><a href="#">Мобильная связь</a></li>
+                            <li><a href="#">Онлайн кинотеатры</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Провайдеры</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">MTC</a></li>
+                            <li><a href="#">Билайн</a></li>
+                            <li><a href="#">Мегафон</a></li>
+                            <li><a href="#">Теле2</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__col-title">Поиск</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Город</a></li>
+                            <li><a href="#">Улица</a></li>
+                            <li><a href="#">Поиск по адресу</a></li>
+                            <li><a href="#">Проверка скорости интернета</a></li>
+                            <li><a href="#">Рейтинг провайдеров</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+
+        <div class="footer-disclaimer">
+            <div class="container">
+                <p class="footer-disclaimer__text">
+                    Продолжая использовать наш сайт, вы даёте согласие на обработку файлов
+                    <a href="#">Cookies</a> и других пользовательских данных, в соответствии с <a href="#">Политикой конфиденциальности</a> и&nbsp;<a href="#">Пользовательским соглашением</a>.
+                </p>
+                <div class="copyright-mobile">
+                    <p class="copyright-mobile__text">© 2026 Провайдеры.рус</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal" id="ask-operator-modal" data-app-modal-id="ask-operator" role="dialog" aria-modal="true" aria-labelledby="ask-operator-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body app-modal__body--compact">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="ask-operator-modal-title">Спросите у оператора</h2>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Отправить запрос</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-modal" id="connect-request-modal" data-app-modal-id="connect-request" role="dialog" aria-modal="true" aria-labelledby="connect-request-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="connect-request-modal-title">Запрос на подключение</h2>
+                    <div class="app-modal__lines app-modal__lines--highlight" data-app-modal-tariff></div>
+                    <div class="app-modal__lines app-modal__lines--muted" data-app-modal-address></div>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Отправить запрос</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+<div class="app-modal app-modal--connect-tariff" id="connect-tariff-modal" data-app-modal-id="connect-tariff" role="dialog" aria-modal="true" aria-labelledby="connect-tariff-modal-title" aria-hidden="true">
+    <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+    <div class="app-modal__dialog connect-tariff-modal__dialog">
+        <button type="button" class="app-modal__close connect-tariff-modal__close" data-app-modal-close aria-label="Закрыть">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 8L24 24M24 8L8 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+        <div class="connect-tariff-modal">
+            <div class="connect-tariff-modal__scroll">
+            <header class="connect-tariff-modal__header">
+                <div class="connect-tariff-modal__header-main">
+                    <div class="connect-tariff-modal__logo">
+                        <img src="../images/operators-logos/mts.png" alt="" width="92" height="92" data-app-modal-logo />
+                    </div>
+                    <div class="connect-tariff-modal__heading">
+                        <div class="connect-tariff-modal__badge hit" data-app-modal-badge>Хит подключений</div>
+                        <h2 class="connect-tariff-modal__title" id="connect-tariff-modal-title" data-app-modal-tariff>Тариф «МТС Дома Отлично»</h2>
+                    </div>
+                </div>
+                <p class="connect-tariff-modal__subtitle">Оптимальная скорость без переплат и дополнительных услуг</p>
+            </header>
+
+                <div class="connect-tariff-modal__services">
+                    <div class="connect-tariff-modal__accordion">
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="../icons/wifi-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Интернет</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Скорость</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">500 Мбит/с</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Технология</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">GPON (Оптический кабель)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="../icons/tv-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Телевидение</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Количество ТВ-каналов</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="../icons/phone-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Мобильная связь</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Интернет</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">30 Гб</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Исходящих звонков</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">900 мин</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">SMS</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">100</span>
+                                    </div>
+                                    <div class="connect-tariff-modal__row">
+                                        <span class="connect-tariff-modal__row-label">Sim</span>
+                                        <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                        <span class="connect-tariff-modal__row-value">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service connect-tariff-modal__accordion-icon-service--kion" src="../icons/kion-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">KION</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <p class="connect-tariff-modal__text">Видеосервис от МТС с эксклюзивным контентом KION Originals, большой коллекцией фильмов, сериалов и более 200 телеканалов.</p>
+                                    <ul class="connect-tariff-modal__list">
+                                        <li>Возможность приобретать фильмы навсегда или брать напрокат</li>
+                                        <li>Рейтинг фильмов</li>
+                                        <li>Детский профиль</li>
+                                        <li>Доступ с 5 устройств.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="connect-tariff-modal__accordion-item">
+                            <button type="button" class="connect-tariff-modal__accordion-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__accordion-head">
+                                    <img class="connect-tariff-modal__accordion-icon-service" src="../icons/more-icon.svg" alt="" width="32" height="32" aria-hidden="true" />
+                                    <span class="connect-tariff-modal__accordion-title">Дополнительно</span>
+                                </span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__accordion-panel">
+                                <div class="connect-tariff-modal__accordion-content">
+                                    <ul class="connect-tariff-modal__list">
+                                        <li>Группа для близких</li>
+                                        <li>Скидка 10% на 3 мес. с услугой Автоплатеж</li>
+                                        <li>Страховой полис с выплатой до 100 тыс. рублей</li>
+                                        <li>Безлимитный доступ к мессенджерам WhatsApp, Telegram и ещё + 3</li>
+                                        <li>Безлимитный доступ к Одноклассники и ВКонтакте</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <aside class="connect-tariff-modal__aside">
+                    <div class="connect-tariff-modal__pricing">
+                        <h3 class="connect-tariff-modal__pricing-title">Стоимость тарифа</h3>
+                        <p class="connect-tariff-modal__pricing-value" data-app-modal-price>529 ₽/мес</p>
+                        <p class="connect-tariff-modal__pricing-note">Средняя цена за год с учетом скидки 40% и стоимости подключения</p>
+
+                        <div class="connect-tariff-modal__pricing-breakdown">
+                            <p class="connect-tariff-modal__pricing-breakdown-heading">Из чего состоит стоимость</p>
+                            <button type="button" class="connect-tariff-modal__pricing-breakdown-trigger" aria-expanded="false">
+                                <span class="connect-tariff-modal__pricing-breakdown-title">Из чего состоит стоимость</span>
+                                <span class="connect-tariff-modal__accordion-chevron" aria-hidden="true">
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--inactive" src="../icons/arrow-inactive.svg" alt="" width="24" height="24" />
+                                    <img class="connect-tariff-modal__accordion-chevron-img connect-tariff-modal__accordion-chevron-img--active" src="../icons/arrow-active.svg" alt="" width="24" height="24" />
+                                </span>
+                            </button>
+                            <div class="connect-tariff-modal__pricing-breakdown-panel">
+                                <div class="connect-tariff-modal__pricing-breakdown-inner">
+                                <p class="connect-tariff-modal__pricing-discount">Скидка -40% первые 6 месяцев</p>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">С 1 по 6 месяц</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value">355 ₽/мес</span>
+                                </div>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">Далее с 7 месяца</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value">883 ₽/мес</span>
+                                </div>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">Подключение</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value">950 ₽</span>
+                                </div>
+                                <div class="connect-tariff-modal__row connect-tariff-modal__row--muted">
+                                    <span class="connect-tariff-modal__row-label">Авансовый платеж</span>
+                                    <span class="connect-tariff-modal__row-dots" aria-hidden="true"></span>
+                                    <span class="connect-tariff-modal__row-value connect-tariff-modal__row-value--with-info">
+                                        2000 ₽
+                                        <button type="button" class="connect-tariff-modal__info-btn" aria-label="Подробнее об авансовом платеже">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5" />
+                                                <path d="M10 9v5M10 6.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="big-button connect-tariff-modal__submit">Подключить тариф</button>
+                    </div>
+
+                    <div class="connect-tariff-modal__address">
+                        <p class="connect-tariff-modal__address-title">Проверьте, доступность тарифа по вашему адресу</p>
+                        <label class="connect-tariff-modal__address-field">
+                            <span class="connect-tariff-modal__sr-only">Введите ваш адрес</span>
+                            <input class="connect-tariff-modal__address-input" type="text" placeholder="Введите ваш адрес" data-app-modal-address-input />
+                            <img class="connect-tariff-modal__address-search" src="../icons/search-icon.svg" alt="" width="24" height="24" aria-hidden="true" />
+                        </label>
+                    </div>
+                </aside>
+        </div>
+    </div>
+</div>
+
+        <div class="cookies-block">
+            <div class="cookies-block__inner">
+                <p class="cookies-block__text">Мы используем cookie и обрабатываем данные согласно <a href="#">политике конфиденциальности</a> (152-ФЗ).</p>
+                <button type="button" class="cookies-block__btn">Принять</button>
+            </div>
+        </div>
+
+        <script defer src="../js/phone-mask.js"></script>
+        <script defer src="../js/app-modal.js"></script>
+        <script defer src="../js/main.js"></script>
+    </body>
+</html>
