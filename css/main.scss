@@ -5685,6 +5685,937 @@ input.main-tariffs__filter-input--radio {
     }
 }
 
+/* —— Улица —— */
+.city-street {
+    padding: 24px 0 0;
+    background: $bg-color;
+    margin-top: -36px;
+
+    @media screen and (max-width: 480px) {
+        margin-top: 0;
+        padding-top: 12px;
+    }
+
+    &__h1row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 28px;
+    }
+
+    &__h1col {
+        min-width: 0;
+    }
+
+    &__title {
+        margin: 0 0 10px;
+        max-width: 840px;
+        font-size: 33px;
+        font-weight: 600;
+        line-height: 1.06;
+        letter-spacing: -0.02em;
+        color: $black-color;
+        text-wrap: balance;
+    }
+
+    &__tldr {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        max-width: 900px;
+        padding: 12px 18px;
+        border-radius: $border-radius-big;
+        background: $pastel-green-color;
+
+        svg {
+            flex-shrink: 0;
+            margin-top: 1px;
+            color: $primary-color;
+        }
+
+        p {
+            margin: 0;
+            min-width: 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: $black-color;
+        }
+
+        b {
+            color: $primary-color;
+        }
+    }
+
+    &__cta.big-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-shrink: 0;
+        width: auto;
+        margin-top: 6px;
+        padding: 15px 26px;
+        font-size: 15px;
+        line-height: 1.2;
+        white-space: nowrap;
+        box-sizing: border-box;
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    @media screen and (max-width: 980px) {
+        &__h1row {
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        &__title {
+            font-size: 26px;
+        }
+
+        &__cta.big-button {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__title {
+            font-size: 22px;
+        }
+
+        &__tldr {
+            padding: 12px 14px;
+
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.city-street-combo {
+    padding-top: 20px;
+    background: $bg-color;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 40% 1fr 1fr;
+        gap: 14px;
+        align-items: stretch;
+    }
+
+    @media screen and (max-width: 980px) {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.city-street-pass {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 10px;
+
+    .city-streets-pass__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 12px 18px;
+    }
+
+    .city-streets-pass__n {
+        font-size: 30px;
+    }
+}
+
+.city-street-pick,
+.city-street-about {
+    padding: 16px 22px;
+    background: $white-color;
+    border-radius: $border-radius-big;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+}
+
+.city-street-pick {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__title {
+        margin: 0 0 2px;
+        font-size: 18px;
+        font-weight: 600;
+        color: $black-color;
+    }
+
+    .city-streets__lead {
+        margin: 0;
+        font-size: 13px;
+    }
+}
+
+.city-street-checker {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__row {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__field {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 14px;
+        background: $bg-color;
+        border: 2px solid transparent;
+        border-radius: $border-radius-big;
+        transition:
+            border-color 0.2s ease,
+            background 0.2s ease;
+
+        &:focus-within {
+            border-color: $primary-color;
+            background: $white-color;
+        }
+
+        svg {
+            flex-shrink: 0;
+            color: $dark-gray-color;
+        }
+
+        input {
+            flex: 1;
+            min-width: 0;
+            padding: 14px 0;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            color: $black-color;
+        }
+    }
+
+    &__btn.big-button {
+        width: auto;
+        flex-shrink: 0;
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    &__h {
+        height: 40px;
+        border: 1.5px solid #e0e2e7;
+        border-radius: $border-radius;
+        background: $white-color;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        color: $black-color;
+        cursor: pointer;
+        transition:
+            border-color 0.2s ease,
+            color 0.2s ease;
+
+        &:hover {
+            border-color: $primary-color;
+            color: $primary-color;
+        }
+    }
+
+    &__all {
+        font-size: 13px;
+        font-weight: 600;
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__row {
+            flex-direction: column;
+        }
+
+        &__btn.big-button {
+            width: 100%;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.city-street-about {
+    &__title {
+        margin: 0 0 8px;
+        font-size: 18px;
+        font-weight: 600;
+        color: $black-color;
+    }
+
+    &__specs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__spec {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 6px 0;
+        border-bottom: 1px solid #e8e9ed;
+        font-size: 13px;
+        font-weight: 500;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__ic {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        border-radius: $border-radius;
+        background: $pastel-green-color;
+
+        img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+    }
+
+    &__lbl {
+        color: $dark-gray-color;
+    }
+
+    &__val {
+        margin-left: auto;
+        font-weight: 600;
+        color: $black-color;
+        text-align: right;
+    }
+}
+
+.city-street-ptable-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+
+    .city-streets__lead {
+        margin-bottom: 0;
+    }
+}
+
+.city-street-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: $dark-gray-color;
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 8px 14px;
+        border: 1px solid #e0e2e7;
+        border-radius: $border-radius;
+        background: $white-color;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        color: $black-color;
+        cursor: pointer;
+        transition:
+            border-color 0.2s ease,
+            color 0.2s ease,
+            background 0.2s ease;
+
+        &:hover {
+            border-color: $primary-color;
+            color: $primary-color;
+        }
+
+        &--active {
+            background: $primary-color;
+            border-color: $primary-color;
+            color: $white-color;
+
+            &:hover {
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.city-street-tariffs {
+    padding-top: 48px;
+    background: $bg-color;
+
+    &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 20px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 32px;
+    }
+}
+
+.city-street-tab {
+    padding: 13px 22px;
+    border: 1.5px solid #e0e2e7;
+    border-radius: $border-radius;
+    background: $white-color;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: $dark-gray-color;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease;
+
+    &:hover {
+        color: $black-color;
+    }
+
+    &--active {
+        border-color: $primary-color;
+        color: $primary-color;
+    }
+}
+
+.city-street-tcard {
+    padding: 22px 26px;
+    background: $white-color;
+    border-radius: $border-radius-big;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+
+    &__head {
+        margin-bottom: 12px;
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 13px;
+            border-radius: $border-radius;
+            font-size: 12px;
+            font-weight: 600;
+            color: $white-color;
+
+            &.sales {
+                background-color: $dark-orange-color;
+            }
+
+            &.popular {
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 190px 1fr 280px;
+        gap: 24px;
+        align-items: start;
+    }
+
+    &__brand {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        img {
+            height: 34px;
+            max-width: 150px;
+            object-fit: contain;
+            object-position: left center;
+        }
+    }
+
+    &__feats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    &__feat {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        img {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__fl {
+        display: block;
+        font-size: 11px;
+        font-weight: 500;
+        color: $dark-gray-color;
+        line-height: 1.2;
+    }
+
+    &__fv {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: $primary-color;
+    }
+
+    &__title {
+        margin: 0 0 18px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.22;
+        letter-spacing: -0.01em;
+        color: $black-color;
+    }
+
+    &__specs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    &__sl {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 11px;
+        font-weight: 500;
+        color: $dark-gray-color;
+        line-height: 1.2;
+    }
+
+    &__sv {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: $black-color;
+    }
+
+    &__buy {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .big-button {
+            width: 100%;
+        }
+    }
+
+    &__pricebox {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px 18px;
+        border-radius: $border-radius-big;
+        background: $pastel-green-color;
+    }
+
+    &__price {
+        font-size: 21px;
+        font-weight: 600;
+        color: $black-color;
+        white-space: nowrap;
+    }
+
+    &__note {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 1.35;
+        color: $black-color;
+    }
+
+    @media screen and (max-width: 980px) {
+        &__body {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        &__specs {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+.city-street-houses {
+    padding-top: 48px;
+    background: $bg-color;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+    }
+
+    @media screen and (max-width: 980px) {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 32px;
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.city-street-house {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 18px;
+    background: $white-color;
+    border-radius: $border-radius-big;
+    border: 1.5px solid transparent;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+    text-decoration: none;
+    color: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover {
+        border-color: $primary-color;
+        box-shadow: 0 4px 16px rgba(12, 13, 13, 0.1);
+        color: inherit;
+    }
+
+    &__no {
+        font-size: 16px;
+        font-weight: 600;
+        color: $black-color;
+    }
+
+    &__m {
+        font-size: 11px;
+        font-weight: 600;
+        color: $primary-color;
+        white-space: nowrap;
+    }
+}
+
+.city-street-neighbors {
+    padding-top: 48px;
+    background: $bg-color;
+
+    &__chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 32px;
+    }
+}
+
+.city-street-schip {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 18px;
+    background: $white-color;
+    border-radius: $border-radius-big;
+    border: 1.5px solid transparent;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover {
+        border-color: $primary-color;
+        box-shadow: 0 4px 16px rgba(12, 13, 13, 0.1);
+        color: inherit;
+    }
+
+    b {
+        font-weight: 600;
+        color: $black-color;
+    }
+
+    span {
+        font-size: 12px;
+        font-weight: 600;
+        color: $dark-gray-color;
+    }
+}
+
+.city-street-map {
+    padding-top: 48px;
+    background: $bg-color;
+
+    &__card {
+        overflow: hidden;
+        background: $white-color;
+        border-radius: $border-radius-big;
+        box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+    }
+
+    &__canvas {
+        width: 100%;
+        height: 360px;
+        background: #e8e9ed;
+    }
+
+    &__bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 16px 22px;
+        border-top: 1px solid #e8e9ed;
+        font-size: 13px;
+        font-weight: 500;
+        color: $dark-gray-color;
+    }
+
+    &__legend {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 18px;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+    }
+
+    &__dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+
+        &--gpon {
+            background: $primary-color;
+        }
+
+        &--fttb {
+            background: #ffa500;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 32px;
+
+        &__canvas {
+            height: 260px;
+        }
+    }
+}
+
+.city-street-reviews {
+    padding-top: 48px;
+    background: $bg-color;
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+
+        .city-streets__lead {
+            margin-bottom: 0;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    @media screen and (max-width: 980px) {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 32px;
+    }
+}
+
+.city-street-rev {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
+    background: $white-color;
+    border-radius: $border-radius-big;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__av {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__nm {
+        font-size: 14px;
+        font-weight: 600;
+        color: $black-color;
+    }
+
+    &__mt {
+        font-size: 12px;
+        font-weight: 500;
+        color: $dark-gray-color;
+    }
+
+    &__stars {
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #ffce33;
+    }
+
+    &__tx {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.6;
+        color: $black-color;
+    }
+
+    &__pl {
+        height: 18px;
+        width: auto;
+        max-width: 92px;
+        object-fit: contain;
+        align-self: flex-start;
+    }
+}
+
+.city-street-source {
+    padding: 32px 0 56px;
+    background: $bg-color;
+
+    &__card {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 22px 28px;
+        background: $white-color;
+        border-radius: $border-radius-big;
+        box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+        font-size: 13px;
+        font-weight: 500;
+        color: $dark-gray-color;
+
+        b {
+            color: $black-color;
+        }
+
+        a {
+            color: $primary-color;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: $gray-color;
+    }
+}
+
+.page-city-street {
+    .faq {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        background: $white-color;
+    }
+
+    @media screen and (max-width: 980px) {
+        .city-streets__title {
+            font-size: 22px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .city-streets__title {
+            font-size: 20px;
+        }
+
+        .faq {
+            padding: 32px 0 40px;
+        }
+    }
+}
+
 .page-city-streets {
     .faq {
         padding-top: 48px;

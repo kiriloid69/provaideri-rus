@@ -1496,3 +1496,120 @@ document.addEventListener("DOMContentLoaded", () => {
     mountIframe();
   }
 })();
+
+(() => {
+  const root = document.querySelector(".page-city-street");
+  if (!root) return;
+
+  const houseInput = root.querySelector("[data-street-house-input]");
+  root.querySelectorAll("[data-house-quick]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (houseInput) houseInput.value = btn.getAttribute("data-house-quick") || "";
+    });
+  });
+
+  root.querySelectorAll("[data-street-tab]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const group = btn.closest(".city-street-tariffs__tabs");
+      if (!group) return;
+      group.querySelectorAll(".city-street-tab").forEach((t) => t.classList.remove("city-street-tab--active"));
+      btn.classList.add("city-street-tab--active");
+    });
+  });
+
+  const sortBtns = Array.from(root.querySelectorAll("[data-street-sort]"));
+  sortBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      sortBtns.forEach((b) => {
+        b.classList.toggle("city-street-sort__btn--active", b === btn);
+        const dir = b.querySelector("[data-street-sort-dir]");
+        if (dir) dir.textContent = b === btn ? (b.dataset.streetSort === "speed" ? "↓" : "↑") : "";
+      });
+    });
+  });
+
+  const houseGrid = root.querySelector("[data-street-houses]");
+  const allHouses = houseGrid ? Array.from(houseGrid.children) : [];
+  const applyHouseRange = (range) => {
+    const [min, max] = (range || "1-30").split("-").map(Number);
+    allHouses.forEach((item) => {
+      const n = Number(item.getAttribute("data-house"));
+      item.hidden = !(n >= min && n <= max);
+    });
+  };
+  root.querySelectorAll("[data-house-range]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const wrap = btn.parentElement;
+      if (wrap) {
+        wrap.querySelectorAll(".city-street-tab").forEach((t) => t.classList.remove("city-street-tab--active"));
+      }
+      btn.classList.add("city-street-tab--active");
+      applyHouseRange(btn.getAttribute("data-house-range"));
+    });
+  });
+  applyHouseRange("1-30");
+})();
+
+(() => {
+  const el = document.querySelector("[data-street-map]");
+  if (!el) return;
+
+  const parseCenter = () => {
+    const raw = (el.dataset.center || "52.60475,39.57025").split(",");
+    const lat = Number(raw[0]);
+    const lon = Number(raw[1]);
+    return Number.isFinite(lat) && Number.isFinite(lon) ? [lat, lon] : [52.60475, 39.57025];
+  };
+
+  const zoom = Number(el.dataset.zoom) || 15;
+  const points = [
+    [52.6052, 39.5688, "дом 2 · GPON", true],
+    [52.6046, 39.5701, "дом 12 · GPON", true],
+    [52.6039, 39.5714, "дом 26 · FTTB", false],
+    [52.6058, 39.5675, "дом 40 · GPON", true],
+    [52.6033, 39.5726, "дом 54 · FTTB", false],
+  ];
+
+  const mountIframe = () => {
+    if (el.querySelector("iframe")) return;
+    const [lat, lon] = parseCenter();
+    const iframe = document.createElement("iframe");
+    iframe.title = "Карта покрытия ул. Гагарина";
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.src = `https://yandex.ru/map-widget/v1/?ll=${encodeURIComponent(`${lon},${lat}`)}&z=${zoom}&l=map`;
+    iframe.setAttribute("allowfullscreen", "");
+    Object.assign(iframe.style, { width: "100%", height: "100%", border: "0" });
+    el.appendChild(iframe);
+  };
+
+  const mountYmaps = () => {
+    ymaps.ready(() => {
+      const map = new ymaps.Map(
+        el,
+        {
+          center: parseCenter(),
+          zoom,
+          controls: ["zoomControl", "geolocationControl"],
+        },
+        { suppressMapOpenBlock: true }
+      );
+
+      points.forEach(([lat, lon, name, gpon]) => {
+        map.geoObjects.add(
+          new ymaps.Placemark(
+            [lat, lon],
+            { balloonContent: name, hintContent: name },
+            { preset: gpon ? "islands#greenCircleDotIcon" : "islands#orangeCircleDotIcon" }
+          )
+        );
+      });
+    });
+  };
+
+  if (typeof ymaps !== "undefined") {
+    mountYmaps();
+  } else {
+    mountIframe();
+  }
+})();
