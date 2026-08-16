@@ -1400,3 +1400,99 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 })();
+
+(() => {
+  const root = document.querySelector(".page-city-district");
+  if (!root) return;
+
+  const buttons = Array.from(root.querySelectorAll("[data-district-letter]"));
+  const streets = Array.from(root.querySelectorAll("[data-district-street]"));
+  const note = root.querySelector("[data-district-streets-note]");
+  if (!buttons.length || !streets.length) return;
+
+  const setLetter = (letter) => {
+    buttons.forEach((btn) => {
+      btn.classList.toggle("city-district-lt--active", btn.dataset.districtLetter === letter);
+    });
+
+    let visible = 0;
+    streets.forEach((item) => {
+      const show = letter === "Все" || item.dataset.letter === letter;
+      item.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    if (note) {
+      note.textContent =
+        letter === "Все"
+          ? "214 улиц — выберите улицу, чтобы увидеть провайдеров по адресу"
+          : `Улицы на «${letter}» — ${visible} в списке`;
+    }
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => setLetter(btn.dataset.districtLetter || "Все"));
+  });
+})();
+
+(() => {
+  const el = document.querySelector("[data-district-map]");
+  if (!el) return;
+
+  const parseCenter = () => {
+    const raw = (el.dataset.center || "52.6045,39.5715").split(",");
+    const lat = Number(raw[0]);
+    const lon = Number(raw[1]);
+    return Number.isFinite(lat) && Number.isFinite(lon) ? [lat, lon] : [52.6045, 39.5715];
+  };
+
+  const zoom = Number(el.dataset.zoom) || 14;
+  const points = [
+    [52.6047, 39.5702, "ул. Гагарина"],
+    [52.609, 39.568, "ул. Космонавтов"],
+    [52.599, 39.581, "пр-т Победы"],
+  ];
+
+  const mountIframe = () => {
+    if (el.querySelector("iframe")) return;
+    const [lat, lon] = parseCenter();
+    const iframe = document.createElement("iframe");
+    iframe.title = "Карта Советского района";
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.src = `https://yandex.ru/map-widget/v1/?ll=${encodeURIComponent(`${lon},${lat}`)}&z=${zoom}&l=map`;
+    iframe.setAttribute("allowfullscreen", "");
+    Object.assign(iframe.style, { width: "100%", height: "100%", border: "0" });
+    el.appendChild(iframe);
+  };
+
+  const mountYmaps = () => {
+    ymaps.ready(() => {
+      const map = new ymaps.Map(
+        el,
+        {
+          center: parseCenter(),
+          zoom,
+          controls: ["zoomControl", "geolocationControl"],
+        },
+        { suppressMapOpenBlock: true }
+      );
+
+      points.forEach(([lat, lon, name]) => {
+        map.geoObjects.add(
+          new ymaps.Placemark(
+            [lat, lon],
+            { balloonContent: name, hintContent: name },
+            { preset: "islands#greenCircleDotIcon" }
+          )
+        );
+      });
+    });
+  };
+
+  if (typeof ymaps !== "undefined") {
+    mountYmaps();
+  } else {
+    mountIframe();
+  }
+})();

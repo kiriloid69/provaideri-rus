@@ -581,7 +581,14 @@ p {
 }
 
 .providers-check--city-hero {
-    padding: 16px 0 0 !important;
+    padding: 24px 0 0 !important;
+    margin-top: -36px;
+    background-color: $bg-color;
+
+    @media screen and (max-width: 480px) {
+        margin-top: 0;
+        padding-top: 12px !important;
+    }
 
     > .container {
         display: block;
@@ -812,10 +819,6 @@ p {
         display: block;
     }
 
-    .breadcrumbs--in-hero {
-        padding: 12px 0 24px;
-    }
-
     + .main-tariffs {
         @media (min-width: 481px) {
             padding-top: 40px;
@@ -824,6 +827,7 @@ p {
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px !important;
     }
 }
 
@@ -4071,6 +4075,7 @@ input.main-tariffs__filter-input--radio {
 }
 
 .breadcrumbs {
+    // Standalone (legacy). Prefer breadcrumbs--in-hero inside the first section.
     padding: 12px 0 24px;
     background-color: $bg-color;
     margin-top: -36px;
@@ -4083,6 +4088,10 @@ input.main-tariffs__filter-input--radio {
         margin-top: 0;
         padding: 12px 0 24px;
         background: transparent;
+
+        @media screen and (max-width: 480px) {
+            padding: 12px 0 20px;
+        }
     }
 
     &__list {
@@ -4615,6 +4624,7 @@ input.main-tariffs__filter-input--radio {
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px;
     }
 
     &__card {
@@ -5213,8 +5223,23 @@ input.main-tariffs__filter-input--radio {
         }
     }
 
+    @media screen and (max-width: 980px) {
+        padding-top: 40px;
+    }
+
     @media screen and (max-width: 480px) {
         padding-top: 32px;
+
+        &__list {
+            gap: 6px;
+        }
+
+        &__link {
+            min-width: 36px;
+            height: 36px;
+            padding: 0 8px;
+            font-size: 14px;
+        }
     }
 }
 
@@ -5225,6 +5250,7 @@ input.main-tariffs__filter-input--radio {
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px;
     }
 
     &__title {
@@ -5254,6 +5280,7 @@ input.main-tariffs__filter-input--radio {
 
         p {
             margin: 0;
+            min-width: 0;
             font-size: 14px;
             font-weight: 600;
             line-height: 1.5;
@@ -5273,11 +5300,18 @@ input.main-tariffs__filter-input--radio {
 
     @media screen and (max-width: 480px) {
         &__title {
-            font-size: 24px;
+            font-size: 22px;
+            margin-bottom: 12px;
         }
 
         &__tldr {
+            gap: 10px;
             padding: 12px 14px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
 
             p {
                 font-size: 13px;
@@ -5290,6 +5324,11 @@ input.main-tariffs__filter-input--radio {
     padding-top: 48px;
     padding-bottom: 48px;
     background: $bg-color;
+
+    @media screen and (max-width: 980px) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 
     @media screen and (max-width: 480px) {
         padding-top: 32px;
@@ -5313,6 +5352,7 @@ input.main-tariffs__filter-input--radio {
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+        min-width: 0;
         padding: 15px 18px;
         background: $white-color;
         border-radius: $border-radius-big;
@@ -5332,12 +5372,17 @@ input.main-tariffs__filter-input--radio {
     }
 
     &__nm {
+        min-width: 0;
         font-size: 14px;
         font-weight: 600;
         color: $black-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     &__m {
+        flex-shrink: 0;
         font-size: 11px;
         font-weight: 600;
         color: $primary-color;
@@ -5352,9 +5397,290 @@ input.main-tariffs__filter-input--radio {
 
     @media screen and (max-width: 480px) {
         padding-top: 32px;
+        padding-bottom: 32px;
 
         &__grid {
             grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        &__item {
+            padding: 14px 16px;
+        }
+    }
+}
+
+.page-city-streets-letter {
+    @media screen and (max-width: 980px) {
+        .city-streets__title {
+            font-size: 22px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .city-streets__title {
+            font-size: 20px;
+        }
+
+        .city-streets__lead {
+            margin-bottom: 16px;
+            font-size: 13px;
+        }
+    }
+}
+
+/* —— Район города —— */
+.city-district {
+    padding: 24px 0 0;
+    background: $bg-color;
+    margin-top: -36px;
+
+    @media screen and (max-width: 480px) {
+        margin-top: 0;
+        padding-top: 12px;
+    }
+
+    &__title {
+        margin: 0 0 16px;
+        max-width: 840px;
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 1.06;
+        letter-spacing: -0.02em;
+        color: $black-color;
+        text-wrap: balance;
+    }
+
+    &__tldr {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        max-width: 920px;
+        padding: 12px 18px;
+        border-radius: $border-radius-big;
+        background: $pastel-green-color;
+
+        svg {
+            flex-shrink: 0;
+            margin-top: 1px;
+            color: $primary-color;
+        }
+
+        p {
+            margin: 0;
+            min-width: 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: $black-color;
+        }
+
+        b {
+            color: $primary-color;
+        }
+    }
+
+    @media screen and (max-width: 980px) {
+        &__title {
+            font-size: 26px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__title {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        &__tldr {
+            gap: 10px;
+            padding: 12px 14px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.city-district-streets {
+    padding-top: 48px;
+    background: $bg-color;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    @media screen and (max-width: 980px) {
+        padding-top: 40px;
+
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 32px;
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    }
+}
+
+.city-district-lt-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 18px;
+}
+
+.city-district-lt {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid transparent;
+    border-radius: $border-radius;
+    background: $white-color;
+    box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: $black-color;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+
+    &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+    }
+
+    &--active {
+        background: $primary-color;
+        border-color: $primary-color;
+        color: $white-color;
+        box-shadow: 0 4px 12px rgba(43, 190, 72, 0.28);
+
+        &:hover {
+            color: $white-color;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        min-width: 36px;
+        height: 34px;
+        padding: 0 10px;
+        font-size: 13px;
+    }
+}
+
+.city-district-map {
+    padding-top: 48px;
+    background: $bg-color;
+
+    &__card {
+        overflow: hidden;
+        background: $white-color;
+        border-radius: $border-radius-big;
+        box-shadow: 0 1px 4px rgba(12, 13, 13, 0.06);
+    }
+
+    &__canvas {
+        width: 100%;
+        height: 380px;
+        background: #e8e9ed;
+    }
+
+    &__bar {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 16px 22px;
+        border-top: 1px solid #e8e9ed;
+        font-size: 13px;
+        font-weight: 500;
+        color: $dark-gray-color;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+    }
+
+    &__dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: $primary-color;
+    }
+
+    @media screen and (max-width: 980px) {
+        padding-top: 40px;
+
+        &__canvas {
+            height: 320px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 32px;
+
+        &__canvas {
+            height: 260px;
+        }
+
+        &__bar {
+            padding: 14px 16px;
+        }
+    }
+}
+
+.page-city-district {
+    .city-streets-pass {
+        margin-top: 20px;
+    }
+
+    .faq {
+        padding-top: 56px;
+        padding-bottom: 64px;
+        background: $white-color;
+    }
+
+    @media screen and (max-width: 980px) {
+        .city-streets__title {
+            font-size: 22px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .city-streets__title {
+            font-size: 20px;
+        }
+
+        .city-streets__lead {
+            margin-bottom: 16px;
+            font-size: 13px;
+        }
+
+        .faq {
+            padding: 32px 0 40px;
         }
     }
 }
@@ -5606,6 +5932,7 @@ input.main-tariffs__filter-input--radio {
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px;
     }
 
     &__grid {
@@ -7207,6 +7534,7 @@ input.main-tariffs__filter-input--radio {
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px;
     }
 
     &__heading {
@@ -7718,12 +8046,13 @@ input.main-tariffs__filter-input--radio {
 }
 
 .speedtest-hero {
-    padding: 40px 0 12px;
+    padding: 24px 0 12px;
     background-color: $white-color;
     margin-top: -36px;
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px;
     }
 
     &__heading {
@@ -7763,7 +8092,7 @@ input.main-tariffs__filter-input--radio {
     }
 
     @media screen and (max-width: 480px) {
-        padding: 24px 0 4px;
+        padding: 12px 0 4px;
 
         &__title {
             font-size: 24px;
@@ -10463,16 +10792,17 @@ input.main-tariffs__filter-input--radio {
 
 /* —— Новости и статьи —— */
 .news-hero {
-    padding: 12px 0 8px;
+    padding: 24px 0 8px;
     background-color: $bg-color;
     margin-top: -36px;
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px;
     }
 
     &__title {
-        margin: 10px 0 12px;
+        margin: 0 0 12px;
         max-width: 900px;
         font-size: 36px;
         font-weight: 600;
@@ -11101,12 +11431,13 @@ input.main-tariffs__filter-input--radio {
 }
 
 .article-hero {
-    padding: 12px 0 0;
+    padding: 24px 0 0;
     background-color: $bg-color;
     margin-top: -36px;
 
     @media screen and (max-width: 480px) {
         margin-top: 0;
+        padding-top: 12px;
     }
 
     &__badge {
