@@ -18,123 +18,253 @@
         <link rel="preload" href="../images/main-mobile.gif" as="image" />
         <link rel="stylesheet" href="../css/main.css" />
     </head>
-    <body>
+    <body class="page-city">
         <header class="header">
-            <div class="container d-flex align-center justify-between">
-                <div class="header__menu d-flex align-center gap-24">
-                    <a href="../index.html" class="header__logo" aria-label="Провайдеры.рус — на главную">
-                        <img src="../images/logo.svg" alt="logo" />
-                    </a>
-                    <ul class="header__menu-list d-flex align-center gap-24">
-                        <li class="header__menu-item">
-                            <a href="search_address.html" class="header__menu-link">Подключение по адресу</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#" class="header__menu-link">Тарифы</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#" class="header__menu-link">Провайдеры</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#" class="header__menu-link">Контакты</a>
-                        </li>
-                    </ul>
+            <div class="header__util-wrap">
+            <div class="header__util">
+                <div class="container header__util-in">
+                    <button type="button" class="header__city" data-sh="city">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+                        Липецк
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <nav class="header__util-links">
+                        <a href="reviews.html">Отзывы</a>
+                        <a href="city_page.html">Карта покрытия</a>
+                        <a href="speedtest.html">Тест скорости</a>
+                        <a href="news.html">Статьи</a>
+                        <a href="compare_tariffs.html">Сравнение</a>
+                    </nav>
                 </div>
-                <div class="header__contacts d-flex gap-24 align-center">
-                    <div class="header__contacts-item">
-                        <a href="tel:88007001234" class="header__contacts-link phone-number">8-800-700-1234</a>
-                    </div>
-                    <div class="header__contacts-item">
-                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
-                            <div class="header__contacts-icon">
-                                <img src="../icons/call-icon.svg" alt="phone" />
+            </div>
+            </div>
+            <div class="header__bar">
+                <div class="container header__bar-in">
+                    <a class="header__logo" href="../index.html" aria-label="Провайдеры.рус — на главную"><img src="../images/logo.svg" alt="Провайдеры.рус" height="28" /></a>
+                    <nav class="header__nav">
+                        <a href="provider_page.html">Провайдеры</a>
+                        <a href="search_address.html">По адресу</a>
+                        <span class="header__tariffs">
+                            <button type="button" class="header__tariffs-btn" data-sh="tar">Тарифы<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                            <div class="header__mega">
+                                <div class="header__mega-col">
+                                    <h4>Пакеты услуг</h4>
+                                    <a href="internet_tv.html">Интернет + ТВ</a>
+                                    <a href="internet_tv.html">Интернет + ТВ + Моб. связь</a>
+                                    <a href="office_internet.html">Интернет в офис</a>
+                                    <a href="house_internet.html">Интернет в частный дом</a>
+                                </div>
+                                <div class="header__mega-col">
+                                    <h4>Подборки</h4>
+                                    <a href="cheap_internet.html">Дешёвый интернет</a>
+                                    <a href="wired_internet.html">Безлимитный домашний интернет</a>
+                                    <a href="wireless_internet.html">Беспроводной домашний интернет</a>
+                                    <a href="fast_internet.html">Самый быстрый интернет</a>
+                                </div>
+                                <div class="header__mega-col">
+                                    <h4>По скорости</h4>
+                                    <div class="header__mega-speed">
+                                        <a href="internet_100.html">100 Мбит/с</a>
+                                        <a href="#">200 Мбит/с</a>
+                                        <a href="internet_300.html">300 Мбит/с</a>
+                                        <a href="internet_500.html">500 Мбит/с</a>
+                                        <a href="internet_1000.html">1000 Мбит/с</a>
+                                    </div>
+                                </div>
                             </div>
-                            <span>Заказать звонок</span>
+                        </span>
+                    </nav>
+                    <div class="header__right">
+                        <a class="header__phone" href="tel:88007001234">
+                            <span class="header__phone-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0C0D0D" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+                            <b>8 800 700-12-34</b>
+                            <small>ежедневно 8:00–22:00</small>
                         </a>
-                    </div>
-                    <div class="header__contacts-item header__contacts-item--city">
-                        <a href="#" class="header__contacts-link d-flex align-center gap-8">
-                            <div class="header__contacts-icon">
-                                <img src="../icons/map-icon.svg" alt="phone" />
-                            </div>
-                            <span>Липецк</span>
-                        </a>
-                    </div>
-                    <div class="header__menu-mobile">
-                        <button type="button" class="header__menu-mobile-btn" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
-                            <img class="header__menu-mobile-icon header__menu-mobile-icon--open" src="../icons/hamburger-icon.svg" alt="" aria-hidden="true" />
-                            <span class="header__menu-mobile-icon header__menu-mobile-icon--close" aria-hidden="true">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </span>
+                        <button class="header__cta" type="button" data-sh="callback">Заказать звонок</button>
+                        <button class="header__burger" type="button" data-sh="menu" aria-label="Меню">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
                         </button>
                     </div>
                 </div>
             </div>
+            <div class="header__scrim" data-sh="tar-close"></div>
         </header>
+        <div class="header-spacer"></div>
 
-        <!-- Мобильное меню (ширина 320px, экраны ≤ px) -->
-        <div class="mobile">
-            <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-                <div class="mobile-menu__backdrop" aria-label="Закрыть меню"></div>
-                <div class="mobile-menu__panel">
-                    <div class="mobile-menu__content">
-                        <nav class="mobile-menu__nav">
-                            <a href="search_address.html" class="mobile-menu__link">Подключение по адресу</a>
-                            <a href="#" class="mobile-menu__link">Тарифы</a>
-                            <a href="#" class="mobile-menu__link">Провайдеры</a>
-                            <a href="#" class="mobile-menu__link">Контакты</a>
-                        </nav>
-                        <div class="mobile-menu__location">
-                            <p class="mobile-menu__location-label">Вы находитесь здесь</p>
-                            <div class="mobile-menu__location-card" id="mobile-menu-location-card">
-                                <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-icon" width="20" height="20" aria-hidden="true" />
-                                <span class="mobile-menu__city">Липецк</span>
+        <div class="header-drawer">
+            <div class="header-drawer__overlay" data-sh="menu-close"></div>
+            <div class="header-drawer__panel">
+                <button class="header-drawer__close" type="button" data-sh="menu-close" aria-label="Закрыть">×</button>
+                <button type="button" class="header__city" data-sh="city">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BBE48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+                    Липецк
+                </button>
+                <a href="provider_page.html">Провайдеры</a>
+                <a href="search_address.html" data-sh="menu-close">По адресу</a>
+                <a href="#">Тарифы</a>
+                <a href="office_internet.html">Интернет в офис</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="city_page.html" data-sh="menu-close">Карта покрытия</a>
+                <a href="speedtest.html">Тест скорости</a>
+                <a href="compare_tariffs.html">Сравнение</a>
+                <a class="header__phone" href="tel:88007001234"><b>8 800 700-12-34</b><small>ежедневно 8:00–22:00</small></a>
+                <button class="header-drawer__cta" type="button" data-sh="callback">Заказать звонок</button>
+            </div>
+        </div>
+
+        <div class="app-modal app-modal--city" id="city-picker-modal" data-app-modal-id="city-picker" role="dialog" aria-modal="true" aria-labelledby="city-picker-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog app-modal__dialog--city">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body app-modal__body--city">
+                    <h2 class="app-modal__title app-modal__title--left" id="city-picker-modal-title">Выберите город</h2>
+                    <div class="city-picker__search-wrap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+                        <input class="city-picker__search app-modal__input" type="text" placeholder="Поиск по городам" autocomplete="off" />
+                    </div>
+                    <div class="city-picker__body">
+                    <div class="city-picker__section">
+                        <h4>Популярные города</h4>
+                        <div class="city-picker__rule"></div>
+                        <div class="city-picker__pills">
+                            <a href="#" data-sh="close" data-app-modal-close>Москва</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Санкт-Петербург</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Новосибирск</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Екатеринбург</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Казань</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Нижний Новгород</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Челябинск</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Красноярск</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Самара</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Уфа</a>
+                            <a href="#" data-sh="close" data-app-modal-close>Липецк</a>
+                        </div>
+                    </div>
+                    <div class="city-picker__section">
+                        <h4>А</h4>
+                        <div class="city-picker__rule"></div>
+                        <div class="city-picker__grid">
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Абакан</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Абаза</a><a href="#" data-sh="close" data-app-modal-close>Аскиз</a><a href="#" data-sh="close" data-app-modal-close>Саяногорск</a><a href="#" data-sh="close" data-app-modal-close>Сорск</a><a href="#" data-sh="close" data-app-modal-close>Черногорск</a></div>
                             </div>
-                            <div class="mobile-menu__location-input-wrapper" id="mobile-menu-location-input-wrapper" style="display: none">
-                                <div class="mobile-menu__location-input-container">
-                                    <img src="../icons/map-icon.svg" alt="" class="mobile-menu__location-input-icon" width="20" height="20" aria-hidden="true" />
-                                    <input type="text" class="mobile-menu__location-input" id="mobile-menu-location-input" placeholder="Введите город" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="mobile-menu-city-suggestions" />
-                                </div>
-                                <ul class="mobile-menu__city-suggestions" id="mobile-menu-city-suggestions" role="listbox" aria-label="Подсказки городов">
-                                    <!-- Список будет заполнен через JS -->
-                                </ul>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Алания</a>
+                                <div class="city-picker__cities"></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Алтайский край</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Барнаул</a><a href="#" data-sh="close" data-app-modal-close>Бийск</a><a href="#" data-sh="close" data-app-modal-close>Рубцовск</a><a href="#" data-sh="close" data-app-modal-close>Новоалтайск</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Анадырь</a>
+                                <div class="city-picker__cities"></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Архангельск</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Вельск</a><a href="#" data-sh="close" data-app-modal-close>Коряжма</a><a href="#" data-sh="close" data-app-modal-close>Котлас</a><a href="#" data-sh="close" data-app-modal-close>Новодвинск</a><a href="#" data-sh="close" data-app-modal-close>Северодвинск</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Астрахань</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Ахтубинск</a><a href="#" data-sh="close" data-app-modal-close>Знаменск</a><a href="#" data-sh="close" data-app-modal-close>Камызяк</a><a href="#" data-sh="close" data-app-modal-close>Красный Яр</a><a href="#" data-sh="close" data-app-modal-close>Нариманов</a><a href="#" data-sh="close" data-app-modal-close>Харабали</a></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="main-mobile">
-                <div class="main-mobile__content">
-                    <div class="container">
-                        <nav class="main-mobile__content-navigation">
-                            <ul class="main-mobile__content-navigation-list">
-                                <li class="main-mobile__content-navigation-item">
-                                    <a href="#" class="main-mobile__content-navigation-link">Тарифы</a>
-                                </li>
-                                <li class="main-mobile__content-navigation-item">
-                                    <a href="#" class="main-mobile__content-navigation-link">Провайдеры</a>
-                                </li>
-                                <li class="main-mobile__content-navigation-item">
-                                    <a href="#" class="main-mobile__content-navigation-link">
-                                        <svg class="compare-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                            <path d="M18.5028 9.4375V1H19.9347V9.4375H18.5028ZM15 5.93466V4.50284H23.4375V5.93466H15Z" fill="currentColor" />
-                                            <path d="M15.1624 8.83756C14.9249 7.55849 14.3426 6.3686 13.4782 5.39635C12.6138 4.4241 11.5003 3.70645 10.2578 3.32087C9.01531 2.93529 7.69111 2.89644 6.42816 3.20851C5.16522 3.52058 4.01151 4.17172 3.09162 5.09162C2.17172 6.01151 1.52058 7.16522 1.20851 8.42816C0.89644 9.69111 0.935291 11.0153 1.32087 12.2578C1.70645 13.5003 2.4241 14.6138 3.39635 15.4782C4.3686 16.3426 5.55849 16.9249 6.83756 17.1624C7.07505 18.4415 7.65743 19.6314 8.52181 20.6036C9.38619 21.5759 10.4997 22.2936 11.7422 22.6791C12.9847 23.0647 14.3089 23.1036 15.5718 22.7915C16.8348 22.4794 17.9885 21.8283 18.9084 20.9084C19.8283 19.9885 20.4794 18.8348 20.7915 17.5718C21.1036 16.3089 21.0647 14.9847 20.6791 13.7422C20.2936 12.4997 19.5759 11.3862 18.6036 10.5218C17.6314 9.65743 16.4415 9.07505 15.1624 8.83756ZM8.56217 13.7141L10.2859 15.4378C9.60564 15.7149 8.87802 15.8571 8.14351 15.8565C8.1429 15.122 8.28509 14.3944 8.56217 13.7141ZM11.5749 14.7076L9.29236 12.4251C9.61545 11.9967 9.99671 11.6154 10.4251 11.2924L12.7076 13.5749C12.3846 14.0033 12.0033 14.3846 11.5749 14.7076ZM13.4378 12.2859L11.7141 10.5622C12.3944 10.2851 13.122 10.1429 13.8565 10.1435C13.8571 10.878 13.7149 11.6056 13.4378 12.2859ZM2.43054 10.1435C2.42779 8.75105 2.93371 7.40552 3.8532 6.35981C4.77269 5.3141 6.04245 4.64021 7.42382 4.4648C8.8052 4.28939 10.2031 4.62453 11.3548 5.40723C12.5064 6.18993 13.3326 7.36631 13.678 8.71527C11.8469 8.76338 10.1042 9.51253 8.80947 10.8081C7.51471 12.1037 6.76667 13.8469 6.71973 15.678C5.49294 15.3605 4.4062 14.6449 3.62994 13.6433C2.85369 12.6416 2.43184 11.4107 2.43054 10.1435ZM13.8565 21.5695C12.5899 21.5684 11.3594 21.1472 10.3579 20.3718C9.35633 19.5964 8.64032 18.5107 8.32204 17.2847C10.1539 17.2377 11.8977 16.4891 13.1934 15.1934C14.4891 13.8977 15.2377 12.1539 15.2847 10.322C16.6337 10.6674 17.8101 11.4936 18.5928 12.6452C19.3755 13.7969 19.7106 15.1948 19.5352 16.5762C19.3598 17.9576 18.6859 19.2273 17.6402 20.1468C16.5945 21.0663 15.249 21.5722 13.8565 21.5695Z" fill="currentColor" />
-                                        </svg>
-                                        Сравнение
-                                        <span class="main-mobile__content-navigation-link-count">5</span></a
-                                    >
-                                </li>
-                            </ul>
-                        </nav>
+                    <div class="city-picker__section">
+                        <h4>Б</h4>
+                        <div class="city-picker__rule"></div>
+                        <div class="city-picker__grid">
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Балашиха</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Железнодорожный</a><a href="#" data-sh="close" data-app-modal-close>Реутов</a><a href="#" data-sh="close" data-app-modal-close>Салтыковка</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Белгород</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Губкин</a><a href="#" data-sh="close" data-app-modal-close>Старый Оскол</a><a href="#" data-sh="close" data-app-modal-close>Шебекино</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Брянск</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Клинцы</a><a href="#" data-sh="close" data-app-modal-close>Новозыбков</a><a href="#" data-sh="close" data-app-modal-close>Унеча</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Бурятия</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Гусиноозёрск</a><a href="#" data-sh="close" data-app-modal-close>Кяхта</a><a href="#" data-sh="close" data-app-modal-close>Улан-Удэ</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Батайск</a>
+                                <div class="city-picker__cities"></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Бийск</a>
+                                <div class="city-picker__cities"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="city-picker__section">
+                        <h4>В</h4>
+                        <div class="city-picker__rule"></div>
+                        <div class="city-picker__grid">
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Владимир</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Александров</a><a href="#" data-sh="close" data-app-modal-close>Гусь-Хрустальный</a><a href="#" data-sh="close" data-app-modal-close>Ковров</a><a href="#" data-sh="close" data-app-modal-close>Муром</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Волгоград</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Волжский</a><a href="#" data-sh="close" data-app-modal-close>Камышин</a><a href="#" data-sh="close" data-app-modal-close>Михайловка</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Вологда</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Череповец</a><a href="#" data-sh="close" data-app-modal-close>Сокол</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Воронеж</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Борисоглебск</a><a href="#" data-sh="close" data-app-modal-close>Лиски</a><a href="#" data-sh="close" data-app-modal-close>Россошь</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Владивосток</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Артём</a><a href="#" data-sh="close" data-app-modal-close>Находка</a><a href="#" data-sh="close" data-app-modal-close>Уссурийск</a></div>
+                            </div>
+                            <div>
+                                <a class="city-picker__region" href="#" data-sh="close" data-app-modal-close>Великий Новгород</a>
+                                <div class="city-picker__cities"><a href="#" data-sh="close" data-app-modal-close>Боровичи</a><a href="#" data-sh="close" data-app-modal-close>Старая Русса</a></div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <section class="providers-check providers-check--city-hero">
+        <div class="app-modal" id="callback-modal" data-app-modal-id="callback-request" role="dialog" aria-modal="true" aria-labelledby="callback-modal-title" aria-hidden="true">
+            <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
+            <div class="app-modal__dialog">
+                <button type="button" class="app-modal__close" data-app-modal-close aria-label="Закрыть">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="app-modal__body app-modal__body--compact">
+                    <img class="app-modal__image" src="../images/operator-avatar.png" alt="" width="120" height="120" aria-hidden="true" />
+                    <h2 class="app-modal__title" id="callback-modal-title">Заказать звонок</h2>
+                    <div class="app-modal__lines app-modal__lines--muted">
+                        <span>Оператор перезвонит в течение 15 минут и поможет выбрать тариф.</span>
+                    </div>
+                    <form class="app-modal__form" action="#" method="post">
+                        <input class="app-modal__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+                        <input class="app-modal__input" type="tel" name="phone" placeholder="Номер телефона" autocomplete="tel" data-phone-mask />
+                        <button type="submit" class="app-modal__submit">Жду звонка</button>
+                    </form>
+                    <p class="app-modal__legal">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <main>
+        <section class="city-hub-hero" id="hero">
             <div class="container">
                 <nav class="breadcrumbs breadcrumbs--in-hero" aria-label="Хлебные крошки">
                     <ol class="breadcrumbs__list">
@@ -142,31 +272,94 @@
                         <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Липецк</li>
                     </ol>
                 </nav>
-                <div class="providers-check__hero-card">
-                    <div class="hero-title">
-                        <h1 class="title">Подключить домашний интернет в&nbsp;Липецке</h1>
-                        <p class="subtitle">Соберём провайдеров, доступных в вашем доме, сравним цену и скорость. Бесплатно, за секунды.</p>
-                    </div>
-                    <div class="providers-check__block">
-                        <div class="providers-check__block__input-wrapper">
-                            <input class="providers-check__block__input" type="text" placeholder="Город, улица, дом" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="address-suggestions-1" id="address-input-1" />
-                            <button type="button" class="providers-check__block__search-btn providers-check__block__find-btn">Найти провайдеров</button>
-                            <ul class="providers-check__block__suggestions" id="address-suggestions-1" role="listbox" aria-label="Подсказки адресов">
-                                <li role="option">Липецк, ул. Гагарина, 12</li>
-                                <li role="option">Липецк, ул. Космонавтов, 45</li>
-                                <li role="option">Липецк, пр-т Победы, 29</li>
-                                <li role="option">Липецк, ул. Неделина, 8</li>
-                                <li role="option">Липецк, ул. Катукова, 15</li>
-                                <li role="option">Липецк, ул. Куйбышева, 3</li>
-                                <li role="option">Липецк, ул. Баумана, 22</li>
-                                <li role="option">Липецк, ул. Новолипецкая, 10</li>
-                            </ul>
+                <div class="city-hub-hero__card">
+                    <span class="city-hub-hero__badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+                        Агрегатор провайдеров · Липецк · 2026
+                    </span>
+                    <h1 class="city-hub-hero__title">Домашний интернет в Липецке — <em>18 провайдеров</em>, от 490&nbsp;₽/мес</h1>
+                    <p class="city-hub-hero__sub">Проверьте, какие провайдеры и тарифы доступны по вашему адресу в Липецке. Подключение бесплатно, часто в день заявки.</p>
+                    <ul class="city-hub-hero__usp">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Бесплатная проверка по адресу</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>18 провайдеров в каталоге</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Подключение от 0&nbsp;₽</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Сравнение за секунды</li>
+                    </ul>
+                    <div class="city-hub-search" data-city-hub-search>
+                        <div class="city-hub-search__row">
+                            <input class="city-hub-search__input" type="text" id="city-hub-addr" placeholder="Улица, дом" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="city-hub-sugg" />
+                            <button class="big-button city-hub-search__btn" id="city-hub-find" type="button">Показать провайдеров</button>
+                        </div>
+                        <ul class="city-hub-search__sugg" id="city-hub-sugg" role="listbox" aria-label="Подсказки адресов" hidden>
+                            <li role="option" data-addr="Липецк, ул. Гагарина, 12"><img src="../icons/map-icon.svg" width="16" height="16" alt="" />Липецк, ул. Гагарина, 12</li>
+                            <li role="option" data-addr="Липецк, ул. Космонавтов, 45"><img src="../icons/map-icon.svg" width="16" height="16" alt="" />Липецк, ул. Космонавтов, 45</li>
+                            <li role="option" data-addr="Липецк, пр-т Победы, 29"><img src="../icons/map-icon.svg" width="16" height="16" alt="" />Липецк, пр-т Победы, 29</li>
+                            <li role="option" data-addr="Липецк, ул. Неделина, 8"><img src="../icons/map-icon.svg" width="16" height="16" alt="" />Липецк, ул. Неделина, 8</li>
+                            <li role="option" data-addr="Липецк, ул. Катукова, 15"><img src="../icons/map-icon.svg" width="16" height="16" alt="" />Липецк, ул. Катукова, 15</li>
+                        </ul>
+                        <div class="city-hub-search__ok" id="city-hub-ok" hidden>
+                            <div class="city-hub-search__ok-row">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                Ваш дом подключён — 12 провайдеров доступно
+                            </div>
+                            <div class="city-hub-search__ok-cta">
+                                <a href="compare_tariffs.html" class="big-button">Показать провайдеров в моём доме</a>
+                                <button class="city-offers__all" type="button" data-sh="callback">Оставить телефон — поможем выбрать</button>
+                            </div>
+                        </div>
+                        <div class="city-hub-search__empty" id="city-hub-empty" hidden>
+                            <h4>Проверим вручную</h4>
+                            <p>По этому адресу пока нет данных в базе. Оставьте номер — оператор проверит доступность и перезвонит за 15 минут.</p>
+                            <form class="city-hub-search__empty-form" action="#" method="post">
+                                <input class="city-lead__input" type="tel" name="phone" placeholder="Ваш телефон" autocomplete="tel" data-phone-mask />
+                                <button class="big-button" type="submit">Поможем подобрать</button>
+                            </form>
                         </div>
                     </div>
-                    <p class="providers-check__hero-note">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                        Бесплатно · без звонков и регистрации · данные по вашему дому
-                    </p>
+                    <p class="city-hub-hero__alt">или <button type="button" data-sh="callback">оставьте телефон</button> — перезвоним за 15 минут и подберём тариф</p>
+                    <div class="city-hub-hero__plates">
+                        <div class="city-hub-hero__plate"><b>18</b><span>провайдеров</span></div>
+                        <div class="city-hub-hero__plate"><b>от 490&nbsp;₽</b><span>в месяц</span></div>
+                        <div class="city-hub-hero__plate"><b>до 1000 Мбит/с</b><span>скорость</span></div>
+                    </div>
+                    <div class="city-hub-hero__logos">
+                        <span class="city-hub-hero__logos-note">Партнёры:</span>
+                        <img src="../images/operators-logos/big-rtk.png" alt="Ростелеком" />
+                        <img src="../images/operators-logos/mts.png" alt="МТС" />
+                        <img src="../images/operators-logos/beeline.png" alt="Билайн" />
+                        <img src="../images/operators-logos/megafon.png" alt="МегаФон" />
+                        <img src="../images/operators-logos/domru.png" alt="Дом.ру" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="city-hub-honest">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                Бесплатно для вас: мы зарабатываем на партнёрстве с провайдерами, а не на абонентах.
+            </div>
+        </div>
+
+        <section class="city-hub-sec">
+            <div class="container">
+                <h2 class="section-title">Интернет в Липецке в цифрах</h2>
+                <p class="section-subtitle">18 провайдеров и 186 тарифов от 490&nbsp;₽</p>
+                <div class="city-trust__grid">
+                    <div class="city-trust__item"><div class="city-trust__value city-trust__value--accent">18</div><div class="city-trust__label">провайдеров в Липецке</div></div>
+                    <div class="city-trust__item"><div class="city-trust__value">186</div><div class="city-trust__label">тарифов в каталоге</div></div>
+                    <div class="city-trust__item"><div class="city-trust__value">от 490&nbsp;₽</div><div class="city-trust__label">минимальная цена в месяц</div></div>
+                    <div class="city-trust__item"><div class="city-trust__value">до 1000</div><div class="city-trust__label">Мбит/с — максимальная скорость</div></div>
+                    <div class="city-trust__item"><div class="city-trust__value">4,6 <img src="../icons/review-star-icon.svg" width="20" height="20" alt="" /></div><div class="city-trust__label">средняя оценка по городу</div></div>
+                    <div class="city-trust__item"><div class="city-trust__value city-trust__value--date">FTTB, GPON</div><div class="city-trust__label">технологии подключения</div></div>
+                    <div class="city-trust__item"><div class="city-trust__value">0&nbsp;₽</div><div class="city-trust__label">подключение у ряда провайдеров</div></div>
+                    <div class="city-trust__item">
+                        <div class="city-trust__value city-trust__value--date">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.5 2.8"/><path d="M3 4v4h4"/></svg>
+                            1 июля 2026
+                        </div>
+                        <div class="city-trust__label">дата обновления данных</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -176,194 +369,368 @@
                 <h2 class="section-title">Куда подключаем интернет</h2>
                 <p class="section-subtitle">Выберите тип объекта — покажем подходящие технологии и тарифы</p>
                 <div class="scenario-cards__grid">
-                    <a href="#" class="scenario-cards__card">
-                        <div class="scenario-cards__icon" aria-hidden="true">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="apartment-grad" x1="18" y1="12" x2="2" y2="13" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#00D9C0" />
-                                        <stop offset="1" stop-color="#7FE618" />
-                                    </linearGradient>
-                                </defs>
-                                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" stroke="url(#apartment-grad)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" stroke="url(#apartment-grad)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" stroke="url(#apartment-grad)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M10 6h4M10 10h4M10 14h4M10 18h4" stroke="url(#apartment-grad)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
+                    <a href="compare_tariffs.html" class="scenario-cards__card">
+                        <div class="scenario-cards__icon"><img src="../icons/home-icon.svg" alt="" width="26" height="26" /></div>
                         <h3 class="scenario-cards__card-title">В квартиру</h3>
                         <p class="scenario-cards__card-text">Оптика или FTTB в многоквартирном доме. Подключение обычно за 1–3 дня.</p>
-                        <span class="scenario-cards__card-link"
-                            >Выбрать тариф
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                        </span>
+                        <span class="scenario-cards__card-link">Выбрать тариф <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a href="#" class="scenario-cards__card">
-                        <div class="scenario-cards__icon"><img src="../icons/home-icon.svg" alt="" width="26" height="26" aria-hidden="true" /></div>
+                    <a href="house_internet.html" class="scenario-cards__card">
+                        <div class="scenario-cards__icon"><img src="../icons/map-icon.svg" alt="" width="26" height="26" /></div>
                         <h3 class="scenario-cards__card-title">В частный дом / на дачу</h3>
                         <p class="scenario-cards__card-text">GPON, радиоканал или мобильный интернет для загородных адресов.</p>
-                        <span class="scenario-cards__card-link"
-                            >Проверить технологию
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                        </span>
+                        <span class="scenario-cards__card-link">Проверить технологию <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a href="#" class="scenario-cards__card">
-                        <div class="scenario-cards__icon"><img src="../icons/int-icon.svg" alt="" width="26" height="26" aria-hidden="true" /></div>
+                    <a href="office_internet.html" class="scenario-cards__card">
+                        <div class="scenario-cards__icon"><img src="../icons/int-icon.svg" alt="" width="26" height="26" /></div>
                         <h3 class="scenario-cards__card-title">В офис</h3>
                         <p class="scenario-cards__card-text">Бизнес-тарифы с гарантией скорости, статическим IP и SLA.</p>
-                        <span class="scenario-cards__card-link"
-                            >Тарифы для бизнеса
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                        </span>
+                        <span class="scenario-cards__card-link">Тарифы для бизнеса <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="city-offers">
+        <section class="city-hub-sec">
             <div class="container">
-                <div class="city-offers__header">
-                    <div class="city-offers__heading">
-                        <h2 class="section-title">Лучшие предложения в&nbsp;Липецке</h2>
-                        <p class="section-subtitle">Выбор редакции — экономия и бесплатное подключение. Полная плитка на странице тарифов.</p>
+                <div class="city-hub-head">
+                    <div>
+                        <h2 class="section-title">Популярные тарифы в Липецке</h2>
+                        <p class="section-subtitle">Лучшие предложения месяца с оценками абонентов</p>
                     </div>
-                    <a href="#" class="city-offers__all">Смотреть все тарифы</a>
+                    <a href="compare_tariffs.html" class="city-offers__all">Все 186 тарифов</a>
                 </div>
-                <div class="city-offers__grid">
-                    <article class="city-offers__card">
-                        <div class="city-offers__card-top">
-                            <img class="city-offers__logo" src="../images/operators-logos/big-rtk.png" alt="Ростелеком" />
-                            <span class="city-offers__badge">Хит</span>
+                <div class="city-hub-prow">
+                    <article class="city-hub-prow__row">
+                        <div class="city-hub-prow__logo"><img src="../images/operators-logos/big-rtk.png" alt="Ростелеком" /></div>
+                        <div class="city-hub-prow__info">
+                            <div class="city-hub-prow__nm">Игровой 500</div>
+                            <div class="city-hub-prow__sub">Ростелеком · 4,7 <img src="../icons/review-star-icon.svg" alt="" width="13" height="13" /></div>
                         </div>
-                        <div class="city-offers__rate">
-                            <img src="../icons/star-icon.svg" width="14" height="14" alt="" aria-hidden="true" />
-                            <b>4,7</b>
-                            <span>· Игровой 500</span>
+                        <div class="city-hub-prow__specs">
+                            <span class="city-hub-prow__speed">500 Мбит/с</span>
+                            <span>ТВ 180 каналов</span>
+                            <span>Подключение 0&nbsp;₽</span>
                         </div>
-                        <ul class="city-offers__specs">
-                            <li class="city-offers__spec"><img src="../icons/wifi-icon.svg" alt="" width="18" height="18" aria-hidden="true" />Скорость<b>500 Мбит/с</b></li>
-                            <li class="city-offers__spec"><img src="../icons/tv-icon.svg" alt="" width="18" height="18" aria-hidden="true" />В пакете<b>ТВ 180 каналов</b></li>
-                            <li class="city-offers__spec"><img src="../icons/timer-icon.svg" alt="" width="18" height="18" aria-hidden="true" />Подключение<b>0&nbsp;₽</b></li>
-                        </ul>
-                        <div class="city-offers__price"><b>590</b><span>₽/мес</span></div>
-                        <button type="button" class="big-button city-offers__cta js-app-modal-open" data-app-modal="connect-request">Подключить тариф</button>
+                        <span class="city-hub-prow__hit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5C9 9.5 10 8 12 3Z"/></svg>Хит</span>
+                        <div class="city-hub-prow__price"><div><s>790 ₽</s><b>590 ₽</b></div><small>далее 790 ₽/мес</small></div>
+                        <button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button>
                     </article>
-                    <article class="city-offers__card">
-                        <div class="city-offers__card-top">
-                            <img class="city-offers__logo" src="../images/operators-logos/mts.png" alt="МТС" />
+                    <article class="city-hub-prow__row">
+                        <div class="city-hub-prow__logo"><img src="../images/operators-logos/mts.png" alt="МТС" /></div>
+                        <div class="city-hub-prow__info">
+                            <div class="city-hub-prow__nm">Дом Всё включено</div>
+                            <div class="city-hub-prow__sub">МТС · 4,6 <img src="../icons/review-star-icon.svg" alt="" width="13" height="13" /></div>
                         </div>
-                        <div class="city-offers__rate">
-                            <img src="../icons/star-icon.svg" width="14" height="14" alt="" aria-hidden="true" />
-                            <b>4,6</b>
-                            <span>· Дом Всё включено</span>
+                        <div class="city-hub-prow__specs">
+                            <span class="city-hub-prow__speed">300 Мбит/с</span>
+                            <span>KION + моб. связь</span>
+                            <span>Подключение 0&nbsp;₽</span>
                         </div>
-                        <ul class="city-offers__specs">
-                            <li class="city-offers__spec"><img src="../icons/wifi-icon.svg" alt="" width="18" height="18" aria-hidden="true" />Скорость<b>300 Мбит/с</b></li>
-                            <li class="city-offers__spec"><img src="../icons/tv-icon.svg" alt="" width="18" height="18" aria-hidden="true" />В пакете<b>KION + моб</b></li>
-                            <li class="city-offers__spec"><img src="../icons/timer-icon.svg" alt="" width="18" height="18" aria-hidden="true" />Подключение<b>0&nbsp;₽</b></li>
-                        </ul>
-                        <div class="city-offers__price"><b>650</b><span>₽/мес</span></div>
-                        <button type="button" class="big-button city-offers__cta js-app-modal-open" data-app-modal="connect-request">Подключить тариф</button>
+                        <span></span>
+                        <div class="city-hub-prow__price"><div><s>890 ₽</s><b>650 ₽</b></div><small>далее 890 ₽/мес</small></div>
+                        <button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button>
                     </article>
-                    <article class="city-offers__card">
-                        <div class="city-offers__card-top">
-                            <img class="city-offers__logo" src="../images/operators-logos/beeline.png" alt="Билайн" />
+                    <article class="city-hub-prow__row">
+                        <div class="city-hub-prow__logo"><img src="../images/operators-logos/beeline.png" alt="Билайн" /></div>
+                        <div class="city-hub-prow__info">
+                            <div class="city-hub-prow__nm">Всё за 490</div>
+                            <div class="city-hub-prow__sub">билайн · 4,5 <img src="../icons/review-star-icon.svg" alt="" width="13" height="13" /></div>
                         </div>
-                        <div class="city-offers__rate">
-                            <img src="../icons/star-icon.svg" width="14" height="14" alt="" aria-hidden="true" />
-                            <b>4,5</b>
-                            <span>· Всё за 490</span>
+                        <div class="city-hub-prow__specs">
+                            <span class="city-hub-prow__speed">200 Мбит/с</span>
+                            <span>ТВ 150 каналов</span>
+                            <span>Подключение 0&nbsp;₽</span>
                         </div>
-                        <ul class="city-offers__specs">
-                            <li class="city-offers__spec"><img src="../icons/wifi-icon.svg" alt="" width="18" height="18" aria-hidden="true" />Скорость<b>200 Мбит/с</b></li>
-                            <li class="city-offers__spec"><img src="../icons/tv-icon.svg" alt="" width="18" height="18" aria-hidden="true" />В пакете<b>ТВ 150 каналов</b></li>
-                            <li class="city-offers__spec"><img src="../icons/timer-icon.svg" alt="" width="18" height="18" aria-hidden="true" />Подключение<b>0&nbsp;₽</b></li>
-                        </ul>
-                        <div class="city-offers__price"><b>490</b><span>₽/мес</span></div>
-                        <button type="button" class="big-button city-offers__cta js-app-modal-open" data-app-modal="connect-request">Подключить тариф</button>
+                        <span></span>
+                        <div class="city-hub-prow__price"><div><s>690 ₽</s><b>490 ₽</b></div><small>далее 690 ₽/мес</small></div>
+                        <button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button>
                     </article>
+                    <article class="city-hub-prow__row">
+                        <div class="city-hub-prow__logo"><img src="../images/operators-logos/megafon.png" alt="МегаФон" /></div>
+                        <div class="city-hub-prow__info">
+                            <div class="city-hub-prow__nm">Гигабит дома</div>
+                            <div class="city-hub-prow__sub">МегаФон · 4,4 <img src="../icons/review-star-icon.svg" alt="" width="13" height="13" /></div>
+                        </div>
+                        <div class="city-hub-prow__specs">
+                            <span class="city-hub-prow__speed">1000 Мбит/с</span>
+                            <span>ТВ + моб. связь</span>
+                            <span>Подключение 0&nbsp;₽</span>
+                        </div>
+                        <span></span>
+                        <div class="city-hub-prow__price"><div><s>999 ₽</s><b>799 ₽</b></div><small>далее 999 ₽/мес</small></div>
+                        <button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button>
+                    </article>
+                    <article class="city-hub-prow__row">
+                        <div class="city-hub-prow__logo"><img src="../images/operators-logos/domru.png" alt="Дом.ру" /></div>
+                        <div class="city-hub-prow__info">
+                            <div class="city-hub-prow__nm">Домашний 200</div>
+                            <div class="city-hub-prow__sub">Дом.ру · 4,3 <img src="../icons/review-star-icon.svg" alt="" width="13" height="13" /></div>
+                        </div>
+                        <div class="city-hub-prow__specs">
+                            <span class="city-hub-prow__speed">200 Мбит/с</span>
+                            <span>ТВ 120 каналов</span>
+                            <span>Подключение 0&nbsp;₽</span>
+                        </div>
+                        <span></span>
+                        <div class="city-hub-prow__price"><div><s>750 ₽</s><b>550 ₽</b></div><small>далее 750 ₽/мес</small></div>
+                        <button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="city-hub-sec" id="rating">
+            <div class="container">
+                <div class="city-hub-rank__eyebrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>
+                    Рейтинг провайдеров
+                </div>
+                <h2 class="section-title">ТОП-провайдеры Липецка</h2>
+                <p class="section-subtitle">Независимый рейтинг по цене, скорости и оценкам абонентов Липецка. Точные тарифы — после проверки вашего адреса.</p>
+                <div class="city-street-sort city-hub-rank__sort" data-city-hub-sort>
+                    <span>Сортировка:</span>
+                    <button type="button" class="city-street-sort__btn city-street-sort__btn--active" data-sort="rating">По рейтингу</button>
+                    <button type="button" class="city-street-sort__btn" data-sort="price">Сначала дешёвые</button>
+                    <button type="button" class="city-street-sort__btn" data-sort="reviews">Лучшие оценки</button>
+                </div>
+                <div class="city-hub-rank__head" aria-hidden="true">
+                    <span>№</span><span>Провайдер</span><span>Рейтинг</span><span>Цена · Скорость</span><span>Кинотеатр</span><span>Услуги</span><span></span>
+                </div>
+                <div class="city-hub-rank__list" data-city-hub-rank>
+                    <article class="city-hub-rrow is-lead" data-rating="4.7" data-price="590" data-reviews="412">
+                        <div class="city-hub-rrow__num"><span class="city-hub-medal city-hub-medal--g1">1</span></div>
+                        <div class="city-hub-rrow__prov">
+                            <div class="city-hub-rrow__logo"><img src="../images/operators-logos/big-rtk.png" alt="" /></div>
+                            <div>
+                                <div class="city-hub-rrow__name">Ростелеком <span class="city-hub-rbadge city-hub-rbadge--lead">Лидер</span></div>
+                                <div class="city-hub-rrow__tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Самая широкая сеть в городе</div>
+                            </div>
+                        </div>
+                        <div class="city-hub-rrow__rate">
+                            <div class="city-hub-rrow__rate-top"><span class="city-hub-rrow__rate-n">4,7</span><span class="city-hub-rrow__rate-c">412 отзывов</span></div>
+                            <div class="city-hub-rrow__bar"><i class="is-lead" style="width:94%"></i></div>
+                        </div>
+                        <div class="city-hub-rrow__price">
+                            <div><span class="city-hub-rrow__price-n">590</span> <span class="city-hub-rrow__price-u">₽/мес</span></div>
+                            <div class="city-hub-rrow__sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>до 500 Мбит/с</div>
+                        </div>
+                        <div class="city-hub-rrow__cine"><span class="city-hub-cine city-hub-cine--wink">Wink</span></div>
+                        <div class="city-hub-rrow__serv">
+                            <span><img src="../icons/tv-icon.svg" alt="ТВ" /></span>
+                            <span><img src="../icons/phone-icon.svg" alt="Моб. связь" /></span>
+                        </div>
+                        <div class="city-hub-rrow__cta"><button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button></div>
+                    </article>
+                    <article class="city-hub-rrow" data-rating="4.6" data-price="650" data-reviews="380">
+                        <div class="city-hub-rrow__num"><span class="city-hub-medal city-hub-medal--g2">2</span></div>
+                        <div class="city-hub-rrow__prov">
+                            <div class="city-hub-rrow__logo"><img src="../images/operators-logos/mts.png" alt="" /></div>
+                            <div>
+                                <div class="city-hub-rrow__name">МТС</div>
+                                <div class="city-hub-rrow__tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Пакет с мобильной связью</div>
+                            </div>
+                        </div>
+                        <div class="city-hub-rrow__rate">
+                            <div class="city-hub-rrow__rate-top"><span class="city-hub-rrow__rate-n">4,6</span><span class="city-hub-rrow__rate-c">380 отзывов</span></div>
+                            <div class="city-hub-rrow__bar"><i style="width:92%"></i></div>
+                        </div>
+                        <div class="city-hub-rrow__price">
+                            <div><span class="city-hub-rrow__price-n">650</span> <span class="city-hub-rrow__price-u">₽/мес</span></div>
+                            <div class="city-hub-rrow__sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>до 300 Мбит/с</div>
+                        </div>
+                        <div class="city-hub-rrow__cine"><span class="city-hub-cine city-hub-cine--kion"><img src="../icons/kion-icon.svg" alt="" />KION</span></div>
+                        <div class="city-hub-rrow__serv">
+                            <span><img src="../icons/tv-icon.svg" alt="ТВ" /></span>
+                            <span><img src="../icons/phone-icon.svg" alt="Моб. связь" /></span>
+                        </div>
+                        <div class="city-hub-rrow__cta"><button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button></div>
+                    </article>
+                    <article class="city-hub-rrow" data-rating="4.5" data-price="490" data-reviews="290">
+                        <div class="city-hub-rrow__num"><span class="city-hub-medal city-hub-medal--g3">3</span></div>
+                        <div class="city-hub-rrow__prov">
+                            <div class="city-hub-rrow__logo"><img src="../images/operators-logos/beeline.png" alt="" /></div>
+                            <div>
+                                <div class="city-hub-rrow__name">билайн</div>
+                                <div class="city-hub-rrow__tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Самый доступный вход</div>
+                            </div>
+                        </div>
+                        <div class="city-hub-rrow__rate">
+                            <div class="city-hub-rrow__rate-top"><span class="city-hub-rrow__rate-n">4,5</span><span class="city-hub-rrow__rate-c">290 отзывов</span></div>
+                            <div class="city-hub-rrow__bar"><i style="width:90%"></i></div>
+                        </div>
+                        <div class="city-hub-rrow__price">
+                            <div><span class="city-hub-rrow__price-n">490</span> <span class="city-hub-rrow__price-u">₽/мес</span></div>
+                            <div class="city-hub-rrow__sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>до 200 Мбит/с</div>
+                        </div>
+                        <div class="city-hub-rrow__cine"><span class="city-hub-cine city-hub-cine--none">—</span></div>
+                        <div class="city-hub-rrow__serv">
+                            <span><img src="../icons/tv-icon.svg" alt="ТВ" /></span>
+                            <span class="is-off"><img src="../icons/phone-icon.svg" alt="Моб. связь" /></span>
+                        </div>
+                        <div class="city-hub-rrow__cta"><button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button></div>
+                    </article>
+                    <article class="city-hub-rrow" data-rating="4.4" data-price="799" data-reviews="210">
+                        <div class="city-hub-rrow__num"><span class="city-hub-medal">4</span></div>
+                        <div class="city-hub-rrow__prov">
+                            <div class="city-hub-rrow__logo"><img src="../images/operators-logos/megafon.png" alt="" /></div>
+                            <div>
+                                <div class="city-hub-rrow__name">МегаФон <span class="city-hub-rbadge city-hub-rbadge--new">Гигабит</span></div>
+                                <div class="city-hub-rrow__tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Скорость до 1 Гбит/с</div>
+                            </div>
+                        </div>
+                        <div class="city-hub-rrow__rate">
+                            <div class="city-hub-rrow__rate-top"><span class="city-hub-rrow__rate-n">4,4</span><span class="city-hub-rrow__rate-c">210 отзывов</span></div>
+                            <div class="city-hub-rrow__bar"><i style="width:88%"></i></div>
+                        </div>
+                        <div class="city-hub-rrow__price">
+                            <div><span class="city-hub-rrow__price-n">799</span> <span class="city-hub-rrow__price-u">₽/мес</span></div>
+                            <div class="city-hub-rrow__sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>до 1000 Мбит/с</div>
+                        </div>
+                        <div class="city-hub-rrow__cine"><span class="city-hub-cine city-hub-cine--ivi">ivi</span></div>
+                        <div class="city-hub-rrow__serv">
+                            <span><img src="../icons/tv-icon.svg" alt="ТВ" /></span>
+                            <span><img src="../icons/phone-icon.svg" alt="Моб. связь" /></span>
+                        </div>
+                        <div class="city-hub-rrow__cta"><button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button></div>
+                    </article>
+                    <article class="city-hub-rrow" data-rating="4.3" data-price="550" data-reviews="180">
+                        <div class="city-hub-rrow__num"><span class="city-hub-medal">5</span></div>
+                        <div class="city-hub-rrow__prov">
+                            <div class="city-hub-rrow__logo"><img src="../images/operators-logos/domru.png" alt="" /></div>
+                            <div>
+                                <div class="city-hub-rrow__name">Дом.ру</div>
+                                <div class="city-hub-rrow__tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Стабильный FTTB</div>
+                            </div>
+                        </div>
+                        <div class="city-hub-rrow__rate">
+                            <div class="city-hub-rrow__rate-top"><span class="city-hub-rrow__rate-n">4,3</span><span class="city-hub-rrow__rate-c">180 отзывов</span></div>
+                            <div class="city-hub-rrow__bar"><i style="width:86%"></i></div>
+                        </div>
+                        <div class="city-hub-rrow__price">
+                            <div><span class="city-hub-rrow__price-n">550</span> <span class="city-hub-rrow__price-u">₽/мес</span></div>
+                            <div class="city-hub-rrow__sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>до 200 Мбит/с</div>
+                        </div>
+                        <div class="city-hub-rrow__cine"><span class="city-hub-cine city-hub-cine--okko">Okko</span></div>
+                        <div class="city-hub-rrow__serv">
+                            <span><img src="../icons/tv-icon.svg" alt="ТВ" /></span>
+                            <span class="is-off"><img src="../icons/phone-icon.svg" alt="Моб. связь" /></span>
+                        </div>
+                        <div class="city-hub-rrow__cta"><button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button></div>
+                    </article>
+                    <article class="city-hub-rrow" data-rating="4.2" data-price="520" data-reviews="95">
+                        <div class="city-hub-rrow__num"><span class="city-hub-medal">6</span></div>
+                        <div class="city-hub-rrow__prov">
+                            <div class="city-hub-rrow__logo"><span class="city-hub-rrow__mono">ТТК</span></div>
+                            <div>
+                                <div class="city-hub-rrow__name">ТТК</div>
+                                <div class="city-hub-rrow__tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Базовый домашний интернет</div>
+                            </div>
+                        </div>
+                        <div class="city-hub-rrow__rate">
+                            <div class="city-hub-rrow__rate-top"><span class="city-hub-rrow__rate-n">4,2</span><span class="city-hub-rrow__rate-c">95 отзывов</span></div>
+                            <div class="city-hub-rrow__bar"><i style="width:84%"></i></div>
+                        </div>
+                        <div class="city-hub-rrow__price">
+                            <div><span class="city-hub-rrow__price-n">520</span> <span class="city-hub-rrow__price-u">₽/мес</span></div>
+                            <div class="city-hub-rrow__sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>до 100 Мбит/с</div>
+                        </div>
+                        <div class="city-hub-rrow__cine"><span class="city-hub-cine city-hub-cine--none">—</span></div>
+                        <div class="city-hub-rrow__serv">
+                            <span class="is-off"><img src="../icons/tv-icon.svg" alt="ТВ" /></span>
+                            <span class="is-off"><img src="../icons/phone-icon.svg" alt="Моб. связь" /></span>
+                        </div>
+                        <div class="city-hub-rrow__cta"><button class="big-button city-hub-prow__cta js-app-modal-open" type="button" data-app-modal="connect-request">Подключить</button></div>
+                    </article>
+                </div>
+                <div class="city-hub-rank__more">
+                    <a href="reviews.html" class="city-offers__all">Весь рейтинг 18 провайдеров →</a>
                 </div>
             </div>
         </section>
 
         <section class="how-to-connect">
             <div class="container">
-                <h2 class="section-title">Как подключить интернет в&nbsp;<span class="city-name">Липецке</span></h2>
-                <p class="section-subtitle">Четыре простых шага — оператор перезвонит и всё оформит. Заявка бесплатна.</p>
+                <h2 class="section-title">Как подключить интернет в Липецке</h2>
+                <p class="section-subtitle">3 шага: адрес → выбор → заявка</p>
                 <div class="how-to-connect__content">
                     <div class="how-to-connect__card">
-                        <img src="../icons/home-icon.svg" alt="Введите адрес" />
+                        <img src="../icons/home-icon.svg" alt="" />
                         <h3 class="how-to-connect__card-title">Введите адрес</h3>
                         <div class="how-to-connect__card-description">Покажем всех провайдеров, доступных именно в вашем доме.</div>
                     </div>
                     <div class="how-to-connect__card">
-                        <img src="../icons/wifiq-icon.svg" alt="Сравните тарифы" />
-                        <h3 class="how-to-connect__card-title">Сравните тарифы</h3>
+                        <img src="../icons/wifiq-icon.svg" alt="" />
+                        <h3 class="how-to-connect__card-title">Выберите тариф</h3>
                         <div class="how-to-connect__card-description">Цена, скорость, ТВ и мобильная связь — всё в одном месте.</div>
                     </div>
                     <div class="how-to-connect__card">
-                        <img src="../icons/order-icon.svg" alt="Оставьте заявку" />
+                        <img src="../icons/order-icon.svg" alt="" />
                         <h3 class="how-to-connect__card-title">Оставьте заявку</h3>
-                        <div class="how-to-connect__card-description">Оператор перезвонит, уточнит детали и согласует дату.</div>
-                    </div>
-                    <div class="how-to-connect__card">
-                        <img src="../icons/int-icon.svg" alt="Подключение" />
-                        <h3 class="how-to-connect__card-title">Подключение</h3>
-                        <div class="how-to-connect__card-description">Монтажник приедет и настроит интернет — часто в день заявки.</div>
+                        <div class="how-to-connect__card-description">Оператор перезвонит, согласует дату — часто подключают в день заявки.</div>
                     </div>
                 </div>
-                <div class="city-trust__grid">
-                    <div class="city-trust__item">
-                        <div class="city-trust__value city-trust__value--accent">18</div>
-                        <div class="city-trust__label">провайдеров в Липецке</div>
-                    </div>
-                    <div class="city-trust__item">
-                        <div class="city-trust__value">2 340</div>
-                        <div class="city-trust__label">отзывов от абонентов</div>
-                    </div>
-                    <div class="city-trust__item">
-                        <div class="city-trust__value">4,6 <img src="../icons/review-star-icon.svg" width="20" height="20" alt="" aria-hidden="true" /></div>
-                        <div class="city-trust__label">средняя оценка по городу</div>
-                    </div>
-                    <div class="city-trust__item">
-                        <div class="city-trust__value city-trust__value--date">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.5 2.8" />
-                                <path d="M3 4v4h4" />
-                            </svg>
-                            1 июля 2026
-                        </div>
-                        <div class="city-trust__label">дата обновления данных</div>
-                    </div>
+            </div>
+        </section>
+
+        <section class="scenario-cards">
+            <div class="container">
+                <h2 class="section-title">Интернет по районам Липецка</h2>
+                <p class="section-subtitle">Выберите район, улицу или ЖК</p>
+                <div class="scenario-cards__grid">
+                    <a href="city_district.html" class="scenario-cards__card">
+                        <div class="scenario-cards__icon"><img src="../icons/map-icon.svg" alt="" width="26" height="26" /></div>
+                        <h3 class="scenario-cards__card-title">4 района</h3>
+                        <p class="scenario-cards__card-text">Провайдеры и средние цены по каждому району Липецка.</p>
+                        <span class="scenario-cards__card-link">Все районы <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a href="city_streets.html" class="scenario-cards__card">
+                        <div class="scenario-cards__icon"><img src="../icons/home-icon.svg" alt="" width="26" height="26" /></div>
+                        <h3 class="scenario-cards__card-title">812 улиц</h3>
+                        <p class="scenario-cards__card-text">Списки домов и доступные технологии по каждой улице.</p>
+                        <span class="scenario-cards__card-link">Все улицы <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a href="city_complexes.html" class="scenario-cards__card">
+                        <div class="scenario-cards__icon"><img src="../icons/int-icon.svg" alt="" width="26" height="26" /></div>
+                        <h3 class="scenario-cards__card-title">42 ЖК</h3>
+                        <p class="scenario-cards__card-text">Новостройки с подведённой оптикой и списком провайдеров.</p>
+                        <span class="scenario-cards__card-link">Все ЖК <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
                 </div>
-                <button type="button" class="big-button how-to-connect__button js-app-modal-open" data-app-modal="ask-operator">Задать вопрос</button>
             </div>
         </section>
 
         <section class="popular-chips">
             <div class="container">
-                <h2 class="section-title">Популярные подборки</h2>
+                <h2 class="section-title">Быстрый переход к тарифам</h2>
                 <p class="section-subtitle">Готовые фильтры на странице тарифов</p>
                 <div class="popular-chips__list">
-                    <a href="#" class="popular-chips__chip"><img src="../icons/wallet-icon.svg" width="18" height="18" alt="" aria-hidden="true" />Дешёвые</a>
-                    <a href="#" class="popular-chips__chip"><img src="../icons/wifi-icon.svg" width="18" height="18" alt="" aria-hidden="true" />Быстрые</a>
-                    <a href="#" class="popular-chips__chip"><img src="../icons/tv-icon.svg" width="18" height="18" alt="" aria-hidden="true" />Интернет + ТВ</a>
-                    <a href="#" class="popular-chips__chip"><img src="../icons/int-icon.svg" width="18" height="18" alt="" aria-hidden="true" />1 Гбит/с</a>
-                    <a href="#" class="popular-chips__chip"><img src="../icons/phone-icon.svg" width="18" height="18" alt="" aria-hidden="true" />Интернет + моб</a>
+                    <a href="fast_internet.html" class="popular-chips__chip"><img src="../icons/wifi-icon.svg" width="18" height="18" alt="" />Быстрый</a>
+                    <a href="cheap_internet.html" class="popular-chips__chip"><img src="../icons/wallet-icon.svg" width="18" height="18" alt="" />Дешёвый</a>
+                    <a href="internet_tv.html" class="popular-chips__chip"><img src="../icons/tv-icon.svg" width="18" height="18" alt="" />Интернет + ТВ</a>
+                    <a href="internet_tv.html" class="popular-chips__chip"><img src="../icons/phone-icon.svg" width="18" height="18" alt="" />+ Моб. связь</a>
+                    <a href="internet_100.html" class="popular-chips__chip"><img src="../icons/int-icon.svg" width="18" height="18" alt="" />100–1000 Мбит/с</a>
                 </div>
             </div>
         </section>
 
-        <section class="provider-logos">
+        <section class="city-hub-sec" id="map">
             <div class="container">
-                <h2 class="section-title">Провайдеры в Липецке</h2>
-                <p class="section-subtitle">Знакомые бренды — быстрый вход на страницу оператора</p>
-                <div class="provider-logos__grid">
-                    <a href="provider_page.html" class="provider-logos__item"><img src="../images/operators-logos/big-rtk.png" alt="Ростелеком" /></a>
-                    <a href="provider_page.html" class="provider-logos__item"><img src="../images/operators-logos/mts.png" alt="МТС" /></a>
-                    <a href="provider_page.html" class="provider-logos__item"><img src="../images/operators-logos/beeline.png" alt="Билайн" /></a>
-                    <a href="provider_page.html" class="provider-logos__item"><img src="../images/operators-logos/megafon.png" alt="МегаФон" /></a>
-                    <a href="provider_page.html" class="provider-logos__item"><img src="../images/operators-logos/domru.png" alt="Дом.ру" /></a>
+                <h2 class="section-title">Карта покрытия провайдеров в Липецке</h2>
+                <p class="section-subtitle">Выберите провайдера — покажем зону покрытия по городу. Точное наличие — после проверки адреса.</p>
+                <div class="city-hub-mtabs" data-city-hub-map>
+                    <button type="button" class="city-hub-mtab is-on" data-cap="Ростелеком — покрытие по Липецку"><img src="../images/operators-logos/big-rtk.png" alt="Ростелеком" /></button>
+                    <button type="button" class="city-hub-mtab" data-cap="МТС — покрытие по Липецку"><img src="../images/operators-logos/mts.png" alt="МТС" /></button>
+                    <button type="button" class="city-hub-mtab" data-cap="билайн — покрытие по Липецку"><img src="../images/operators-logos/beeline.png" alt="билайн" /></button>
+                    <button type="button" class="city-hub-mtab" data-cap="МегаФон — покрытие по Липецку"><img src="../images/operators-logos/megafon.png" alt="МегаФон" /></button>
+                    <button type="button" class="city-hub-mtab" data-cap="Дом.ру — покрытие по Липецку"><img src="../images/operators-logos/domru.png" alt="Дом.ру" /></button>
+                </div>
+                <div class="city-district-map__card">
+                    <div class="city-district-map__canvas" id="city-hub-map" data-city-hub-canvas data-center="52.6088,39.5992" data-zoom="12"></div>
+                    <div class="city-district-map__bar">
+                        <span><i class="city-district-map__dot" aria-hidden="true"></i> <span id="city-hub-mcap-text">Ростелеком — покрытие по Липецку</span></span>
+                        <a href="https://yandex.ru/maps/?ll=39.5992%2C52.6088&amp;z=12" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -373,10 +740,10 @@
                 <div class="city-free__banner">
                     <div class="city-free__text">
                         <h2 class="city-free__title">Бесплатное подключение — 0&nbsp;₽</h2>
-                        <p class="city-free__desc">Провайдеры Липецка подключают новых абонентов без платы за монтаж. Успейте оформить по акции.</p>
-                        <a href="#" class="big-button city-free__cta">Тарифы с бесплатным подключением</a>
+                        <p class="city-free__desc">Ряд провайдеров Липецка подключает новых абонентов без платы за монтаж. Успейте оформить по акции.</p>
+                        <a href="compare_tariffs.html" class="big-button city-free__cta">Тарифы с бесплатным подключением</a>
                     </div>
-                    <img class="city-free__img" src="../images/free-connect-man.png" alt="" width="220" height="190" aria-hidden="true" />
+                    <img class="city-free__img" src="../images/free-connect-man.png" alt="" width="220" height="190" />
                 </div>
             </div>
         </section>
@@ -507,46 +874,34 @@
         <section class="faq">
             <div class="container">
                 <h2 class="section-title">Частые вопросы</h2>
-                <p class="section-subtitle">Всё о подключении интернета в Липецке</p>
+                <p class="section-subtitle">Ответы про подключение, скорость и цены в Липецке</p>
                 <div class="faq__list">
                     <div class="faq__col">
                         <div class="faq__item">
                             <button type="button" class="faq__question faq__question--open" aria-expanded="true" aria-controls="faq-1" id="faq-q-1">
                                 <span class="faq__question-text">Как подключить интернет в Липецке?</span>
-                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
-                                </svg>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap faq__answer-wrap--open" id="faq-1" role="region" aria-labelledby="faq-q-1">
-                                <div class="faq__answer-inner">
-                                    <div class="faq__answer">Введите адрес в форму вверху страницы — система покажет доступных провайдеров и тарифы для вашего дома. Выберите подходящий и оставьте заявку, оператор перезвонит и согласует дату подключения.</div>
-                                </div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Введите адрес в форму вверху страницы — система покажет доступных провайдеров и тарифы для вашего дома. Выберите подходящий и оставьте заявку, оператор перезвонит и согласует дату подключения.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-2" id="faq-q-2">
                                 <span class="faq__question-text">Сколько стоит подключение?</span>
-                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
-                                </svg>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-2" role="region" aria-labelledby="faq-q-2">
-                                <div class="faq__answer-inner">
-                                    <div class="faq__answer">Большинство провайдеров Липецка подключают новых абонентов бесплатно — 0 ₽ за монтаж по акции. Абонентская плата начинается от 490 ₽/мес.</div>
-                                </div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Большинство провайдеров Липецка подключают новых абонентов бесплатно — 0 ₽ за монтаж по акции. Абонентская плата начинается от 490 ₽/мес.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-3" id="faq-q-3">
                                 <span class="faq__question-text">Какие технологии доступны?</span>
-                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
-                                </svg>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-3" role="region" aria-labelledby="faq-q-3">
-                                <div class="faq__answer-inner">
-                                    <div class="faq__answer">В многоквартирных домах — оптика (GPON) и FTTB со скоростью до 1 Гбит/с. Для частного сектора и дач — GPON или радиоканал, уточняется по адресу.</div>
-                                </div>
+                                <div class="faq__answer-inner"><div class="faq__answer">В многоквартирных домах — оптика (GPON) и FTTB со скоростью до 1 Гбит/с. Для частного сектора и дач — GPON или радиоканал, уточняется по адресу.</div></div>
                             </div>
                         </div>
                     </div>
@@ -554,40 +909,28 @@
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-4" id="faq-q-4">
                                 <span class="faq__question-text">Можно ли интернет + ТВ + мобильную связь?</span>
-                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
-                                </svg>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-4" role="region" aria-labelledby="faq-q-4">
-                                <div class="faq__answer-inner">
-                                    <div class="faq__answer">Да, операторы предлагают конвергентные пакеты. Это выгоднее, чем оплачивать услуги по отдельности, — часто в комплекте идёт онлайн-кинотеатр.</div>
-                                </div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Да, операторы предлагают конвергентные пакеты. Это выгоднее, чем оплачивать услуги по отдельности, — часто в комплекте идёт онлайн-кинотеатр.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-5" id="faq-q-5">
                                 <span class="faq__question-text">За сколько подключат?</span>
-                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
-                                </svg>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-5" role="region" aria-labelledby="faq-q-5">
-                                <div class="faq__answer-inner">
-                                    <div class="faq__answer">В квартире — обычно 1–3 дня, нередко в день заявки. В частном доме сроки зависят от технологии и удалённости, оператор назовёт точную дату.</div>
-                                </div>
+                                <div class="faq__answer-inner"><div class="faq__answer">В квартире — обычно 1–3 дня, нередко в день заявки. В частном доме сроки зависят от технологии и удалённости, оператор назовёт точную дату.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-6" id="faq-q-6">
                                 <span class="faq__question-text">Что делать, если моего адреса нет?</span>
-                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" />
-                                </svg>
+                                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-6" role="region" aria-labelledby="faq-q-6">
-                                <div class="faq__answer-inner">
-                                    <div class="faq__answer">Оставьте телефон в форме «Спросите у оператора» — оператор проверит доступность вручную и предложит варианты, включая мобильный интернет.</div>
-                                </div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Оставьте телефон в форме ниже — оператор проверит доступность вручную и предложит варианты, включая мобильный интернет.</div></div>
                             </div>
                         </div>
                     </div>
@@ -600,10 +943,10 @@
                 <div class="city-seo__card">
                     <h2 class="section-title">Подключить интернет в Липецке — как выбрать провайдера</h2>
                     <div class="city-seo__text">
-                        <p>Чтобы подключить домашний интернет в Липецке, начните с проверки по адресу: в разных домах доступны разные технологии — оптика (GPON), FTTB или радиоканал для частного сектора. Введите адрес выше, и мы покажем всех провайдеров, готовых подключить именно ваш дом, с актуальными ценами и скоростями.</p>
-                        <p>В Липецке работают федеральные операторы — Ростелеком, МТС, Билайн, МегаФон и Дом.ру. Большинство предлагает пакеты «интернет + ТВ + мобильная связь» и бесплатное подключение для новых абонентов. Сравните предложения на странице тарифов и оставьте заявку — оператор перезвонит и согласует удобное время монтажа.</p>
+                        <p>Чтобы подключить домашний интернет в Липецке, начните с проверки по адресу: в разных домах доступны разные технологии — FTTB или оптика GPON со скоростью до 1000 Мбит/с. Введите адрес выше, и мы покажем всех провайдеров из 18, готовых подключить именно ваш дом, с актуальными ценами и скоростями.</p>
+                        <p>В Липецке доступно 186 тарифов — от 490 ₽/мес за базовый интернет до гигабитных пакетов «интернет + ТВ + мобильная связь». У ряда провайдеров подключение бесплатное. Сравните предложения на странице тарифов и оставьте заявку — оператор перезвонит и согласует удобное время монтажа, часто в день заявки.</p>
                     </div>
-                    <h3 class="city-seo__streets-title">Интернет по улицам и районам Липецка</h3>
+                    <h3 class="city-seo__streets-title">Часто ищут: интернет по улицам Липецка</h3>
                     <div class="city-seo__alpha" role="tablist" aria-label="Алфавитный указатель улиц">
                         <button type="button" class="city-seo__alpha-btn is-active" role="tab" aria-selected="true" data-letter="А">А</button>
                         <button type="button" class="city-seo__alpha-btn" role="tab" aria-selected="false" data-letter="Б">Б</button>
@@ -616,137 +959,246 @@
                     </div>
                     <div class="city-seo__streets">
                         <div class="city-seo__streets-panel is-active" role="tabpanel" data-letter="А" aria-hidden="false">
-                            <a href="#" class="city-seo__street">ул. Ангарская</a>
-                            <a href="#" class="city-seo__street">ул. Астраханская</a>
-                            <a href="#" class="city-seo__street">пр-т Агрономический</a>
-                            <a href="#" class="city-seo__street">ул. Айвазовского</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Ангарская</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Астраханская</a>
+                            <a href="city_street.html" class="city-seo__street">пр-т Агрономический</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Айвазовского</a>
                         </div>
                         <div class="city-seo__streets-panel" role="tabpanel" data-letter="Б" aria-hidden="true">
-                            <a href="#" class="city-seo__street">ул. Балмочных</a>
-                            <a href="#" class="city-seo__street">ул. Баумана</a>
-                            <a href="#" class="city-seo__street">ул. Белана</a>
-                            <a href="#" class="city-seo__street">ул. Бунина</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Балмочных</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Баумана</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Белана</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Бунина</a>
                         </div>
                         <div class="city-seo__streets-panel" role="tabpanel" data-letter="В" aria-hidden="true">
-                            <a href="#" class="city-seo__street">ул. Валентины Терешковой</a>
-                            <a href="#" class="city-seo__street">ул. Ватутина</a>
-                            <a href="#" class="city-seo__street">ул. Вермишева</a>
-                            <a href="#" class="city-seo__street">ул. Водопьянова</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Валентины Терешковой</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Ватутина</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Вермишева</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Водопьянова</a>
                         </div>
                         <div class="city-seo__streets-panel" role="tabpanel" data-letter="Г" aria-hidden="true">
-                            <a href="#" class="city-seo__street">ул. Гагарина</a>
-                            <a href="#" class="city-seo__street">ул. Гайдара</a>
-                            <a href="#" class="city-seo__street">ул. Гоголя</a>
-                            <a href="#" class="city-seo__street">ул. Горького</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Гагарина</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Гайдара</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Гоголя</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Горького</a>
                         </div>
                         <div class="city-seo__streets-panel" role="tabpanel" data-letter="Д" aria-hidden="true">
-                            <a href="#" class="city-seo__street">ул. Депутатская</a>
-                            <a href="#" class="city-seo__street">ул. Доватора</a>
-                            <a href="#" class="city-seo__street">ул. Дорожная</a>
-                            <a href="#" class="city-seo__street">ул. Достоевского</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Депутатская</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Доватора</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Дорожная</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Достоевского</a>
                         </div>
                         <div class="city-seo__streets-panel" role="tabpanel" data-letter="Е" aria-hidden="true">
-                            <a href="#" class="city-seo__street">ул. Ерёмина</a>
-                            <a href="#" class="city-seo__street">ул. Ефремовская</a>
-                            <a href="#" class="city-seo__street">проезд Есенина</a>
-                            <a href="#" class="city-seo__street">ул. Единства</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Ерёмина</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Ефремовская</a>
+                            <a href="city_street.html" class="city-seo__street">проезд Есенина</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Единства</a>
                         </div>
                         <div class="city-seo__streets-panel" role="tabpanel" data-letter="К" aria-hidden="true">
-                            <a href="#" class="city-seo__street">ул. Космонавтов</a>
-                            <a href="#" class="city-seo__street">ул. Крайняя</a>
-                            <a href="#" class="city-seo__street">ул. Куйбышева</a>
-                            <a href="#" class="city-seo__street">ул. Катукова</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Космонавтов</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Крайняя</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Куйбышева</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Катукова</a>
                         </div>
                         <div class="city-seo__streets-panel" role="tabpanel" data-letter="Н" aria-hidden="true">
-                            <a href="#" class="city-seo__street">ул. Неделина</a>
-                            <a href="#" class="city-seo__street">ул. Нагорная</a>
-                            <a href="#" class="city-seo__street">ул. Новолипецкая</a>
-                            <a href="#" class="city-seo__street">ул. Нижняя</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Неделина</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Нагорная</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Новолипецкая</a>
+                            <a href="city_street.html" class="city-seo__street">ул. Нижняя</a>
+                        </div>
+                    </div>
+                    <h3 class="city-seo__streets-title">Интернет по районам Липецка</h3>
+                    <div class="city-hub-tags">
+                        <a href="city_district.html">Советский</a>
+                        <a href="city_district.html">Октябрьский</a>
+                        <a href="city_district.html">Правобережный</a>
+                        <a href="city_district.html">Левобережный</a>
+                    </div>
+                    <h3 class="city-seo__streets-title">Интернет по ЖК Липецка</h3>
+                    <div class="city-hub-tags">
+                        <a href="city_complexes.html">ЖК «Европейский»</a>
+                        <a href="city_complexes.html">ЖК «Уютный»</a>
+                        <a href="city_complexes.html">ЖК «Олимпийский»</a>
+                        <a href="city_complexes.html">ЖК «Сокол»</a>
+                        <a href="city_complexes.html">ЖК «Новолипецкий»</a>
+                        <a href="city_complexes.html">ЖК «Петровский»</a>
+                    </div>
+                </div>
+
+                <div class="city-seo__card city-hub-links">
+                    <h2 class="section-title">Популярные подборки тарифов</h2>
+                    <div class="city-hub-links__grid">
+                        <div>
+                            <h4>По скорости</h4>
+                            <a href="internet_100.html">Интернет 100 Мбит/с</a>
+                            <a href="#">Интернет 200 Мбит/с</a>
+                            <a href="internet_300.html">Интернет 300 Мбит/с</a>
+                            <a href="internet_500.html">Интернет 500 Мбит/с</a>
+                            <a href="internet_1000.html">Интернет 1 Гбит/с</a>
+                        </div>
+                        <div>
+                            <h4>По составу пакета</h4>
+                            <a href="wired_internet.html">Только домашний интернет</a>
+                            <a href="internet_tv.html">Интернет + ТВ</a>
+                            <a href="internet_tv.html">Интернет + ТВ + Мобильная связь</a>
+                            <a href="wired_internet.html">Безлимитный интернет</a>
+                            <a href="house_internet.html">Тарифы для частного дома</a>
+                        </div>
+                        <div>
+                            <h4>Провайдеры Липецка</h4>
+                            <a href="provider_page.html">МТС</a>
+                            <a href="provider_page.html">Ростелеком</a>
+                            <a href="provider_page.html">МегаФон</a>
+                            <a href="provider_page.html">Билайн</a>
+                            <a href="provider_page.html">Дом.ru</a>
+                        </div>
+                        <div>
+                            <h4>Полезное</h4>
+                            <a href="reviews.html">Рейтинг провайдеров</a>
+                            <a href="compare_tariffs.html">Каталог тарифов</a>
+                            <a href="speedtest.html">Тест скорости</a>
+                            <a href="reviews.html">Отзывы абонентов</a>
+                            <a href="#" data-sh="callback">Заказать звонок</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="city-lead__card">
-                    <img class="city-lead__avatar" src="../images/operator-avatar.png" alt="Оператор" width="96" height="96" />
+                    <img class="city-lead__avatar" src="../images/operator-avatar.png" alt="" width="96" height="96" />
                     <div class="city-lead__body">
-                        <h2 class="section-title">Спросите у оператора</h2>
-                        <p class="section-subtitle">Не нашли свой адрес или сомневаетесь в выборе? Оставьте телефон — перезвоним и бесплатно поможем подобрать тариф.</p>
+                        <h2 class="section-title">Не нашли провайдера? Поможем подобрать</h2>
+                        <p class="section-subtitle">Оставьте телефон — перезвоним ежедневно 8:00–22:00 и бесплатно подберём тариф под ваш адрес.</p>
                         <form class="city-lead__form" action="#" method="post">
                             <input class="city-lead__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" data-phone-mask />
-                            <input class="city-lead__input" type="text" name="address" placeholder="Адрес подключения" autocomplete="street-address" />
-                            <button type="submit" class="big-button city-lead__submit">Перезвоните мне</button>
+                            <input class="city-lead__input" type="text" name="address" placeholder="Адрес подключения (необязательно)" autocomplete="street-address" />
+                            <button type="submit" class="big-button city-lead__submit">Перезвоните мне — подберём за 15 минут</button>
                         </form>
+                        <label class="city-hub-consent">
+                            <input type="checkbox" checked />
+                            <span>Соглашаюсь на <a href="#">обработку персональных данных</a> (152-ФЗ) и с <a href="#">политикой конфиденциальности</a>.</span>
+                        </label>
                     </div>
                 </div>
             </div>
         </section>
+        </main>
 
         <footer class="footer">
-            <div class="container footer__inner">
-                <div class="footer__left">
-                    <a href="../index.html" class="footer__logo" aria-label="Провайдеры.рус — на главную">
-                        <img src="../images/white-logo.svg" alt="Провайдеры РУС" width="198" height="29" class="footer__logo-img" />
-                    </a>
-                    <p class="footer__copyright">© 2026 Провайдеры.рус</p>
+            <div class="footer__pre">
+                <div class="container">
+                    <div class="footer__pre-in">
+                        <span class="footer__pre-label">Смотрите также:</span>
+                        <a href="city_district.html">Районы Липецка</a>
+                        <a href="city_streets.html">Улицы Липецка</a>
+                        <a href="city_complexes.html">ЖК Липецка</a>
+                        <a href="reviews.html">Рейтинг провайдеров Липецка</a>
+                    </div>
                 </div>
-                <nav class="footer__links-mobile">
-                    <a href="search_address.html">Подключение по адресу</a>
-                    <a href="#">Тарифы</a>
-                    <a href="#">Провайдеры</a>
-                    <a href="#">Контакты</a>
-                </nav>
-                <nav class="footer__nav">
-                    <div class="footer__col">
-                        <h3 class="footer__col-title">О компании</h3>
+            </div>
+
+            <div class="container">
+                <div class="footer__top">
+                <nav class="footer__nav" aria-label="Навигация в подвале">
+                    <div>
+                        <h3 class="footer__title">Провайдеры</h3>
                         <ul class="footer__list">
-                            <li><a href="search_address.html">Подключение по адресу</a></li>
-                            <li><a href="#">Тарифы</a></li>
-                            <li><a href="#">Провайдеры</a></li>
+                            <li><a href="provider_page.html">Все провайдеры</a></li>
+                            <li><a href="reviews.html">Рейтинг провайдеров</a></li>
+                            <li><a href="provider_page.html">Ростелеком</a></li>
+                            <li><a href="provider_page.html">МТС</a></li>
+                            <li><a href="provider_page.html">билайн</a></li>
+                            <li><a href="provider_page.html">МегаФон</a></li>
+                            <li><a href="provider_page.html">Дом.ру</a></li>
+                            <li><a href="search_address.html">Провайдеры по адресу</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer__title">Тарифы</h3>
+                        <ul class="footer__list">
+                            <li><a href="wired_internet.html">Домашний интернет</a></li>
+                            <li><a href="internet_tv.html">Интернет + ТВ</a></li>
+                            <li><a href="internet_tv.html">Интернет + ТВ + моб. связь</a></li>
+                            <li><a href="cheap_internet.html">Недорогие тарифы</a></li>
+                            <li><a href="fast_internet.html">Высокоскоростные</a></li>
+                            <li><a href="#">Акции</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer__title">О сервисе</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">О проекте</a></li>
+                            <li><a href="#">Как это работает</a></li>
+                            <li><a href="reviews.html">Отзывы</a></li>
+                            <li><a href="news.html">Блог</a></li>
+                            <li><a href="#">Помощь</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>
                     </div>
-                    <div class="footer__col">
-                        <h3 class="footer__col-title">Услуги</h3>
+                    <div>
+                        <h3 class="footer__title">Гео</h3>
                         <ul class="footer__list">
-                            <li><a href="#">Интернет</a></li>
-                            <li><a href="#">ТВ</a></li>
-                            <li><a href="#">Мобильная связь</a></li>
-                            <li><a href="#">Онлайн кинотеатры</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__col">
-                        <h3 class="footer__col-title">Провайдеры</h3>
-                        <ul class="footer__list">
-                            <li><a href="#">MTC</a></li>
-                            <li><a href="#">Билайн</a></li>
-                            <li><a href="#">Мегафон</a></li>
-                            <li><a href="#">Теле2</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__col">
-                        <h3 class="footer__col-title">Поиск</h3>
-                        <ul class="footer__list">
-                            <li><a href="#">Город</a></li>
-                            <li><a href="#">Улица</a></li>
-                            <li><a href="#">Поиск по адресу</a></li>
-                            <li><a href="#">Проверка скорости интернета</a></li>
-                            <li><a href="#">Рейтинг провайдеров</a></li>
+                            <li><a href="city_page.html">Города</a></li>
+                            <li><a href="search_address.html">Поиск по адресу</a></li>
+                            <li><a href="#">Карта сайта</a></li>
                         </ul>
                     </div>
                 </nav>
-            </div>
-        </footer>
 
-        <div class="footer-disclaimer">
-            <div class="container">
-                <p class="footer-disclaimer__text">
-                    Продолжая использовать наш сайт, вы даёте согласие на обработку файлов
-                    <a href="#">Cookies</a> и других пользовательских данных, в соответствии с <a href="#">Политикой конфиденциальности</a> и&nbsp;<a href="#">Пользовательским соглашением</a>.
-                </p>
-                <div class="copyright-mobile">
-                    <p class="copyright-mobile__text">© 2026 Провайдеры.рус</p>
+                <div class="footer__aside">
+                    <div class="footer__card">
+                        <a href="../index.html" class="footer__logo" aria-label="Провайдеры.рус — на главную">
+                            <img src="../images/logo.svg" alt="Провайдеры.рус" width="198" height="29" />
+                        </a>
+                        <a class="footer__tel" href="tel:88007001234">8 800 700-12-34</a>
+                        <div class="footer__note">звонок по России бесплатный</div>
+                        <div class="footer__rows">
+                            <div class="footer__row">
+                                <span>E-mail</span>
+                                <a href="mailto:hallo@xn--80adhes1agig4i.xn--p1acf">hallo@провайдеры.рус</a>
+                            </div>
+                            <div class="footer__row">
+                                <span>Режим</span>
+                                <div>ежедневно 8:00–22:00</div>
+                            </div>
+                            <div class="footer__row">
+                                <span>Соцсети</span>
+                                <div class="footer__soc">
+                                    <a href="#" aria-label="ВКонтакте">VK</a>
+                                    <a href="#" aria-label="Telegram">TG</a>
+                                    <a href="#" aria-label="Дзен">Дзен</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
+
+            <div class="container">
+                <div class="footer__legal" itemscope itemtype="https://schema.org/Organization">
+                    <p class="footer__disc">
+                        <b><span itemprop="name">Провайдеры.рус</span> — информационный сервис (агрегатор информации об услугах связи).</b>
+                        Мы не являемся оператором связи и не оказываем услуги связи. Договор на оказание услуг заключается напрямую с выбранным провайдером. Информация на сайте носит справочный характер и не является публичной офертой (ст. 437 ГК РФ). Сведения о владельце агрегатора размещены в соответствии с п. 1.2 ст. 9 Закона РФ «О защите прав потребителей».
+                    </p>
+                    <div class="footer__bottom">
+                        <p class="footer__req">
+                            © 2026 Провайдеры.рус ·
+                            <span itemprop="legalName">ИП Анненков Алексей Владимирович</span> ·
+                            ИНН <span itemprop="taxID">482411779100</span> ·
+                            ОГРНИП 308482204200073 ·
+                            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">398001, г. <span itemprop="addressLocality">Липецк</span>, <span itemprop="streetAddress">ул. Толстого, д. 1, оф. 432</span></span> ·
+                            Режим работы: ежедневно 8:00–22:00
+                        </p>
+                        <div class="footer__links">
+                            <a href="#">Политика обработки персональных данных</a>
+                            <a href="#">Пользовательское соглашение</a>
+                            <a href="#">Согласие на обработку ПДн</a>
+                            <a href="#">Использование cookie</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <div class="app-modal" id="ask-operator-modal" data-app-modal-id="ask-operator" role="dialog" aria-modal="true" aria-labelledby="ask-operator-modal-title" aria-hidden="true">
             <div class="app-modal__overlay" data-app-modal-close tabindex="-1"></div>
@@ -1052,6 +1504,9 @@
 
         <script defer src="../js/phone-mask.js"></script>
         <script defer src="../js/app-modal.js"></script>
+        <script defer src="../js/site-header.js"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+        <script defer src="../js/city-hub.js"></script>
         <script defer src="../js/main.js"></script>
     </body>
 </html>
