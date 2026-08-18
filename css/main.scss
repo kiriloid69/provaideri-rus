@@ -7072,31 +7072,20 @@ input.main-tariffs__filter-input--radio {
     }
 
     .city-street-checker__field {
-        background: rgba($white-color, 0.16);
+        height: 49px;
+        background: $white-color;
         border-color: transparent;
 
         &:focus-within {
             background: $white-color;
-            border-color: transparent;
+            border-color: $primary-color;
         }
 
         svg {
-            color: rgba($white-color, 0.85);
-        }
-
-        &:focus-within svg {
             color: $dark-gray-color;
         }
 
         input {
-            color: $white-color;
-
-            &::placeholder {
-                color: rgba($white-color, 0.75);
-            }
-        }
-
-        &:focus-within input {
             color: $black-color;
 
             &::placeholder {
