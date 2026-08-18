@@ -11,7 +11,7 @@
   }
 
   function lockBody() {
-    const drawerOpen = document.querySelector(".sh-drawer.is-open");
+    const drawerOpen = document.querySelector(".header-drawer.is-open");
     const modalOpen = document.querySelector(".app-modal.is-open");
     if (!modalOpen) {
       document.body.style.overflow = drawerOpen ? "hidden" : "";
@@ -19,17 +19,17 @@
   }
 
   function closeMega() {
-    document.querySelectorAll(".sh-mega, .sh-scrim").forEach(function (e) {
+    document.querySelectorAll(".header__mega, .header__scrim").forEach(function (e) {
       e.classList.remove("is-open");
     });
-    document.querySelectorAll(".sh-tar-btn").forEach(function (b) {
+    document.querySelectorAll(".header__tariffs-btn").forEach(function (b) {
       b.classList.remove("open");
     });
   }
 
   function closeAll() {
     closeMega();
-    document.querySelectorAll(".sh-drawer").forEach(function (e) {
+    document.querySelectorAll(".header-drawer").forEach(function (e) {
       e.classList.remove("is-open");
     });
     if (window.appModal) {
@@ -44,8 +44,8 @@
       var act = t.getAttribute("data-sh");
       if (act === "tar") {
         ev.preventDefault();
-        var mega = q(".sh-mega");
-        var scrim = q(".sh-scrim");
+        var mega = q(".header__mega");
+        var scrim = q(".header__scrim");
         var open = !(mega && mega.classList.contains("is-open"));
         setOpen(mega, open);
         setOpen(scrim, open);
@@ -55,16 +55,16 @@
         closeMega();
       } else if (act === "menu") {
         ev.preventDefault();
-        var d = q(".sh-drawer");
+        var d = q(".header-drawer");
         setOpen(d, !(d && d.classList.contains("is-open")));
         lockBody();
       } else if (act === "menu-close") {
-        setOpen(q(".sh-drawer"), false);
+        setOpen(q(".header-drawer"), false);
         lockBody();
       } else if (act === "city") {
         ev.preventDefault();
         closeMega();
-        setOpen(q(".sh-drawer"), false);
+        setOpen(q(".header-drawer"), false);
         var cityModal = q("#city-picker-modal");
         if (window.appModal && cityModal) {
           window.appModal.open(cityModal, t);
@@ -73,7 +73,7 @@
       } else if (act === "callback") {
         ev.preventDefault();
         closeMega();
-        setOpen(q(".sh-drawer"), false);
+        setOpen(q(".header-drawer"), false);
         var callbackModal = q("#callback-modal");
         if (window.appModal && callbackModal) {
           window.appModal.open(callbackModal, t);
@@ -147,7 +147,7 @@
   }
 
   function onScroll() {
-    var h = q(".sh-hdr");
+    var h = q(".header:not(:has(.header__menu))");
     if (!h) return;
 
     if (utilScroll.ticking) return;
@@ -162,7 +162,7 @@
   }
 
   window.addEventListener("resize", function () {
-    var h = q(".sh-hdr");
+    var h = q(".header:not(:has(.header__menu))");
     if (!h) return;
     if (window.innerWidth <= 980) {
       h.classList.remove("is-util-hidden");
@@ -173,16 +173,16 @@
   });
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  var citySearch = q(".sh-citym__search");
+  var citySearch = q(".city-picker__search");
   if (citySearch) {
     citySearch.addEventListener("input", function () {
       var qv = citySearch.value.trim().toLowerCase();
-      document.querySelectorAll(".sh-citym__pills a").forEach(function (a) {
+      document.querySelectorAll(".city-picker__pills a").forEach(function (a) {
         a.hidden = Boolean(qv) && a.textContent.toLowerCase().indexOf(qv) === -1;
       });
-      document.querySelectorAll(".sh-citym__grid > div").forEach(function (col) {
-        var name = (col.querySelector(".sh-reg__name") || {}).textContent || "";
-        var kids = Array.from(col.querySelectorAll(".sh-reg__kids a"));
+      document.querySelectorAll(".city-picker__grid > div").forEach(function (col) {
+        var name = (col.querySelector(".city-picker__region") || {}).textContent || "";
+        var kids = Array.from(col.querySelectorAll(".city-picker__cities a"));
         var nameHit = name.toLowerCase().indexOf(qv) !== -1;
         kids.forEach(function (k) {
           k.hidden = Boolean(qv) && !nameHit && k.textContent.toLowerCase().indexOf(qv) === -1;
@@ -192,8 +192,8 @@
         });
         col.hidden = Boolean(qv) && !nameHit && !anyKid;
       });
-      document.querySelectorAll(".sh-citym__sec").forEach(function (sec) {
-        var visible = sec.querySelector("a:not([hidden]), .sh-citym__grid > div:not([hidden])");
+      document.querySelectorAll(".city-picker__section").forEach(function (sec) {
+        var visible = sec.querySelector("a:not([hidden]), .city-picker__grid > div:not([hidden])");
         sec.hidden = Boolean(qv) && !visible;
       });
     });
