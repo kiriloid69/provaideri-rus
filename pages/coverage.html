@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Рейтинг провайдеров Липецка — Провайдеры.рус</title>
+        <title>Карта покрытия провайдеров в Липецке — Провайдеры.рус</title>
 
         <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
@@ -18,7 +18,7 @@
         <link rel="preload" href="../images/main-mobile.gif" as="image" />
         <link rel="stylesheet" href="../css/main.css" />
     </head>
-    <body class="page-rating">
+    <body class="page-coverage" data-cov="all">
         <header class="header">
             <div class="header__util-wrap">
             <div class="header__util">
@@ -263,233 +263,224 @@
         </div>
 
         <main>
-        <section class="rt-hero">
+        <section class="cov-hero">
             <div class="container">
                 <nav class="breadcrumbs breadcrumbs--in-hero" aria-label="Хлебные крошки">
                     <ol class="breadcrumbs__list">
                         <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Главная</a></li>
                         <li class="breadcrumbs__item"><a href="city_page.html" class="breadcrumbs__link">Липецк</a></li>
-                        <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Рейтинг провайдеров</li>
+                        <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Карта покрытия провайдеров</li>
                     </ol>
                 </nav>
-                <div class="rt-hero__card">
-                    <div class="rt-hero__glow" aria-hidden="true"></div>
-                    <div class="rt-hero__grid">
+                <div class="cov-hero__card">
+                    <div class="cov-hero__grid">
                         <div>
-                            <span class="rt-hero__live"><span class="rt-hero__dot" aria-hidden="true"></span>Обновлено 27 июля 2026</span>
-                            <h1 class="rt-hero__title">Рейтинг интернет-провайдеров Липецка <em>по отзывам</em></h1>
-                            <p class="rt-hero__lead">Рейтинг составлен по реальным отзывам абонентов в Липецке. Мы считаем байес-среднюю по отзывам плюс балл 0–100 по шести осям — цена, фактическая скорость, покрытие и ассортимент считаются относительно других провайдеров.</p>
-                            <div class="rt-hero__cta">
-                                <a class="big-button" href="#rating">Смотреть рейтинг</a>
-                                <div class="rt-hero__stats">
-                                    <div><div class="rt-hero__n">18</div><div class="rt-hero__l">провайдеров</div></div>
-                                    <div><div class="rt-hero__n">1 676</div><div class="rt-hero__l">отзывов учтено</div></div>
-                                    <div><div class="rt-hero__n">4,8</div><div class="rt-hero__l">оценка лидера</div></div>
-                                </div>
+                            <div class="prov-hero__badges">
+                                <span class="prov-chip prov-chip--ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Данные сетей обновлены в июле 2026</span>
+                                <span class="prov-chip">4 района</span>
+                                <span class="prov-chip">5 операторов на карте</span>
+                            </div>
+                            <h1 class="cov-hero__title">Карта покрытия <em>провайдеров в Липецке</em></h1>
+                            <p class="cov-hero__tldr">Зоны доступности интернет-провайдеров на карте Липецка: сколько операторов в каждом районе, где есть FTTB и GPON и какая доля домов подключена. Проверка — по адресу.</p>
+                            <ul class="cov-hero__usp">
+                                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Зоны покрытия на карте</li>
+                                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Операторы по районам</li>
+                                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Доля домов</li>
+                                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Проверка по адресу</li>
+                            </ul>
+                            <div class="cov-hero__ops">
+                                <span>На карте:</span>
+                                <span class="cov-hero__op"><img src="../images/operators-logos/rtk.png" alt="Ростелеком" /></span>
+                                <span class="cov-hero__op"><img src="../images/operators-logos/mts.png" alt="МТС" /></span>
+                                <span class="cov-hero__op"><img src="../images/operators-logos/beeline.png" alt="билайн" /></span>
+                                <span class="cov-hero__op"><img src="../images/operators-logos/megafon.png" alt="МегаФон" /></span>
+                                <span class="cov-hero__op"><img src="../images/operators-logos/domru.png" alt="Дом.ру" /></span>
+                            </div>
+                            <div class="cov-hero__cta">
+                                <a class="big-button" href="#checker">Проверить адрес</a>
+                                <a class="city-hub-ghost" href="ranking.html">Все провайдеры Липецка</a>
+                                <span class="cov-hero__note">Бесплатно · 1 минута</span>
                             </div>
                         </div>
-                        <div class="rt-hero__panel">
-                            <div class="rt-hero__kicker">Средние оценки по услугам</div>
-                            <div class="rt-hero__bars">
-                                <div>
-                                    <div class="rt-hero__bar-lab"><span>Интернет</span><b>4,6</b></div>
-                                    <div class="rt-hero__track rt-hero__track--lime"><span style="width:92%"></span></div>
-                                </div>
-                                <div>
-                                    <div class="rt-hero__bar-lab"><span>ТВ</span><b>4,3</b></div>
-                                    <div class="rt-hero__track"><span style="width:86%"></span></div>
-                                </div>
-                                <div>
-                                    <div class="rt-hero__bar-lab"><span>Поддержка</span><b>3,9</b></div>
-                                    <div class="rt-hero__track"><span style="width:78%"></span></div>
-                                </div>
-                                <div>
-                                    <div class="rt-hero__bar-lab"><span>Моб. связь</span><b>4,1</b></div>
-                                    <div class="rt-hero__track"><span style="width:82%"></span></div>
-                                </div>
-                            </div>
-                            <p class="rt-hero__hint">Байес-средняя учитывает число отзывов: провайдер с 5 оценками не обгонит проверенного.</p>
+                        <div class="cov-nums">
+                            <div class="cov-nums__item"><b>5</b><span>провайдеров с сетью в Липецке</span></div>
+                            <div class="cov-nums__item"><b>96%</b><span>домов, где доступен хотя бы один оператор</span></div>
+                            <div class="cov-nums__item"><b>3,4</b><span>оператора в среднем на дом</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="rt-sec">
+        <section class="cov-sec" id="map-block">
             <div class="container">
-                <h2 class="section-title">Рынок в цифрах</h2>
-                <p class="section-subtitle">1 676 отзывов от абонентов Липецка, средняя оценка рынка — 4,3. Она же служит опорой для байес-сглаживания.</p>
-                <div class="rt-stats">
-                    <div class="rt-stats__item"><div class="rt-stats__n">1 676</div><div class="rt-stats__l">отзывов учтено</div></div>
-                    <div class="rt-stats__item"><div class="rt-stats__n rt-stats__n--accent">4,3</div><div class="rt-stats__l">средняя оценка по городу (C)</div></div>
-                    <div class="rt-stats__item"><div class="rt-stats__n">18</div><div class="rt-stats__l">провайдеров с оценками</div></div>
-                    <div class="rt-stats__item"><div class="rt-stats__n">64 %</div><div class="rt-stats__l">отзывов с оценкой 4 и 5</div></div>
-                </div>
-                <div class="rt-split">
-                    <div class="rt-card">
-                        <div class="rt-kicker">Распределение оценок</div>
-                        <div class="rt-dist">
-                            <div class="rt-dist__row"><span class="rt-dist__star">5 ★</span><span class="rt-bar"><span style="width:41%"></span></span><span class="rt-dist__pct">41 %</span></div>
-                            <div class="rt-dist__row"><span class="rt-dist__star">4 ★</span><span class="rt-bar rt-bar--mint"><span style="width:23%"></span></span><span class="rt-dist__pct">23 %</span></div>
-                            <div class="rt-dist__row"><span class="rt-dist__star">3 ★</span><span class="rt-bar rt-bar--lime"><span style="width:14%"></span></span><span class="rt-dist__pct">14 %</span></div>
-                            <div class="rt-dist__row"><span class="rt-dist__star">2 ★</span><span class="rt-bar rt-bar--orange"><span style="width:9%"></span></span><span class="rt-dist__pct">9 %</span></div>
-                            <div class="rt-dist__row"><span class="rt-dist__star">1 ★</span><span class="rt-bar rt-bar--hot"><span style="width:13%"></span></span><span class="rt-dist__pct">13 %</span></div>
+                <h2 class="section-title">Карта покрытия провайдеров</h2>
+                <p class="section-subtitle">Сколько операторов доступно в районе. Нажмите на зону, чтобы увидеть состав провайдеров и технологии.</p>
+                <div class="cov-map cov-map--wide">
+                    <div class="cov-map__box">
+                        <div class="cov-filter">
+                            <button type="button" class="is-on" data-cov-op="all">Все провайдеры</button>
+                            <button type="button" data-cov-op="rtk"><img src="../images/operators-logos/rtk.png" alt="Ростелеком" /></button>
+                            <button type="button" data-cov-op="mts"><img src="../images/operators-logos/mts.png" alt="МТС" /></button>
+                            <button type="button" data-cov-op="beeline"><img src="../images/operators-logos/beeline.png" alt="билайн" /></button>
+                            <button type="button" data-cov-op="megafon"><img src="../images/operators-logos/megafon.png" alt="МегаФон" /></button>
+                            <button type="button" data-cov-op="domru"><img src="../images/operators-logos/domru.png" alt="Дом.ру" /></button>
                         </div>
-                    </div>
-                    <div class="rt-card">
-                        <div class="rt-kicker">Средние оценки по услугам</div>
-                        <div class="rt-svc">
-                            <div>
-                                <div class="rt-svc__lab"><span>Интернет</span><b>4,6</b></div>
-                                <div class="rt-bar"><span style="width:92%"></span></div>
-                            </div>
-                            <div>
-                                <div class="rt-svc__lab"><span>Телевидение</span><b>4,3</b></div>
-                                <div class="rt-bar"><span style="width:86%"></span></div>
-                            </div>
-                            <div>
-                                <div class="rt-svc__lab"><span>Поддержка</span><b>3,9</b></div>
-                                <div class="rt-bar rt-bar--mint"><span style="width:78%"></span></div>
-                            </div>
-                            <div>
-                                <div class="rt-svc__lab"><span>Мобильная связь</span><b>4,1</b></div>
-                                <div class="rt-bar rt-bar--mint"><span style="width:82%"></span></div>
-                            </div>
+                        <div class="cov-map__canvas" id="cov-map"></div>
+                        <div class="cov-legend" id="cov-legend">
+                            <span><i style="background:#1B8F33;"></i>4–5 операторов</span>
+                            <span><i style="background:#2BBE48;"></i>3 оператора</span>
+                            <span><i style="background:#FFA500;"></i>2 оператора</span>
+                            <span><i style="background:#C3C7CD;"></i>1 оператор</span>
                         </div>
-                        <p class="rt-note">Поддержка — самая слабая часть рынка: на неё приходится 38 % отзывов с оценкой 1–2.</p>
+                        <p class="cov-map__attr">Картография: Яндекс Карты. Радиус круга — условная зона района; точную доступность по дому даёт проверка по адресу.</p>
                     </div>
+                    <aside class="cov-panel">
+                        <div class="cov-panel__l">Выбранная зона</div>
+                        <h3 id="z-name">Советский район</h3>
+                        <div class="cov-zrows">
+                            <div><div class="cov-zrow"><span>Домов с интернетом</span><b id="z-cov">98%</b></div><span class="cov-zbar"><i id="z-bar" style="width:98%"></i></span></div>
+                            <div class="cov-zrow"><span>Провайдеров в зоне</span><b id="z-ops">5</b></div>
+                            <div class="cov-zrow"><span>Технологии</span><b id="z-tech">GPON, FTTB</b></div>
+                            <div class="cov-zrow"><span>Макс. скорость</span><b id="z-speed">1 Гбит/с</b></div>
+                            <div class="cov-zrow"><span>Тарифов в зоне</span><b id="z-tar">86</b></div>
+                        </div>
+                        <div class="cov-zops" id="z-oplist"></div>
+                        <a class="big-button" href="#checker">Проверить свой адрес</a>
+                        <div class="cov-zlist" id="z-list"></div>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <section class="rt-sec">
+        <section class="cov-sec" id="checker">
             <div class="container">
-                <h2 class="section-title">Как формируется рейтинг</h2>
-                <p class="section-subtitle">Единица оценки — пара «провайдер + город». Оценка по отзывам сглаживается байесовски, остальные оси считаются как перцентиль внутри Липецка. Оплата за место в рейтинге не влияет ни на балл, ни на порядок.</p>
-                <div class="rt-method">
-                    <div class="rt-card">
-                        <span class="rt-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg></span>
-                        <h3>Байес-сглаженная оценка</h3>
-                        <p>R* = v/(v+m)·R + m/(v+m)·C, где C — средняя по городу, m = 15. Пять пятёрок не поднимут провайдера выше проверенного.</p>
-                    </div>
-                    <div class="rt-card">
-                        <span class="rt-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.5 10 19 14 21 14 12.5 22 3"/></svg></span>
-                        <h3>Перцентили внутри города</h3>
-                        <p>Каждая ось нормируется относительно остальных провайдеров Липецка. Цена за Мбит инвертируется: дешевле — выше.</p>
-                    </div>
-                    <div class="rt-card">
-                        <span class="rt-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
-                        <h3>Композитный балл 0–100</h3>
-                        <p>Балл = 100 · Σ вес · перцентиль. Если источника по оси нет, ось исключается, а её вес пропорционально уходит на остальные.</p>
-                    </div>
-                    <div class="rt-card">
-                        <span class="rt-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-                        <h3>Пересчёт ночью и после модерации</h3>
-                        <p>Город пересчитывается целиком: ночным прогоном и сразу после того, как новый отзыв прошёл проверку.</p>
-                    </div>
-                </div>
-                <div class="rt-formula">
-                    <div class="rt-card rt-card--pad">
-                        <div class="rt-kicker">Веса осей в балле</div>
-                        <div class="rt-weights">
-                            <div class="rt-weights__row"><span>Оценка по отзывам (байес)</span><b>30 %</b><span class="rt-weights__norm">перцентиль R*</span></div>
-                            <div class="rt-weights__row"><span>Фактическая скорость</span><b>20 %</b><span class="rt-weights__norm">факт / заявлено по спидтестам</span></div>
-                            <div class="rt-weights__row"><span>Цена за Мбит</span><b>20 %</b><span class="rt-weights__norm">инвертированный перцентиль</span></div>
-                            <div class="rt-weights__row"><span>Покрытие в городе</span><b>15 %</b><span class="rt-weights__norm">доля домов с подключением</span></div>
-                            <div class="rt-weights__row"><span>Ассортимент и технологии</span><b>10 %</b><span class="rt-weights__norm">число тарифов + бонус за оптику</span></div>
-                            <div class="rt-weights__row"><span>Акции и бесплатное подключение</span><b>5 %</b><span class="rt-weights__norm">есть / нет</span></div>
+                <div class="prov-chk" id="chk-box">
+                    <div class="prov-chk__grid">
+                        <div>
+                            <h2 class="prov-chk__title">Проверить свой адрес</h2>
+                            <p class="prov-chk__text">Узнайте, какие провайдеры уже заведены в ваш дом: введите улицу и номер — покажем адрес на карте, список операторов и число тарифов.</p>
+                        </div>
+                        <div class="city-hub-search">
+                            <div class="city-hub-search__row">
+                                <input class="city-hub-search__input" type="text" id="cov-addr" placeholder="Улица и дом" autocomplete="off" />
+                                <button class="big-button city-hub-search__btn" id="cov-find" type="button">Проверить</button>
+                            </div>
+                            <ul class="city-hub-search__sugg" id="cov-sugg" hidden></ul>
                         </div>
                     </div>
-                    <div class="rt-notes">
-                        <div class="rt-card rt-card--mint">
-                            <h3>Место в рейтинге нельзя купить</h3>
-                            <p>Партнёрские выплаты не оказывают влияния на место в рейтинге. Балл и порядок в таблице считает алгоритм по данным города.</p>
-                        </div>
-                        <div class="rt-card">
-                            <h3>Один провайдер — разные баллы в разных городах</h3>
-                            <p>Всё нормируется относительно города, поэтому МТС в Липецке и в Омске получает разный балл и разные бейджи.</p>
-                        </div>
-                    </div>
+                    <div class="cov-res" id="cov-res" hidden></div>
                 </div>
             </div>
         </section>
 
-        <section class="rt-sec rt-sec--last" id="rating">
+        <section class="cov-sec">
             <div class="container">
-                <h2 class="section-title">Рейтинг по отзывам</h2>
-                <p class="section-subtitle">Сортировка по итоговому баллу. Переключите ось, чтобы увидеть лидеров по конкретному критерию, — резюме «за и против» у каждого провайдера складывается из тем отзывов и его позиции по городу.</p>
-                <div class="rt-tabs" data-rt-tabs>
-                    <button type="button" class="is-on" data-rt-sort="score">Общий балл</button>
-                    <button type="button" data-rt-sort="rating">Оценка по отзывам</button>
-                    <button type="button" data-rt-sort="factSpeed">Фактическая скорость</button>
-                    <button type="button" data-rt-sort="perMbit">Цена за Мбит</button>
-                    <button type="button" data-rt-sort="coverage">Покрытие</button>
-                </div>
-                <div class="rt-list" data-rt-list></div>
-                <p class="rt-foot">Показаны 8 провайдеров с наибольшим числом отзывов. <a href="reviews.html">Все 18 провайдеров Липецка</a></p>
+                <h2 class="section-title">Покрытие по провайдерам</h2>
+                <p class="section-subtitle">Доля домов Липецка у каждого оператора и технологии, которыми он подключает.</p>
+                <div class="cov-plist" id="cov-plist"></div>
             </div>
         </section>
 
-        <section class="faq" id="faq">
+        <section class="cov-sec cov-sec--last">
+            <div class="container">
+                <h2 class="section-title">Технологии подключения</h2>
+                <p class="section-subtitle">FTTB и GPON по районам Липецка.</p>
+                <div class="cov-tech">
+                    <div class="cov-tech__card">
+                        <h3><span class="cov-dot" style="background:#2BBE48;"></span>GPON — оптика в квартиру</h3>
+                        <p>Оптоволокно заводится прямо в квартиру, медного участка до роутера нет. Максимальная скорость и стабильный вечерний пинг. Чаще в новостройках.</p>
+                        <ul class="cov-spec">
+                            <li><span class="l">Скорость</span><span class="v">до 1 Гбит/с</span></li>
+                            <li><span class="l">Операторов с GPON</span><span class="v">4 из 5</span></li>
+                            <li><span class="l">Доля домов города</span><span class="v">47%</span></li>
+                            <li><span class="l">Срок монтажа</span><span class="v">1–2 дня</span></li>
+                        </ul>
+                        <div class="cov-zones">
+                            <span class="reviews-chip">Советский</span><span class="reviews-chip">Октябрьский</span>
+                        </div>
+                    </div>
+                    <div class="cov-tech__card">
+                        <h3><span class="cov-dot" style="background:#FFA500;"></span>FTTB — оптика до дома</h3>
+                        <p>Оптика доходит до щитка в подъезде, до квартиры идёт витая пара. Дешевле в подключении и доступна в панельном фонде.</p>
+                        <ul class="cov-spec">
+                            <li><span class="l">Скорость</span><span class="v">до 500 Мбит/с</span></li>
+                            <li><span class="l">Операторов с FTTB</span><span class="v">5 из 5</span></li>
+                            <li><span class="l">Доля домов города</span><span class="v">89%</span></li>
+                            <li><span class="l">Срок монтажа</span><span class="v">1–3 дня</span></li>
+                        </ul>
+                        <div class="cov-zones">
+                            <span class="reviews-chip">Правобережный</span><span class="reviews-chip">Левобережный</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cov-links">
+                    <a class="city-hub-ghost" href="search_address.html">Провайдеры по адресу</a>
+                    <a class="city-hub-ghost" href="compare_tariffs.html">Сравнить тарифы операторов</a>
+                </div>
+            </div>
+        </section>
+
+                <section class="faq" id="faq">
             <div class="container">
                 <h2 class="section-title">Частые вопросы</h2>
-                <p class="section-subtitle">О методике расчёта, обновлении и о том, как попадают отзывы.</p>
+                <p class="section-subtitle">Про зоны покрытия, операторов и проверку адреса в Липецке</p>
                 <div class="faq__list">
                     <div class="faq__col">
                         <div class="faq__item">
                             <button type="button" class="faq__question faq__question--open" aria-expanded="true" aria-controls="faq-1" id="faq-q-1">
-                                <span class="faq__question-text">Чем балл 0–100 отличается от оценки 4,8?</span>
+                                <span class="faq__question-text">Как узнать, какие провайдеры есть в доме?</span>
                                 <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap faq__answer-wrap--open" id="faq-1" role="region" aria-labelledby="faq-q-1">
-                                <div class="faq__answer-inner"><div class="faq__answer">Оценка 4,8 — это только отзывы абонентов, сглаженные средней по городу. Балл шире: он объединяет отзывы (30 %), фактическую скорость, цену за Мбит, покрытие, ассортимент и акции. Порядок в таблице определяет балл.</div></div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Введите улицу и номер — покажем дом на карте и список операторов с технологиями и числом тарифов.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-2" id="faq-q-2">
-                                <span class="faq__question-text">Почему провайдер с оценкой 5,0 стоит ниже провайдера с 4,8?</span>
+                                <span class="faq__question-text">Почему в одном районе 5 операторов, а в другом меньше?</span>
                                 <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-2" role="region" aria-labelledby="faq-q-2">
-                                <div class="faq__answer-inner"><div class="faq__answer">Из-за байес-сглаживания: 5,0 по восьми отзывам статистически ненадёжна и притягивается к средней по городу (4,3). Чем больше отзывов, тем меньше сглаживание — и тем выше провайдер поднимается при том же балле.</div></div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Сеть заводится по домам. В новостройках обычно больше GPON-операторов, в старом фонде чаще FTTB и меньше игроков.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-3" id="faq-q-3">
-                                <span class="faq__question-text">Как часто обновляется рейтинг?</span>
+                                <span class="faq__question-text">Круги на карте — это точные границы?</span>
                                 <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-3" role="region" aria-labelledby="faq-q-3">
-                                <div class="faq__answer-inner"><div class="faq__answer">Город пересчитывается каждую ночь, а также сразу после того, как новый отзыв прошёл модерацию. Дата последнего пересчёта указана в начале страницы — 27 июля 2026.</div></div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Нет, это условные зоны районов. Точную доступность по квартире даёт проверка адреса.</div></div>
                             </div>
                         </div>
                     </div>
                     <div class="faq__col">
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-4" id="faq-q-4">
-                                <span class="faq__question-text">Может ли провайдер купить место в рейтинге?</span>
+                                <span class="faq__question-text">Чем GPON отличается от FTTB?</span>
                                 <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-4" role="region" aria-labelledby="faq-q-4">
-                                <div class="faq__answer-inner"><div class="faq__answer">Нет. Балл считает алгоритм по данным города: отзывы, спидтесты, каталог тарифов и покрытие. Партнёрские отношения влияют только на размещение тарифов и помечаются отдельно.</div></div>
+                                <div class="faq__answer-inner"><div class="faq__answer">GPON — оптика в квартиру до 1 Гбит/с. FTTB — оптика до щитка и медь до квартиры, обычно до 500 Мбит/с.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-5" id="faq-q-5">
-                                <span class="faq__question-text">Откуда берутся «за» и «против»?</span>
+                                <span class="faq__question-text">Можно ли открыть карту одного оператора?</span>
                                 <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-5" role="region" aria-labelledby="faq-q-5">
-                                <div class="faq__answer-inner"><div class="faq__answer">Из тем отзывов с указанием доли упоминаний и из позиции провайдера по осям: «дешевле среднего по Липецку на 60 ₽», «быстрее 80 % провайдеров города». Текст собирается по шаблону из тех же чисел, что и в таблице.</div></div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Да, фильтр над картой переключает зоны по Ростелекому, МТС, билайну, МегаФону и Дом.ру. Есть отдельная карта МТС.</div></div>
                             </div>
                         </div>
                         <div class="faq__item">
                             <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-6" id="faq-q-6">
-                                <span class="faq__question-text">Рейтинг одинаков для всех городов?</span>
+                                <span class="faq__question-text">Что делать, если по адресу никого нет?</span>
                                 <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.6843 8.31093C17.2652 7.89636 16.5881 7.89636 16.169 8.31093L11.9993 12.4355L7.82962 8.31093C7.4105 7.89636 6.73346 7.89636 6.31434 8.31093C5.89522 8.72551 5.89522 9.39522 6.31434 9.80979L11.2471 14.6891C11.6662 15.1036 12.3432 15.1036 12.7623 14.6891L17.6951 9.80979C18.1034 9.40585 18.1034 8.72551 17.6843 8.31093Z" /></svg>
                             </button>
                             <div class="faq__answer-wrap" id="faq-6" role="region" aria-labelledby="faq-q-6">
-                                <div class="faq__answer-inner"><div class="faq__answer">Нет — оценка считается для пары «провайдер + город», потому что сеть, цены и качество поддержки различаются. Смените город в шапке, чтобы увидеть местный рейтинг.</div></div>
+                                <div class="faq__answer-inner"><div class="faq__answer">Оставьте заявку — сообщим, когда появится покрытие. Иногда доступен мобильный интернет.</div></div>
                             </div>
                         </div>
                     </div>
@@ -497,6 +488,7 @@
             </div>
         </section>
         </main>
+
 
         <footer class="footer">
             <div class="footer__pre">
@@ -920,7 +912,8 @@
         <script defer src="../js/phone-mask.js"></script>
         <script defer src="../js/app-modal.js"></script>
         <script defer src="../js/site-header.js"></script>
-        <script defer src="../js/ranking.js"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+        <script defer src="../js/coverage-map.js"></script>
         <script defer src="../js/main.js"></script>
     </body>
 </html>
