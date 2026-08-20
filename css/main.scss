@@ -8875,9 +8875,16 @@ input.main-tariffs__filter-input--radio {
         display: grid;
         grid-template-columns: 88px minmax(0, 1fr);
         gap: 20px;
+        align-items: start;
+    }
+
+    &__head {
+        display: contents;
     }
 
     &__logo {
+        grid-column: 1;
+        grid-row: 1 / span 2;
         width: 88px;
         height: 88px;
         padding: 12px;
@@ -8896,9 +8903,17 @@ input.main-tariffs__filter-input--radio {
     }
 
     &__badges {
+        grid-column: 2;
+        grid-row: 1;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
+    }
+
+    &__main {
+        grid-column: 2;
+        grid-row: 2;
+        min-width: 0;
     }
 
     &__title {
@@ -9406,18 +9421,84 @@ input.main-tariffs__filter-input--radio {
         }
 
         .prov-hero__top,
-        .prov-hero__id,
         .prov-prc {
             grid-template-columns: minmax(0, 1fr);
         }
 
-        .prov-hero__title {
-            font-size: 28px;
+        .prov-hero__id {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 16px;
+        }
+
+        .prov-hero__head {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 12px;
         }
 
         .prov-hero__logo {
+            flex: 0 0 72px;
             width: 72px;
             height: 72px;
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+        .prov-hero__badges {
+            flex: 1 1 auto;
+            min-width: 0;
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+        .prov-hero__main {
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+        .prov-hero__title {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .prov-hero__cta {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: stretch;
+
+            .big-button,
+            .city-offers__all {
+                box-sizing: border-box;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .prov-hero__note {
+                text-align: center;
+            }
+        }
+
+        .prov-facts {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            margin-left: -18px;
+            margin-right: -18px;
+            padding: 0 18px 4px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                flex: 0 0 auto;
+            }
         }
 
         .faq__list {
