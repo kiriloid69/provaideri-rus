@@ -7143,6 +7143,10 @@ input.main-tariffs__filter-input--radio {
 
 .city-hub-sec {
     padding: 48px 0 0;
+
+    &--last {
+        padding-bottom: 48px;
+    }
 }
 
 .city-hub-head {
@@ -8664,11 +8668,22 @@ input.main-tariffs__filter-input--radio {
         flex-direction: column;
         align-items: flex-end;
         gap: 10px;
+
+        .big-button {
+            width: auto;
+            flex: 0 0 auto;
+            padding: 10px 16px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
     }
 
     &__price {
+        flex: 1 1 auto;
+        min-width: 0;
         font-size: 15px;
         font-weight: 700;
+        white-space: nowrap;
     }
 
     &__note {
@@ -8886,6 +8901,7 @@ input.main-tariffs__filter-input--radio {
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
 
         .addr-tabs {
@@ -8912,9 +8928,13 @@ input.main-tariffs__filter-input--radio {
 
         .addr-search__field {
             min-height: 52px;
-            background: $bg-color;
+            background: $white-color;
             border: 1px solid rgba($gray-color, 0.45);
             border-radius: $border-radius-big;
+        }
+
+        .addr-search__input {
+            background: $white-color;
         }
 
         .addr-stats {
@@ -8932,8 +8952,6 @@ input.main-tariffs__filter-input--radio {
     }
 
     @media screen and (max-width: 720px) {
-        .scenario-cards__grid--4,
-        .how-to-connect--4 .how-to-connect__content,
         .addr-prow {
             display: flex;
             flex-wrap: nowrap;
@@ -8955,6 +8973,49 @@ input.main-tariffs__filter-input--radio {
                 flex: 0 0 82%;
                 min-width: 0;
                 scroll-snap-align: start;
+            }
+        }
+
+        .scenario-cards__grid--4 {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 12px;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            margin: 0;
+            padding: 2px 0 6px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            > * {
+                flex: 0 0 calc(100% - 36px);
+                min-width: 0;
+                scroll-snap-align: start;
+            }
+        }
+
+        .how-to-connect--4 .how-to-connect__content {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 12px;
+            overflow: visible;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            > * {
+                flex: none;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
         }
     }
@@ -9562,6 +9623,19 @@ input.main-tariffs__filter-input--radio {
             min-width: 0;
             grid-column: auto;
             grid-row: auto;
+            gap: 6px;
+
+            .prov-chip {
+                gap: 4px;
+                padding: 4px 8px;
+                font-size: 11px;
+
+                img,
+                svg {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
         }
 
         .prov-hero__main {
@@ -11538,7 +11612,6 @@ input.main-tariffs__filter-input--radio {
     }
 
     @media screen and (max-width: 720px) {
-        .how-to-connect__content,
         .city-hub-prow {
             display: flex;
             flex-wrap: nowrap;
@@ -11558,6 +11631,30 @@ input.main-tariffs__filter-input--radio {
 
             > * {
                 flex: 0 0 82%;
+                min-width: 0;
+                scroll-snap-align: start;
+            }
+        }
+
+        .how-to-connect__content {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            gap: 12px;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            margin: 0;
+            padding: 2px 0 6px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            > * {
+                flex: 0 0 calc(100% - 36px);
                 min-width: 0;
                 scroll-snap-align: start;
             }
@@ -11587,16 +11684,6 @@ input.main-tariffs__filter-input--radio {
         }
 
         .how-to-connect {
-            .container {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
-            &__content {
-                flex-direction: row;
-                gap: 12px;
-            }
-
             &__card {
                 border-radius: $border-radius-big;
             }
@@ -13176,8 +13263,17 @@ input.main-tariffs__filter-input--radio {
         }
     }
 
+    @media screen and (max-width: 720px) {
+        padding-bottom: 16px;
+
+        &.main-tariffs {
+            padding-bottom: 16px;
+        }
+    }
+
     @media screen and (max-width: 480px) {
         padding-top: 24px;
+        padding-bottom: 16px;
 
         .section-title {
             font-size: 20px;
@@ -13520,6 +13616,10 @@ input.main-tariffs__filter-input--radio {
     padding-top: 48px;
     background-color: $bg-color;
     scroll-margin-top: 24px;
+
+    @media screen and (max-width: 720px) {
+        padding-top: 16px;
+    }
 }
 
 .reviews-form {
@@ -18284,17 +18384,17 @@ input.main-tariffs__filter-input--radio {
         gap: 18px;
 
         h2 {
-            font-size: 20px;
+            font-size: 20px !important;
         }
 
         p {
-            font-size: 13.5px;
+            font-size: 13.5px !important;
         }
 
         &__lime,
         &__ghost {
             width: 100%;
-            justify-content: center;
+            justify-content: center ;
         }
     }
 }
@@ -20427,7 +20527,7 @@ input.main-tariffs__filter-input--radio {
         font-size: 20px;
     }
     h2 {
-        font-size: 20px;
+        font-size: 20px !important;
         &.title {
             font-size: 26px;
         }
@@ -20963,7 +21063,7 @@ input.main-tariffs__filter-input--radio {
 
     .how-to-connect {
         & .container {
-            padding: 0;
+            padding: 0 16px;
         }
         & .title {
             background-color: $white-color;
@@ -20973,17 +21073,18 @@ input.main-tariffs__filter-input--radio {
         }
         .section-title,
         .section-subtitle {
-            padding-left: 12px;
-            padding-right: 12px;
+            padding-left: 0;
+            padding-right: 0;
         }
         &__content {
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
+            margin: 0;
         }
         &__card {
-            border-radius: 0;
+            border-radius: $border-radius-big;
             &-title {
-                padding: 0 32px;
+                padding: 0;
             }
         }
         &__button {

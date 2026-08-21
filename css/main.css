@@ -6383,6 +6383,9 @@ input.main-tariffs__filter-input--radio:focus-visible {
 .city-hub-sec {
   padding: 48px 0 0;
 }
+.city-hub-sec--last {
+  padding-bottom: 48px;
+}
 
 .city-hub-head {
   display: flex;
@@ -7720,9 +7723,19 @@ input.main-tariffs__filter-input--radio:focus-visible {
   align-items: flex-end;
   gap: 10px;
 }
+.addr-prow__last .big-button {
+  width: auto;
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+}
 .addr-prow__price {
+  flex: 1 1 auto;
+  min-width: 0;
   font-size: 15px;
   font-weight: 700;
+  white-space: nowrap;
 }
 .addr-prow__note {
   margin: 14px 0 0;
@@ -7911,6 +7924,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
   }
   .page-search-address .addr-tabs {
     display: flex;
@@ -7932,9 +7946,12 @@ input.main-tariffs__filter-input--radio:focus-visible {
   }
   .page-search-address .addr-search__field {
     min-height: 52px;
-    background: #f0f1f4;
+    background: #ffffff;
     border: 1px solid rgba(164, 165, 168, 0.45);
     border-radius: 12px;
+  }
+  .page-search-address .addr-search__input {
+    background: #ffffff;
   }
   .page-search-address .addr-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7948,8 +7965,6 @@ input.main-tariffs__filter-input--radio:focus-visible {
   }
 }
 @media screen and (max-width: 720px) {
-  .page-search-address .scenario-cards__grid--4,
-  .page-search-address .how-to-connect--4 .how-to-connect__content,
   .page-search-address .addr-prow {
     display: flex;
     flex-wrap: nowrap;
@@ -7963,17 +7978,51 @@ input.main-tariffs__filter-input--radio:focus-visible {
     margin-right: -16px;
     padding: 2px 16px 6px;
   }
-  .page-search-address .scenario-cards__grid--4::-webkit-scrollbar,
-  .page-search-address .how-to-connect--4 .how-to-connect__content::-webkit-scrollbar,
   .page-search-address .addr-prow::-webkit-scrollbar {
     display: none;
   }
-  .page-search-address .scenario-cards__grid--4 > *,
-  .page-search-address .how-to-connect--4 .how-to-connect__content > *,
   .page-search-address .addr-prow > * {
     flex: 0 0 82%;
     min-width: 0;
     scroll-snap-align: start;
+  }
+  .page-search-address .scenario-cards__grid--4 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 2px 0 6px;
+  }
+  .page-search-address .scenario-cards__grid--4::-webkit-scrollbar {
+    display: none;
+  }
+  .page-search-address .scenario-cards__grid--4 > * {
+    flex: 0 0 calc(100% - 36px);
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .page-search-address .how-to-connect--4 .how-to-connect__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .page-search-address .how-to-connect--4 .how-to-connect__content > * {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -8498,6 +8547,17 @@ input.main-tariffs__filter-input--radio:focus-visible {
     min-width: 0;
     grid-column: auto;
     grid-row: auto;
+    gap: 6px;
+  }
+  .page-provider .prov-hero__badges .prov-chip {
+    gap: 4px;
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  .page-provider .prov-hero__badges .prov-chip img,
+  .page-provider .prov-hero__badges .prov-chip svg {
+    width: 12px;
+    height: 12px;
   }
   .page-provider .prov-hero__main {
     grid-column: auto;
@@ -10237,7 +10297,6 @@ input.main-tariffs__filter-input--radio:focus-visible {
   }
 }
 @media screen and (max-width: 720px) {
-  .page-city .how-to-connect__content,
   .page-city .city-hub-prow {
     display: flex;
     flex-wrap: nowrap;
@@ -10251,13 +10310,32 @@ input.main-tariffs__filter-input--radio:focus-visible {
     margin-right: -16px;
     padding: 2px 16px 6px;
   }
-  .page-city .how-to-connect__content::-webkit-scrollbar,
   .page-city .city-hub-prow::-webkit-scrollbar {
     display: none;
   }
-  .page-city .how-to-connect__content > *,
   .page-city .city-hub-prow > * {
     flex: 0 0 82%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .page-city .how-to-connect__content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 2px 0 6px;
+  }
+  .page-city .how-to-connect__content::-webkit-scrollbar {
+    display: none;
+  }
+  .page-city .how-to-connect__content > * {
+    flex: 0 0 calc(100% - 36px);
     min-width: 0;
     scroll-snap-align: start;
   }
@@ -10280,14 +10358,6 @@ input.main-tariffs__filter-input--radio:focus-visible {
     flex: 0 0 calc(100% - 36px);
     min-width: 0;
     scroll-snap-align: start;
-  }
-  .page-city .how-to-connect .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .page-city .how-to-connect__content {
-    flex-direction: row;
-    gap: 12px;
   }
   .page-city .how-to-connect__card {
     border-radius: 12px;
@@ -11646,9 +11716,18 @@ input.main-tariffs__filter-input--radio:focus-visible {
     display: inline-flex;
   }
 }
+@media screen and (max-width: 720px) {
+  .reviews-board {
+    padding-bottom: 16px;
+  }
+  .reviews-board.main-tariffs {
+    padding-bottom: 16px;
+  }
+}
 @media screen and (max-width: 480px) {
   .reviews-board {
     padding-top: 24px;
+    padding-bottom: 16px;
   }
   .reviews-board .section-title {
     font-size: 20px;
@@ -11952,6 +12031,11 @@ input.main-tariffs__filter-input--radio:focus-visible {
   padding-top: 48px;
   background-color: #f0f1f4;
   scroll-margin-top: 24px;
+}
+@media screen and (max-width: 720px) {
+  .reviews-form-section {
+    padding-top: 16px;
+  }
 }
 
 .reviews-form {
@@ -16114,10 +16198,10 @@ input.main-tariffs__filter-input--radio:focus-visible {
     gap: 18px;
   }
   .news-promo h2 {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   .news-promo p {
-    font-size: 13.5px;
+    font-size: 13.5px !important;
   }
   .news-promo__lime, .news-promo__ghost {
     width: 100%;
@@ -17968,7 +18052,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
     font-size: 20px;
   }
   h2 {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   h2.title {
     font-size: 26px;
@@ -18419,7 +18503,7 @@ input.main-tariffs__filter-input--radio:focus-visible {
     line-height: 1;
   }
   .how-to-connect .container {
-    padding: 0;
+    padding: 0 16px;
   }
   .how-to-connect .title {
     background-color: #ffffff;
@@ -18429,18 +18513,19 @@ input.main-tariffs__filter-input--radio:focus-visible {
   }
   .how-to-connect .section-title,
   .how-to-connect .section-subtitle {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .how-to-connect__content {
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+    margin: 0;
   }
   .how-to-connect__card {
-    border-radius: 0;
+    border-radius: 12px;
   }
   .how-to-connect__card-title {
-    padding: 0 32px;
+    padding: 0;
   }
   .how-to-connect__button {
     margin-top: 30px;
